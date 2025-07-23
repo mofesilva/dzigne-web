@@ -13,7 +13,7 @@ function Navbar() {
                 alt="Dzign-e"
                 className="h-8 w-auto"
             />
-            <ul className='flex gap-8 font-rajdhani font-bold text-xl '>
+            <ul className='lg:flex hidden gap-8 font-rajdhani font-bold text-xl '>
                 <NavbarDestination destination="/" text="Home" />
                 <NavbarDestination destination="/about-us" text="Inside Dzign-e" />
                 <NavbarDestination destination="/cases" text="Cases" />
