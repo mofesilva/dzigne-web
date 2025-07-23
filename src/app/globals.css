@@ -1,21 +1,29 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
+  --background: #eeeeee;
   --foreground: #171717;
+  --carbon: #171717;
+  --green-accent: #7fd10c;
+  --green-accent-light: #95f50e;
+  --eggshell: #eeeeee;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-carbon: var(--carbon);
+  --color-green-accent: var(--green-accent);
+  --color-green-accent-light: var(--green-accent-light);
+  --color-eggshell: var(--eggshell);
+  --font-rajdhani: var(--font-rajdhani);
+  --font-league-spartan: var(--font-league-spartan);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #171717;
+    --foreground: #ffffff;
   }
 }
 
@@ -23,4 +31,40 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Classes utilitárias para seções com largura total */
+.section-full-width {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.section-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.hero-section-full {
+  width: 100%;
+  height: 600px;
+  position: relative;
+}
+
+.footer-section {
+  width: 100%;
+  background-color: var(--green-accent);
+}
+
+/* Responsividade para o container */
+@media (max-width: 640px) {
+  .section-container {
+    padding: 0 1rem;
+  }
+}
+
+@media (min-width: 1400px) {
+  .section-container {
+    max-width: 1400px;
+  }
 }
