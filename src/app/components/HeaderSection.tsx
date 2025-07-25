@@ -8,12 +8,15 @@ interface HeaderSectionProps {
 
 function HeaderSection({ image, content }: HeaderSectionProps) {
     return (
-        <section className='hero-section-full'>
-            <Image src={image} alt="Hero Banner" className='w-full object-cover h-[600px]' fill quality={100} />
-            <div className='absolute top-0 left-0 w-full h-full'>
-                <div className="section-container">
-                    <div className="h-36"></div>
-                    {content}
+        <section className='w-full min-h-screen relative overflow-hidden'>
+            {/* Fundo preto */}
+            <div className="absolute inset-0 bg-carbon"></div>
+
+            <div className='relative z-10 w-full h-full'>
+                <div className="section-container h-full flex flex-col justify-center">
+                    <div className="mt-20">
+                        {content}
+                    </div>
                 </div>
             </div>
         </section>

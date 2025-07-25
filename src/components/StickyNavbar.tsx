@@ -19,11 +19,10 @@ function StickyNavbar() {
         <div className="fixed top-4 w-full z-50">
             <div className="section-container">
                 <nav className={`
-                    bg-carbon/90 backdrop-blur-lg 
+                    ${isScrolled ? 'bg-carbon/75 backdrop-blur-md' : 'bg-carbon'}
                     rounded-2xl px-6 py-3
-                    shadow-2xl shadow-black/50
                     w-full transition-all duration-300
-                    ${isScrolled ? 'border border-white/20' : 'border-transparent'}
+                    ${isScrolled ? 'border border-white/20' : 'border border-transparent'}
                 `}>
                     <div className='flex justify-between items-center'>
                         <Image
