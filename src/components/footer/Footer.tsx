@@ -9,12 +9,12 @@ import FooterNavigationSection from './FooterNavigationSection';
 function Footer() {
     return (
         <footer className="footer-section text-foreground">
-            <div className="section-container align-center place-content-center content-center items-center justify-center">
-                <div className="lg:flex lg:flex-row flex-col gap-4">
+            <div className="section-container align-center content-center items-center justify-center">
+                <div className="flex gap-4">
                     <FooterContactSection />
-                    <Divider width="0.5" color="carbon" height="200" />
+                    <Divider width="1" color="carbon" height="200px" />
                     <FooterAddressSection />
-                    <Divider width="0.5" color="carbon" height="200" />
+                    <Divider width="1" color="carbon" height="200px" />
                     <FooterNavigationSection />
                 </div>
                 <SigningSection />

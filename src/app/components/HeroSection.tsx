@@ -1,7 +1,6 @@
 import React from 'react';
 import NavigationButton from './NavigationButton';
 import Image from 'next/image';
-import icalvinusMockup from '../../assets/images/mockups/iCalvinus_mockup_4.png';
 
 function HeroSection() {
     return (
@@ -30,7 +29,7 @@ function HeroSection() {
                         </a>
                     </div></div>
                 <div className="drop-shadow-[0_0_50px_rgba(127,209,12,0.3)]">
-                    <Image src={icalvinusMockup} alt="Hero Image" width={600} height={600} />
+                    <Image src='/assets/images/mockups/iCalvinus_mockup_4.png' alt="Hero Image" width={600} height={600} />
                 </div>
             </section>
         </>

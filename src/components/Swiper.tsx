@@ -1,5 +1,4 @@
 'use client'
-
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation, Pagination, Autoplay } from 'swiper/modules'
 import type { SwiperOptions } from 'swiper/types'
@@ -9,15 +8,17 @@ type CarouselProps = {
     slides: React.ReactNode[]
     options?: SwiperOptions
     className?: string
+    style?: React.CSSProperties
 }
 
-export default function Carousel({ slides, options, className }: CarouselProps) {
+export default function Carousel({ slides, options, className, style }: CarouselProps) {
     return (
         <Swiper
             modules={[Navigation, Pagination, Autoplay]}
             navigation
             pagination={{ clickable: true }}
-            autoplay={{ delay: 4000 }}
+            autoplay={{ delay: 8000 }}
+            style={style}
             loop
             {...options}
             className={className}

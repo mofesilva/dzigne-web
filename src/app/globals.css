@@ -4,6 +4,7 @@
   --background: #eeeeee;
   --foreground: #171717;
   --carbon: #171717;
+  --carbon-medium: #1F1F1F;
   --green-accent: #7fd10c;
   --green-accent-light: #95f50e;
   --eggshell: #eeeeee;
@@ -13,6 +14,7 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-carbon: var(--carbon);
+  --color-carbon-medium: var(--carbon-medium);
   --color-green-accent: var(--green-accent);
   --color-green-accent-light: var(--green-accent-light);
   --color-eggshell: var(--eggshell);
@@ -55,6 +57,7 @@ body {
   width: 100%;
   background-color: var(--green-accent);
 }
+
 
 /* Responsividade para o container */
 @media (max-width: 640px) {

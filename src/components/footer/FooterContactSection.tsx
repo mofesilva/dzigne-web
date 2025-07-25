@@ -1,14 +1,15 @@
 'use client'
 import React from 'react';
 import Image from 'next/image';
-import dzigneLogoBlack from '../../assets/dzigne-logotype-black.png';
 
 function FooterContactSection() {
     return (
         <>
             <section className="flex flex-col items-start justify-start h-auto p-10 pl-0">
-                <Image src={dzigneLogoBlack}
+                <Image src='/assets/dzigne-logotype-black.png'
                     alt="Logotipo Dzign-e"
+                    width={100}
+                    height={100}
                     className="h-auto w-30 pb-4" />
                 <div className="pl-0 items-start text-start justify-start pb-4">
                     <a href="https://www.instagram.com/dzign.e/"
