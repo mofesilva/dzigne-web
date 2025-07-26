@@ -1,17 +1,31 @@
 'use client';
 import React, { useState } from 'react'
 import ServiceListItem from './ServiceListItem'
-import NavigationButton from './NavigationButton'
+import NavigationButton from '../../components/NavigationButton'
 
 function ServicesSection() {
     const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+    const [isMouseInSection, setIsMouseInSection] = useState(false);
 
     const handleMouseMove = (e: React.MouseEvent) => {
         setMousePosition({ x: e.clientX, y: e.clientY });
     };
 
+    const handleMouseEnter = () => {
+        setIsMouseInSection(true);
+    };
+
+    const handleMouseLeave = () => {
+        setIsMouseInSection(false);
+    };
+
     return (
-        <section className='bg-carbon w-full pt-32 pb-20' onMouseMove={handleMouseMove}>
+        <section
+            className='bg-carbon w-full pt-32 pb-20'
+            onMouseMove={handleMouseMove}
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+        >
             <div className="section-container">
                 {/* Header com título e botão */}
                 <div className="flex justify-between items-start mb-16">
@@ -36,18 +50,21 @@ function ServicesSection() {
                         title="Desenvolvimento"
                         description="Projetos desenvolvidos sob medida, com arquitetura robusta e tecnologias modernas para seu negócio."
                         globalMousePosition={mousePosition}
+                        isMouseInSection={isMouseInSection}
                     />
                     <ServiceListItem
                         icon="fa-solid fa-user-plus"
                         title="Alocação de Equipes"
                         description="Times especializados sob demanda com os perfis certos para acelerar suas entregas."
                         globalMousePosition={mousePosition}
+                        isMouseInSection={isMouseInSection}
                     />
                     <ServiceListItem
                         icon="fa-solid fa-microchip"
                         title="Tecnologia Proprietária"
                         description="Soluções inovadoras com nossa tecnologia proprietária para acelerar seu desenvolvimento."
                         globalMousePosition={mousePosition}
+                        isMouseInSection={isMouseInSection}
                     />
                 </div>
             </div>
