@@ -12,13 +12,13 @@ interface CaseSlideProps {
 
 function CaseSlide({ text, logo, alt, mockup, href }: CaseSlideProps) {
     return (
-        <div className="flex items-center justify-center w-full h-full gap-8 pr-8">
-            <div className="mockup__container flex-shrink-0">
-                <Image src={mockup} alt="Mockup" className="h-auto w-[320px] md:w-[400px]" width={600} height={600} quality={100} />
+        <div className="flex flex-col md:flex-row md:items-center justify-center w-full min-h-full py-8 gap-8 px-4 md:pr-8 md:px-0">
+            <div className="mockup__container flex-shrink-0 flex justify-center md:justify-start">
+                <Image src={mockup} alt="Mockup" className="h-auto w-[200px] md:w-[400px]" width={600} height={600} quality={100} />
             </div>
-            <div className="case__study__content flex flex-col items-start justify-center max-w-xl">
+            <div className="case__study__content flex flex-col items-center md:items-start justify-center max-w-xl">
                 <Image src={logo} alt={alt} className="h-auto w-[100px] mb-4" width={100} height={100} quality={100} />
-                <p className="font-league-spartan text-lg text-eggshell mb-8 cursor-default">{text}</p>
+                <p className="font-league-spartan text-lg text-eggshell mb-8 cursor-default text-center md:text-left">{text}</p>
                 <NavigationButton href={href} text={'Saiba mais'} icon={'fa-solid fa-chevron-right'} />
             </div>
         </div>
