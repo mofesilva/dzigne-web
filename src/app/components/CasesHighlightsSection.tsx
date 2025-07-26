@@ -4,9 +4,9 @@ import CaseSlide from './CaseSlide';
 
 function CasesHighlightsSection() {
     return (
-        <section className="section-container pb-10 flex justify-center items-center" style={{ minHeight: 600 }}>
+        <section className="section-container flex justify-center items-center" style={{ minHeight: 600 }}>
             <Carousel
-                className="h-[600px] w-full"
+                className="h-auto md:h-[600px] w-full"
                 style={{
                     '--swiper-navigation-color': '#7fd10c',
                     '--swiper-pagination-bullet-inactive-color': '#eeeeee',
