@@ -27,7 +27,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-
+      <head>
+        <link rel="stylesheet" href="/fontawesome/css/all.min.css" />
+      </head>
       <body
         className={`${rajdhani.variable} ${leagueSpartan.variable} antialiased`}
       >
