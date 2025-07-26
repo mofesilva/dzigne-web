@@ -5,7 +5,7 @@ import Image from 'next/image';
 function FooterContactSection() {
     return (
         <>
-            <section className="flex flex-col items-center md:items-start justify-start h-auto pt-10 pb-0 px-10 md:p-10 md:pl-0 text-center md:text-left">
+            <section className="flex flex-col items-center md:items-end justify-start h-auto pt-10 pb-0 px-10 md:p-10 md:pl-0 text-center md:text-right">
                 <Image src='/assets/dzigne-logotype-black.png'
                     alt="Logotipo Dzign-e"
                     width={100}
@@ -23,7 +23,7 @@ function FooterContactSection() {
                         <i className="fa-brands fa-linkedin-in text-carbon text-2xl"></i>
                     </a>
                 </div>
-                <div className="pb-4 flex flex-col items-center md:items-start gap-2">
+                <div className="pb-4 flex flex-col items-center md:items-end gap-2">
                     <div className="flex items-center gap-1">
                         <i className="fa-solid fa-at text-carbon text-xl"></i>
                         <a href="mailto:contato@dzign-e.com.br" className="font-league-spartan text-xl text-carbon">
