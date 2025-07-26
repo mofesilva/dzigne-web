@@ -4,7 +4,7 @@ import Link from 'next/link';
 function FooterNavigationSection() {
     return (
         <>
-            <div className="font-rajdhani text-lg font-semibold text-carbon self-center">
+            <div className="font-rajdhani text-lg font-semibold text-carbon self-center text-center md:text-left">
                 <ul className="">
                     <li className="">
                         <Link href="/" className="footer__menu__link">
