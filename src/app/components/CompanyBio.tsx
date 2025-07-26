@@ -3,14 +3,14 @@ import NavigationButton from '../../components/NavigationButton';
 
 function CompanyBio() {
     return (
-        <section aria-label="Conheça a Dzign-e" className='section-container py-20'>
+        <section aria-label="Conheça a Dzign-e" className='bg-eggshell pt-20'>
             {/* Header com título e botão */}
-            <div className="flex justify-between items-start mb-16">
+            <div className="section-container flex justify-between items-start  mt-20">
                 <div>
-                    <h1 className="font-rajdhani text-5xl font-bold text-white mb-4">
+                    <h1 className="font-rajdhani text-5xl font-bold text-carbon mb-4">
                         Somos a Dzign-e
                     </h1>
-                    <p className="font-league-spartan text-xl pb-8 text-white/70 max-w-2xl">
+                    <p className="font-league-spartan text-xl pb-8 text-carbon/70 max-w-2xl">
                         Uma software house brasileira especializada em criar produtos e soluções
                         digitais
                         sob medida para empresas que buscam inovação,
@@ -22,10 +22,11 @@ function CompanyBio() {
                         pessoas.
                     </p>
 
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center text-center mb-8">
+                    <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start text-center mb-8">
                         <NavigationButton
                             href={'/about-us'}
                             text={'Conheça a Dzign-e'}
+                            inverted={true}
                         />
                     </div>
                 </div>
