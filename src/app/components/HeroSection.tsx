@@ -1,5 +1,5 @@
 import React from 'react';
-import NavigationButton from './NavigationButton';
+import NavigationButton from '../../components/NavigationButton';
 import Image from 'next/image';
 
 function HeroSection() {
