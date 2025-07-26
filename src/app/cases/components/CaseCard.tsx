@@ -51,6 +51,7 @@ function CaseCard({ logo, company, title, description, mockup, href, tags, isRev
                     href={href}
                     text="Ver Case Completo"
                     icon="fa-solid fa-arrow-right"
+                    inverted={true}
                 />
             </div>
 
