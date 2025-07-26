@@ -1,6 +1,5 @@
 import Footer from "@/components/footer/Footer";
 import React from "react";
-import HeaderSection from "../components/HeaderSection";
 import AboutHeroSection from "./components/AboutHeroSection";
 import AboutMissionSection from "./components/AboutMissionSection";
 import AboutValuesSection from "./components/AboutValuesSection";

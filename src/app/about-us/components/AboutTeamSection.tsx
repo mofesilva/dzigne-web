@@ -16,7 +16,7 @@ function AboutTeamSection() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
                     <div>
                         <h3 className="font-rajdhani text-3xl font-bold text-carbon mb-6">
-                            "Na Dzign-e, unimos inteligência técnica e sensibilidade de negócio para entregar soluções digitais que crescem com você."
+                            &ldquo;Na Dzign-e, unimos inteligência técnica e sensibilidade de negócio para entregar soluções digitais que crescem com você.&rdquo;
                         </h3>
                         <p className="font-league-spartan text-lg text-carbon/80 mb-8 leading-relaxed">
                             Nossa equipe é formada por desenvolvedores, designers e estrategistas digitais que trabalham
