@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Rajdhani, League_Spartan } from "next/font/google";
 import "./globals.css";
 import StickyNavbar from "@/components/StickyNavbar";
-import Script from 'next/script';
 
 const rajdhani = Rajdhani({
   variable: "--font-rajdhani",
@@ -28,9 +27,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
-        <Script src="/fontawesome/css/all.min.css" />
-      </head>
+
       <body
         className={`${rajdhani.variable} ${leagueSpartan.variable} antialiased`}
       >

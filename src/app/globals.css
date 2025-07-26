@@ -1,4 +1,6 @@
 @import "tailwindcss";
+/* Adiciona todas as classes dos ícones */
+@import url('/fontawesome/css/all.min.css');
 
 :root {
   --background: #eeeeee;
@@ -70,4 +72,9 @@ body {
   .section-container {
     max-width: 1400px;
   }
+}
+
+.fa-solid {
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
 }
