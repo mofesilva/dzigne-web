@@ -1,5 +1,6 @@
 import React from 'react';
 import CaseCard from './CaseCard';
+import Divider from '@/components/Divider';
 
 function CasesListSection() {
     return (
@@ -26,7 +27,7 @@ function CasesListSection() {
                         tags={["Educação", "Mobile App", "Web Platform"]}
                         isReversed={false}
                     />
-
+                    <Divider width="1" color="carbon" height="100%" horizontal={true} />
                     <CaseCard
                         logo="/assets/images/logos/sigmacon.png"
                         company="Sigmacon"
@@ -37,7 +38,7 @@ function CasesListSection() {
                         tags={["Gestão", "Mobile App", "IoT"]}
                         isReversed={true}
                     />
-
+                    <Divider width="1" color="carbon" height="100%" horizontal={true} />
                     <CaseCard
                         logo="/assets/images/logos/ipi.png"
                         company="IPI - Igreja Presbiteriana Independente"
@@ -48,7 +49,7 @@ function CasesListSection() {
                         tags={["Educação", "Mobile App", "Web Platform"]}
                         isReversed={false}
                     />
-
+                    <Divider width="1" color="carbon" height="100%" horizontal={true} />
                     <CaseCard
                         logo="/assets/images/logos/labormed.png"
                         company="Labormed"
