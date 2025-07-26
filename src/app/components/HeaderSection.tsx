@@ -1,17 +1,23 @@
 import React from 'react';
-import HeroSection from './HeroSection';
-import Navbar from '@/components/Navbar';
-import herobanner from '../../assets/main-banner.jpg';
 import Image from 'next/image';
 
-function HeaderSection() {
+interface HeaderSectionProps {
+    // image: string;
+    content: React.ReactNode;
+    isSecondaryPage?: boolean;
+}
+
+function HeaderSection({ content, isSecondaryPage = false }: HeaderSectionProps) {
     return (
-        <section className='hero-section-full'>
-            <Image src={herobanner} alt="Hero Banner" className='w-full object-cover h-[600px]' quality={100} />
-            <div className='absolute top-0 left-0 w-full h-full'>
-                <div className="section-container">
-                    <Navbar />
-                    <HeroSection />
+        <section className={`w-full ${isSecondaryPage ? 'min-h-[50vh]' : 'min-h-screen'} relative overflow-hidden`}>
+            {/* Fundo preto */}
+            <div className="absolute inset-0 bg-carbon"></div>
+
+            <div className='relative z-10 w-full h-full'>
+                <div className="section-container h-full flex flex-col justify-center">
+                    <div className={`${isSecondaryPage ? 'mt-8' : 'mt-20'}`}>
+                        {content}
+                    </div>
                 </div>
             </div>
         </section>
