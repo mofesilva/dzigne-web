@@ -1,12 +1,12 @@
 import React from "react";
 import Footer from "@/components/footer/Footer";
-import HeaderSection from "../components/HeaderSection";
+import SecondaryHeaderSection from "../../components/SecondaryHeaderSection";
 import HeroSection from "../components/HeroSection";
 
 const Page = () => {
   return (
     <main className="flex flex-col">
-      <HeaderSection image='/assets/main-banner.jpg' content={<HeroSection />} />
+      <SecondaryHeaderSection content={<HeroSection />} />
       <Footer />
     </main>
   )
