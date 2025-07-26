@@ -10,11 +10,23 @@ function Footer() {
     return (
         <footer className="footer-section text-foreground">
             <div className="section-container align-center content-center items-center justify-center">
-                <div className="flex gap-4">
+                <div className="flex flex-col gap-4 md:flex-row md:gap-4 md:items-center">
                     <FooterContactSection />
-                    <Divider width="1" color="carbon" height="200px" />
+                    {/* Divider horizontal no mobile, vertical no desktop */}
+                    <div className="block md:hidden">
+                        <Divider width="1" color="carbon" height="100%" horizontal={true} />
+                    </div>
+                    <div className="hidden md:block self-center">
+                        <Divider width="1" color="carbon" height="120px" />
+                    </div>
                     <FooterAddressSection />
-                    <Divider width="1" color="carbon" height="200px" />
+                    {/* Divider horizontal no mobile, vertical no desktop */}
+                    <div className="block md:hidden">
+                        <Divider width="1" color="carbon" height="100%" horizontal={true} />
+                    </div>
+                    <div className="hidden md:block self-center">
+                        <Divider width="1" color="carbon" height="120px" />
+                    </div>
                     <FooterNavigationSection />
                 </div>
                 <SigningSection />
