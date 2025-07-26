@@ -5,15 +5,22 @@ import HeroSection from "./components/HeroSection";
 import CasesHighlightsSection from "./components/CasesHighlightsSection";
 import ServicesSection from "./components/ServicesSection";
 import CompanyBio from "./components/CompanyBio";
+import LogosGrid from "./components/LogosGrid";
+import StatisticSection from "./components/StatisticSection";
+import TestimonialsSection from "./components/TestimonialsSection";
+
 export default function Home() {
   return (
     <main className="flex flex-col">
       <div className="">
-        <HeaderSection image='/assets/main-banner.jpg' content={<HeroSection />} />
+        <HeaderSection content={<HeroSection />} />
         <CompanyHighlightsSection />
         <ServicesSection />
         <CasesHighlightsSection />
+        <StatisticSection />
         <CompanyBio />
+        <TestimonialsSection />
+        <LogosGrid />
         <Footer />
       </div>
     </main>
