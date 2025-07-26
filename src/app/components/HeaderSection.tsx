@@ -2,19 +2,20 @@ import React from 'react';
 import Image from 'next/image';
 
 interface HeaderSectionProps {
-    image: string;
+    // image: string;
     content: React.ReactNode;
+    isSecondaryPage?: boolean;
 }
 
-function HeaderSection({ image, content }: HeaderSectionProps) {
+function HeaderSection({ content, isSecondaryPage = false }: HeaderSectionProps) {
     return (
-        <section className='w-full min-h-screen relative overflow-hidden'>
+        <section className={`w-full ${isSecondaryPage ? 'min-h-[50vh]' : 'min-h-screen'} relative overflow-hidden`}>
             {/* Fundo preto */}
             <div className="absolute inset-0 bg-carbon"></div>
 
             <div className='relative z-10 w-full h-full'>
                 <div className="section-container h-full flex flex-col justify-center">
-                    <div className="mt-20">
+                    <div className={`${isSecondaryPage ? 'mt-8' : 'mt-20'}`}>
                         {content}
                     </div>
                 </div>
