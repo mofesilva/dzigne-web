@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
-import NavigationButton from './NavigationButton'
+import NavigationButton from '../../components/NavigationButton'
 
 interface CaseSlideProps {
     text: string
@@ -18,7 +18,7 @@ function CaseSlide({ text, logo, alt, mockup, href }: CaseSlideProps) {
             </div>
             <div className="case__study__content flex flex-col items-start justify-center max-w-xl">
                 <Image src={logo} alt={alt} className="h-auto w-[100px] mb-4" width={100} height={100} quality={100} />
-                <p className="font-league-spartan text-lg text-eggshell mb-8">{text}</p>
+                <p className="font-league-spartan text-lg text-eggshell mb-8 cursor-default">{text}</p>
                 <NavigationButton href={href} text={'Saiba mais'} icon={'fa-solid fa-chevron-right'} />
             </div>
         </div>

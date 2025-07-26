@@ -4,7 +4,7 @@ import CaseSlide from './CaseSlide';
 
 function CasesHighlightsSection() {
     return (
-        <section className="section-container py-10 flex justify-center items-center" style={{ minHeight: 600 }}>
+        <section className="section-container pb-10 flex justify-center items-center" style={{ minHeight: 600 }}>
             <Carousel
                 className="h-[600px] w-full"
                 style={{
@@ -14,6 +14,9 @@ function CasesHighlightsSection() {
                     '--swiper-pagination-color': '#7fd10c',
                     '--swiper-navigation-size': '24px',
                 } as React.CSSProperties}
+                options={{
+                    spaceBetween: 32  // Gap de 24px entre os slides
+                }}
                 slides={[
                     <CaseSlide key={1}
                         text="Criamos uma solução digital exclusiva que potencializou o estudo
