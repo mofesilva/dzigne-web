@@ -13,7 +13,6 @@ const Page = () => {
       <AboutMissionSection />
       <AboutValuesSection />
       <AboutTeamSection />
-      <Footer />
     </main>
   );
 };

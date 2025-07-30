@@ -21,7 +21,6 @@ export default function Home() {
         <CompanyBio />
         <TestimonialsSection />
         <LogosGrid />
-        <Footer />
       </div>
     </main>
   );

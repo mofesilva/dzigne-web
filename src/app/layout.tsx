@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Rajdhani, League_Spartan } from "next/font/google";
 import "./globals.css";
 import StickyNavbar from "@/components/StickyNavbar";
+import Footer from "@/components/footer/Footer";
 
 const rajdhani = Rajdhani({
   variable: "--font-rajdhani",
@@ -36,6 +37,7 @@ export default function RootLayout({
         <StickyNavbar />
         {children}
       </body>
+      <Footer />
     </html>
   );
 }
