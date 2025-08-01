@@ -28,14 +28,14 @@ function CaseDetailsSection({ duration, team, technologies, challenge, solution,
                 {/* Informações básicas do projeto */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
                     {details.map((detail, index) => (
-                        <div key={index} className="bg-gray-800 rounded-2xl p-8 border border-gray-700/30 hover:border-green-accent/30 transition-all duration-300 text-center">
+                        <div key={index} className="bg-gray-100 rounded-2xl p-8 border border-gray-200 hover:border-green-accent/40 transition-all duration-300 flex flex-col items-center justify-center text-center min-h-[200px]">
                             <div className="mb-4">
-                                <i className={`${detail.icon} text-3xl text-green-accent`}></i>
+                                <i className={`${detail.icon} text-4xl text-green-accent`}></i>
                             </div>
-                            <h3 className="font-rajdhani text-xl font-bold text-white mb-3">
+                            <h3 className="font-rajdhani text-xl font-bold text-carbon mb-3">
                                 {detail.label}
                             </h3>
-                            <p className="font-league-spartan text-white/80 leading-relaxed">
+                            <p className="font-league-spartan text-carbon/70 leading-relaxed">
                                 {detail.value}
                             </p>
                         </div>
