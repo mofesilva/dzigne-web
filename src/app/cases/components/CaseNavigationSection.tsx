@@ -45,8 +45,7 @@ function CaseNavigationSection({ previousCase, nextCase }: CaseNavigationSection
                         <NavigationButton
                             href="/cases"
                             text="Ver Todos os Cases"
-                            icon="fa-solid fa-grid-2"
-                            inverted={false}
+                            inverted={true}
                         />
                     </div>
 
