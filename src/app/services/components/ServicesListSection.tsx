@@ -6,32 +6,101 @@ interface ServiceCardProps {
     title: string;
     description: string;
     features: string[];
+    globalMousePosition: { x: number, y: number };
+    isMouseInSection: boolean;
 }
 
-function ServiceCard({ icon, title, description, features }: ServiceCardProps) {
-    const [isHovered, setIsHovered] = useState(false);
+function ServiceCard({ icon, title, description, features, globalMousePosition, isMouseInSection }: ServiceCardProps) {
+    const [isNearby, setIsNearby] = useState(false);
+    const [isInside, setIsInside] = useState(false);
+    const [localMousePosition, setLocalMousePosition] = useState({ x: 0, y: 0 });
+    const cardRef = React.useRef<HTMLDivElement>(null);
+
+    React.useEffect(() => {
+        if (!cardRef.current || !isMouseInSection) {
+            setIsNearby(false);
+            setIsInside(false);
+            return;
+        }
+
+        const rect = cardRef.current.getBoundingClientRect();
+        const distance = 120;
+
+        const isNear = globalMousePosition.x >= rect.left - distance &&
+            globalMousePosition.x <= rect.right + distance &&
+            globalMousePosition.y >= rect.top - distance &&
+            globalMousePosition.y <= rect.bottom + distance;
+
+        const isWithin = globalMousePosition.x >= rect.left &&
+            globalMousePosition.x <= rect.right &&
+            globalMousePosition.y >= rect.top &&
+            globalMousePosition.y <= rect.bottom;
+
+        setIsNearby(isNear);
+        setIsInside(isWithin);
+
+        if (isNear) {
+            setLocalMousePosition({
+                x: globalMousePosition.x - rect.left,
+                y: globalMousePosition.y - rect.top
+            });
+        }
+    }, [globalMousePosition, isMouseInSection]);
+
+    const handleCardMouseEnter = () => {
+        if (isMouseInSection) {
+            setIsInside(true);
+        }
+    };
+
+    const handleCardMouseLeave = () => {
+        setIsInside(false);
+    };
 
     return (
-        <div 
-            className="bg-white rounded-lg p-8 shadow-lg hover:shadow-xl transition-all duration-300 border-l-4 border-green-accent"
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
+        <div
+            ref={cardRef}
+            className="relative bg-eggshell/5 border border-eggshell/10 rounded-2xl p-8 transition-all duration-300 group"
+            onMouseEnter={handleCardMouseEnter}
+            onMouseLeave={handleCardMouseLeave}
         >
-            <div className="flex items-center mb-6">
-                <div className="w-16 h-16 bg-green-accent rounded-lg flex items-center justify-center mr-4">
-                    <i className={`${icon} text-2xl text-white`}></i>
-                </div>
-                <h3 className="text-xl font-rajdhani font-bold text-carbon">{title}</h3>
+            {/* Borda toda verde quando dentro */}
+            <div
+                className={`absolute -inset-[1px] rounded-2xl border-2 border-green-accent pointer-events-none transition-opacity duration-300 ease-out ${isInside ? 'opacity-100' : 'opacity-0'
+                    }`}
+            />
+
+            {/* Efeito spotlight quando próximo mas fora */}
+            {isNearby && !isInside && isMouseInSection && (
+                <div
+                    className="absolute -inset-[1px] rounded-2xl pointer-events-none transition-opacity duration-200"
+                    style={{
+                        background: `radial-gradient(80px circle at ${localMousePosition.x}px ${localMousePosition.y}px, rgba(127, 209, 12, 0.6), transparent 70%)`,
+                        mask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
+                        maskComposite: 'xor',
+                        WebkitMask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
+                        WebkitMaskComposite: 'xor',
+                        padding: '1px'
+                    }}
+                />
+            )}
+
+            <div className="mb-6 text-center">
+                <i className={`${icon} text-green-accent text-4xl`}></i>
             </div>
             
-            <p className="text-carbon/70 font-league-spartan mb-6 leading-relaxed">
+            <h3 className="font-rajdhani text-2xl font-bold text-white mb-4 group-hover:text-green-accent transition-colors cursor-default text-center">
+                {title}
+            </h3>
+            
+            <p className="text-white/70 font-league-spartan mb-6 leading-relaxed cursor-default text-center">
                 {description}
             </p>
             
-            <div className="space-y-2">
+            <div className="space-y-3">
                 {features.map((feature, index) => (
-                    <div key={index} className="flex items-center text-sm font-league-spartan text-carbon/60">
-                        <i className="fas fa-check text-green-accent mr-2"></i>
+                    <div key={index} className="flex items-center text-sm font-league-spartan text-white/60">
+                        <i className="fas fa-check text-green-accent mr-3 text-xs"></i>
                         {feature}
                     </div>
                 ))}
@@ -41,6 +110,21 @@ function ServiceCard({ icon, title, description, features }: ServiceCardProps) {
 }
 
 function ServicesListSection() {
+    const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+    const [isMouseInSection, setIsMouseInSection] = useState(false);
+
+    const handleMouseMove = (e: React.MouseEvent) => {
+        setMousePosition({ x: e.clientX, y: e.clientY });
+    };
+
+    const handleMouseEnter = () => {
+        setIsMouseInSection(true);
+    };
+
+    const handleMouseLeave = () => {
+        setIsMouseInSection(false);
+    };
+
     const services = [
         {
             icon: "fas fa-code",
@@ -78,85 +162,57 @@ function ServicesListSection() {
         {
             icon: "fas fa-paint-brush",
             title: "UI/UX Design",
-            description: "Criamos interfaces intuitivas e experiências de usuário que encantam e convertem, focando na usabilidade e estética.",
+            description: "Interfaces intuitivas e experiências excepcionais que conectam usuários aos seus produtos de forma natural.",
             features: [
-                "Interface design",
-                "User experience",
-                "Wireframes e mockups",
-                "Design responsivo"
+                "Interface responsiva",
+                "Wireframes detalhados",
+                "Prototipagem funcional",
+                "Design consistente"
             ]
         },
         {
-            icon: "fas fa-palette",
-            title: "Desenvolvimento de Identidade Visual",
-            description: "Construímos identidades visuais marcantes que transmitem os valores da sua marca de forma autêntica.",
-            features: [
-                "Logo e branding",
-                "Manual de marca",
-                "Paleta de cores",
-                "Tipografia personalizada"
-            ]
-        },
-        {
-            icon: "fas fa-tools",
-            title: "Manutenção",
-            description: "Mantemos seus sistemas sempre atualizados, seguros e funcionando perfeitamente com suporte contínuo.",
-            features: [
-                "Atualizações regulares",
-                "Monitoramento proativo",
-                "Correção de bugs",
-                "Otimização de performance"
-            ]
-        },
-        {
-            icon: "fas fa-users",
-            title: "Alocação de Equipe",
-            description: "Fornecemos profissionais especializados para integrar sua equipe e acelerar o desenvolvimento dos seus projetos.",
-            features: [
-                "Desenvolvedores experientes",
-                "Designers especializados",
-                "Gestores de projeto",
-                "Consultores técnicos"
-            ]
-        },
-        {
-            icon: "fas fa-laptop-code",
-            title: "Outsourcing de TI",
-            description: "Terceirização completa de TI com equipes dedicadas para otimizar seus processos e reduzir custos operacionais.",
-            features: [
-                "Equipe dedicada",
-                "Gestão completa",
-                "SLA garantido",
-                "Redução de custos"
-            ]
-        },
-        {
-            icon: "fas fa-lightbulb",
+            icon: "fas fa-rocket",
             title: "Consultoria em TI",
-            description: "Orientação estratégica em tecnologia para ajudar sua empresa a tomar as melhores decisões tecnológicas.",
+            description: "Orientação estratégica para otimizar seus processos tecnológicos e acelerar a transformação digital.",
             features: [
-                "Análise de arquitetura",
+                "Análise de infraestrutura",
                 "Planejamento estratégico",
                 "Auditoria de sistemas",
                 "Otimização de processos"
+            ]
+        },
+        {
+            icon: "fas fa-chart-line",
+            title: "Analytics e Performance",
+            description: "Monitoramento e otimização contínua para garantir que seus produtos digitais performem no máximo potencial.",
+            features: [
+                "Google Analytics setup",
+                "Performance monitoring",
+                "SEO optimization",
+                "Relatórios detalhados"
             ]
         }
     ];
 
     return (
-        <section className='bg-eggshell w-full py-32'>
+        <section 
+            className='bg-carbon w-full py-32'
+            onMouseMove={handleMouseMove}
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+        >
             <div className="section-container">
                 <div className="text-center mb-16">
-                    <h2 className="font-rajdhani text-5xl font-bold text-carbon mb-8">
-                        Soluções Completas em Tecnologia
+                    <h2 className="font-rajdhani text-5xl font-bold text-white mb-8">
+                        Soluções Completas em <span className="text-green-accent">Tecnologia</span>
                     </h2>
-                    <p className="font-league-spartan text-xl text-carbon/80 max-w-4xl mx-auto leading-relaxed">
+                    <p className="font-league-spartan text-xl text-white/80 max-w-4xl mx-auto leading-relaxed">
                         Da concepção à implementação, oferecemos todos os serviços necessários 
                         para transformar sua visão em realidade digital.
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {services.map((service, index) => (
                         <ServiceCard
                             key={index}
@@ -164,6 +220,8 @@ function ServicesListSection() {
                             title={service.title}
                             description={service.description}
                             features={service.features}
+                            globalMousePosition={mousePosition}
+                            isMouseInSection={isMouseInSection}
                         />
                     ))}
                 </div>
