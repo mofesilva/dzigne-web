@@ -14,7 +14,7 @@ export const metadata = {
 function LabormedPage() {
     return (
         <main className="flex flex-col">
-            <SecondaryHeaderSection 
+            <SecondaryHeaderSection
                 content={
                     <CaseHeroSection
                         logo="/assets/images/logos/labormed.png"
@@ -66,8 +66,6 @@ function LabormedPage() {
                     title: "Plataforma Educacional Personalizada"
                 }}
             />
-
-            <Footer />
         </main>
     );
 }
