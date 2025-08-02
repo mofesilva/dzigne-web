@@ -14,7 +14,7 @@ export const metadata = {
 function SigmaconPage() {
     return (
         <main className="flex flex-col">
-            <SecondaryHeaderSection 
+            <SecondaryHeaderSection
                 content={
                     <CaseHeroSection
                         logo="/assets/images/logos/sigmacon.png"
@@ -72,7 +72,6 @@ function SigmaconPage() {
                 }}
             />
 
-            <Footer />
         </main>
     );
 }

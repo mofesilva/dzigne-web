@@ -11,7 +11,7 @@ interface TestimonialCardProps {
 
 function TestimonialCard({ text, name, position, company, photo }: TestimonialCardProps) {
     return (
-        <div className="bg-white rounded-2xl p-8 h-auto min-h-[400px] flex flex-col justify-between">
+        <div className="bg-neutral-200 rounded-2xl p-8 border border-neutral-300 h-auto min-h-[400px] flex flex-col justify-between">
             <div>
                 <p className="text-gray-800 font-league-spartan text-base leading-relaxed mb-8">
                     &ldquo;{text}&rdquo;
