@@ -1,50 +1,7 @@
 'use client';
 import React from 'react';
 
-interface TechItemProps {
-    name: string;
-    icon: string;
-}
-
-function TechItem({ name, icon }: TechItemProps) {
-    return (
-        <div className="flex flex-col items-center justify-center p-4 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 hover:border-green-accent/30 transition-all duration-300 group">
-            <i className={`${icon} text-3xl text-white/70 group-hover:text-green-accent transition-colors mb-2`}></i>
-            <span className="text-sm font-league-spartan text-white/60 group-hover:text-white transition-colors text-center">
-                {name}
-            </span>
-        </div>
-    );
-}
-
 function TechStackSection() {
-    const frontendTechs = [
-        { name: "React", icon: "fab fa-react" },
-        { name: "Next.js", icon: "fas fa-code" },
-        { name: "JavaScript", icon: "fab fa-js-square" },
-        { name: "TypeScript", icon: "fas fa-code" },
-        { name: "TailwindCSS", icon: "fas fa-paint-brush" },
-        { name: "Flutter", icon: "fas fa-mobile-alt" }
-    ];
-
-    const backendTechs = [
-        { name: "Node.js", icon: "fab fa-node-js" },
-        { name: "Express", icon: "fas fa-server" },
-        { name: "PHP", icon: "fab fa-php" },
-        { name: "Python", icon: "fab fa-python" },
-        { name: "PostgreSQL", icon: "fas fa-database" },
-        { name: "MongoDB", icon: "fas fa-leaf" }
-    ];
-
-    const cloudTechs = [
-        { name: "AWS", icon: "fab fa-aws" },
-        { name: "Docker", icon: "fab fa-docker" },
-        { name: "GitHub", icon: "fab fa-github" },
-        { name: "Linux", icon: "fab fa-linux" },
-        { name: "Firebase", icon: "fas fa-fire" },
-        { name: "Vercel", icon: "fas fa-cloud" }
-    ];
-
     return (
         <section className="bg-eggshell w-full py-32">
             <div className="section-container">
@@ -58,61 +15,122 @@ function TechStackSection() {
                     </p>
                 </div>
 
-                {/* Tech Categories com fundo escuro */}
-                <div className="bg-carbon rounded-3xl p-12 max-w-6xl mx-auto">
+                {/* Categorias lado a lado */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto mb-16">
+                    
                     {/* Frontend */}
-                    <div className="mb-12">
-                        <div className="flex items-center justify-center mb-8">
-                            <div className="w-12 h-12 bg-green-accent rounded-lg flex items-center justify-center mr-4">
+                    <div className="text-center">
+                        <div className="flex items-center justify-center mb-6">
+                            <div className="w-12 h-12 bg-green-accent rounded-lg flex items-center justify-center mr-3">
                                 <i className="fas fa-desktop text-xl text-white"></i>
                             </div>
-                            <h3 className="text-3xl font-rajdhani font-bold text-white">Frontend</h3>
+                            <h3 className="text-2xl font-rajdhani font-bold text-carbon">Frontend</h3>
                         </div>
-                        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-                            {frontendTechs.map((tech, index) => (
-                                <TechItem key={index} name={tech.name} icon={tech.icon} />
-                            ))}
+                        <div className="space-y-3">
+                            <div className="flex items-center justify-center">
+                                <i className="fab fa-react text-2xl text-carbon/70 mr-3"></i>
+                                <span className="font-league-spartan text-carbon">React</span>
+                            </div>
+                            <div className="flex items-center justify-center">
+                                <i className="fas fa-code text-2xl text-carbon/70 mr-3"></i>
+                                <span className="font-league-spartan text-carbon">Next.js</span>
+                            </div>
+                            <div className="flex items-center justify-center">
+                                <i className="fab fa-js-square text-2xl text-carbon/70 mr-3"></i>
+                                <span className="font-league-spartan text-carbon">JavaScript</span>
+                            </div>
+                            <div className="flex items-center justify-center">
+                                <i className="fas fa-code text-2xl text-carbon/70 mr-3"></i>
+                                <span className="font-league-spartan text-carbon">TypeScript</span>
+                            </div>
+                            <div className="flex items-center justify-center">
+                                <i className="fas fa-paint-brush text-2xl text-carbon/70 mr-3"></i>
+                                <span className="font-league-spartan text-carbon">TailwindCSS</span>
+                            </div>
+                            <div className="flex items-center justify-center">
+                                <i className="fas fa-mobile-alt text-2xl text-carbon/70 mr-3"></i>
+                                <span className="font-league-spartan text-carbon">Flutter</span>
+                            </div>
                         </div>
                     </div>
-
-                    <div className="w-full h-px bg-white/10 mb-12"></div>
 
                     {/* Backend */}
-                    <div className="mb-12">
-                        <div className="flex items-center justify-center mb-8">
-                            <div className="w-12 h-12 bg-green-accent rounded-lg flex items-center justify-center mr-4">
+                    <div className="text-center">
+                        <div className="flex items-center justify-center mb-6">
+                            <div className="w-12 h-12 bg-green-accent rounded-lg flex items-center justify-center mr-3">
                                 <i className="fas fa-server text-xl text-white"></i>
                             </div>
-                            <h3 className="text-3xl font-rajdhani font-bold text-white">Backend & Database</h3>
+                            <h3 className="text-2xl font-rajdhani font-bold text-carbon">Backend</h3>
                         </div>
-                        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-                            {backendTechs.map((tech, index) => (
-                                <TechItem key={index} name={tech.name} icon={tech.icon} />
-                            ))}
+                        <div className="space-y-3">
+                            <div className="flex items-center justify-center">
+                                <i className="fab fa-node-js text-2xl text-carbon/70 mr-3"></i>
+                                <span className="font-league-spartan text-carbon">Node.js</span>
+                            </div>
+                            <div className="flex items-center justify-center">
+                                <i className="fas fa-server text-2xl text-carbon/70 mr-3"></i>
+                                <span className="font-league-spartan text-carbon">Express</span>
+                            </div>
+                            <div className="flex items-center justify-center">
+                                <i className="fab fa-php text-2xl text-carbon/70 mr-3"></i>
+                                <span className="font-league-spartan text-carbon">PHP</span>
+                            </div>
+                            <div className="flex items-center justify-center">
+                                <i className="fab fa-python text-2xl text-carbon/70 mr-3"></i>
+                                <span className="font-league-spartan text-carbon">Python</span>
+                            </div>
+                            <div className="flex items-center justify-center">
+                                <i className="fas fa-database text-2xl text-carbon/70 mr-3"></i>
+                                <span className="font-league-spartan text-carbon">PostgreSQL</span>
+                            </div>
+                            <div className="flex items-center justify-center">
+                                <i className="fas fa-leaf text-2xl text-carbon/70 mr-3"></i>
+                                <span className="font-league-spartan text-carbon">MongoDB</span>
+                            </div>
                         </div>
                     </div>
 
-                    <div className="w-full h-px bg-white/10 mb-12"></div>
-
-                    {/* Cloud & DevOps */}
-                    <div>
-                        <div className="flex items-center justify-center mb-8">
-                            <div className="w-12 h-12 bg-green-accent rounded-lg flex items-center justify-center mr-4">
+                    {/* Cloud */}
+                    <div className="text-center">
+                        <div className="flex items-center justify-center mb-6">
+                            <div className="w-12 h-12 bg-green-accent rounded-lg flex items-center justify-center mr-3">
                                 <i className="fas fa-cloud text-xl text-white"></i>
                             </div>
-                            <h3 className="text-3xl font-rajdhani font-bold text-white">Cloud & DevOps</h3>
+                            <h3 className="text-2xl font-rajdhani font-bold text-carbon">Cloud & DevOps</h3>
                         </div>
-                        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-                            {cloudTechs.map((tech, index) => (
-                                <TechItem key={index} name={tech.name} icon={tech.icon} />
-                            ))}
+                        <div className="space-y-3">
+                            <div className="flex items-center justify-center">
+                                <i className="fab fa-aws text-2xl text-carbon/70 mr-3"></i>
+                                <span className="font-league-spartan text-carbon">AWS</span>
+                            </div>
+                            <div className="flex items-center justify-center">
+                                <i className="fab fa-docker text-2xl text-carbon/70 mr-3"></i>
+                                <span className="font-league-spartan text-carbon">Docker</span>
+                            </div>
+                            <div className="flex items-center justify-center">
+                                <i className="fab fa-github text-2xl text-carbon/70 mr-3"></i>
+                                <span className="font-league-spartan text-carbon">GitHub</span>
+                            </div>
+                            <div className="flex items-center justify-center">
+                                <i className="fab fa-linux text-2xl text-carbon/70 mr-3"></i>
+                                <span className="font-league-spartan text-carbon">Linux</span>
+                            </div>
+                            <div className="flex items-center justify-center">
+                                <i className="fas fa-fire text-2xl text-carbon/70 mr-3"></i>
+                                <span className="font-league-spartan text-carbon">Firebase</span>
+                            </div>
+                            <div className="flex items-center justify-center">
+                                <i className="fas fa-cloud text-2xl text-carbon/70 mr-3"></i>
+                                <span className="font-league-spartan text-carbon">Vercel</span>
+                            </div>
                         </div>
                     </div>
+
                 </div>
 
                 {/* CTA Section */}
-                <div className="mt-16 text-center">
-                    <div className="bg-carbon/5 border border-carbon/10 rounded-2xl p-8 max-w-3xl mx-auto">
+                <div className="text-center">
+                    <div className="bg-white border border-carbon/10 rounded-2xl p-8 max-w-3xl mx-auto">
                         <h3 className="text-2xl font-rajdhani font-bold text-carbon mb-4">
                             Stack Personalizada para Seu Projeto
                         </h3>
