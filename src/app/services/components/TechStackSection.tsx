@@ -15,109 +15,111 @@ function TechStackSection() {
                     </p>
                 </div>
 
-                {/* Categorias lado a lado */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto mb-16">
-
-                    {/* Frontend */}
-                    <div className="text-start">
-                        <div className="flex items-center justify-center mb-6">
-
-                            <h3 className="text-2xl font-rajdhani font-bold text-carbon">Frontend</h3>
-                        </div>
-                        <div className="space-y-3">
-                            <div className="flex items-center justify-center">
-                                <i className="fab fa-react text-2xl text-carbon/70 mr-3"></i>
-                            </div>
-                            <div className="flex items-center justify-center">
-                                <i className="fas fa-code text-2xl text-carbon/70 mr-3"></i>
-                            </div>
-                            <div className="flex items-center justify-center">
-                                <i className="fab fa-js-square text-2xl text-carbon/70 mr-3"></i>
-                            </div>
-                            <div className="flex items-center justify-center">
-                                <i className="fas fa-code text-2xl text-carbon/70 mr-3"></i>
-                            </div>
-                            <div className="flex items-center justify-center">
-                                <i className="fas fa-paint-brush text-2xl text-carbon/70 mr-3"></i>
-                            </div>
-                            <div className="flex items-center justify-center">
-                                <i className="fas fa-mobile-alt text-2xl text-carbon/70 mr-3"></i>
-                            </div>
-                        </div>
+                {/* Tech Stack Table Card */}
+                <div className="max-w-5xl mx-auto mb-16">
+                    <div className="bg-neutral-200 rounded-2xl overflow-hidden">
+                        <table className="w-full">
+                            <thead>
+                                <tr className="border-b border-carbon/10">
+                                    <th className="text-left p-6 font-rajdhani font-bold text-carbon text-xl">Frontend</th>
+                                    <th className="text-left p-6 font-rajdhani font-bold text-carbon text-xl border-l border-carbon/10">Backend</th>
+                                    <th className="text-left p-6 font-rajdhani font-bold text-carbon text-xl border-l border-carbon/10">Cloud & DevOps</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td className="p-6 align-top">
+                                        <div className="space-y-3">
+                                            <div className="flex items-center">
+                                                <img
+                                                    src="/assets/icons/nextjs-icon-svgrepo-com.svg"
+                                                    alt="Next.js"
+                                                    className="w-5 h-5 opacity-70 mr-3"
+                                                />
+                                                <span className="font-league-spartan text-carbon text-sm">Next.js</span>
+                                            </div>
+                                            <div className="flex items-center">
+                                                <i className="fab fa-flutter text-lg opacity-70 mr-3 text-carbon"></i>
+                                                <span className="font-league-spartan text-carbon text-sm">Flutter</span>
+                                            </div>
+                                            <div className="flex items-center">
+                                                <i className="fab fa-dart-lang text-lg opacity-70 mr-3 text-carbon"></i>
+                                                <span className="font-league-spartan text-carbon text-sm">Dart</span>
+                                            </div>
+                                            <div className="flex items-center">
+                                                <i className="fab fa-react text-lg opacity-70 mr-3 text-carbon"></i>
+                                                <span className="font-league-spartan text-carbon text-sm">React</span>
+                                            </div>
+                                            <div className="flex items-center">
+                                                <i className="fab fa-js-square text-lg opacity-70 mr-3 text-carbon"></i>
+                                                <span className="font-league-spartan text-carbon text-sm">JavaScript</span>
+                                            </div>
+                                            <div className="flex items-center">
+                                                <i className="fas fa-paint-brush text-lg opacity-70 mr-3 text-carbon"></i>
+                                                <span className="font-league-spartan text-carbon text-sm">UI/UX Design</span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td className="p-6 align-top border-l border-carbon/10">
+                                        <div className="space-y-3">
+                                            <div className="flex items-center">
+                                                <i className="fab fa-node-js text-lg opacity-70 mr-3 text-carbon"></i>
+                                                <span className="font-league-spartan text-carbon text-sm">Node.js</span>
+                                            </div>
+                                            <div className="flex items-center">
+                                                <i className="fas fa-server text-lg opacity-70 mr-3 text-carbon"></i>
+                                                <span className="font-league-spartan text-carbon text-sm">Express</span>
+                                            </div>
+                                            <div className="flex items-center">
+                                                <i className="fab fa-php text-lg opacity-70 mr-3 text-carbon"></i>
+                                                <span className="font-league-spartan text-carbon text-sm">PHP</span>
+                                            </div>
+                                            <div className="flex items-center">
+                                                <i className="fab fa-python text-lg opacity-70 mr-3 text-carbon"></i>
+                                                <span className="font-league-spartan text-carbon text-sm">Python</span>
+                                            </div>
+                                            <div className="flex items-center">
+                                                <i className="fas fa-database text-lg opacity-70 mr-3 text-carbon"></i>
+                                                <span className="font-league-spartan text-carbon text-sm">PostgreSQL</span>
+                                            </div>
+                                            <div className="flex items-center">
+                                                <i className="fas fa-leaf text-lg opacity-70 mr-3 text-carbon"></i>
+                                                <span className="font-league-spartan text-carbon text-sm">MongoDB</span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td className="p-6 align-top border-l border-carbon/10">
+                                        <div className="space-y-3">
+                                            <div className="flex items-center">
+                                                <i className="fab fa-aws text-lg opacity-70 mr-3 text-carbon"></i>
+                                                <span className="font-league-spartan text-carbon text-sm">AWS</span>
+                                            </div>
+                                            <div className="flex items-center">
+                                                <i className="fab fa-docker text-lg opacity-70 mr-3 text-carbon"></i>
+                                                <span className="font-league-spartan text-carbon text-sm">Docker</span>
+                                            </div>
+                                            <div className="flex items-center">
+                                                <i className="fab fa-github text-lg opacity-70 mr-3 text-carbon"></i>
+                                                <span className="font-league-spartan text-carbon text-sm">GitHub</span>
+                                            </div>
+                                            <div className="flex items-center">
+                                                <i className="fab fa-linux text-lg opacity-70 mr-3 text-carbon"></i>
+                                                <span className="font-league-spartan text-carbon text-sm">Linux</span>
+                                            </div>
+                                            <div className="flex items-center">
+                                                <i className="fas fa-fire text-lg opacity-70 mr-3 text-carbon"></i>
+                                                <span className="font-league-spartan text-carbon text-sm">Firebase</span>
+                                            </div>
+                                            <div className="flex items-center">
+                                                <i className="fas fa-cloud text-lg opacity-70 mr-3 text-carbon"></i>
+                                                <span className="font-league-spartan text-carbon text-sm">Vercel</span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
-
-                    {/* Backend */}
-                    <div className="text-center">
-                        <div className="flex items-center justify-center mb-6">
-                            <div className="w-12 h-12 bg-green-accent rounded-lg flex items-center justify-center mr-3">
-                                <i className="fas fa-server text-xl text-white"></i>
-                            </div>
-                            <h3 className="text-2xl font-rajdhani font-bold text-carbon">Backend</h3>
-                        </div>
-                        <div className="space-y-3">
-                            <div className="flex items-center justify-center">
-                                <i className="fab fa-node-js text-2xl text-carbon/70 mr-3"></i>
-                                <span className="font-league-spartan text-carbon">Node.js</span>
-                            </div>
-                            <div className="flex items-center justify-center">
-                                <i className="fas fa-server text-2xl text-carbon/70 mr-3"></i>
-                                <span className="font-league-spartan text-carbon">Express</span>
-                            </div>
-                            <div className="flex items-center justify-center">
-                                <i className="fab fa-php text-2xl text-carbon/70 mr-3"></i>
-                                <span className="font-league-spartan text-carbon">PHP</span>
-                            </div>
-                            <div className="flex items-center justify-center">
-                                <i className="fab fa-python text-2xl text-carbon/70 mr-3"></i>
-                                <span className="font-league-spartan text-carbon">Python</span>
-                            </div>
-                            <div className="flex items-center justify-center">
-                                <i className="fas fa-database text-2xl text-carbon/70 mr-3"></i>
-                                <span className="font-league-spartan text-carbon">PostgreSQL</span>
-                            </div>
-                            <div className="flex items-center justify-center">
-                                <i className="fas fa-leaf text-2xl text-carbon/70 mr-3"></i>
-                                <span className="font-league-spartan text-carbon">MongoDB</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* Cloud */}
-                    <div className="text-center">
-                        <div className="flex items-center justify-center mb-6">
-                            <div className="w-12 h-12 bg-green-accent rounded-lg flex items-center justify-center mr-3">
-                                <i className="fas fa-cloud text-xl text-white"></i>
-                            </div>
-                            <h3 className="text-2xl font-rajdhani font-bold text-carbon">Cloud & DevOps</h3>
-                        </div>
-                        <div className="space-y-3">
-                            <div className="flex items-center justify-center">
-                                <i className="fab fa-aws text-2xl text-carbon/70 mr-3"></i>
-                                <span className="font-league-spartan text-carbon">AWS</span>
-                            </div>
-                            <div className="flex items-center justify-center">
-                                <i className="fab fa-docker text-2xl text-carbon/70 mr-3"></i>
-                                <span className="font-league-spartan text-carbon">Docker</span>
-                            </div>
-                            <div className="flex items-center justify-center">
-                                <i className="fab fa-github text-2xl text-carbon/70 mr-3"></i>
-                                <span className="font-league-spartan text-carbon">GitHub</span>
-                            </div>
-                            <div className="flex items-center justify-center">
-                                <i className="fab fa-linux text-2xl text-carbon/70 mr-3"></i>
-                                <span className="font-league-spartan text-carbon">Linux</span>
-                            </div>
-                            <div className="flex items-center justify-center">
-                                <i className="fas fa-fire text-2xl text-carbon/70 mr-3"></i>
-                                <span className="font-league-spartan text-carbon">Firebase</span>
-                            </div>
-                            <div className="flex items-center justify-center">
-                                <i className="fas fa-cloud text-2xl text-carbon/70 mr-3"></i>
-                                <span className="font-league-spartan text-carbon">Vercel</span>
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
 
                 {/* CTA Section */}
