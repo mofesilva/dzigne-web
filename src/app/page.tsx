@@ -11,7 +11,7 @@ import TestimonialsSection from "./components/TestimonialsSection";
 
 export default function Home() {
   return (
-    <main className="flex flex-col">
+    <div className="flex flex-col">
       <div className="">
         <HeaderSection content={<HeroSection />} />
         <CompanyHighlightsSection />
@@ -22,6 +22,6 @@ export default function Home() {
         <TestimonialsSection />
         <LogosGrid />
       </div>
-    </main>
+    </div>
   );
 }
