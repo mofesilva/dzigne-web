@@ -3,6 +3,7 @@ import React from 'react';
 interface CaseDetail {
     label: string;
     value: string;
+    icon: string;
 }
 
 interface CaseDetailsSectionProps {
@@ -16,9 +17,9 @@ interface CaseDetailsSectionProps {
 
 function CaseDetailsSection({ duration, team, technologies, challenge, solution, results }: CaseDetailsSectionProps) {
     const details: CaseDetail[] = [
-        { label: "Duração", value: duration },
-        { label: "Equipe", value: team },
-        { label: "Tecnologias", value: technologies.join(", ") },
+        { label: "Duração", value: duration, icon: "fa-solid fa-clock" },
+        { label: "Equipe", value: team, icon: "fa-solid fa-users" },
+        { label: "Tecnologias", value: technologies.join(", "), icon: "fa-solid fa-code" },
     ];
 
     return (
@@ -27,11 +28,14 @@ function CaseDetailsSection({ duration, team, technologies, challenge, solution,
                 {/* Informações básicas do projeto */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
                     {details.map((detail, index) => (
-                        <div key={index} className="text-center">
-                            <h3 className="font-rajdhani text-lg font-semibold text-carbon mb-2">
+                        <div key={index} className="bg-gray-100 rounded-2xl p-8 border border-gray-200 hover:border-green-accent/40 transition-all duration-300 flex flex-col items-center justify-center text-center min-h-[200px]">
+                            <div className="mb-4">
+                                <i className={`${detail.icon} text-4xl text-green-accent`}></i>
+                            </div>
+                            <h3 className="font-rajdhani text-xl font-bold text-carbon mb-3">
                                 {detail.label}
                             </h3>
-                            <p className="font-league-spartan text-carbon/80">
+                            <p className="font-league-spartan text-carbon/70 leading-relaxed">
                                 {detail.value}
                             </p>
                         </div>
