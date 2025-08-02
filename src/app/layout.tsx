@@ -35,7 +35,9 @@ export default function RootLayout({
         className={`${rajdhani.variable} ${leagueSpartan.variable} antialiased`}
       >
         <StickyNavbar />
-        {children}
+        <main className="pt-16">   {/*  pt-28 ≈ 7 rem (112 px)  */}
+          {children}
+        </main>
       </body>
       <Footer />
     </html>

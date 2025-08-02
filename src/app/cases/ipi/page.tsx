@@ -14,7 +14,7 @@ export const metadata = {
 function IPIPage() {
     return (
         <main className="flex flex-col">
-            <SecondaryHeaderSection 
+            <SecondaryHeaderSection
                 content={
                     <CaseHeroSection
                         logo="/assets/images/logos/ipi.png"
@@ -82,7 +82,6 @@ function IPIPage() {
                 }}
             />
 
-            <Footer />
         </main>
     );
 }
