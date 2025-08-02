@@ -1,5 +1,5 @@
 import React from 'react';
-import SecondaryHeaderSection from "../components/SecondaryHeaderSection";
+import SecondaryHeaderSection from "../../components/SecondaryHeaderSection";
 import ServicesHeroSection from "./components/ServicesHeroSection";
 import ServicesListSection from "./components/ServicesListSection";
 import TechStackSection from "./components/TechStackSection";
