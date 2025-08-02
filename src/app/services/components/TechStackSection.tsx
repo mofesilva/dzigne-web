@@ -10,46 +10,38 @@ function TechStackSection() {
                         Tecnologias que <span className="text-green-accent">Dominamos</span>
                     </h2>
                     <p className="font-league-spartan text-xl text-carbon/80 max-w-4xl mx-auto leading-relaxed">
-                        Utilizamos as melhores e mais modernas tecnologias do mercado para 
+                        Utilizamos as melhores e mais modernas tecnologias do mercado para
                         garantir performance, escalabilidade e qualidade em todos os projetos.
                     </p>
                 </div>
 
                 {/* Categorias lado a lado */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto mb-16">
-                    
+
                     {/* Frontend */}
-                    <div className="text-center">
+                    <div className="text-start">
                         <div className="flex items-center justify-center mb-6">
-                            <div className="w-12 h-12 bg-green-accent rounded-lg flex items-center justify-center mr-3">
-                                <i className="fas fa-desktop text-xl text-white"></i>
-                            </div>
+
                             <h3 className="text-2xl font-rajdhani font-bold text-carbon">Frontend</h3>
                         </div>
                         <div className="space-y-3">
                             <div className="flex items-center justify-center">
                                 <i className="fab fa-react text-2xl text-carbon/70 mr-3"></i>
-                                <span className="font-league-spartan text-carbon">React</span>
                             </div>
                             <div className="flex items-center justify-center">
                                 <i className="fas fa-code text-2xl text-carbon/70 mr-3"></i>
-                                <span className="font-league-spartan text-carbon">Next.js</span>
                             </div>
                             <div className="flex items-center justify-center">
                                 <i className="fab fa-js-square text-2xl text-carbon/70 mr-3"></i>
-                                <span className="font-league-spartan text-carbon">JavaScript</span>
                             </div>
                             <div className="flex items-center justify-center">
                                 <i className="fas fa-code text-2xl text-carbon/70 mr-3"></i>
-                                <span className="font-league-spartan text-carbon">TypeScript</span>
                             </div>
                             <div className="flex items-center justify-center">
                                 <i className="fas fa-paint-brush text-2xl text-carbon/70 mr-3"></i>
-                                <span className="font-league-spartan text-carbon">TailwindCSS</span>
                             </div>
                             <div className="flex items-center justify-center">
                                 <i className="fas fa-mobile-alt text-2xl text-carbon/70 mr-3"></i>
-                                <span className="font-league-spartan text-carbon">Flutter</span>
                             </div>
                         </div>
                     </div>
@@ -135,11 +127,11 @@ function TechStackSection() {
                             Stack Personalizada para Seu Projeto
                         </h3>
                         <p className="text-base font-league-spartan text-carbon/70 mb-6 leading-relaxed">
-                            Além das tecnologias listadas, adaptamos nossa stack às necessidades específicas 
+                            Além das tecnologias listadas, adaptamos nossa stack às necessidades específicas
                             do seu projeto, sempre priorizando performance e escalabilidade.
                         </p>
-                        <a 
-                            href="/contato" 
+                        <a
+                            href="/contato"
                             className="inline-flex items-center px-6 py-3 bg-green-accent text-white font-league-spartan font-semibold rounded-lg hover:bg-green-accent-light transition-colors"
                         >
                             <i className="fas fa-rocket mr-2"></i>
