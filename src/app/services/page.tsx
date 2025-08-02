@@ -12,12 +12,12 @@ export const metadata = {
 
 function ServicesPage() {
     return (
-        <main className="flex flex-col">
+        <div className="flex flex-col">
             <SecondaryHeaderSection content={<ServicesHeroSection />} />
             <ServicesListSection />
             <TechStackSection />
             <ProcessSection />
-        </main>
+        </div>
     );
 }
 

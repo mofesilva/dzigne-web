@@ -54,7 +54,8 @@ body {
 }
 
 .footer-section {
-  width: 100%;
+  width: auto;
+  border-radius: 2rem;
   background-color: var(--green-accent);
 }
 

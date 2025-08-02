@@ -3,11 +3,11 @@ import NavigationButton from '../../components/NavigationButton';
 
 function CompanyBio() {
     return (
-        <section aria-label="Conheça a Dzign-e" className='bg-eggshell pt-20'>
+        <section aria-label="Conheça a Dzign-e" className='bg-eggshell pt-16'>
             {/* Header com título e botão */}
-            <div className="section-container flex justify-between items-start  mt-20">
+            <div className="section-container flex justify-between items-start">
                 <div>
-                    <h1 className="font-rajdhani text-5xl font-bold text-carbon mb-4">
+                    <h1 className="font-rajdhani text-4xl 2xl:text-5xl font-bold text-carbon mb-4">
                         Somos a Dzign-e
                     </h1>
                     <p className="font-league-spartan text-xl pb-8 text-carbon/70 max-w-2xl">
@@ -22,7 +22,7 @@ function CompanyBio() {
                         pessoas.
                     </p>
 
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start text-center mb-8">
+                    <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start text-center">
                         <NavigationButton
                             href={'/about-us'}
                             text={'Conheça a Dzign-e'}

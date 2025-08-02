@@ -1,139 +1,139 @@
 'use client';
-import React, { useState } from 'react';
-
-interface TechItemProps {
-    name: string;
-    icon: string;
-    color: string;
-}
-
-function TechItem({ name, icon, color }: TechItemProps) {
-    const [isHovered, setIsHovered] = useState(false);
-
-    return (
-        <div 
-            className="bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition-all duration-300 flex flex-col items-center text-center group cursor-pointer"
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
-        >
-            <div 
-                className="w-16 h-16 rounded-lg flex items-center justify-center mb-4 transition-transform duration-300 group-hover:scale-110"
-                style={{ backgroundColor: color }}
-            >
-                <i className={`${icon} text-2xl text-white`}></i>
-            </div>
-            <h4 className="font-league-spartan font-semibold text-carbon">{name}</h4>
-        </div>
-    );
-}
-
-interface TechCategoryProps {
-    title: string;
-    icon: string;
-    technologies: TechItemProps[];
-}
-
-function TechCategory({ title, icon, technologies }: TechCategoryProps) {
-    return (
-        <div className="mb-16">
-            <div className="flex items-center mb-8">
-                <div className="w-12 h-12 bg-green-accent rounded-lg flex items-center justify-center mr-4">
-                    <i className={`${icon} text-xl text-white`}></i>
-                </div>
-                <h3 className="text-2xl font-rajdhani font-bold text-carbon">{title}</h3>
-            </div>
-            
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6">
-                {technologies.map((tech, index) => (
-                    <TechItem
-                        key={index}
-                        name={tech.name}
-                        icon={tech.icon}
-                        color={tech.color}
-                    />
-                ))}
-            </div>
-        </div>
-    );
-}
+import React from 'react';
 
 function TechStackSection() {
-    const techCategories = [
-        {
-            title: "Front-end",
-            icon: "fas fa-desktop",
-            technologies: [
-                { name: "React", icon: "fab fa-react", color: "#61DAFB" },
-                { name: "Next.js", icon: "fas fa-code", color: "#000000" },
-                { name: "JavaScript", icon: "fab fa-js-square", color: "#F7DF1E" },
-                { name: "TailwindCSS", icon: "fas fa-paint-brush", color: "#06B6D4" },
-                { name: "Flutter", icon: "fas fa-mobile-alt", color: "#02569B" },
-                { name: "Dart", icon: "fas fa-code", color: "#0175C2" }
-            ]
-        },
-        {
-            title: "Back-end",
-            icon: "fas fa-server",
-            technologies: [
-                { name: "Node.js", icon: "fab fa-node-js", color: "#339933" },
-                { name: "Express", icon: "fas fa-server", color: "#000000" },
-                { name: "PHP", icon: "fab fa-php", color: "#777BB4" },
-                { name: "JavaScript", icon: "fab fa-js-square", color: "#F7DF1E" }
-            ]
-        },
-        {
-            title: "Banco de Dados",
-            icon: "fas fa-database",
-            technologies: [
-                { name: "MySQL", icon: "fas fa-database", color: "#4479A1" },
-                { name: "MongoDB", icon: "fas fa-leaf", color: "#47A248" }
-            ]
-        },
-        {
-            title: "Cloud & Hospedagem",
-            icon: "fas fa-cloud",
-            technologies: [
-                { name: "Google Firebase", icon: "fas fa-fire", color: "#FFCA28" },
-                { name: "Akamai Cloud", icon: "fas fa-cloud", color: "#0096D6" }
-            ]
-        }
-    ];
-
     return (
-        <section className="w-full py-20 bg-white">
+        <section className="bg-eggshell w-full py-32">
             <div className="section-container">
                 <div className="text-center mb-16">
-                    <h2 className="text-3xl lg:text-4xl font-rajdhani font-bold text-carbon mb-6">
+                    <h2 className="font-rajdhani text-5xl font-bold text-carbon mb-8">
                         Tecnologias que <span className="text-green-accent">Dominamos</span>
                     </h2>
-                    <p className="text-lg font-league-spartan text-gray-700 max-w-3xl mx-auto">
-                        Utilizamos as melhores e mais modernas tecnologias do mercado para 
+                    <p className="font-league-spartan text-xl text-carbon/80 max-w-4xl mx-auto leading-relaxed">
+                        Utilizamos as melhores e mais modernas tecnologias do mercado para
                         garantir performance, escalabilidade e qualidade em todos os projetos.
                     </p>
                 </div>
 
-                <div className="max-w-7xl mx-auto">
-                    {techCategories.map((category, index) => (
-                        <TechCategory
-                            key={index}
-                            title={category.title}
-                            icon={category.icon}
-                            technologies={category.technologies}
-                        />
-                    ))}
+                {/* Tech Stack Table Card */}
+                <div className="max-w-5xl mx-auto mb-16">
+                    <div className="bg-neutral-200 rounded-2xl overflow-hidden">
+                        <table className="w-full">
+                            <thead>
+                                <tr className="border-b border-carbon/10">
+                                    <th className="text-left p-6 font-rajdhani font-bold text-carbon text-xl">Frontend</th>
+                                    <th className="text-left p-6 font-rajdhani font-bold text-carbon text-xl border-l border-carbon/10">Backend</th>
+                                    <th className="text-left p-6 font-rajdhani font-bold text-carbon text-xl border-l border-carbon/10">Cloud & DevOps</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td className="p-6 align-top">
+                                        <div className="space-y-3">
+                                            <div className="flex items-center">
+                                                <img
+                                                    src="/assets/icons/nextjs-icon-svgrepo-com.svg"
+                                                    alt="Next.js"
+                                                    className="w-5 h-5 opacity-70 mr-3"
+                                                />
+                                                <span className="font-league-spartan text-carbon text-sm">Next.js</span>
+                                            </div>
+                                            <div className="flex items-center">
+                                                <i className="fab fa-flutter text-lg opacity-70 mr-3 text-carbon"></i>
+                                                <span className="font-league-spartan text-carbon text-sm">Flutter</span>
+                                            </div>
+                                            <div className="flex items-center">
+                                                <i className="fab fa-dart-lang text-lg opacity-70 mr-3 text-carbon"></i>
+                                                <span className="font-league-spartan text-carbon text-sm">Dart</span>
+                                            </div>
+                                            <div className="flex items-center">
+                                                <i className="fab fa-react text-lg opacity-70 mr-3 text-carbon"></i>
+                                                <span className="font-league-spartan text-carbon text-sm">React</span>
+                                            </div>
+                                            <div className="flex items-center">
+                                                <i className="fab fa-js-square text-lg opacity-70 mr-3 text-carbon"></i>
+                                                <span className="font-league-spartan text-carbon text-sm">JavaScript</span>
+                                            </div>
+                                            <div className="flex items-center">
+                                                <i className="fas fa-paint-brush text-lg opacity-70 mr-3 text-carbon"></i>
+                                                <span className="font-league-spartan text-carbon text-sm">UI/UX Design</span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td className="p-6 align-top border-l border-carbon/10">
+                                        <div className="space-y-3">
+                                            <div className="flex items-center">
+                                                <i className="fab fa-node-js text-lg opacity-70 mr-3 text-carbon"></i>
+                                                <span className="font-league-spartan text-carbon text-sm">Node.js</span>
+                                            </div>
+                                            <div className="flex items-center">
+                                                <i className="fas fa-server text-lg opacity-70 mr-3 text-carbon"></i>
+                                                <span className="font-league-spartan text-carbon text-sm">Express</span>
+                                            </div>
+                                            <div className="flex items-center">
+                                                <i className="fab fa-php text-lg opacity-70 mr-3 text-carbon"></i>
+                                                <span className="font-league-spartan text-carbon text-sm">PHP</span>
+                                            </div>
+                                            <div className="flex items-center">
+                                                <i className="fab fa-python text-lg opacity-70 mr-3 text-carbon"></i>
+                                                <span className="font-league-spartan text-carbon text-sm">Python</span>
+                                            </div>
+                                            <div className="flex items-center">
+                                                <i className="fas fa-database text-lg opacity-70 mr-3 text-carbon"></i>
+                                                <span className="font-league-spartan text-carbon text-sm">PostgreSQL</span>
+                                            </div>
+                                            <div className="flex items-center">
+                                                <i className="fas fa-leaf text-lg opacity-70 mr-3 text-carbon"></i>
+                                                <span className="font-league-spartan text-carbon text-sm">MongoDB</span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td className="p-6 align-top border-l border-carbon/10">
+                                        <div className="space-y-3">
+                                            <div className="flex items-center">
+                                                <i className="fab fa-aws text-lg opacity-70 mr-3 text-carbon"></i>
+                                                <span className="font-league-spartan text-carbon text-sm">AWS</span>
+                                            </div>
+                                            <div className="flex items-center">
+                                                <i className="fab fa-docker text-lg opacity-70 mr-3 text-carbon"></i>
+                                                <span className="font-league-spartan text-carbon text-sm">Docker</span>
+                                            </div>
+                                            <div className="flex items-center">
+                                                <i className="fab fa-github text-lg opacity-70 mr-3 text-carbon"></i>
+                                                <span className="font-league-spartan text-carbon text-sm">GitHub</span>
+                                            </div>
+                                            <div className="flex items-center">
+                                                <i className="fab fa-linux text-lg opacity-70 mr-3 text-carbon"></i>
+                                                <span className="font-league-spartan text-carbon text-sm">Linux</span>
+                                            </div>
+                                            <div className="flex items-center">
+                                                <i className="fas fa-fire text-lg opacity-70 mr-3 text-carbon"></i>
+                                                <span className="font-league-spartan text-carbon text-sm">Firebase</span>
+                                            </div>
+                                            <div className="flex items-center">
+                                                <i className="fas fa-cloud text-lg opacity-70 mr-3 text-carbon"></i>
+                                                <span className="font-league-spartan text-carbon text-sm">Vercel</span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
 
-                <div className="mt-16 text-center">
-                    <div className="bg-gray-50 rounded-lg p-8 border-l-4 border-green-accent">
-                        <h3 className="text-xl font-rajdhani font-bold text-carbon mb-4">
+                {/* CTA Section */}
+                <div className="text-center">
+                    <div className="bg-white border border-carbon/10 rounded-2xl p-8 max-w-3xl mx-auto">
+                        <h3 className="text-2xl font-rajdhani font-bold text-carbon mb-4">
                             Stack Personalizada para Seu Projeto
                         </h3>
-                        <p className="text-base font-league-spartan text-gray-700 mb-6">
-                            Além das tecnologias listadas, adaptamos nossa stack às necessidades específicas 
+                        <p className="text-base font-league-spartan text-carbon/70 mb-6 leading-relaxed">
+                            Além das tecnologias listadas, adaptamos nossa stack às necessidades específicas
                             do seu projeto, sempre priorizando performance e escalabilidade.
                         </p>
-                        <a 
-                            href="/contato" 
+                        <a
+                            href="/contato"
                             className="inline-flex items-center px-6 py-3 bg-green-accent text-white font-league-spartan font-semibold rounded-lg hover:bg-green-accent-light transition-colors"
                         >
                             <i className="fas fa-rocket mr-2"></i>

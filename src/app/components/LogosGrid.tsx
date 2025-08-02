@@ -20,10 +20,10 @@ function LogosGrid() {
     return (
         <section className="bg-eggshell py-16">
             <div className="section-container">
-                <h2 className="text-4xl font-rajdhani font-bold text-center mb-12 text-carbon">
-                    Empresas que confiaram seu potencial na Dzign-e
+                <h2 className="text-4xl 2xl:text-5xl font-rajdhani font-bold text-center mb-8 text-carbon">
+                    Empresas que confiaram seu potencial à Dzign-e
                 </h2>
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-8 items-center justify-items-center">
+                <div className="grid rounded-2xl bg-neutral-200 border-neutral-300 border-2 p-8 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-8 items-center justify-items-center">
                     {logos.map((logo, index) => (
                         <div key={index} className="flex items-center justify-center">
                             <Image
