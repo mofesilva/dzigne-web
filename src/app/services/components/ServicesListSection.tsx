@@ -24,13 +24,13 @@ function ServiceCard({ icon, title, description, features }: ServiceCardProps) {
                 <h3 className="text-xl font-rajdhani font-bold text-carbon">{title}</h3>
             </div>
             
-            <p className="text-gray-700 font-league-spartan mb-6 leading-relaxed">
+            <p className="text-carbon/70 font-league-spartan mb-6 leading-relaxed">
                 {description}
             </p>
             
             <div className="space-y-2">
                 {features.map((feature, index) => (
-                    <div key={index} className="flex items-center text-sm font-league-spartan text-gray-600">
+                    <div key={index} className="flex items-center text-sm font-league-spartan text-carbon/60">
                         <i className="fas fa-check text-green-accent mr-2"></i>
                         {feature}
                     </div>
@@ -144,13 +144,13 @@ function ServicesListSection() {
     ];
 
     return (
-        <section className="w-full py-20 bg-eggshell">
+        <section className='bg-eggshell w-full py-32'>
             <div className="section-container">
                 <div className="text-center mb-16">
-                    <h2 className="text-3xl lg:text-4xl font-rajdhani font-bold text-carbon mb-6">
+                    <h2 className="font-rajdhani text-5xl font-bold text-carbon mb-8">
                         Soluções Completas em Tecnologia
                     </h2>
-                    <p className="text-lg font-league-spartan text-gray-700 max-w-3xl mx-auto">
+                    <p className="font-league-spartan text-xl text-carbon/80 max-w-4xl mx-auto leading-relaxed">
                         Da concepção à implementação, oferecemos todos os serviços necessários 
                         para transformar sua visão em realidade digital.
                     </p>

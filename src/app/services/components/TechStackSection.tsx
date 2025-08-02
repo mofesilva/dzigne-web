@@ -100,13 +100,13 @@ function TechStackSection() {
     ];
 
     return (
-        <section className="w-full py-20 bg-white">
+        <section className="bg-white w-full py-32">
             <div className="section-container">
                 <div className="text-center mb-16">
-                    <h2 className="text-3xl lg:text-4xl font-rajdhani font-bold text-carbon mb-6">
+                    <h2 className="font-rajdhani text-5xl font-bold text-carbon mb-8">
                         Tecnologias que <span className="text-green-accent">Dominamos</span>
                     </h2>
-                    <p className="text-lg font-league-spartan text-gray-700 max-w-3xl mx-auto">
+                    <p className="font-league-spartan text-xl text-carbon/80 max-w-4xl mx-auto leading-relaxed">
                         Utilizamos as melhores e mais modernas tecnologias do mercado para 
                         garantir performance, escalabilidade e qualidade em todos os projetos.
                     </p>
@@ -128,7 +128,7 @@ function TechStackSection() {
                         <h3 className="text-xl font-rajdhani font-bold text-carbon mb-4">
                             Stack Personalizada para Seu Projeto
                         </h3>
-                        <p className="text-base font-league-spartan text-gray-700 mb-6">
+                        <p className="text-base font-league-spartan text-carbon/70 mb-6">
                             Além das tecnologias listadas, adaptamos nossa stack às necessidades específicas 
                             do seu projeto, sempre priorizando performance e escalabilidade.
                         </p>

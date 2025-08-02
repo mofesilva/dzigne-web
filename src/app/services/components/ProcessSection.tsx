@@ -19,8 +19,8 @@ function ProcessStep({ number, title, description, icon }: ProcessStepProps) {
                 </div>
             </div>
             
-            <h3 className="text-xl font-rajdhani font-bold text-carbon mb-4">{title}</h3>
-            <p className="text-gray-700 font-league-spartan leading-relaxed">{description}</p>
+            <h3 className="text-xl font-rajdhani font-bold text-white mb-4">{title}</h3>
+            <p className="text-white/80 font-league-spartan leading-relaxed">{description}</p>
         </div>
     );
 }
@@ -66,13 +66,13 @@ function ProcessSection() {
     ];
 
     return (
-        <section className="w-full py-20 bg-carbon">
+        <section className="bg-carbon w-full py-32">
             <div className="section-container">
                 <div className="text-center mb-16">
-                    <h2 className="text-3xl lg:text-4xl font-rajdhani font-bold text-white mb-6">
+                    <h2 className="font-rajdhani text-5xl font-bold text-white mb-8">
                         Nosso <span className="text-green-accent">Processo</span>
                     </h2>
-                    <p className="text-lg font-league-spartan text-white/80 max-w-3xl mx-auto">
+                    <p className="font-league-spartan text-xl text-white/80 max-w-4xl mx-auto leading-relaxed">
                         Seguimos uma metodologia comprovada que garante entregas de qualidade, 
                         dentro do prazo e alinhadas com seus objetivos de negócio.
                     </p>
