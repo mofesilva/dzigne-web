@@ -1,5 +1,4 @@
 import HeaderSection from "./components/HeaderSection";
-import Footer from "@/components/footer/Footer";
 import CompanyHighlightsSection from "./components/CompanyHighlightsSection";
 import HeroSection from "./components/HeroSection";
 import CasesHighlightsSection from "./components/CasesHighlightsSection";
@@ -11,7 +10,7 @@ import TestimonialsSection from "./components/TestimonialsSection";
 
 export default function Home() {
   return (
-    <main className="flex flex-col">
+    <div className="flex flex-col">
       <div className="">
         <HeaderSection content={<HeroSection />} />
         <CompanyHighlightsSection />
@@ -22,6 +21,6 @@ export default function Home() {
         <TestimonialsSection />
         <LogosGrid />
       </div>
-    </main>
+    </div>
   );
 }

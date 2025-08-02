@@ -6,10 +6,10 @@ import TestimonialCard from './TestimonialCard'
 function TestimonialsSection() {
     const testimonials = [
         {
-            text: "A Dzign-e desenvolveu uma solução que transformou completamente nossa operação digital. A qualidade técnica e o atendimento foram excepcionais do início ao fim do projeto.",
-            name: "João Silva",
-            position: "Diretor de TI",
-            company: "TechCorp",
+            text: "A Dzign-e e nós, da Sigmacon, temos uma parceria sólida desde 2018. Nossa trajetória conjunta começou com um grande desafio: desenvolver um aplicativo inovador para gestão de segurança. Este projeto, pioneiro e extremamente desafiador para o setor, foi abraçado pela Dzign-e, que transformou nosso sonho em uma realidade de excelência. Ao longo dos anos, continuamos trabalhando juntos, mantendo uma filosofia de melhoria contínua do produto.",
+            name: "Adalberto",
+            position: "CEO",
+            company: "SigmaCOn",
             photo: "/assets/images/depoimentos/adalberto.jpg"
         },
         {
@@ -79,10 +79,10 @@ function TestimonialsSection() {
                 }
             `}</style>
 
-            <section className="bg-eggshell pt-10 pb-20">
+            <section className="bg-eggshell py-16">
                 <div className="section-container">
-                    <div className="text-start mb-16">
-                        <h2 className="text-5xl font-rajdhani font-bold text-carbon mt-4">
+                    <div className="text-start mb-8">
+                        <h2 className="text-4xl 2xl:text-5xl font-rajdhani font-bold text-carbon mt-4">
                             O que dizem nossos clientes
                         </h2>
                     </div>

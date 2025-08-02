@@ -21,14 +21,14 @@ function ServicesSection() {
 
     return (
         <section
-            className='bg-carbon w-full pt-32 pb-20'
+            className='bg-carbon w-full py-16'
             onMouseMove={handleMouseMove}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
         >
             <div className="section-container">
                 {/* Header com título e botão */}
-                <div className="flex justify-between items-start mb-16">
+                <div className="flex flex-col lg:flex-row lg:justify-between lg:items-start mb-16 gap-6">
                     <div>
                         <h1 className="font-rajdhani text-5xl font-bold text-white mb-4">
                             Construímos software

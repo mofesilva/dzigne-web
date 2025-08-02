@@ -6,13 +6,13 @@ function HeroSection() {
     return (
         <section className='flex flex-col items-center justify-center text-center w-full'>
             <div className="max-w-4xl mx-auto mb-16">
-                <h1 className='text-5xl lg:text-6xl font-rajdhani font-bold text-eggshell mb-6 leading-tight'>
+                <h1 className='text-5xl 2xl:text-6xl font-rajdhani font-bold text-eggshell mb-6 leading-tight'>
                     O parceiro<br />
                     <span className="text-green-accent">ideal para o seu</span><br />
                     Negócio
                 </h1>
 
-                <p className='text-lg lg:text-xl font-league-spartan text-eggshell mb-8 max-w-2xl mx-auto'>
+                <p className='text-lg 2xl:text-xl font-league-spartan text-eggshell mb-8 max-w-2xl mx-auto'>
                     Do conceito ao lançamento.<br />Criamos soluções digitais sob medida que transformam ideias em produtos extraordinários.
                 </p>
 
