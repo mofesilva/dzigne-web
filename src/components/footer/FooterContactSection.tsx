@@ -10,7 +10,7 @@ function FooterContactSection() {
                     alt="Logotipo Dzign-e"
                     width={100}
                     height={100}
-                    className="h-auto w-30 pb-4" />
+                    className="h-auto w-30 pb-4 mr-1" />
                 <div className="flex items-center justify-center md:justify-start pb-4 gap-2">
                     <a href="https://www.instagram.com/dzign.e/"
                         target="_blank"
@@ -34,12 +34,12 @@ function FooterContactSection() {
                     </a>
                 </div>
                 <div className="pb-4 flex flex-col items-center md:items-end gap-1">
-                    <div className="flex items-center justify-center md:justify-start w-full">
+                    <div className="flex items-center justify-center md:justify-start w-full mr-0.5">
                         <a href="mailto:contato@dzign-e.com.br" className="font-league-spartan text-lg 2xl:text-xl text-carbon">
                             contato@dzign-e.com.br
                         </a>
                     </div>
-                    <div className="flex items-center gap-1">
+                    <div className="flex items-center gap-1 mr-0.5">
                         <a
                             href="https://wa.me/5519999094848"
                             target="_blank"
