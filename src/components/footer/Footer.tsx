@@ -9,10 +9,10 @@ import FooterNavigationSection from './FooterNavigationSection';
 
 function Footer() {
     return (
-        <div className="bg-eggshell w-auto h-auto p-2  ">
-            <footer className="footer-section text-foreground">
-                <div className="section-container align-center content-center items-center justify-center">
-                    <div className="flex flex-col gap-4 md:flex-row md:gap-4 md:items-center">
+        <div className="bg-eggshell w-auto h-auto p-2">
+            <footer className="footer-section text-foreground justify-center content-center items-center self-center">
+                <div className="section-container align-center content-center items-center">
+                    <div className="flex flex-col md:flex-row gap-4 md:gap-4 md:items-center justify-between md:justify-center">
                         <FooterContactSection />
                         {/* Divider horizontal no mobile, vertical no desktop */}
                         <div className="block md:hidden">
