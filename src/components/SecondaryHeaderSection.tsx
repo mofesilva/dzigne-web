@@ -6,16 +6,11 @@ interface SecondaryHeaderSectionProps {
 
 function SecondaryHeaderSection({ content }: SecondaryHeaderSectionProps) {
     return (
-        <section className='w-full h-[50vh] relative overflow-hidden'>
-            {/* Fundo preto */}
-            <div className="absolute inset-0 bg-carbon"></div>
-
-            <div className='relative z-10 w-full h-full'>
-                <div className="section-container h-full flex items-center justify-center pt-16">
-                    {content}
-                </div>
+        <div className="bg-carbon rounded-4xl mx-2 mt-2 min-h-[50vh] item-end content-center pt-20 2xl:pt-0 lg:pb-8 ">
+            <div className="section-container flex items-end justify-center pt-24 pb-8 lg:pt-28 lg:pb-12">
+                {content}
             </div>
-        </section>
+        </div>
     )
 }
 
