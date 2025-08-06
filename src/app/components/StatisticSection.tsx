@@ -19,7 +19,7 @@ function StatisticSection() {
 
     return (
         <section
-            className='bg-carbon w-full py-20'
+            className='bg-carbon py-16 rounded-b-4xl mx-2'
             onMouseMove={handleMouseMove}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
