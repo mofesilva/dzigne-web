@@ -2,7 +2,7 @@ import React from 'react';
 
 function AboutTeamSection() {
     return (
-        <section className='bg-eggshell w-full py-32'>
+        <section className='bg-eggshell w-full py-16'>
             <div className="section-container">
                 <div className="text-center mb-16">
                     <h2 className="font-rajdhani text-5xl font-bold text-carbon mb-4">
