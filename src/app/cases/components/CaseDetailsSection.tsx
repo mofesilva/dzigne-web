@@ -23,7 +23,7 @@ function CaseDetailsSection({ duration, team, technologies, challenge, solution,
     ];
 
     return (
-        <section className="bg-eggshell w-full py-32">
+        <section className="bg-eggshell w-full py-16">
             <div className="section-container">
                 {/* Informações básicas do projeto */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
