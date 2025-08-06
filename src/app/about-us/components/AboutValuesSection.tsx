@@ -20,7 +20,7 @@ function AboutValuesSection() {
 
     return (
         <section
-            className='bg-carbon w-full pt-32 pb-20'
+            className='bg-carbon w-full py-16'
             onMouseMove={handleMouseMove}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
