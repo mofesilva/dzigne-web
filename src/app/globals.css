@@ -30,7 +30,7 @@
 }
 
 body {
-  background: var(--background);
+  background: var(--foreground);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -62,6 +62,10 @@ body {
 
 /* Responsividade para o container */
 @media (max-width: 640px) {
+  body {
+    background: var(--background);
+  }
+
   .section-container {
     padding: 0 1rem;
   }

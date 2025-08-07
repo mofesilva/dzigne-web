@@ -25,7 +25,7 @@ function StickyNavbar() {
     };
 
     return (
-        <div className="fixed top-4 w-full z-50">
+        <div className="fixed top-2 w-full z-50">
             <div className="section-container">
                 <nav className={`
                     ${isScrolled ? 'bg-carbon/75 backdrop-blur-md' : 'bg-carbon'}

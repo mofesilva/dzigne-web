@@ -65,7 +65,7 @@ function AboutValueCard({ icon, title, description, globalMousePosition, isMouse
         >
             {/* Borda toda verde quando dentro */}
             <div
-                className={`absolute -inset-[1px] rounded-2xl border-2 border-green-accent pointer-events-none transition-opacity duration-300 ease-out ${isInside ? 'opacity-100' : 'opacity-0'
+                className={`absolute -inset-[1px] rounded-2xl border border-green-accent pointer-events-none transition-opacity duration-300 ease-out ${isInside ? 'opacity-70' : 'opacity-0'
                     }`}
             />
 
@@ -84,13 +84,13 @@ function AboutValueCard({ icon, title, description, globalMousePosition, isMouse
                 />
             )}
 
-            <div className="mb-6 text-center">
+            <div className="mb-6 text-start">
                 <i className={`${icon} text-green-accent text-4xl`}></i>
             </div>
-            <h3 className="font-rajdhani text-2xl font-bold text-white mb-4 group-hover:text-green-accent transition-colors cursor-default text-center">
+            <h3 className="font-rajdhani text-2xl font-bold text-white mb-4 group-hover:text-green-accent transition-colors cursor-default text-start">
                 {title}
             </h3>
-            <p className="font-league-spartan text-white/70 leading-relaxed cursor-default text-center">
+            <p className="font-league-spartan text-white/70 leading-relaxed cursor-default text-start">
                 {description}
             </p>
         </div>

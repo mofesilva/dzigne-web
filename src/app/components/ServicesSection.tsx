@@ -21,7 +21,7 @@ function ServicesSection() {
 
     return (
         <section
-            className='bg-carbon w-full py-16'
+            className='bg-carbon py-16 rounded-t-4xl mx-2'
             onMouseMove={handleMouseMove}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
