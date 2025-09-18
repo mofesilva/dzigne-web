@@ -4,62 +4,71 @@ import Divider from '@/components/Divider';
 
 function CasesListSection() {
     return (
-        <section className='bg-eggshell w-full py-32'>
+        <section className='bg-eggshell w-full pt-16 pb-32'>
             <div className="section-container">
-                <div className="text-center mb-16">
-                    <h2 className="font-rajdhani text-5xl font-bold text-carbon mb-4">
-                        Projetos que Transformaram Negócios
-                    </h2>
-                    <p className="font-league-spartan text-xl text-carbon/80 max-w-3xl mx-auto">
-                        Cada projeto é único e desenvolvido com foco nos resultados do cliente.
-                        Veja como ajudamos empresas a alcançar seus objetivos através da tecnologia.
-                    </p>
-                </div>
-
                 <div className="space-y-16">
                     <CaseCard
-                        logo="/assets/images/logos/mackenzie.png"
+                        logo="/assets/images/logos/mackenzie2.png"
                         company="Universidade Mackenzie"
-                        title="Plataforma de Estudos para OAB"
+                        title="OAB Mack"
                         description="Criamos uma solução digital exclusiva que potencializou o estudo dos alunos para a OAB, integrando simulados intuitivos com gestão dinâmica do conteúdo pelos professores. A plataforma revolucionou a preparação dos estudantes."
-                        mockup="/assets/images/mockups/oabmack_mockup.png"
-                        href="/cases/mackenzie"
-                        tags={["Educação", "Mobile App", "Web Platform"]}
+                        mockup="/assets/images/mockups/oabmack_mockup_2.png"
+                        href="/cases/oab-mack"
+                        tags={["Educação", "Direito", "Plataforma de Estudos"]}
                         isReversed={false}
                     />
                     <Divider width="1" color="carbon" height="100%" horizontal={true} />
                     <CaseCard
-                        logo="/assets/images/logos/sigmacon.png"
-                        company="Sigmacon"
-                        title="App de Gestão Condominial"
-                        description="Desenvolvemos um app que revolucionou a gestão condominial, integrando reservas, câmeras e autorizações de entrada em uma única solução inteligente. A tecnologia virou aliada da segurança."
-                        mockup="/assets/images/mockups/oabmack_mockup.png"
-                        href="/cases/sigmacon"
-                        tags={["Gestão", "Mobile App", "IoT"]}
+                        logo="/assets/images/logos/icalvinus-h.png"
+                        company="Igreja Presbiteriana do Brasil"
+                        description="Auxiliamos a IPI no desenvolvimento de uma plataforma personalizada, composta por um aplicativo móvel para alunos e uma interface web para professores. A solução proporcionou uma experiência intuitiva e produtiva de estudos."
+                        mockup="/assets/images/mockups/iCalvinus_mockup_4.png"
+                        href="/cases/icalvinus"
+                        tags={["Gestão Conciliar", "Organização Religiosa", "Gestão de Documentos"]}
                         isReversed={true}
                     />
                     <Divider width="1" color="carbon" height="100%" horizontal={true} />
                     <CaseCard
-                        logo="/assets/images/logos/ipi.png"
-                        company="IPI - Igreja Presbiteriana Independente"
-                        title="Plataforma Educacional Personalizada"
-                        description="Auxiliamos a IPI no desenvolvimento de uma plataforma personalizada, composta por um aplicativo móvel para alunos e uma interface web para professores. A solução proporcionou uma experiência intuitiva e produtiva de estudos."
-                        mockup="/assets/images/mockups/iCalvinus_mockup_4.png"
-                        href="/cases/ipi"
-                        tags={["Educação", "Mobile App", "Web Platform"]}
+                        logo="/assets/images/logos/sigmaapp.png"
+                        company="Sigmacon"
+                        description="Desenvolvemos um app que revolucionou a gestão condominial, integrando reservas, câmeras e autorizações de entrada em uma única solução inteligente. A tecnologia virou aliada da segurança."
+                        mockup="/assets/images/mockups/sigmaapp-mockup-2.png"
+                        href="/cases/sigmaapp"
+                        tags={["Gestão", "Condomínios", "IoT"]}
                         isReversed={false}
                     />
                     <Divider width="1" color="carbon" height="100%" horizontal={true} />
                     <CaseCard
+                        logo="/assets/images/logos/ipiconecta-h4.png"
+                        company="Igreja Presbiteriana Independente do Brasil"
+
+                        description="Desenvolvemos um sistema completo para gestão laboratorial, incluindo controle de exames, resultados e integração com equipamentos. A solução otimizou os processos e melhorou a experiência dos pacientes."
+                        mockup="/assets/images/mockups/ipiconecta_desktop+mobile_mockup_1.png"
+                        href="/cases/ipiconecta"
+                        tags={["Gestão Conciliar", "Mobile App", "Web Platform"]}
+                        isReversed={true}
+                    />
+                    <Divider width="1" color="carbon" height="100%" horizontal={true} />
+                    <CaseCard
+                        logo="/assets/images/logos/contrataja-h.png"
+                        company="Contrata Já"
+                        description="Desenvolvemos um sistema completo para gestão laboratorial, incluindo controle de exames, resultados e integração com equipamentos. A solução otimizou os processos e melhorou a experiência dos pacientes."
+                        mockup="/assets/images/mockups/oabmack_mockup_2.png"
+                        href="/cases/contrata-ja"
+                        tags={["Plataforma de Contratação de Serviços", "Marketplace", "Setor de Serviços"]}
+                        isReversed={false}
+                    />
+                    {/* <Divider width="1" color="carbon" height="100%" horizontal={true} /> */}
+                    {/* <CaseCard
                         logo="/assets/images/logos/labormed.png"
-                        company="Labormed"
-                        title="Sistema de Gestão Laboratorial"
+                        company="Ergon Missões"
+                        title="Ergon Missões"
                         description="Desenvolvemos um sistema completo para gestão laboratorial, incluindo controle de exames, resultados e integração com equipamentos. A solução otimizou os processos e melhorou a experiência dos pacientes."
                         mockup="/assets/images/mockups/oabmack_mockup_2.png"
                         href="/cases/labormed"
                         tags={["Saúde", "Web System", "Integration"]}
                         isReversed={true}
-                    />
+                    /> */}
                 </div>
             </div>
         </section>
