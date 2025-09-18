@@ -4,14 +4,14 @@ import Image from 'next/image';
 interface CaseHeroSectionProps {
     logo: string;
     company: string;
-    title: string;
+    title?: string;
     description: string;
     tags: string[];
 }
 
 function CaseHeroSection({ logo, company, title, description, tags }: CaseHeroSectionProps) {
     return (
-        <div className="text-center text-white">
+        <div className="text-center text-white mb-16">
             <div className="mb-8">
                 <Image
                     src={logo}
