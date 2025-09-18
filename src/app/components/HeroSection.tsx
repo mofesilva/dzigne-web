@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 function HeroSection() {
     return (
-        <section className='flex flex-col items-center justify-center text-center w-full'>
+        <section className='flex flex-col md:flex-row  md:text-start items-center justify-center text-center w-full'>
             <div className="max-w-4xl mx-auto mb-16">
                 <h1 className='text-5xl 2xl:text-6xl font-rajdhani font-bold text-eggshell mb-6 leading-tight'>
                     O parceiro<br />
@@ -16,7 +16,7 @@ function HeroSection() {
                     Do conceito ao lançamento.<br />Criamos soluções digitais sob medida que transformam ideias em produtos extraordinários.
                 </p>
 
-                <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+                <div className="flex flex-col sm:flex-row gap-4 md:justify-start md:justify-start md:text-start  justify-center mb-8">
                     <NavigationButton
                         href={'/cases'}
                         text={'Ver nossos Cases'}
@@ -27,7 +27,7 @@ function HeroSection() {
                     />
                 </div>
 
-                <div className="flex justify-center gap-6">
+                <div className="flex md:justify-start justify-center gap-6">
                     <a
                         href="https://www.instagram.com/dzign.e/"
                         target="_blank"
