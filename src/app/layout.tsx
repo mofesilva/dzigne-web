@@ -3,6 +3,7 @@ import { Rajdhani, League_Spartan } from "next/font/google";
 import "./globals.css";
 import StickyNavbar from "@/components/StickyNavbar";
 import Footer from "@/components/footer/Footer";
+import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 
 const rajdhani = Rajdhani({
   variable: "--font-rajdhani",
@@ -38,6 +39,7 @@ export default function RootLayout({
         <main className="">   {/*  pt-28 ≈ 7 rem (112 px)  */}
           {children}
         </main>
+        <FloatingWhatsApp />
       </body>
       <Footer />
     </html>
