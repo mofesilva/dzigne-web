@@ -51,7 +51,7 @@ function TestimonialsSection() {
         },
         {
             text: "Trabalhamos com a Dzign-e há alguns anos no desenvolvimento de website sincronizado com aplicativo. Atendimento pronto, desenvolvido conforme nossas necessidades com total satisfação. Ferramentas fáceis e acessíveis, aprovadas pelos membros. Suporte rápido e efetivo. O investimento vale a pena. Recomendação total.",
-            name: "Rev. Carlos Eduardo Aranha Neto",
+            name: "Rev. Carlos E. Aranha Neto",
             position: "Pastor titular",
             company: "Igreja Presbiteriana de Campinas",
             photo: "/assets/images/depoimentos/aranha.jpg"
