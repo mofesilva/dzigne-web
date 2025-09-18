@@ -5,7 +5,7 @@ import NavigationButton from '../../../components/NavigationButton';
 interface CaseCardProps {
     logo: string;
     company: string;
-    title: string;
+    title?: string;
     description: string;
     mockup: string;
     href: string;
@@ -22,15 +22,18 @@ function CaseCard({ logo, company, title, description, mockup, href, tags, isRev
                     <Image
                         src={logo}
                         alt={`${company} Logo`}
-                        width={120}
+                        width={200}
                         height={60}
+                        quality={100}
                         className="h-12 w-auto object-contain"
                     />
                 </div>
 
-                <h3 className="font-rajdhani text-3xl font-bold text-carbon mb-4">
-                    {title}
-                </h3>
+                {title != null && (
+                    <h3 className="font-rajdhani text-3xl font-bold text-carbon mb-4">
+                        {title}
+                    </h3>
+                )}
 
                 <p className="font-league-spartan text-lg text-carbon/80 mb-6 leading-relaxed">
                     {description}
