@@ -15,10 +15,10 @@ function CaseSlide({ text, logo, alt, mockup, href, isLogoHorizontal = false }: 
     return (
         <div className="flex flex-col md:flex-row md:items-center justify-center w-full min-h-full py-16 gap-8 px-4 md:pr-8 md:px-0">
             <div className="mockup__container flex-shrink-0 flex justify-center md:justify-start">
-                <Image src={mockup} alt="Mockup" className="w-auto h-[200px] md:h-[400px]" width={600} height={600} quality={100} />
+                <Image src={mockup} alt="Mockup" className="w-auto h-[200px] md:h-[400px]" width={600} height={600} quality={100} loading='lazy' />
             </div>
             <div className="case__study__content flex flex-col items-center md:items-start justify-center max-w-xl">
-                <Image src={logo} alt={alt} className={`h-auto mb-4 ${isLogoHorizontal ? 'w-[150px]' : 'w-[100px]'}`} width={100} height={100} quality={100} />
+                <Image src={logo} alt={alt} className={`h-auto mb-4 ${isLogoHorizontal ? 'w-[150px]' : 'w-[100px]'}`} width={100} height={100} quality={100} loading='lazy' />
                 <p className="font-league-spartan text-lg text-eggshell mb-8 cursor-default text-center md:text-left">{text}</p>
                 <NavigationButton href={href} text={'Saiba mais'} icon={'fa-solid fa-chevron-right'} />
             </div>
