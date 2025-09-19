@@ -5,11 +5,6 @@ import CaseGallerySection from '../components/CaseGallerySection';
 import CaseNavigationSection from '../components/CaseNavigationSection';
 import HeaderSection from '@/app/components/HeaderSection';
 
-export const metadata = {
-    title: "Case Mackenzie - Plataforma OAB | Dzign-e",
-    description: "Como desenvolvemos uma plataforma revolucionária para estudos da OAB na Universidade Mackenzie"
-};
-
 function MackenziePage() {
     return (
         <div className="flex flex-col">
@@ -41,7 +36,7 @@ function MackenziePage() {
             // ]}
             />
 
-            <CaseGallerySection
+            {/* <CaseGallerySection
                 title="Interface e Funcionalidades"
                 description="Conheça as principais telas e funcionalidades que desenvolvemos para transformar a experiência de estudos dos alunos da Mackenzie."
                 images={[
@@ -56,13 +51,13 @@ function MackenziePage() {
                         description: "Interface de realização de simulados com cronômetro e marcação de questões"
                     }
                 ]}
-            />
+            /> */}
 
             <CaseNavigationSection
                 nextCase={{
-                    href: "/cases/sigmacon",
-                    company: "Sigmacon",
-                    title: "App de Gestão Condominial"
+                    href: "/cases/icalvinus",
+                    company: "iCalvinus",
+                    title: "Igreja Presbiteriana do Brasil"
                 }}
             />
         </div>
