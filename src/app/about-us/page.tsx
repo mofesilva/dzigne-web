@@ -1,4 +1,3 @@
-import Footer from "@/components/footer/Footer";
 import React from "react";
 import AboutHeroSection from "./components/AboutHeroSection";
 import AboutMissionSection from "./components/AboutMissionSection";
