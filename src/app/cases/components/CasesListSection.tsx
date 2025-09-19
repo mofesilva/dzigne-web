@@ -10,8 +10,7 @@ function CasesListSection() {
                     <CaseCard
                         logo="/assets/images/logos/mackenzie2.png"
                         company="Universidade Mackenzie"
-                        title="OAB Mack"
-                        description="Criamos uma solução digital exclusiva que potencializou o estudo dos alunos para a OAB, integrando simulados intuitivos com gestão dinâmica do conteúdo pelos professores. A plataforma revolucionou a preparação dos estudantes."
+                        description="Uma plataforma educacional que transformou a preparação dos estudantes de Direito para o exame da OAB, integrando simulados interativos com gestão dinâmica de conteúdo."
                         mockup="/assets/images/mockups/oabmack_mockup_2.png"
                         href="/cases/oab-mack"
                         tags={["Educação", "Direito", "Plataforma de Estudos"]}
@@ -21,41 +20,40 @@ function CasesListSection() {
                     <CaseCard
                         logo="/assets/images/logos/icalvinus-h.png"
                         company="Igreja Presbiteriana do Brasil"
-                        description="Auxiliamos a IPI no desenvolvimento de uma plataforma personalizada, composta por um aplicativo móvel para alunos e uma interface web para professores. A solução proporcionou uma experiência intuitiva e produtiva de estudos."
+                        description="Um sistema inovador que transformou a gestão conciliar da Igreja Presbiteriana do Brasil, centralizando documentos e decisões em uma plataforma digital acessível e eficiente."
                         mockup="/assets/images/mockups/iCalvinus_mockup_4.png"
                         href="/cases/icalvinus"
-                        tags={["Gestão Conciliar", "Organização Religiosa", "Gestão de Documentos"]}
+                        tags={["Gestão", "Organização Religiosa", "Gestão de Documentos"]}
                         isReversed={true}
                     />
                     <Divider width="1" color="carbon" height="100%" horizontal={true} />
                     <CaseCard
                         logo="/assets/images/logos/sigmaapp.png"
                         company="Sigmacon"
-                        description="Desenvolvemos um app que revolucionou a gestão condominial, integrando reservas, câmeras e autorizações de entrada em uma única solução inteligente. A tecnologia virou aliada da segurança."
+                        description="O aplicativo móvel que mudou a forma de gerenciar segurança em condomínios, integrando reservas de espaços, controle de acesso e monitoramento em uma única plataforma intuitiva."
                         mockup="/assets/images/mockups/sigmaapp-mockup-2.png"
                         href="/cases/sigmaapp"
-                        tags={["Gestão", "Condomínios", "IoT"]}
+                        tags={["Segurança", "Condomínios", "IoT", "Gestão de Espaços"]}
                         isReversed={false}
                     />
                     <Divider width="1" color="carbon" height="100%" horizontal={true} />
                     <CaseCard
                         logo="/assets/images/logos/ipiconecta-h4.png"
                         company="Igreja Presbiteriana Independente do Brasil"
-
-                        description="Desenvolvemos um sistema completo para gestão laboratorial, incluindo controle de exames, resultados e integração com equipamentos. A solução otimizou os processos e melhorou a experiência dos pacientes."
+                        description="Um sistema definitivo para gestão conciliar, centralizando documentos, decisões e comunicações em uma plataforma digital acessível e eficiente, além de cadastro de sínodos, presbitérios, igrejas e rol de membros."
                         mockup="/assets/images/mockups/ipiconecta_desktop+mobile_mockup_1.png"
                         href="/cases/ipiconecta"
-                        tags={["Gestão Conciliar", "Mobile App", "Web Platform"]}
+                        tags={["Gestão", "Organização Religiosa", "Gestão de Documentos"]}
                         isReversed={true}
                     />
                     <Divider width="1" color="carbon" height="100%" horizontal={true} />
                     <CaseCard
                         logo="/assets/images/logos/contrataja-h.png"
                         company="Contrata Já"
-                        description="Desenvolvemos um sistema completo para gestão laboratorial, incluindo controle de exames, resultados e integração com equipamentos. A solução otimizou os processos e melhorou a experiência dos pacientes."
-                        mockup="/assets/images/mockups/oabmack_mockup_2.png"
+                        description="Uma marketplace em desenvolvimento que conecta profissionais de serviços a clientes, facilitando contratações rápidas e seguras com avaliações e portfólios integrados."
+                        mockup="/assets/images/mockups/contrataja-ipad-mockup-2.png"
                         href="/cases/contrata-ja"
-                        tags={["Plataforma de Contratação de Serviços", "Marketplace", "Setor de Serviços"]}
+                        tags={["Serviços", "Marketplace", "Plataforma de Contratação"]}
                         isReversed={false}
                     />
                     {/* <Divider width="1" color="carbon" height="100%" horizontal={true} /> */}
