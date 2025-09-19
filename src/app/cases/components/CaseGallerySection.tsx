@@ -1,17 +1,42 @@
 import React from 'react';
-import Image from 'next/image';
+import fs from 'fs';
+import path from 'path';
+import CaseGalleryClient from './CaseGalleryClient';
 
 interface CaseGallerySectionProps {
     title: string;
     description: string;
-    images: {
+    images?: {
         src: string;
-        alt: string;
+        alt?: string;
         description?: string;
     }[];
+    imagesFolder?: string;
 }
 
-function CaseGallerySection({ title, description, images }: CaseGallerySectionProps) {
+function CaseGallerySection({ title, description, images, imagesFolder }: CaseGallerySectionProps) {
+    let imagesToRender: CaseGallerySectionProps['images'] = images ?? [];
+
+    if (imagesFolder) {
+        try {
+            const publicFolderRelative = imagesFolder.replace(/^\//, '').replace(/\/$/, '');
+            const dirPath = path.join(process.cwd(), 'public', publicFolderRelative);
+            const files = fs.readdirSync(dirPath).filter((f) => /\.(jpe?g|png|webp|avif|gif)$/i.test(f));
+
+            const folderImages = files.map((file) => ({
+                src: `/${publicFolderRelative}/${file}`,
+                alt: file,
+                description: ''
+            }));
+
+            if (folderImages.length > 0) {
+                imagesToRender = folderImages;
+            }
+        } catch (err) {
+            // Could not read folder on server side; fall back to provided images
+        }
+    }
+
     return (
         <section className="bg-carbon w-full py-20">
             <div className="section-container">
@@ -24,27 +49,8 @@ function CaseGallerySection({ title, description, images }: CaseGallerySectionPr
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                    {images.map((image, index) => (
-                        <div key={index} className="group">
-                            <div className="relative overflow-hidden rounded-lg bg-white/5 p-4">
-                                <Image
-                                    src={image.src}
-                                    alt={image.alt}
-                                    width={600}
-                                    height={400}
-                                    className="w-full h-auto object-contain rounded-lg transition-transform duration-300 group-hover:scale-105"
-                                    quality={90}
-                                />
-                            </div>
-                            {image.description && (
-                                <p className="font-league-spartan text-white/80 text-center mt-4">
-                                    {image.description}
-                                </p>
-                            )}
-                        </div>
-                    ))}
-                </div>
+                {/* Render client gallery */}
+                <CaseGalleryClient images={imagesToRender} />
             </div>
         </section>
     );
