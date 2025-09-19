@@ -1,6 +1,4 @@
 import React from 'react';
-// import Footer from '@/components/footer/Footer';
-// import SecondaryHeaderSection from '@/components/SecondaryHeaderSection';
 import CaseHeroSection from '../components/CaseHeroSection';
 import CaseDetailsSection from '../components/CaseDetailsSection';
 import CaseGallerySection from '../components/CaseGallerySection';
@@ -58,17 +56,16 @@ function SigmaconPage() {
                     }
                 ]}
             />
-
             <CaseNavigationSection
                 previousCase={{
-                    href: "/cases/mackenzie",
-                    company: "Universidade Mackenzie",
-                    title: "Plataforma de Estudos para OAB"
+                    href: "/cases/icalvinus",
+                    company: "iCalvinus",
+                    title: "Igreja Presbiteriana do Brasil"
                 }}
                 nextCase={{
-                    href: "/cases/ipi",
-                    company: "IPI - Igreja Presbiteriana Independente",
-                    title: "Plataforma Educacional Personalizada"
+                    href: "/cases/ipiconecta",
+                    company: "IPIConecta",
+                    title: "Igreja Presbiteriana Independente do Brasil"
                 }}
             />
 
