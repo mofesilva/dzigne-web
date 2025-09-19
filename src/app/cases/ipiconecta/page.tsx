@@ -71,14 +71,14 @@ function IPIPage() {
 
             <CaseNavigationSection
                 previousCase={{
-                    href: "/cases/sigmacon",
-                    company: "Sigmacon",
-                    title: "App de Gestão Condominial"
+                    href: "/cases/sigmaapp",
+                    company: "SigmaApp",
+                    title: "Sigmacon"
                 }}
                 nextCase={{
-                    href: "/cases/labormed",
-                    company: "Labormed",
-                    title: "Sistema de Gestão Laboratorial"
+                    href: "/cases/contrata-ja",
+                    company: "Contrata Já",
+                    title: "Contrata Já"
                 }}
             />
 
