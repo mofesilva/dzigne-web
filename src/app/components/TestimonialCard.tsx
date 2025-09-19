@@ -25,6 +25,7 @@ function TestimonialCard({ text, name, position, company, photo }: TestimonialCa
                         alt={`${name} - ${position}`}
                         width={64}
                         height={64}
+                        loading='lazy'
                         className="w-full h-full object-cover"
                     />
                 </div>
