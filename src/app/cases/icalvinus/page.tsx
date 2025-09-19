@@ -35,22 +35,11 @@ function ICalvinusCasePage() {
                 ]}
             />
 
-            {/* <CaseGallerySection
+            <CaseGallerySection
                 title="Funcionalidades Inovadoras"
                 description="Explore as principais funcionalidades que transformaram a gestão condominial e a experiência dos moradores."
-                images={[
-                    {
-                        src: "/assets/images/mockups/oabmack_mockup.png",
-                        alt: "Tela principal do app Sigmacon",
-                        description: "Dashboard principal com acesso rápido a todas as funcionalidades"
-                    },
-                    {
-                        src: "/assets/images/mockups/oabmack_mockup_2.png",
-                        alt: "Sistema de reservas integrado",
-                        description: "Interface intuitiva para reserva de espaços comuns com calendário interativo"
-                    }
-                ]}
-            /> */}
+                imagesFolder="/assets/images/mockups/cases/icalvinus"
+            />
 
             <CaseNavigationSection
                 previousCase={{
