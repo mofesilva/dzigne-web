@@ -36,8 +36,8 @@ function ICalvinusCasePage() {
             />
 
             <CaseGallerySection
-                title="Funcionalidades Inovadoras"
-                description="Explore as principais funcionalidades que transformaram a gestão condominial e a experiência dos moradores."
+                title="Galeria de Imagens"
+                description="Explore a galeria de imagens do projeto."
                 imagesFolder="/assets/images/mockups/cases/icalvinus"
             />
 
