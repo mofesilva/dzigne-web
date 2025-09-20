@@ -1,6 +1,6 @@
 'use client';
 import React from 'react';
-import Image from 'next/image';
+import LazyImage from '@/components/LazyImage';
 
 function TechStackSection() {
     return (
@@ -32,7 +32,7 @@ function TechStackSection() {
                                     <td className="p-6 align-top">
                                         <div className="space-y-3">
                                             <div className="flex items-center">
-                                                <Image src="/assets/icons/nextjs-icon-svgrepo-com.svg" alt="Next.js" width={20} height={20} className="opacity-70 mr-3" />
+                                                <LazyImage src="/assets/icons/nextjs-icon-svgrepo-com.svg" alt="Next.js" width={20} height={20} className="opacity-70 mr-3" />
                                                 <span className="font-league-spartan text-carbon text-sm">Next.js</span>
                                             </div>
                                             <div className="flex items-center">
