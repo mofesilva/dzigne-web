@@ -32,7 +32,7 @@ function CaseGallerySection({ title, description, images, imagesFolder }: CaseGa
             if (folderImages.length > 0) {
                 imagesToRender = folderImages;
             }
-        } catch (err) {
+        } catch {
             // Could not read folder on server side; fall back to provided images
         }
     }
