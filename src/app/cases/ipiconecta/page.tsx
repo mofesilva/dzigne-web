@@ -1,5 +1,4 @@
 import React from 'react';
-import Footer from '@/components/footer/Footer';
 import SecondaryHeaderSection from '@/components/SecondaryHeaderSection';
 import CaseHeroSection from '../components/CaseHeroSection';
 import CaseDetailsSection from '../components/CaseDetailsSection';
