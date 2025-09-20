@@ -30,6 +30,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        {/* eslint-disable-next-line @next/next/no-css-tags -- Using local FontAwesome CSS from public assets intentionally */}
         <link rel="stylesheet" href="/fontawesome/css/all.min.css" />
       </head>
       <body
@@ -40,8 +41,8 @@ export default function RootLayout({
           {children}
         </main>
         <FloatingWhatsApp />
+        <Footer />
       </body>
-      <Footer />
     </html>
   );
 }
