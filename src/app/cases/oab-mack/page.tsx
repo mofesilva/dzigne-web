@@ -1,7 +1,7 @@
 import React from 'react';
 import CaseHeroSection from '../components/CaseHeroSection';
 import CaseDetailsSection from '../components/CaseDetailsSection';
-import CaseGallerySection from '../components/CaseGallerySection';
+// CaseGallerySection intentionally unused on this page
 import CaseNavigationSection from '../components/CaseNavigationSection';
 import HeaderSection from '@/app/components/HeaderSection';
 
