@@ -1,12 +1,12 @@
 'use client'
 import React from 'react';
-import Image from 'next/image';
+import LazyImage from '@/components/LazyImage';
 
 function FooterContactSection() {
     return (
         <>
             <section className="flex flex-col items-center md:items-end justify-start h-auto pt-10 pb-0 px-10 md:py-10 md:pr-0 md:pl-0 text-center md:text-right">
-                <Image src='/assets/dzigne-logotype-black.png'
+                <LazyImage src='/assets/dzigne-logotype-black.png'
                     alt="Logotipo Dzign-e"
                     width={100}
                     height={100}
