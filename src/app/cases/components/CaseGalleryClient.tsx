@@ -28,7 +28,7 @@ export default function CaseGalleryClient({ images }: Props) {
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 gap-6">
                 {images.map((image, index) => (
                     <figure key={index} className="group">
-                        <div className="aspect-square w-full overflow-hidden rounded-lg bg-white/5 cursor-pointer" onClick={() => openAt(index)}>
+                        <div className="aspect-square w-full overflow-hidden border border-2 border-eggshell/10 rounded-2xl bg-white/5 hover:bg-green-accent/10 cursor-pointer" onClick={() => openAt(index)}>
                             <div className="w-full h-full p-4 box-border flex items-center justify-center">
                                 <div className="relative w-full h-full transform transition-transform duration-300 group-hover:scale-105">
                                     <Image
