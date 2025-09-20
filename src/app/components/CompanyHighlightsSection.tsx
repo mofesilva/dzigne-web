@@ -1,5 +1,5 @@
 import React from 'react'
-import Image from 'next/image';
+import LazyImage from '@/components/LazyImage';
 
 function CompanyHighlightsSection() {
     return (
@@ -9,9 +9,9 @@ function CompanyHighlightsSection() {
                     <span className="bg-green-accent text-carbon ml-1 px-2 py-1">expertise!</span>
                 </h1>
                 <div className="flex pt-2 lg:pt-0 justify-between md:gap-16 items-center flex-shrink w-full lg:w-auto">
-                    <Image src='/assets/images/logos/labormed.png' alt="Labormed Logo" width={120} height={120} className="h-auto" />
-                    <Image src='/assets/images/logos/arion.png' alt="Arion Logo" width={120} height={120} className="h-auto" />
-                    <Image src='/assets/images/logos/mackenzie.png' alt="Mackenzie Logo" width={120} height={120} className="h-auto" />
+                    <LazyImage src='/assets/images/logos/labormed.png' alt="Labormed Logo" width={120} height={120} className="h-auto" />
+                    <LazyImage src='/assets/images/logos/arion.png' alt="Arion Logo" width={120} height={120} className="h-auto" />
+                    <LazyImage src='/assets/images/logos/mackenzie.png' alt="Mackenzie Logo" width={120} height={120} className="h-auto" />
                 </div>
             </div>
         </section>
