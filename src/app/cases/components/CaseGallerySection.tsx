@@ -38,7 +38,7 @@ function CaseGallerySection({ title, description, images, imagesFolder }: CaseGa
     }
 
     return (
-        <section className="bg-carbon w-full py-20">
+        <section className="bg-carbon w-auto py-20 sm:rounded-4xl m-0 sm:m-2">
             <div className="section-container">
                 <div className="text-center mb-16">
                     <h2 className="font-rajdhani text-4xl lg:text-5xl font-bold text-white mb-6">
