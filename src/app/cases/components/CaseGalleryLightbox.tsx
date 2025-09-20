@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import Image from 'next/image';
+import LazyImage from '@/components/LazyImage';
 
 interface ImageItem {
     src: string;
@@ -183,14 +183,13 @@ export default function CaseGalleryLightbox({ images, startIndex, onClose, onInd
                     <div className="flex-1 flex items-center justify-center w-full" style={{ paddingBottom: '0.5rem' }}>
                         {/* Use an explicit-sized Image to avoid layout issues with fill inside dynamic containers */}
                         <div style={{ maxHeight: 'calc(90dvh - 6rem)', maxWidth: '95vw', width: '95%', height: 'auto' }} className="flex items-center justify-center">
-                            <Image
+                            <LazyImage
                                 src={images[index].src}
                                 alt={images[index].alt ?? ""}
                                 width={1200}
                                 height={800}
                                 style={{ objectFit: 'contain', maxHeight: 'calc(90dvh - 6rem)', maxWidth: '95vw' }}
                                 className="rounded-md shadow-lg lightbox-image"
-                                loading='lazy'
                                 draggable={false}
                             />
                         </div>
@@ -217,7 +216,7 @@ export default function CaseGalleryLightbox({ images, startIndex, onClose, onInd
                             >
                                 <div className="w-12 h-12 relative overflow-hidden bg-transparent flex items-center justify-center">
                                     <div className="w-full h-full flex items-center justify-center">
-                                        <Image src={img.src} alt={img.alt ?? ""} width={96} height={96} style={{ objectFit: 'contain' }} className="max-w-full max-h-full" />
+                                        <LazyImage src={img.src} alt={img.alt ?? ""} width={96} height={96} style={{ objectFit: 'contain' }} className="max-w-full max-h-full" />
                                     </div>
                                 </div>
                             </button>
