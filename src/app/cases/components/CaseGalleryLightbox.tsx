@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from 'next/image';
 
 interface ImageItem {
     src: string;
@@ -19,6 +20,15 @@ export default function CaseGalleryLightbox({ images, startIndex, onClose, onInd
     const [index, setIndex] = React.useState<number>(startIndex ?? 0);
 
     React.useEffect(() => setIndex(startIndex ?? 0), [startIndex]);
+
+    // Touch/swipe refs (must be declared unconditionally)
+    const touchStartX = React.useRef<number | null>(null);
+    const touchStartY = React.useRef<number | null>(null);
+    const touchStartTime = React.useRef<number | null>(null);
+    const touchIgnore = React.useRef<boolean>(false);
+
+    const prev = React.useCallback(() => setIndex((i) => (i - 1 + images.length) % images.length), [images.length]);
+    const next = React.useCallback(() => setIndex((i) => (i + 1) % images.length), [images.length]);
 
     // Scroll lock and keyboard handling
     React.useEffect(() => {
@@ -54,17 +64,17 @@ export default function CaseGalleryLightbox({ images, startIndex, onClose, onInd
         html.style.overflow = "hidden";
 
         // Prevent touchmove globally except when inside the thumbnail strip (.dg-thumb-scroll)
-        const onTouchMove = (e: TouchEvent) => {
+        const docOnTouchMove = (e: TouchEvent) => {
             const tgt = e.target as HTMLElement | null;
             if (tgt && tgt.closest && tgt.closest(".dg-thumb-scroll")) return;
             e.preventDefault();
         };
 
-        document.addEventListener("touchmove", onTouchMove as EventListener, { passive: false } as any);
+        document.addEventListener("touchmove", docOnTouchMove, { passive: false });
 
         return () => {
             document.removeEventListener("keydown", onKey);
-            document.removeEventListener("touchmove", onTouchMove as EventListener);
+            document.removeEventListener("touchmove", docOnTouchMove);
 
             // restore body/html styles
             body.style.position = prevBody.position;
@@ -78,21 +88,13 @@ export default function CaseGalleryLightbox({ images, startIndex, onClose, onInd
             // restore scroll position
             window.scrollTo(0, scrollY);
         };
-    }, [index, onClose]);
+    }, [next, prev, onClose]);
 
     React.useEffect(() => onIndexChange?.(index), [index, onIndexChange]);
-
-    const prev = () => setIndex((i) => (i - 1 + images.length) % images.length);
-    const next = () => setIndex((i) => (i + 1) % images.length);
 
     if (!images || images.length === 0) return null;
 
     // Touch/swipe handling for mobile
-    const touchStartX = React.useRef<number | null>(null);
-    const touchStartY = React.useRef<number | null>(null);
-    const touchStartTime = React.useRef<number | null>(null);
-    const touchIgnore = React.useRef<boolean>(false);
-
     const onTouchStart = (e: React.TouchEvent) => {
         const t = e.touches[0];
         touchStartX.current = t.clientX;
@@ -102,7 +104,7 @@ export default function CaseGalleryLightbox({ images, startIndex, onClose, onInd
         touchIgnore.current = !!(tgt && tgt.closest && (tgt.closest("button") || tgt.closest(".dg-thumb-scroll")));
     };
 
-    const onTouchMove = (e: React.TouchEvent) => {
+    const onTouchMove = () => {
         // noop - we evaluate on touchend
     };
 
@@ -154,38 +156,44 @@ export default function CaseGalleryLightbox({ images, startIndex, onClose, onInd
         >
             <button
                 aria-label="Fechar galeria"
-                className="absolute left-4 top-4 w-10 h-10 flex items-center justify-center rounded-md border border-white/20 text-white bg-black/20 hover:bg-black/10 cursor-pointer"
+                className="absolute left-4 top-4 w-10 h-10 flex items-center justify-center rounded-md border border-white/20 text-white bg-black/20 hover:bg-green-accent/20 cursor-pointer"
                 onClick={onClose}
             >
-                ✕
+                <i className="fa-solid fa-xmark" aria-hidden="true"></i>
             </button>
 
             <button
                 aria-label="Imagem anterior"
-                className="hidden md:flex absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 flex items-center justify-center rounded-md border border-white/20 text-white bg-black/30 hover:bg-black/20 cursor-pointer"
+                className="hidden md:flex absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 flex items-center justify-center rounded-md border border-white/20 text-white bg-black/30 hover:bg-green-accent/20 cursor-pointer"
                 onClick={prev}
             >
-                ‹
+                <i className="fa-solid fa-chevron-left" aria-hidden="true"></i>
             </button>
 
             <button
                 aria-label="Próxima imagem"
-                className="hidden md:flex absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 flex items-center justify-center rounded-md border border-white/20 text-white bg-black/30 hover:bg-black/20 cursor-pointer"
+                className="hidden md:flex absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 flex items-center justify-center rounded-md border border-white/20 text-white bg-black/30 hover:bg-green-accent/20 cursor-pointer"
                 onClick={next}
             >
-                ›
+                <i className="fa-solid fa-chevron-right" aria-hidden="true"></i>
             </button>
 
             <div className="w-full flex items-center justify-center box-border">
                 <div className="lightbox-inner flex flex-col items-center w-full max-w-[95vw]" style={{ maxHeight: "90dvh", paddingBottom: '4.5rem' }}>
                     <div className="flex-1 flex items-center justify-center w-full" style={{ paddingBottom: '0.5rem' }}>
-                        <img
-                            src={images[index].src}
-                            alt={images[index].alt ?? ""}
-                            className="w-auto h-auto object-contain rounded-md shadow-lg lightbox-image"
-                            style={{ maxHeight: "calc(90dvh - 6rem)", maxWidth: "95vw" } as React.CSSProperties}
-                            draggable={false}
-                        />
+                        {/* Use an explicit-sized Image to avoid layout issues with fill inside dynamic containers */}
+                        <div style={{ maxHeight: 'calc(90dvh - 6rem)', maxWidth: '95vw', width: '95%', height: 'auto' }} className="flex items-center justify-center">
+                            <Image
+                                src={images[index].src}
+                                alt={images[index].alt ?? ""}
+                                width={1200}
+                                height={800}
+                                style={{ objectFit: 'contain', maxHeight: 'calc(90dvh - 6rem)', maxWidth: '95vw' }}
+                                className="rounded-md shadow-lg lightbox-image"
+                                loading='lazy'
+                                draggable={false}
+                            />
+                        </div>
                     </div>
 
                     <style jsx global>{`
@@ -204,11 +212,13 @@ export default function CaseGalleryLightbox({ images, startIndex, onClose, onInd
                             <button
                                 key={i}
                                 onClick={() => setIndex(i)}
-                                className={`p-0.5 ${i === index ? "border-2 border-green-accent bg-green-accent/10" : "bg-white/10"} rounded-sm`}
+                                className={`p-0.5 ${i === index ? "border-2 border-green-accent bg-green-accent/10" : "bg-white/10"} hover:bg-green-accent/20 rounded-sm cursor-pointer`}
                                 aria-label={`Ir para imagem ${i + 1}`}
                             >
                                 <div className="w-12 h-12 relative overflow-hidden bg-transparent flex items-center justify-center">
-                                    <img src={img.src} alt={img.alt ?? ""} className="max-w-full max-h-full object-contain" />
+                                    <div className="w-full h-full flex items-center justify-center">
+                                        <Image src={img.src} alt={img.alt ?? ""} width={96} height={96} style={{ objectFit: 'contain' }} className="max-w-full max-h-full" />
+                                    </div>
                                 </div>
                             </button>
                         ))}
