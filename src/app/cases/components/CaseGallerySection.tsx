@@ -6,16 +6,11 @@ import CaseGalleryClient from './CaseGalleryClient';
 interface CaseGallerySectionProps {
     title: string;
     description: string;
-    images?: {
-        src: string;
-        alt?: string;
-        description?: string;
-    }[];
     imagesFolder?: string;
 }
 
-function CaseGallerySection({ title, description, images, imagesFolder }: CaseGallerySectionProps) {
-    let imagesToRender: CaseGallerySectionProps['images'] = images ?? [];
+function CaseGallerySection({ title, description, imagesFolder }: CaseGallerySectionProps) {
+    let imagesToRender: { src: string; alt?: string; description?: string }[] = [];
 
     if (imagesFolder) {
         try {
