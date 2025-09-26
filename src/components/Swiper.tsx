@@ -9,18 +9,25 @@ type CarouselProps = {
     options?: SwiperOptions
     className?: string
     style?: React.CSSProperties
+    onSlideChange?: (swiper: any) => void
+    onSwiper?: (swiper: any) => void
 }
 
-export default function Carousel({ slides, options, className, style }: CarouselProps) {
+export default function Carousel({ slides, options, className, style, onSlideChange, onSwiper }: CarouselProps) {
+    const enableNavigation = !!(options && options.navigation);
+    const enablePagination = !!(options && options.pagination);
+
     return (
         <Swiper
             modules={[Navigation, Pagination, Autoplay]}
-            navigation
-            pagination={{ clickable: true }}
-            autoplay={{ delay: 8000 }}
+            navigation={enableNavigation}
+            pagination={enablePagination ? { ...(options!.pagination as any) } : false}
+            autoplay={options?.autoplay ?? { delay: 8000 }}
             style={style}
-            loop
-            {...options}
+            loop={options?.loop ?? true}
+            onSlideChange={onSlideChange}
+            onSwiper={onSwiper}
+            {...(options ?? {})}
             className={className}
         >
             {slides.map((node, i) => (
