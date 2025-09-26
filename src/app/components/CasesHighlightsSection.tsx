@@ -1,3 +1,4 @@
+'use client';
 import Carousel from '@/components/Swiper';
 import React from 'react'
 import CaseSlide from './CaseSlide';
@@ -16,7 +17,9 @@ function CasesHighlightsSection() {
                         '--swiper-navigation-size': '24px',
                     } as React.CSSProperties}
                     options={{
-                        spaceBetween: 32  // Gap de 24px entre os slides
+                        spaceBetween: 32,
+                        pagination: { clickable: true },
+                        autoplay: { delay: 5000, disableOnInteraction: false, pauseOnMouseEnter: true } // Gap de 24px entre os slides
                     }}
                     slides={[
                         <CaseSlide key={1}
