@@ -42,30 +42,9 @@ function IPIPage() {
             />
 
             <CaseGallerySection
-                title="Interface e Experiência do Usuário"
-                description="Conheça as telas e funcionalidades que criamos para proporcionar uma experiência de aprendizado única e envolvente."
-                images={[
-                    {
-                        src: "/assets/images/mockups/iCalvinus_mockup.png",
-                        alt: "Tela principal do aplicativo iCalvinus",
-                        description: "Dashboard do estudante com cursos em andamento e progresso de estudos"
-                    },
-                    {
-                        src: "/assets/images/mockups/iCalvinus_mockup_2.png",
-                        alt: "Interface de cursos e lições",
-                        description: "Tela de curso com vídeo-aulas, materiais complementares e avaliações"
-                    },
-                    {
-                        src: "/assets/images/mockups/iCalvinus_mockup_3.png",
-                        alt: "Sistema de avaliações interativo",
-                        description: "Interface de avaliações com diferentes tipos de questões e feedback imediato"
-                    },
-                    {
-                        src: "/assets/images/mockups/iCalvinus_mockup_4.png",
-                        alt: "Painel administrativo para professores",
-                        description: "Dashboard do professor com gestão de conteúdo e acompanhamento de alunos"
-                    }
-                ]}
+                title="Galeria de Imagens"
+                description="Explore a galeria de imagens do projeto."
+                imagesFolder="/assets/images/mockups/cases/ipiconecta"
             />
 
             <CaseNavigationSection
