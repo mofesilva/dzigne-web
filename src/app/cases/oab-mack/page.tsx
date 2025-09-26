@@ -1,7 +1,7 @@
 import React from 'react';
 import CaseHeroSection from '../components/CaseHeroSection';
 import CaseDetailsSection from '../components/CaseDetailsSection';
-// CaseGallerySection intentionally unused on this page
+import CaseGallerySection from '../components/CaseGallerySection';
 import CaseNavigationSection from '../components/CaseNavigationSection';
 import HeaderSection from '@/app/components/HeaderSection';
 
@@ -36,22 +36,11 @@ function MackenziePage() {
             // ]}
             />
 
-            {/* <CaseGallerySection
-                title="Interface e Funcionalidades"
-                description="Conheça as principais telas e funcionalidades que desenvolvemos para transformar a experiência de estudos dos alunos da Mackenzie."
-                images={[
-                    {
-                        src: "/assets/images/mockups/oabmack_mockup.png",
-                        alt: "Tela principal do aplicativo OAB Mackenzie",
-                        description: "Tela inicial com simulados e estatísticas de desempenho"
-                    },
-                    {
-                        src: "/assets/images/mockups/oabmack_mockup_2.png",
-                        alt: "Simulado em andamento no app",
-                        description: "Interface de realização de simulados com cronômetro e marcação de questões"
-                    }
-                ]}
-            /> */}
+            <CaseGallerySection
+                title="Galeria de Imagens"
+                description="Explore a galeria de imagens do projeto."
+                imagesFolder="/assets/images/mockups/cases/oab-mack"
+            />
 
             <CaseNavigationSection
                 nextCase={{
