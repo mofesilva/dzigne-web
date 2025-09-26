@@ -4,11 +4,12 @@ import AboutMissionSection from "./components/AboutMissionSection";
 import AboutValuesSection from "./components/AboutValuesSection";
 import AboutTeamSection from "./components/AboutTeamSection";
 import SecondaryHeaderSection from "../../components/SecondaryHeaderSection";
+import HeaderSection from "../components/HeaderSection";
 
 const Page = () => {
   return (
     <main className="flex flex-col">
-      <SecondaryHeaderSection content={<AboutHeroSection />} />
+      <HeaderSection content={<AboutHeroSection />} />
       <AboutMissionSection />
       <AboutValuesSection />
       <AboutTeamSection />
