@@ -3,7 +3,6 @@ import AboutHeroSection from "./components/AboutHeroSection";
 import AboutMissionSection from "./components/AboutMissionSection";
 import AboutValuesSection from "./components/AboutValuesSection";
 import AboutTeamSection from "./components/AboutTeamSection";
-import SecondaryHeaderSection from "../../components/SecondaryHeaderSection";
 import HeaderSection from "../components/HeaderSection";
 
 const Page = () => {
