@@ -6,30 +6,28 @@ import CaseGalleryClient from './CaseGalleryClient';
 interface CaseGallerySectionProps {
     title: string;
     description: string;
-    imagesFolder?: string;
+    imagesFolder: string;
 }
 
 function CaseGallerySection({ title, description, imagesFolder }: CaseGallerySectionProps) {
     let imagesToRender: { src: string; alt?: string; description?: string }[] = [];
 
-    if (imagesFolder) {
-        try {
-            const publicFolderRelative = imagesFolder.replace(/^\//, '').replace(/\/$/, '');
-            const dirPath = path.join(process.cwd(), 'public', publicFolderRelative);
-            const files = fs.readdirSync(dirPath).filter((f) => /\.(jpe?g|png|webp|avif|gif)$/i.test(f));
+    try {
+        const publicFolderRelative = imagesFolder.replace(/^\//, '').replace(/\/$/, '');
+        const dirPath = path.join(process.cwd(), 'public', publicFolderRelative);
+        const files = fs.readdirSync(dirPath).filter((f) => /\.(jpe?g|png|webp|avif|gif)$/i.test(f));
 
-            const folderImages = files.map((file) => ({
-                src: `/${publicFolderRelative}/${file}`,
-                alt: file,
-                description: ''
-            }));
+        const folderImages = files.map((file) => ({
+            src: `/${publicFolderRelative}/${file}`,
+            alt: file,
+            description: ''
+        }));
 
-            if (folderImages.length > 0) {
-                imagesToRender = folderImages;
-            }
-        } catch {
-            // Could not read folder on server side; fall back to provided images
+        if (folderImages.length > 0) {
+            imagesToRender = folderImages;
         }
+    } catch {
+        // Could not read folder on server side; fall back to empty array
     }
 
     return (
