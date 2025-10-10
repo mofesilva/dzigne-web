@@ -5,12 +5,14 @@ import CaseGallerySection from '../components/CaseGallerySection';
 import CaseNavigationSection from '../components/CaseNavigationSection';
 import HeaderSection from '@/app/components/HeaderSection';
 
+// METADATA: Define automaticamente o <title> e <meta description> da página
+// Usado para SEO, compartilhamento em redes sociais e título da aba do navegador
 export const metadata = {
     title: "Case Sigmacon - App de Gestão Condominial | Dzign-e",
     description: "Como desenvolvemos um aplicativo revolucionário para gestão condominial integrando IoT, reservas e segurança"
 };
 
-function SigmaconPage() {
+function SigmaappPage() {
     return (
         <main className="flex flex-col">
             <HeaderSection
@@ -28,7 +30,7 @@ function SigmaconPage() {
                 duration="8 meses"
                 team="2 desenvolvedores"
                 technologies={["Flutter", "Firebase", "Node.js", "MongoDB", "AWS IoT", "WebRTC", "TypeScript"]}
-                challenge="Os condomínios enfrentavam dificuldades para gerenciar reservas de espaços comuns, controlar acessos, monitorar segurança e manter comunicação eficiente entre moradores e administração. Era necessária uma solução integrada que centralizasse todas essas funcionalidades em uma plataforma móvel intuitiva."
+                challenge="O CEO da Sigmacon identificou uma lacuna no mercado de segurnça condominial, um aplicativo que intetgrasse enfrentavam dificuldades para gerenciar reservas de espaços comuns, controlar acessos, monitorar segurança e manter comunicação eficiente entre moradores e administração. Era necessária uma solução integrada que centralizasse todas essas funcionalidades em uma plataforma móvel intuitiva."
                 solution="Desenvolvemos um aplicativo móvel completo que permite aos moradores reservar espaços comuns, visualizar câmeras de segurança, autorizar visitantes, receber comunicados da administração e acessar serviços do condomínio. Para administradores, criamos um painel de gestão com controle total das funcionalidades, relatórios e monitoramento em tempo real."
             // results={[
             //     "95% de redução no tempo de reserva de espaços",
@@ -62,4 +64,4 @@ function SigmaconPage() {
     );
 }
 
-export default SigmaconPage;
+export default SigmaappPage;
