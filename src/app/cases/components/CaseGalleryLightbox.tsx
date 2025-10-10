@@ -3,6 +3,7 @@
 import React from "react";
 import LazyImage from '@/components/LazyImage';
 import Carousel from '@/components/Swiper';
+import type { Swiper as SwiperClass } from 'swiper/types';
 
 interface ImageItem {
     src: string;
@@ -19,7 +20,7 @@ interface Props {
 
 export default function CaseGalleryLightbox({ images, startIndex, onClose, onIndexChange }: Props) {
     const [index, setIndex] = React.useState<number>(startIndex ?? 0);
-    const swiperRef = React.useRef<any | null>(null);
+    const swiperRef = React.useRef<SwiperClass | null>(null);
 
     React.useEffect(() => setIndex(startIndex ?? 0), [startIndex]);
 
@@ -155,11 +156,11 @@ export default function CaseGalleryLightbox({ images, startIndex, onClose, onInd
                             }}
                             // When looping is enabled Swiper exposes `realIndex` which maps to the
                             // original slides array index. Use that to keep our thumbnail index in sync.
-                            onSlideChange={(s: any) => {
+                            onSlideChange={(s: SwiperClass) => {
                                 const real = typeof s.realIndex === 'number' ? s.realIndex : s.activeIndex % images.length;
                                 setIndex(real);
                             }}
-                            onSwiper={(s: any) => (swiperRef.current = s)}
+                            onSwiper={(s: SwiperClass) => (swiperRef.current = s)}
                             slides={slides}
                         />
                     </div>
@@ -188,9 +189,9 @@ export default function CaseGalleryLightbox({ images, startIndex, onClose, onInd
                                     if (swiperRef.current) {
                                         const s = swiperRef.current;
                                         if (typeof s.slideToLoop === 'function') {
-                                            try { s.slideToLoop(i); } catch (err) { s.slideTo(i); }
+                                            try { s.slideToLoop(i); } catch { s.slideTo(i); }
                                         } else if (typeof s.slideTo === 'function') {
-                                            try { s.slideTo(i); } catch (err) { setIndex(i); }
+                                            try { s.slideTo(i); } catch { setIndex(i); }
                                         } else {
                                             setIndex(i);
                                         }
