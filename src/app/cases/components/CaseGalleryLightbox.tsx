@@ -2,6 +2,8 @@
 
 import React from "react";
 import LazyImage from '@/components/LazyImage';
+import Carousel from '@/components/Swiper';
+import type { Swiper as SwiperClass } from 'swiper/types';
 
 interface ImageItem {
     src: string;
@@ -18,24 +20,16 @@ interface Props {
 
 export default function CaseGalleryLightbox({ images, startIndex, onClose, onIndexChange }: Props) {
     const [index, setIndex] = React.useState<number>(startIndex ?? 0);
+    const swiperRef = React.useRef<SwiperClass | null>(null);
 
     React.useEffect(() => setIndex(startIndex ?? 0), [startIndex]);
 
-    // Touch/swipe refs (must be declared unconditionally)
-    const touchStartX = React.useRef<number | null>(null);
-    const touchStartY = React.useRef<number | null>(null);
-    const touchStartTime = React.useRef<number | null>(null);
-    const touchIgnore = React.useRef<boolean>(false);
+    React.useEffect(() => onIndexChange?.(index), [index, onIndexChange]);
 
-    const prev = React.useCallback(() => setIndex((i) => (i - 1 + images.length) % images.length), [images.length]);
-    const next = React.useCallback(() => setIndex((i) => (i + 1) % images.length), [images.length]);
-
-    // Scroll lock and keyboard handling
+    // Scroll lock and keyboard handling (kept from previous implementation)
     React.useEffect(() => {
         const onKey = (e: KeyboardEvent) => {
             if (e.key === "Escape") onClose();
-            if (e.key === "ArrowRight") next();
-            if (e.key === "ArrowLeft") prev();
         };
 
         document.addEventListener("keydown", onKey);
@@ -88,70 +82,36 @@ export default function CaseGalleryLightbox({ images, startIndex, onClose, onInd
             // restore scroll position
             window.scrollTo(0, scrollY);
         };
-    }, [next, prev, onClose]);
-
-    React.useEffect(() => onIndexChange?.(index), [index, onIndexChange]);
+    }, [onClose]);
 
     if (!images || images.length === 0) return null;
 
-    // Touch/swipe handling for mobile
-    const onTouchStart = (e: React.TouchEvent) => {
-        const t = e.touches[0];
-        touchStartX.current = t.clientX;
-        touchStartY.current = t.clientY;
-        touchStartTime.current = Date.now();
-        const tgt = e.target as HTMLElement | null;
-        touchIgnore.current = !!(tgt && tgt.closest && (tgt.closest("button") || tgt.closest(".dg-thumb-scroll")));
-    };
-
-    const onTouchMove = () => {
-        // noop - we evaluate on touchend
-    };
-
-    const onTouchEnd = (e: React.TouchEvent) => {
-        if (touchIgnore.current) {
-            touchStartX.current = null;
-            touchStartY.current = null;
-            touchStartTime.current = null;
-            touchIgnore.current = false;
-            return;
-        }
-
-        const touch = (e.changedTouches && e.changedTouches[0]) || null;
-        if (!touch || touchStartX.current === null || touchStartY.current === null || touchStartTime.current === null) return;
-        const dx = touch.clientX - touchStartX.current;
-        const dy = touch.clientY - touchStartY.current;
-
-        const absDx = Math.abs(dx);
-        const absDy = Math.abs(dy);
-
-        const THRESHOLD = 50;
-        if (absDx > THRESHOLD && absDx > absDy * 1.5) {
-            if (dx < 0) next();
-            else prev();
-        }
-
-        touchStartX.current = null;
-        touchStartY.current = null;
-        touchStartTime.current = null;
-        touchIgnore.current = false;
-    };
+    const slides = images.map((img, i) => (
+        <div key={i} className="flex items-center justify-center" style={{ maxHeight: 'calc(90dvh - 6rem)' }}>
+            <div style={{ maxHeight: 'calc(90dvh - 6rem)', maxWidth: '95vw', width: '100%', height: 'auto' }} className="flex items-center justify-center">
+                <LazyImage
+                    src={img.src}
+                    alt={img.alt ?? ""}
+                    width={1200}
+                    height={800}
+                    style={{ objectFit: 'contain', maxHeight: 'calc(90dvh - 6rem)', maxWidth: '95vw' }}
+                    className="rounded-md shadow-lg lightbox-image"
+                    draggable={false}
+                />
+            </div>
+        </div>
+    ));
 
     const onOverlayClick = (e: React.MouseEvent) => {
-        const target = e.target as HTMLElement | null;
-        if (!target) return;
-        if (target.closest("button")) return;
-        if (target.closest(".lightbox-image")) return;
+        // only close when clicking directly on the overlay (not its children)
+        if (e.target !== e.currentTarget) return;
         onClose();
     };
 
     return (
         <div
-            onTouchStart={onTouchStart}
-            onTouchMove={onTouchMove}
-            onTouchEnd={onTouchEnd}
             onClick={onOverlayClick}
-            className="fixed inset-0 z-[1000] flex items-center justify-center bg-black/80 p-4 select-none"
+            className="fixed inset-0 z-[1000] flex items-center justify-center bg-black/80 p-0 md:p-4 select-none"
             style={{ height: "100dvh", overflow: "hidden", overscrollBehavior: "contain", touchAction: "manipulation" } as React.CSSProperties}
         >
             <button
@@ -162,42 +122,56 @@ export default function CaseGalleryLightbox({ images, startIndex, onClose, onInd
                 <i className="fa-solid fa-xmark" aria-hidden="true"></i>
             </button>
 
+            {/* Prev/Next buttons moved to overlay level so horizontal offset matches close button */}
             <button
                 aria-label="Imagem anterior"
-                className="hidden md:flex absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 flex items-center justify-center rounded-md border border-white/20 text-white bg-black/30 hover:bg-green-accent/20 cursor-pointer"
-                onClick={prev}
+                className="lightbox-prev hidden md:flex absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center rounded-md border border-white/20 text-white bg-black/20 hover:bg-green-accent/20 cursor-pointer z-[1010]"
             >
                 <i className="fa-solid fa-chevron-left" aria-hidden="true"></i>
             </button>
 
             <button
                 aria-label="Próxima imagem"
-                className="hidden md:flex absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 flex items-center justify-center rounded-md border border-white/20 text-white bg-black/30 hover:bg-green-accent/20 cursor-pointer"
-                onClick={next}
+                className="lightbox-next hidden md:flex absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center rounded-md border border-white/20 text-white bg-black/20 hover:bg-green-accent/20 cursor-pointer z-[1010]"
             >
                 <i className="fa-solid fa-chevron-right" aria-hidden="true"></i>
             </button>
 
             <div className="w-full flex items-center justify-center box-border">
                 <div className="lightbox-inner flex flex-col items-center w-full max-w-[95vw]" style={{ maxHeight: "90dvh", paddingBottom: '4.5rem' }}>
-                    <div className="flex-1 flex items-center justify-center w-full" style={{ paddingBottom: '0.5rem' }}>
-                        {/* Use an explicit-sized Image to avoid layout issues with fill inside dynamic containers */}
-                        <div style={{ maxHeight: 'calc(90dvh - 6rem)', maxWidth: '95vw', width: '95%', height: 'auto' }} className="flex items-center justify-center">
-                            <LazyImage
-                                src={images[index].src}
-                                alt={images[index].alt ?? ""}
-                                width={1200}
-                                height={800}
-                                style={{ objectFit: 'contain', maxHeight: 'calc(90dvh - 6rem)', maxWidth: '95vw' }}
-                                className="rounded-md shadow-lg lightbox-image"
-                                draggable={false}
-                            />
-                        </div>
+                    <div className="flex-1 relative flex items-center justify-center w-full" style={{ paddingBottom: '0.5rem' }}>
+                        <Carousel
+                            className="case-lightbox-swiper w-full"
+                            style={{ paddingLeft: 0, paddingRight: 0 }}
+                            options={{
+                                slidesPerView: 1,
+                                centeredSlides: true,
+                                spaceBetween: 0,
+                                autoplay: false,
+                                // ensure initial slide respects the provided startIndex
+                                initialSlide: startIndex ?? index,
+                                navigation: { nextEl: '.lightbox-next', prevEl: '.lightbox-prev' },
+                                pagination: false,
+                                loop: true,
+                            }}
+                            // When looping is enabled Swiper exposes `realIndex` which maps to the
+                            // original slides array index. Use that to keep our thumbnail index in sync.
+                            onSlideChange={(s: SwiperClass) => {
+                                const real = typeof s.realIndex === 'number' ? s.realIndex : s.activeIndex % images.length;
+                                setIndex(real);
+                            }}
+                            onSwiper={(s: SwiperClass) => (swiperRef.current = s)}
+                            slides={slides}
+                        />
                     </div>
 
                     <style jsx global>{`
                         .dg-thumb-scroll { -ms-overflow-style: none; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
                         .dg-thumb-scroll::-webkit-scrollbar { display: none; width: 0; height: 0; }
+                        /* Ensure slides are always centered and images contained */
+                        .case-lightbox-swiper .swiper-wrapper { align-items: center; }
+                        .case-lightbox-swiper .swiper-slide { display: flex; align-items: center; justify-content: center; }
+                        .case-lightbox-swiper .lightbox-image, .case-lightbox-swiper img { object-fit: contain !important; max-width: 95vw; max-height: calc(90dvh - 6rem); }
                     `}</style>
                 </div>
             </div>
@@ -210,14 +184,27 @@ export default function CaseGalleryLightbox({ images, startIndex, onClose, onInd
                         {images.map((img, i) => (
                             <button
                                 key={i}
-                                onClick={() => setIndex(i)}
+                                onClick={() => {
+                                    // If swiper is in loop mode use slideToLoop (keeps correct duplicated-slide handling)
+                                    if (swiperRef.current) {
+                                        const s = swiperRef.current;
+                                        if (typeof s.slideToLoop === 'function') {
+                                            try { s.slideToLoop(i); } catch { s.slideTo(i); }
+                                        } else if (typeof s.slideTo === 'function') {
+                                            try { s.slideTo(i); } catch { setIndex(i); }
+                                        } else {
+                                            setIndex(i);
+                                        }
+                                    } else {
+                                        setIndex(i);
+                                    }
+                                }}
                                 className={`p-0.5 ${i === index ? "border-2 border-green-accent bg-green-accent/10" : "bg-white/10"} hover:bg-green-accent/20 rounded-sm cursor-pointer`}
                                 aria-label={`Ir para imagem ${i + 1}`}
                             >
-                                <div className="w-12 h-12 relative overflow-hidden bg-transparent flex items-center justify-center">
-                                    <div className="w-full h-full flex items-center justify-center">
-                                        <LazyImage src={img.src} alt={img.alt ?? ""} width={96} height={96} style={{ objectFit: 'contain' }} className="max-w-full max-h-full" />
-                                    </div>
+                                {/* thumbnail: use LazyImage wrapper with fill so the image stays contained */}
+                                <div className="w-12 h-12 relative overflow-hidden bg-transparent">
+                                    <LazyImage wrapperClassName="w-full h-full relative" src={img.src} alt={img.alt ?? ""} className="object-contain" fill />
                                 </div>
                             </button>
                         ))}

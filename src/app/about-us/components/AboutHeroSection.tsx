@@ -2,9 +2,9 @@ import React from 'react';
 
 function AboutHeroSection() {
     return (
-        <div className="max-w-4xl mx-auto text-center py-16">
-            <h1 className='text-5xl 2xl:text-6xl font-rajdhani font-bold text-white mb-6 leading-tight'>
-                Conheça a <br />
+        <div className="max-w-4xl mx-auto text-center align-center justify-center self-center pb-16">
+            <h1 className='inline-flex flex-wrap justify-center items-center text-4xl 2xl:text-5xl font-rajdhani font-bold text-white mb-6 gap-4'>
+                <span>Conheça a</span>
                 <span className="text-green-accent">Dzign-e</span>
             </h1>
 

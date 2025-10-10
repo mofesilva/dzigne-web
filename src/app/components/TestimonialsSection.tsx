@@ -122,19 +122,24 @@ function TestimonialsSection() {
                             slides={slides}
                             options={{
                                 slidesPerView: 1,
+                                slidesPerGroup: 1,
                                 spaceBetween: 30,
+                                pagination: { clickable: true, type: 'bullets' },
                                 autoplay: {
                                     delay: 3000,
                                     disableOnInteraction: false,
+                                    pauseOnMouseEnter: true
                                 },
-                                loop: false,
+                                loop: true,
                                 breakpoints: {
                                     768: {
                                         slidesPerView: 2,
+                                        slidesPerGroup: 1,
                                         spaceBetween: 30,
                                     },
                                     1024: {
                                         slidesPerView: 3,
+                                        slidesPerGroup: 1,
                                         spaceBetween: 30,
                                     }
                                 }
