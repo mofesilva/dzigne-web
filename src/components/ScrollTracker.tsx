@@ -1,21 +1,27 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef } from 'react';
 
 export default function ScrollTracker() {
-    const [progress, setProgress] = useState(0);
+    const fillRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
-        const handleScroll = () => {
+        let rafId: number;
+
+        function update() {
             const scrollTop = window.scrollY;
             const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-            const scrollPercent = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
-            setProgress(Math.min(scrollPercent, 100));
-        };
+            const pct = docHeight > 0 ? Math.min((scrollTop / docHeight) * 100, 100) : 0;
 
-        window.addEventListener('scroll', handleScroll, { passive: true });
-        handleScroll();
-        return () => window.removeEventListener('scroll', handleScroll);
+            if (fillRef.current) {
+                fillRef.current.style.height = `${pct}%`;
+            }
+
+            rafId = requestAnimationFrame(update);
+        }
+
+        rafId = requestAnimationFrame(update);
+        return () => cancelAnimationFrame(rafId);
     }, []);
 
     return (
@@ -24,8 +30,9 @@ export default function ScrollTracker() {
             <div className="relative w-[3px] h-[120px] rounded-full bg-white/10">
                 {/* Fill */}
                 <div
-                    className="absolute top-0 left-0 w-full rounded-full bg-green-accent transition-all duration-150 ease-out"
-                    style={{ height: `${progress}%` }}
+                    ref={fillRef}
+                    className="absolute top-0 left-0 w-full rounded-full bg-green-accent"
+                    style={{ height: '0%' }}
                 />
             </div>
         </div>
