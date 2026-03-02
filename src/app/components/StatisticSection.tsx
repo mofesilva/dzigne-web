@@ -1,5 +1,6 @@
 'use client';
 import React, { useState, useEffect, useRef } from 'react'
+import { Stopwatch, Code, UserId, Compass } from '@solar-icons/react/ssr';
 
 function StatisticSection() {
     const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -27,28 +28,28 @@ function StatisticSection() {
             <div className="section-container">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                     <StatisticCard
-                        icon="fa-solid fa-business-time"
+                        icon={<Stopwatch weight="Bold" size={36} />}
                         title="+ de 15 anos"
                         description="transformando ideias em produtos digitais"
                         globalMousePosition={mousePosition}
                         isMouseInSection={isMouseInSection}
                     />
                     <StatisticCard
-                        icon="fa-solid fa-terminal"
+                        icon={<Code weight="Bold" size={36} />}
                         title="+ de 35 anos"
                         description="de experiência com desenvolvimento acumulado"
                         globalMousePosition={mousePosition}
                         isMouseInSection={isMouseInSection}
                     />
                     <StatisticCard
-                        icon="fa-solid fa-id-badge"
+                        icon={<UserId weight="Outline" size={36} />}
                         title="+ de 60 empresas"
                         description="transformadas por nossas soluções!"
                         globalMousePosition={mousePosition}
                         isMouseInSection={isMouseInSection}
                     />
                     <StatisticCard
-                        icon="fa-solid fa-compass"
+                        icon={<Compass weight="Outline" size={36} />}
                         title="+ de 9 segmentos"
                         description="impactados por nossa expertise!"
                         globalMousePosition={mousePosition}
@@ -61,7 +62,7 @@ function StatisticSection() {
 }
 
 interface StatisticCardProps {
-    icon: string;
+    icon: React.ReactNode;
     title: string;
     description: string;
     globalMousePosition: { x: number; y: number };
@@ -142,12 +143,12 @@ function StatisticCard({ icon, title, description, globalMousePosition, isMouseI
                 />
             )}
 
-            <div className="mb-6">
-                <i className={`${icon} text-green-accent text-4xl`}></i>
+            <div className="mb-6 text-green-accent">
+                {icon}
             </div>
-            <h2 className="font-rajdhani text-2xl font-bold text-white mb-4 group-hover:text-green-accent transition-colors cursor-default">
+            <h4 className="font-rajdhani font-bold text-white mb-4 group-hover:text-green-accent transition-colors cursor-default">
                 {title}
-            </h2>
+            </h4>
             <p className="font-league-spartan text-white/70 leading-relaxed cursor-default">
                 {description}
             </p>
