@@ -1,4 +1,5 @@
 import React from "react";
+import BrandIcon from "./BrandIcon";
 
 type Props = {
     phone?: string; // in international format, e.g. +5511999999999
@@ -21,11 +22,10 @@ export default function FloatingWhatsApp({
             className="fixed right-6 bottom-6 z-50 flex items-center gap-3 bg-green-600 hover:bg-green-700 text-white px-3 sm:px-4 py-3 rounded-full shadow-lg ring-2 ring-green-400/30 transition-colors duration-150"
         >
             <span className="flex items-center justify-center w-8 h-8 rounded-full bg-white/10">
-                {/* Font Awesome WhatsApp icon (uses local fontawesome css) */}
-                <i className="fa-brands fa-whatsapp text-white text-lg" aria-hidden />
+                <BrandIcon name="whatsapp" size={20} className="invert" alt="WhatsApp" />
             </span>
 
-            <span className="font-medium text-sm hidden sm:inline">Entrar em contato</span>
+            <span className="font-medium text-small hidden sm:inline">Entrar em contato</span>
         </a>
     );
 }
