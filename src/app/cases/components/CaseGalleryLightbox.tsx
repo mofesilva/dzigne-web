@@ -4,6 +4,7 @@ import React from "react";
 import LazyImage from '@/components/LazyImage';
 import Carousel from '@/components/Swiper';
 import type { Swiper as SwiperClass } from 'swiper/types';
+import { CloseCircle, AltArrowLeft, AltArrowRight } from '@solar-icons/react/ssr';
 
 interface ImageItem {
     src: string;
@@ -119,7 +120,7 @@ export default function CaseGalleryLightbox({ images, startIndex, onClose, onInd
                 className="absolute left-4 top-4 w-10 h-10 flex items-center justify-center rounded-md border border-white/20 text-white bg-black/20 hover:bg-green-accent/20 cursor-pointer"
                 onClick={onClose}
             >
-                <i className="fa-solid fa-xmark" aria-hidden="true"></i>
+                <CloseCircle weight="Outline" size={20} />
             </button>
 
             {/* Prev/Next buttons moved to overlay level so horizontal offset matches close button */}
@@ -127,14 +128,14 @@ export default function CaseGalleryLightbox({ images, startIndex, onClose, onInd
                 aria-label="Imagem anterior"
                 className="lightbox-prev hidden md:flex absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center rounded-md border border-white/20 text-white bg-black/20 hover:bg-green-accent/20 cursor-pointer z-[1010]"
             >
-                <i className="fa-solid fa-chevron-left" aria-hidden="true"></i>
+                <AltArrowLeft weight="Outline" size={20} />
             </button>
 
             <button
                 aria-label="Próxima imagem"
                 className="lightbox-next hidden md:flex absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center rounded-md border border-white/20 text-white bg-black/20 hover:bg-green-accent/20 cursor-pointer z-[1010]"
             >
-                <i className="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                <AltArrowRight weight="Outline" size={20} />
             </button>
 
             <div className="w-full flex items-center justify-center box-border">
