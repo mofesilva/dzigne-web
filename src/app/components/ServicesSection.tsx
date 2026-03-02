@@ -2,6 +2,7 @@
 import React, { useState } from 'react'
 import ServiceListItem from './ServiceListItem'
 import NavigationButton from '../../components/NavigationButton'
+import { Code, UserPlus, Cpu } from '@solar-icons/react/ssr';
 
 function ServicesSection() {
     const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -30,12 +31,12 @@ function ServicesSection() {
                 {/* Header com título e botão */}
                 <div className="flex flex-col lg:flex-row lg:justify-between lg:items-start mb-16 gap-6">
                     <div>
-                        <h1 className="font-rajdhani text-5xl font-bold text-white mb-4">
+                        <h1 className="font-rajdhani font-bold text-white mb-4">
                             Construímos software
                         </h1>
-                        <p className="font-league-spartan text-xl text-white/70 max-w-2xl">
+                        <h5 className="font-league-spartan text-white/70 max-w-2xl">
                             Inteligente, rápido e familiar. A Dzign-e é a melhor forma de desenvolver com eficiência.
-                        </p>
+                        </h5>
                     </div>
                     <NavigationButton
                         href={'/services'}
@@ -46,21 +47,21 @@ function ServicesSection() {
                 {/* Grid de serviços */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     <ServiceListItem
-                        icon="fa-solid fa-code"
+                        icon={<Code weight="Bold" size={36} />}
                         title="Desenvolvimento"
                         description="Projetos desenvolvidos sob medida, com arquitetura robusta e tecnologias modernas para seu negócio."
                         globalMousePosition={mousePosition}
                         isMouseInSection={isMouseInSection}
                     />
                     <ServiceListItem
-                        icon="fa-solid fa-user-plus"
+                        icon={<UserPlus weight="Outline" size={36} />}
                         title="Alocação de Equipes"
                         description="Times especializados sob demanda com os perfis certos para acelerar suas entregas."
                         globalMousePosition={mousePosition}
                         isMouseInSection={isMouseInSection}
                     />
                     <ServiceListItem
-                        icon="fa-solid fa-microchip"
+                        icon={<Cpu weight="Bold" size={36} />}
                         title="Tecnologia Proprietária"
                         description="Soluções inovadoras com nossa tecnologia proprietária para acelerar seu desenvolvimento."
                         globalMousePosition={mousePosition}
