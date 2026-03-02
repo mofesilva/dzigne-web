@@ -1,4 +1,5 @@
 import React from 'react';
+import { Letter } from '@solar-icons/react/ssr';
 
 function PrivacyContentSection() {
     const sections = [
@@ -139,10 +140,10 @@ function PrivacyContentSection() {
             <div className="section-container">
                 <div className="max-w-4xl mx-auto">
                     <div className="mb-12 text-center">
-                        <p className="text-lg font-league-spartan text-gray-600 mb-4">
+                        <h6 className="font-league-spartan text-gray-600 mb-4">
                             Última atualização: Janeiro de 2024
-                        </p>
-                        <p className="text-base font-league-spartan text-gray-700 max-w-3xl mx-auto">
+                        </h6>
+                        <p className="font-league-spartan text-gray-700 max-w-3xl mx-auto">
                             A Dzign-e está comprometida com a proteção da sua privacidade e o tratamento adequado dos seus dados pessoais, em conformidade com a Lei Geral de Proteção de Dados (LGPD).
                         </p>
                     </div>
@@ -150,12 +151,12 @@ function PrivacyContentSection() {
                     <div className="space-y-12">
                         {sections.map((section, index) => (
                             <div key={index} className="border-l-4 border-green-accent pl-6">
-                                <h2 className="text-2xl font-rajdhani font-bold text-carbon mb-4">
+                                <h3 className="font-rajdhani font-bold text-carbon mb-4">
                                     {section.title}
-                                </h2>
+                                </h3>
                                 <div className="space-y-4">
                                     {section.content.map((paragraph, pIndex) => (
-                                        <p key={pIndex} className="text-base font-league-spartan text-gray-700 leading-relaxed">
+                                        <p key={pIndex} className="font-league-spartan text-gray-700 leading-relaxed">
                                             {paragraph}
                                         </p>
                                     ))}
@@ -165,17 +166,17 @@ function PrivacyContentSection() {
                     </div>
 
                     <div className="mt-16 p-8 bg-gray-50 rounded-lg border-l-4 border-green-accent">
-                        <h3 className="text-xl font-rajdhani font-bold text-carbon mb-4">
+                        <h5 className="font-rajdhani font-bold text-carbon mb-4">
                             Tem dúvidas sobre nossa Política de Privacidade?
-                        </h3>
-                        <p className="text-base font-league-spartan text-gray-700 mb-4">
+                        </h5>
+                        <p className="font-league-spartan text-gray-700 mb-4">
                             Entre em contato conosco. Estamos aqui para esclarecer qualquer questão sobre o tratamento dos seus dados pessoais.
                         </p>
-                        <a 
-                            href="mailto:contato@dzign-e.com.br" 
+                        <a
+                            href="mailto:contato@dzign-e.com.br"
                             className="inline-flex items-center px-6 py-3 bg-green-accent text-white font-league-spartan font-semibold rounded-lg hover:bg-green-accent-light transition-colors"
                         >
-                            <i className="fas fa-envelope mr-2"></i>
+                            <Letter weight="Outline" size={18} className="mr-2" />
                             Entrar em Contato
                         </a>
                     </div>
