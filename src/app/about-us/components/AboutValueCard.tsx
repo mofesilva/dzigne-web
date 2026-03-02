@@ -2,7 +2,7 @@
 import React, { useState, useRef, useEffect } from 'react'
 
 interface AboutValueCardProps {
-    icon: string
+    icon: React.ReactNode
     title: string
     description: string
     globalMousePosition: { x: number, y: number }
@@ -84,12 +84,12 @@ function AboutValueCard({ icon, title, description, globalMousePosition, isMouse
                 />
             )}
 
-            <div className="mb-6 text-start">
-                <i className={`${icon} text-green-accent text-4xl`}></i>
+            <div className="mb-6 text-start text-green-accent">
+                {icon}
             </div>
-            <h3 className="font-rajdhani text-2xl font-bold text-white mb-4 group-hover:text-green-accent transition-colors cursor-default text-start">
+            <h4 className="font-rajdhani font-bold text-white mb-4 group-hover:text-green-accent transition-colors cursor-default text-start">
                 {title}
-            </h3>
+            </h4>
             <p className="font-league-spartan text-white/70 leading-relaxed cursor-default text-start">
                 {description}
             </p>
