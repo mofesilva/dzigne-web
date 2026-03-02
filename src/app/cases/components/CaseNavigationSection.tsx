@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import NavigationButton from '@/components/NavigationButton';
+import { AltArrowLeft, AltArrowRight } from '@solar-icons/react/ssr';
 
 interface NavigationCase {
     href: string;
@@ -23,13 +24,13 @@ function CaseNavigationSection({ previousCase, nextCase }: CaseNavigationSection
                         {previousCase ? (
                             <Link href={previousCase.href} className="group block">
                                 <div className="text-left">
-                                    <p className="font-league-spartan text-sm text-carbon/60 mb-2">
-                                        <i className="fa-solid fa-arrow-left mr-2"></i>
+                                    <p className="font-league-spartan text-small text-carbon/60 mb-2 flex items-center">
+                                        <AltArrowLeft weight="Bold" size={14} className="mr-2" />
                                         Case Anterior
                                     </p>
-                                    <h3 className="font-rajdhani text-xl font-semibold text-carbon group-hover:text-green-accent transition-colors">
+                                    <h5 className="font-rajdhani font-semibold text-carbon group-hover:text-green-accent transition-colors">
                                         {previousCase.company}
-                                    </h3>
+                                    </h5>
                                     <p className="font-league-spartan text-carbon/80">
                                         {previousCase.title}
                                     </p>
@@ -54,13 +55,13 @@ function CaseNavigationSection({ previousCase, nextCase }: CaseNavigationSection
                         {nextCase ? (
                             <Link href={nextCase.href} className="group block">
                                 <div className="text-right">
-                                    <p className="font-league-spartan text-sm text-carbon/60 mb-2">
+                                    <p className="font-league-spartan text-small text-carbon/60 mb-2 flex items-center justify-end">
                                         Próximo Case
-                                        <i className="fa-solid fa-arrow-right ml-2"></i>
+                                        <AltArrowRight weight="Bold" size={14} className="ml-2" />
                                     </p>
-                                    <h3 className="font-rajdhani text-xl font-semibold text-carbon group-hover:text-green-accent transition-colors">
+                                    <h5 className="font-rajdhani font-semibold text-carbon group-hover:text-green-accent transition-colors">
                                         {nextCase.company}
-                                    </h3>
+                                    </h5>
                                     <p className="font-league-spartan text-carbon/80">
                                         {nextCase.title}
                                     </p>
