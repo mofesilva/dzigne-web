@@ -1,5 +1,5 @@
 'use client'
-import React, { useState, useCallback } from 'react'
+import React, { useState, useCallback, SyntheticEvent } from 'react'
 import Image, { ImageProps } from 'next/image'
 
 type LazyImageProps = ImageProps & {
@@ -10,9 +10,9 @@ type LazyImageProps = ImageProps & {
 export default function LazyImage({ wrapperClassName = '', spinnerClassName = '', className = '', onLoadingComplete, alt = '', ...props }: LazyImageProps) {
     const [loaded, setLoaded] = useState(false)
 
-    const handleLoaded = useCallback((img?: HTMLImageElement) => {
+    const handleLoaded = useCallback((event: SyntheticEvent<HTMLImageElement>) => {
         setLoaded(true)
-        if (img && onLoadingComplete) onLoadingComplete(img)
+        if (onLoadingComplete) onLoadingComplete(event.currentTarget)
     }, [onLoadingComplete])
 
     return (
@@ -30,7 +30,7 @@ export default function LazyImage({ wrapperClassName = '', spinnerClassName = ''
                 {...props}
                 alt={alt}
                 className={`${className} ${loaded ? 'opacity-100' : 'opacity-0'} transition-opacity duration-200`}
-                onLoadingComplete={handleLoaded}
+                onLoad={handleLoaded}
                 loading={(props.loading as 'lazy' | 'eager') ?? 'lazy'}
             />
         </div>
