@@ -5,6 +5,7 @@ import StickyNavbar from "@/components/StickyNavbar";
 import Footer from "@/components/footer/Footer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import ScrollTracker from "@/components/ScrollTracker";
+import SmoothScroll from "@/components/SmoothScroll";
 
 const rajdhani = Rajdhani({
   variable: "--font-rajdhani",
@@ -37,6 +38,7 @@ export default function RootLayout({
       >
         <StickyNavbar />
         <ScrollTracker />
+        <SmoothScroll />
         <main className="">   {/*  pt-28 ≈ 7 rem (112 px)  */}
           {children}
         </main>
