@@ -1,13 +1,12 @@
 import type { NextConfig } from "next";
-import path from "path";
 
 const nextConfig: NextConfig = {
   webpack: (config) => {
-    if (config.resolve && config.resolve.alias) {
-      config.resolve.alias["@"] = path.resolve(__dirname, "src");
-    } else if (config.resolve) {
-      config.resolve.alias = { ...(config.resolve.alias || {}), ["@"]: path.resolve(__dirname, "src") };
-    }
+    // Fix hot reload on Windows - use polling for file changes
+    config.watchOptions = {
+      poll: 1000,
+      aggregateTimeout: 300,
+    };
     return config;
   },
 };
