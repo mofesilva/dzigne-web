@@ -1,4 +1,3 @@
-import HeaderSection from "./components/HeaderSection";
 import CompanyHighlightsSection from "./components/CompanyHighlightsSection";
 import HeroSection from "./components/HeroSection";
 import CasesHighlightsSection from "./components/CasesHighlightsSection";
@@ -12,7 +11,7 @@ export default function Home() {
   return (
     <div className="flex flex-col">
       <div className="">
-        <HeaderSection content={<HeroSection />} />
+        <HeroSection />
         <CompanyHighlightsSection />
         <ServicesSection />
         <CasesHighlightsSection />
