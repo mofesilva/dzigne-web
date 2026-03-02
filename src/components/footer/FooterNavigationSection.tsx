@@ -4,10 +4,10 @@ import Link from 'next/link';
 function FooterNavigationSection() {
     return (
         <>
-            <div className="font-rajdhani text-lg 2xl:text-xl  font-semibold text-carbon self-center text-center md:text-left w-auto pr-0">
+            <div className="font-rajdhani font-semibold text-carbon self-center text-center md:text-left w-auto pr-0">
                 <ul className="">
                     <li className="">
-                        <Link href="/" className="text-lg 2xl:text-xl">
+                        <Link href="/" className="">
                             Contato
                         </Link>
                     </li>
