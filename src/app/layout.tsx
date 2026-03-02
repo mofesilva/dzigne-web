@@ -4,6 +4,7 @@ import "./globals.css";
 import StickyNavbar from "@/components/StickyNavbar";
 import Footer from "@/components/footer/Footer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
+import ScrollTracker from "@/components/ScrollTracker";
 
 const rajdhani = Rajdhani({
   variable: "--font-rajdhani",
@@ -30,13 +31,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        {/* eslint-disable-next-line @next/next/no-css-tags -- Using local FontAwesome CSS from public assets intentionally */}
-        <link rel="stylesheet" href="/fontawesome/css/all.min.css" />
       </head>
       <body
         className={`${rajdhani.variable} ${leagueSpartan.variable} antialiased`}
       >
         <StickyNavbar />
+        <ScrollTracker />
         <main className="">   {/*  pt-28 ≈ 7 rem (112 px)  */}
           {children}
         </main>
