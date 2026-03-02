@@ -2,7 +2,7 @@
 import React, { useState, useRef, useEffect } from 'react'
 
 interface ServiceListItemProps {
-    icon: string
+    icon: React.ReactNode
     title: string
     description: string
     globalMousePosition: { x: number, y: number }
@@ -89,12 +89,12 @@ function ServiceListItem({ icon, title, description, globalMousePosition, isMous
                 />
             )}
 
-            <div className="mb-6">
-                <i className={`${icon} text-green-accent text-4xl`}></i>
+            <div className="mb-6 text-green-accent text-4xl">
+                {icon}
             </div>
-            <h2 className="font-rajdhani text-2xl font-bold text-white mb-4 group-hover:text-green-accent transition-colors cursor-default">
+            <h4 className="font-rajdhani font-bold text-white mb-4 group-hover:text-green-accent transition-colors cursor-default">
                 {title}
-            </h2>
+            </h4>
             <p className="font-league-spartan text-white/70 leading-relaxed cursor-default">
                 {description}
             </p>
