@@ -1,61 +1,99 @@
-import React from 'react';
+'use client';
+
+import React, { useEffect, useRef } from 'react';
 import NavigationButton from '../../components/NavigationButton';
 import Image from 'next/image';
+import { AltArrowDown } from '@solar-icons/react/ssr';
 
 function HeroSection() {
+    const contentRef = useRef<HTMLDivElement>(null);
+    const mockupRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const scrollY = window.scrollY;
+            if (contentRef.current) {
+                contentRef.current.style.transform = `translateY(${scrollY * -0.3}px)`;
+            }
+            if (mockupRef.current) {
+                mockupRef.current.style.transform = `translateY(${scrollY * -0.15}px)`;
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll, { passive: true });
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
     return (
-        <section className='flex flex-col md:flex-row  md:text-start items-center justify-center text-center w-full'>
-            <div className="max-w-4xl mx-auto mb-16">
-                <h1 className='text-5xl 2xl:text-6xl font-rajdhani font-bold text-eggshell mb-6 leading-tight'>
-                    O parceiro<br />
-                    <span className="text-green-accent">ideal para o seu</span><br />
-                    Negócio
-                </h1>
+        <section className='bg-black w-full h-dvh overflow-hidden relative'>
+            {/* Mockup — right side, bottom aligned */}
+            <div ref={mockupRef} className="hidden md:block absolute right-[2%] lg:right-[5%] bottom-[10%] w-[50%] lg:w-[48%] z-0 will-change-transform">
+                <Image
+                    src="/assets/images/mockups/iCalvinus_mockup_2.png"
+                    alt="iCalvinus Mockup"
+                    width={1920}
+                    height={1440}
+                    quality={100}
+                    className="w-full h-auto drop-shadow-[0_0_60px_rgba(127,209,12,0.15)]"
+                    priority
+                />
+            </div>
 
-                <p className='text-lg 2xl:text-xl font-league-spartan text-eggshell mb-8 max-w-2xl mx-auto'>
-                    Do conceito ao lançamento.<br />Criamos soluções digitais sob medida que transformam ideias em produtos extraordinários.
-                </p>
-
-                <div className="flex flex-col sm:flex-row gap-4 md:justify-start md:justify-start md:text-start  justify-center mb-8">
-                    <NavigationButton
-                        href={'/cases'}
-                        text={'Ver nossos Cases'}
-                    />
-                    <NavigationButton
-                        href={'/about-us'}
-                        text={'Conheça a Dzign-e'}
-                    />
-                </div>
-
-                <div className="flex md:justify-start justify-center gap-6">
-                    <a
-                        href="https://www.instagram.com/dzign.e/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-eggshell hover:text-green-accent transition-colors duration-300"
+            {/* Content — left aligned */}
+            <div ref={contentRef} className="w-full h-full flex flex-col justify-end relative z-10 px-6 md:px-12 lg:px-20 2xl:px-32 pb-[12vh] md:pb-[14vh] will-change-transform">
+                <div className="max-w-3xl">
+                    <h1
+                        className='font-rajdhani text-eggshell mb-4 md:mb-6 tracking-wide'
+                        style={{ fontSize: 'clamp(2.5rem, 5vw + 1rem, 6rem)', lineHeight: 1.05 }}
                     >
-                        <i className="fa-brands fa-instagram text-2xl"></i>
-                    </a>
-                    <a
-                        href="https://www.linkedin.com/company/dzigne/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-eggshell hover:text-green-accent transition-colors duration-300"
+                        <span className="font-medium">O parceiro</span><br />
+                        <span className="font-bold text-green-accent">ideal para o seu Negócio</span>
+                    </h1>
+
+                    <p
+                        className='font-league-spartan text-eggshell mb-10 max-w-xl leading-relaxed'
+                        style={{ fontSize: 'clamp(0.95rem, 0.8vw + 0.5rem, 1.25rem)' }}
                     >
-                        <i className="fa-brands fa-linkedin-in text-2xl"></i>
-                    </a>
+                        Do conceito ao lançamento. Criamos soluções digitais sob medida que transformam ideias em produtos extraordinários.
+                    </p>
+
+                    <div className="flex flex-col sm:flex-row gap-4 mb-8">
+                        <NavigationButton
+                            href={'/cases'}
+                            text={'Ver nossos Cases'}
+                        />
+                        <NavigationButton
+                            href={'/about-us'}
+                            text={'Conheça a Dzign-e'}
+                        />
+                    </div>
+
+                    <div className="flex gap-6">
+                        <a
+                            href="https://www.instagram.com/dzign.e/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="opacity-50 hover:opacity-100 transition-opacity duration-300"
+                        >
+                            {/* eslint-disable-next-line @next/next/no-img-element */}
+                            <img src="/assets/icons/brands/instagram.svg" alt="Instagram" width={24} height={24} className="invert" />
+                        </a>
+                        <a
+                            href="https://www.linkedin.com/company/dzigne/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="opacity-50 hover:opacity-100 transition-opacity duration-300"
+                        >
+                            {/* eslint-disable-next-line @next/next/no-img-element */}
+                            <img src="/assets/icons/brands/linkedin.svg" alt="LinkedIn" width={24} height={24} className="invert" />
+                        </a>
+                    </div>
                 </div>
             </div>
 
-            {/* Mockup embaixo */}
-            <div className="drop-shadow-[0_0_50px_rgba(127,209,12,0.3)] pb-20">
-                <Image
-                    src='/assets/images/mockups/iCalvinus_mockup_4.png'
-                    alt="Hero Image"
-                    width={600}
-                    height={450}
-                    className="max-w-full h-auto"
-                />
+            {/* Scroll down arrow */}
+            <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 animate-bounce opacity-80">
+                <AltArrowDown size={32} color="#eeeeee" />
             </div>
         </section>
     );
