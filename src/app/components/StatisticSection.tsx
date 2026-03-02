@@ -1,159 +1,41 @@
 'use client';
-import React, { useState, useEffect, useRef } from 'react'
-import { Stopwatch, Code, UserId, Compass } from '@solar-icons/react/ssr';
+import React from 'react';
+import StatItem from './StatItem';
+
+const stats = [
+    { value: '15+', label: 'anos', description: 'transformando ideias em produtos digitais' },
+    { value: '35+', label: 'anos', description: 'de experiência acumulada em desenvolvimento' },
+    { value: '60+', label: 'projetos', description: 'aos nossos parceiros' },
+    { value: '9+', label: 'segmentos', description: 'impactados por nossa expertise' },
+];
 
 function StatisticSection() {
-    const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-    const [isMouseInSection, setIsMouseInSection] = useState(false);
-
-    const handleMouseMove = (e: React.MouseEvent) => {
-        setMousePosition({ x: e.clientX, y: e.clientY });
-    };
-
-    const handleMouseEnter = () => {
-        setIsMouseInSection(true);
-    };
-
-    const handleMouseLeave = () => {
-        setIsMouseInSection(false);
-    };
-
     return (
-        <section
-            className='bg-carbon py-16 rounded-b-4xl mx-2'
-            onMouseMove={handleMouseMove}
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
-        >
-            <div className="section-container">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <StatisticCard
-                        icon={<Stopwatch weight="Bold" size={36} />}
-                        title="+ de 15 anos"
-                        description="transformando ideias em produtos digitais"
-                        globalMousePosition={mousePosition}
-                        isMouseInSection={isMouseInSection}
-                    />
-                    <StatisticCard
-                        icon={<Code weight="Bold" size={36} />}
-                        title="+ de 35 anos"
-                        description="de experiência com desenvolvimento acumulado"
-                        globalMousePosition={mousePosition}
-                        isMouseInSection={isMouseInSection}
-                    />
-                    <StatisticCard
-                        icon={<UserId weight="Outline" size={36} />}
-                        title="+ de 60 empresas"
-                        description="transformadas por nossas soluções!"
-                        globalMousePosition={mousePosition}
-                        isMouseInSection={isMouseInSection}
-                    />
-                    <StatisticCard
-                        icon={<Compass weight="Outline" size={36} />}
-                        title="+ de 9 segmentos"
-                        description="impactados por nossa expertise!"
-                        globalMousePosition={mousePosition}
-                        isMouseInSection={isMouseInSection}
-                    />
+        <section className="bg-black w-full relative overflow-hidden">
+            <div className="px-6 md:px-12 lg:px-20 2xl:px-32 py-8 lg:py-16">
+                <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-14 lg:gap-x-12">
+                    {stats.map((stat, i) => (
+                        <StatItem
+                            key={i}
+                            value={stat.value}
+                            label={stat.label}
+                            description={stat.description}
+                        />
+                    ))}
+                </div>
+                <div className="w-full mt-24 mb-24">
+                    <h1
+                        className="font-rajdhani text-eggshell text-center"
+
+                    >
+                        <span className="font-medium">Resultados que </span>
+                        <span className="font-bold text-green-accent">falam por si</span>
+                    </h1>
                 </div>
             </div>
+
         </section>
-    )
-}
-
-interface StatisticCardProps {
-    icon: React.ReactNode;
-    title: string;
-    description: string;
-    globalMousePosition: { x: number; y: number };
-    isMouseInSection: boolean;
-}
-
-function StatisticCard({ icon, title, description, globalMousePosition, isMouseInSection }: StatisticCardProps) {
-    const [isNearby, setIsNearby] = useState(false);
-    const [isInside, setIsInside] = useState(false);
-    const [localMousePosition, setLocalMousePosition] = useState({ x: 0, y: 0 });
-    const cardRef = useRef<HTMLDivElement>(null);
-
-    useEffect(() => {
-        if (!cardRef.current || !isMouseInSection) {
-            setIsNearby(false);
-            setIsInside(false);
-            return;
-        }
-
-        const rect = cardRef.current.getBoundingClientRect();
-        const distance = 120;
-
-        const isNear = globalMousePosition.x >= rect.left - distance &&
-            globalMousePosition.x <= rect.right + distance &&
-            globalMousePosition.y >= rect.top - distance &&
-            globalMousePosition.y <= rect.bottom + distance;
-
-        const isWithin = globalMousePosition.x >= rect.left &&
-            globalMousePosition.x <= rect.right &&
-            globalMousePosition.y >= rect.top &&
-            globalMousePosition.y <= rect.bottom;
-
-        setIsNearby(isNear);
-        setIsInside(isWithin);
-
-        if (isNear) {
-            setLocalMousePosition({
-                x: globalMousePosition.x - rect.left,
-                y: globalMousePosition.y - rect.top
-            });
-        }
-    }, [globalMousePosition, isMouseInSection]);
-
-    const handleCardMouseEnter = () => {
-        if (isMouseInSection) {
-            setIsInside(true);
-        }
-    };
-
-    const handleCardMouseLeave = () => {
-        setIsInside(false);
-    };
-
-    return (
-        <div
-            ref={cardRef}
-            className="relative bg-eggshell/5 border border-eggshell/10 rounded-2xl p-8 transition-all duration-300 group"
-            onMouseEnter={handleCardMouseEnter}
-            onMouseLeave={handleCardMouseLeave}
-        >
-            {/* Borda verde quando dentro */}
-            <div
-                className={`absolute -inset-[1px] rounded-2xl border border-green-accent pointer-events-none transition-opacity duration-300 ease-out ${isInside ? 'opacity-70' : 'opacity-0'}`}
-            />
-
-            {/* Efeito spotlight quando próximo mas fora */}
-            {isNearby && !isInside && isMouseInSection && (
-                <div
-                    className="absolute -inset-[1px] rounded-2xl pointer-events-none transition-opacity duration-200"
-                    style={{
-                        background: `radial-gradient(80px circle at ${localMousePosition.x}px ${localMousePosition.y}px, rgba(127, 209, 12, 0.6), transparent 70%)`,
-                        mask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
-                        maskComposite: 'xor',
-                        WebkitMask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
-                        WebkitMaskComposite: 'xor',
-                        padding: '1px'
-                    }}
-                />
-            )}
-
-            <div className="mb-6 text-green-accent">
-                {icon}
-            </div>
-            <h4 className="font-rajdhani font-bold text-white mb-4 group-hover:text-green-accent transition-colors cursor-default">
-                {title}
-            </h4>
-            <p className="font-league-spartan text-white/70 leading-relaxed cursor-default">
-                {description}
-            </p>
-        </div>
-    )
+    );
 }
 
 export default StatisticSection;
