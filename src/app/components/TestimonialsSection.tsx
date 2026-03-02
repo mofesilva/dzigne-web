@@ -112,7 +112,7 @@ function TestimonialsSection() {
             <section className="bg-eggshell py-16">
                 <div className="section-container">
                     <div className="text-start mb-8">
-                        <h2 className="text-4xl 2xl:text-5xl font-rajdhani font-bold text-carbon mt-4">
+                        <h2 className="font-rajdhani font-bold text-carbon mt-4">
                             O que dizem nossos clientes
                         </h2>
                     </div>
