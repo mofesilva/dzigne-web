@@ -19,7 +19,7 @@ function LogosGrid() {
     return (
         <section className="bg-eggshell py-16 pt-0">
             <div className="section-container">
-                <h2 className="text-4xl 2xl:text-5xl font-rajdhani font-bold text-start mb-8 text-carbon">
+                <h2 className="font-rajdhani font-bold text-start mb-8 text-carbon">
                     Empresas que confiaram seu potencial à Dzign-e
                 </h2>
                 <div className="grid rounded-2xl bg-neutral-200 border-neutral-300 border-2 p-8 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-10 items-center justify-items-center content-center justify-center">
