@@ -22,19 +22,19 @@ function CaseHeroSection({ logo, company, title, description, tags }: CaseHeroSe
                 />
             </div>
 
-            <h1 className="font-rajdhani text-5xl lg:text-6xl font-bold mb-6">
+            <h1 className="font-rajdhani font-bold mb-6">
                 {title}
             </h1>
 
-            <p className="font-league-spartan text-xl lg:text-2xl text-white/90 max-w-4xl mx-auto mb-8 leading-relaxed">
+            <h5 className="font-league-spartan text-white/90 max-w-4xl mx-auto mb-8 leading-relaxed">
                 {description}
-            </p>
+            </h5>
 
             <div className="flex flex-wrap justify-center gap-3">
                 {tags.map((tag, index) => (
                     <span
                         key={index}
-                        className="bg-green-accent text-carbon px-4 py-2 rounded-full font-rajdhani font-semibold text-sm"
+                        className="bg-green-accent text-carbon px-4 py-2 rounded-full font-rajdhani font-semibold text-small"
                     >
                         {tag}
                     </span>
