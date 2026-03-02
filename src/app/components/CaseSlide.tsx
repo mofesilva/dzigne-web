@@ -1,6 +1,7 @@
 import React from 'react'
 import LazyImage from '@/components/LazyImage'
 import NavigationButton from '../../components/NavigationButton'
+import { AltArrowRight } from '@solar-icons/react/ssr';
 
 interface CaseSlideProps {
     text: string
@@ -19,8 +20,8 @@ function CaseSlide({ text, logo, alt, mockup, href, isLogoHorizontal = false }: 
             </div>
             <div className="case__study__content flex flex-col items-center md:items-start justify-center max-w-xl">
                 <LazyImage src={logo} alt={alt} className={`h-auto mb-4 ${isLogoHorizontal ? 'w-[150px]' : 'w-[100px]'}`} width={100} height={100} quality={100} />
-                <p className="font-league-spartan text-lg text-eggshell mb-8 cursor-default text-center md:text-left">{text}</p>
-                <NavigationButton href={href} text={'Saiba mais'} icon={'fa-solid fa-chevron-right'} />
+                <h6 className="font-league-spartan text-eggshell mb-8 cursor-default text-center md:text-left">{text}</h6>
+                <NavigationButton href={href} text={'Saiba mais'} icon={<AltArrowRight weight="Outline" size={16} />} />
             </div>
         </div>
     )
