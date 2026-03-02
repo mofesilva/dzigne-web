@@ -11,7 +11,7 @@ function NavbarDestination({ destination, text, onClick }: NavbarDestinationProp
     return (
         <Link
             href={destination}
-            className='hover:text-green-accent-light transition-colors duration-300 select-none'
+            className="hover:text-green-accent-light transition-colors duration-300 select-none tracking-wider font-rajdhani font-bold text-lg tracking-wide"
             onClick={onClick}
         >
             {text}
