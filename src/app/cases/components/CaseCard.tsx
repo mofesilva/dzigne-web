@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import NavigationButton from '../../../components/NavigationButton';
+import { AltArrowRight } from '@solar-icons/react/ssr';
 
 interface CaseCardProps {
     logo: string;
@@ -30,20 +31,20 @@ function CaseCard({ logo, company, title, description, mockup, href, tags, isRev
                 </div>
 
                 {title != null && (
-                    <h3 className="font-rajdhani text-3xl font-bold text-carbon mb-4">
+                    <h3 className="font-rajdhani font-bold text-carbon mb-4">
                         {title}
                     </h3>
                 )}
 
-                <p className="font-league-spartan text-lg text-carbon/80 mb-6 leading-relaxed">
+                <h6 className="font-league-spartan text-carbon/80 mb-6 leading-relaxed">
                     {description}
-                </p>
+                </h6>
 
                 <div className="flex flex-wrap gap-2 mb-8">
                     {tags.map((tag, index) => (
                         <span
                             key={index}
-                            className="bg-green-accent text-carbon px-3 py-1 rounded-full font-rajdhani font-semibold text-sm"
+                            className="bg-green-accent text-carbon px-3 py-1 rounded-full font-rajdhani font-semibold text-small"
                         >
                             {tag}
                         </span>
@@ -53,7 +54,7 @@ function CaseCard({ logo, company, title, description, mockup, href, tags, isRev
                 <NavigationButton
                     href={href}
                     text="Ver Case Completo"
-                    icon="fa-solid fa-arrow-right"
+                    icon={<AltArrowRight weight="Bold" size={16} />}
                     inverted={true}
                 />
             </div>
