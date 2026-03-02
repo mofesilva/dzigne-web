@@ -1,8 +1,9 @@
 'use client';
 import React, { useState } from 'react';
+import { Code, Server, Smartphone, PaintRoller, Rocket, GraphUp, CheckCircle } from '@solar-icons/react/ssr';
 
 interface ServiceCardProps {
-    icon: string;
+    icon: React.ReactNode;
     title: string;
     description: string;
     features: string[];
@@ -85,22 +86,22 @@ function ServiceCard({ icon, title, description, features, globalMousePosition, 
                 />
             )}
 
-            <div className="mb-6 text-center">
-                <i className={`${icon} text-green-accent text-4xl`}></i>
+            <div className="mb-6 text-center text-green-accent">
+                {icon}
             </div>
-            
-            <h3 className="font-rajdhani text-2xl font-bold text-white mb-4 group-hover:text-green-accent transition-colors cursor-default text-center">
+
+            <h4 className="font-rajdhani font-bold text-white mb-4 group-hover:text-green-accent transition-colors cursor-default text-center">
                 {title}
-            </h3>
-            
+            </h4>
+
             <p className="text-white/70 font-league-spartan mb-6 leading-relaxed cursor-default text-center">
                 {description}
             </p>
-            
+
             <div className="space-y-3">
                 {features.map((feature, index) => (
-                    <div key={index} className="flex items-center text-sm font-league-spartan text-white/60">
-                        <i className="fas fa-check text-green-accent mr-3 text-xs"></i>
+                    <div key={index} className="flex items-center text-small font-league-spartan text-white/60">
+                        <CheckCircle weight="Bold" size={14} className="text-green-accent mr-3 flex-shrink-0" />
                         {feature}
                     </div>
                 ))}
@@ -127,7 +128,7 @@ function ServicesListSection() {
 
     const services = [
         {
-            icon: "fas fa-code",
+            icon: <Code weight="Bold" size={36} />,
             title: "Desenvolvimento Web e Mobile",
             description: "Criamos aplicações web e mobile modernas, responsivas e escaláveis usando as melhores tecnologias do mercado.",
             features: [
@@ -138,7 +139,7 @@ function ServicesListSection() {
             ]
         },
         {
-            icon: "fas fa-server",
+            icon: <Server weight="Outline" size={36} />,
             title: "Hospedagem dos Serviços",
             description: "Soluções completas de hospedagem com alta disponibilidade, segurança e performance para seus projetos.",
             features: [
@@ -149,7 +150,7 @@ function ServicesListSection() {
             ]
         },
         {
-            icon: "fas fa-mobile-alt",
+            icon: <Smartphone weight="Outline" size={36} />,
             title: "Design de Produtos Digitais",
             description: "Desenvolvemos produtos digitais que combinam funcionalidade excepcional com experiências de usuário memoráveis.",
             features: [
@@ -160,7 +161,7 @@ function ServicesListSection() {
             ]
         },
         {
-            icon: "fas fa-paint-brush",
+            icon: <PaintRoller weight="Outline" size={36} />,
             title: "UI/UX Design",
             description: "Interfaces intuitivas e experiências excepcionais que conectam usuários aos seus produtos de forma natural.",
             features: [
@@ -171,7 +172,7 @@ function ServicesListSection() {
             ]
         },
         {
-            icon: "fas fa-rocket",
+            icon: <Rocket weight="Bold" size={36} />,
             title: "Consultoria em TI",
             description: "Orientação estratégica para otimizar seus processos tecnológicos e acelerar a transformação digital.",
             features: [
@@ -182,7 +183,7 @@ function ServicesListSection() {
             ]
         },
         {
-            icon: "fas fa-chart-line",
+            icon: <GraphUp weight="Outline" size={36} />,
             title: "Analytics e Performance",
             description: "Monitoramento e otimização contínua para garantir que seus produtos digitais performem no máximo potencial.",
             features: [
@@ -195,7 +196,7 @@ function ServicesListSection() {
     ];
 
     return (
-        <section 
+        <section
             className='bg-carbon w-full py-32'
             onMouseMove={handleMouseMove}
             onMouseEnter={handleMouseEnter}
@@ -203,13 +204,13 @@ function ServicesListSection() {
         >
             <div className="section-container">
                 <div className="text-center mb-16">
-                    <h2 className="font-rajdhani text-5xl font-bold text-white mb-8">
+                    <h1 className="font-rajdhani font-bold text-white mb-8">
                         Soluções Completas em <span className="text-green-accent">Tecnologia</span>
-                    </h2>
-                    <p className="font-league-spartan text-xl text-white/80 max-w-4xl mx-auto leading-relaxed">
+                    </h1>
+                    <h5 className="font-league-spartan text-white/80 max-w-4xl mx-auto leading-relaxed">
                         Da concepção à implementação, oferecemos todos os serviços necessários 
                         para transformar sua visão em realidade digital.
-                    </p>
+                    </h5>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
