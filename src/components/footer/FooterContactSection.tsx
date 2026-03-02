@@ -1,6 +1,8 @@
 'use client'
 import React from 'react';
 import LazyImage from '@/components/LazyImage';
+import BrandIcon from '@/components/BrandIcon';
+import { Letter } from '@solar-icons/react/ssr';
 
 function FooterContactSection() {
     return (
@@ -15,27 +17,27 @@ function FooterContactSection() {
                     <a href="https://www.instagram.com/dzign.e/"
                         target="_blank"
                         rel="noopener noreferrer">
-                        <i className="fa-brands fa-instagram text-carbon text-xl 2xl:text-2xl"></i>
+                        <BrandIcon name="instagram" size={22} alt="Instagram" />
                     </a>
                     <a href="https://www.linkedin.com/company/dzigne/"
                         target="_blank"
                         rel="noopener noreferrer">
-                        <i className="fa-brands fa-linkedin-in text-carbon text-xl 2xl:text-2xl"></i>
+                        <BrandIcon name="linkedin" size={22} alt="LinkedIn" />
                     </a>
                     <a href="mailto:contato@dzign-e.com.br"
                         target="_blank"
                         rel="noopener noreferrer">
-                        <i className="fa-solid fa-envelope text-carbon text-xl 2xl:text-2xl"></i>
+                        <Letter weight="Outline" size={22} className="text-carbon" />
                     </a>
                     <a href="https://wa.me/5519999094848"
                         target="_blank"
                         rel="noopener noreferrer">
-                        <i className="fa-brands fa-whatsapp text-carbon text-xl 2xl:text-2xl"></i>
+                        <BrandIcon name="whatsapp" size={22} alt="WhatsApp" />
                     </a>
                 </div>
                 <div className="pb-4 flex flex-col items-center md:items-end gap-1">
                     <div className="flex items-center justify-center md:justify-start w-full mr-0.5">
-                        <a href="mailto:contato@dzign-e.com.br" className="font-league-spartan text-lg 2xl:text-xl text-carbon">
+                        <a href="mailto:contato@dzign-e.com.br" className="font-league-spartan text-carbon">
                             contato@dzign-e.com.br
                         </a>
                     </div>
@@ -44,7 +46,7 @@ function FooterContactSection() {
                             href="https://wa.me/5519999094848"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="font-league-spartan text-lg 2xl:text-xl text-carbon"
+                            className="font-league-spartan text-carbon"
                         >
                             (19) 99909-4848
                         </a>
