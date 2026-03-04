@@ -10,8 +10,8 @@ const stats = [
 
 function StatisticSection() {
     return (
-        <section className="bg-black w-full relative overflow-hidden">
-            <div className="px-6 md:px-12 lg:px-20 2xl:px-32 py-8 lg:py-24">
+        <section className="bg-black w-full relative overflow-hidden py-20 md:py-28 lg:py-36">
+            <div className="px-6 md:px-12 lg:px-20 2xl:px-32">
                 <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-14 lg:gap-x-12">
                     {stats.map((stat, i) => (
                         <StatItem
@@ -21,15 +21,6 @@ function StatisticSection() {
                             description={stat.description}
                         />
                     ))}
-                </div>
-                <div className="w-full mt-24">
-                    <h1
-                        className="font-rajdhani text-eggshell text-center"
-
-                    >
-                        <span className="font-medium">Resultados que </span>
-                        <span className="font-bold text-green-accent">falam por si</span>
-                    </h1>
                 </div>
             </div>
 
