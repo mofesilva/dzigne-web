@@ -94,13 +94,13 @@ function ServiceCard({ icon, title, description, features, globalMousePosition, 
                 {title}
             </h4>
 
-            <p className="text-white/70 font-league-spartan mb-6 leading-relaxed cursor-default text-center">
+            <p className="text-white/70 font-outfit mb-6 leading-relaxed cursor-default text-center">
                 {description}
             </p>
 
             <div className="space-y-3">
                 {features.map((feature, index) => (
-                    <div key={index} className="flex items-center text-small font-league-spartan text-white/60">
+                    <div key={index} className="flex items-center text-small font-outfit text-white/60">
                         <CheckCircle weight="Bold" size={14} className="text-green-accent mr-3 flex-shrink-0" />
                         {feature}
                     </div>
@@ -207,7 +207,7 @@ function ServicesListSection() {
                     <h1 className="font-rajdhani font-bold text-white mb-8">
                         Soluções Completas em <span className="text-green-accent">Tecnologia</span>
                     </h1>
-                    <h5 className="font-league-spartan text-white/80 max-w-4xl mx-auto leading-relaxed">
+                    <h5 className="font-outfit text-white/80 max-w-4xl mx-auto leading-relaxed">
                         Da concepção à implementação, oferecemos todos os serviços necessários 
                         para transformar sua visão em realidade digital.
                     </h5>
