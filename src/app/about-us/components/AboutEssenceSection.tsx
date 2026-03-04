@@ -69,9 +69,8 @@ function AboutEssenceSection() {
                             >
                                 {/* Image */}
                                 <div
-                                    className={`relative aspect-[4/3] w-full overflow-hidden rounded-2xl ${
-                                        isReverse ? 'md:order-2' : 'md:order-1'
-                                    }`}
+                                    className={`relative aspect-[4/3] w-full overflow-hidden rounded-2xl ${isReverse ? 'md:order-2' : 'md:order-1'
+                                        }`}
                                 >
                                     <Image
                                         src={block.image}
@@ -84,9 +83,8 @@ function AboutEssenceSection() {
 
                                 {/* Text */}
                                 <div
-                                    className={`flex items-center ${
-                                        isReverse ? 'md:order-1' : 'md:order-2'
-                                    }`}
+                                    className={`flex items-center ${isReverse ? 'md:order-1' : 'md:order-2'
+                                        }`}
                                 >
                                     <h3 className="font-rajdhani font-medium text-carbon leading-snug">
                                         {block.text}
