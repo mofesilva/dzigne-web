@@ -10,7 +10,7 @@ function CompanyBio() {
                     <h2 className="font-rajdhani font-bold text-carbon mb-4">
                         Somos a Dzign-e
                     </h2>
-                    <h6 className="font-league-spartan pb-8 text-carbon/70 max-w-2xl">
+                    <h6 className="font-outfit pb-8 text-carbon/70 max-w-2xl">
                         Uma software house brasileira especializada em criar produtos e soluções
                         digitais
                         sob medida para empresas que buscam inovação,
