@@ -4,7 +4,7 @@ import StatItem from './StatItem';
 const stats = [
     { value: '15+', label: 'anos', description: 'transformando ideias em produtos digitais' },
     { value: '35+', label: 'anos', description: 'de experiência acumulada em desenvolvimento' },
-    { value: '60+', label: 'projetos', description: 'aos nossos parceiros' },
+    { value: '60+', label: 'projetos', description: 'entregue aos nossos parceiros' },
     { value: '9+', label: 'segmentos', description: 'impactados por nossa expertise' },
 ];
 
