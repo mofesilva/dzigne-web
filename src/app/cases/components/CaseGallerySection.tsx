@@ -37,7 +37,7 @@ function CaseGallerySection({ title, description, imagesFolder }: CaseGallerySec
                     <h2 className="font-rajdhani font-bold text-white mb-6">
                         {title}
                     </h2>
-                    <h5 className="font-league-spartan text-white/90 max-w-3xl mx-auto">
+                    <h5 className="font-outfit text-white/90 max-w-3xl mx-auto">
                         {description}
                     </h5>
                 </div>
