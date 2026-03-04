@@ -8,7 +8,7 @@ function ServicesHeroSection() {
                 <span className="text-green-accent">Serviços</span>
             </h1>
 
-            <h6 className='font-league-spartan text-white/80 max-w-2xl mx-auto'>
+            <h6 className='font-outfit text-white/80 max-w-2xl mx-auto'>
                 Oferecemos soluções completas em tecnologia, desde desenvolvimento até consultoria,
                 para transformar suas ideias em produtos digitais de sucesso.
             </h6>
