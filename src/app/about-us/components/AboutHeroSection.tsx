@@ -1,5 +1,4 @@
 import React from 'react';
-import Divider from '@/components/Divider';
 
 function AboutHeroSection() {
     return (
@@ -10,20 +9,15 @@ function AboutHeroSection() {
                         Sobre nós
                     </h6>
 
-                    <h1 className="font-rajdhani text-eggshell mb-6">
-                        <span className="font-medium">Mais do que código.</span>
+                    <h1 className="font-rajdhani text-eggshell">
+                        <span className="font-medium">
+                            O digital que move negócios
+                        </span>
                         <br />
-                        <span className="font-bold text-green-accent">Criamos experiências.</span>
+                        <span className="font-bold text-green-accent">
+                            nasce de quem entende pessoas.
+                        </span>
                     </h1>
-
-                    <p className="font-outfit text-eggshell/50 max-w-2xl mx-auto leading-relaxed mb-10">
-                        Uma software house brasileira movida pelo design intencional e engenharia de
-                        excelência — transformando visões em produtos digitais que impactam negócios reais.
-                    </p>
-
-                    <div className="flex justify-center">
-                        <Divider width="60" color="green-accent" height="3px" horizontal />
-                    </div>
                 </div>
             </div>
         </section>
