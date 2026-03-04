@@ -44,15 +44,13 @@ function HeroSection() {
                 <div className="max-w-3xl">
                     <h1
                         className='font-rajdhani text-eggshell mb-4 md:mb-6 tracking-wide'
-                        style={{ fontSize: 'clamp(2.5rem, 5vw + 1rem, 6rem)', lineHeight: 1.05 }}
                     >
                         <span className="font-medium">O parceiro</span><br />
                         <span className="font-bold text-green-accent">ideal para o seu Negócio</span>
                     </h1>
 
                     <p
-                        className='font-league-spartan text-eggshell mb-10 max-w-xl leading-relaxed'
-                        style={{ fontSize: 'clamp(0.95rem, 0.8vw + 0.5rem, 1.25rem)' }}
+                        className='font-outfit text-eggshell mb-10 max-w-xl leading-relaxed'
                     >
                         Do conceito ao lançamento. Criamos soluções digitais sob medida que transformam ideias em produtos extraordinários.
                     </p>
