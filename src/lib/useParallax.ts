@@ -39,6 +39,11 @@ export function useParallax(speed: number): ParallaxResult {
         const element = ref.current;
         if (!element) return;
 
+        // Desabilita parallax no mobile — scroll nativo já é suave
+        const isTouchDevice =
+            'ontouchstart' in window || navigator.maxTouchPoints > 0;
+        if (isTouchDevice) return;
+
         const observer = new IntersectionObserver(
             ([entry]) => {
                 isVisible.current = entry.isIntersecting;
