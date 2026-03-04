@@ -8,7 +8,7 @@ function PrivacyHeroSection() {
                 <span className="text-green-accent">Privacidade</span>
             </h1>
 
-            <h6 className='font-league-spartan text-white/80 max-w-2xl mx-auto'>
+            <h6 className='font-outfit text-white/80 max-w-2xl mx-auto'>
                 Conheça como tratamos e protegemos suas informações pessoais de acordo com a Lei Geral de Proteção de Dados (LGPD).
             </h6>
         </div>
