@@ -25,7 +25,7 @@ export default function FloatingWhatsApp({
                 <BrandIcon name="whatsapp" size={20} className="invert" alt="WhatsApp" />
             </span>
 
-            <span className="font-medium text-small hidden sm:inline">Entrar em contato</span>
+            <h6 className="font-outfit pr-3 pb-0.5">Entrar em contato</h6>
         </a>
     );
 }
