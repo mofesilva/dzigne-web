@@ -6,6 +6,10 @@ export default function ScrollTracker() {
     const fillRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
+        // O indicador é hidden no mobile (hidden md:flex), pular o loop rAF
+        const mql = window.matchMedia('(min-width: 768px)');
+        if (!mql.matches) return;
+
         let rafId: number;
 
         function update() {
