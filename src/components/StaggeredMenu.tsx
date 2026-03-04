@@ -499,7 +499,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
                 )}
 
                 <header
-                    className={`staggered-menu-header absolute top-0 left-0 w-full flex items-center justify-between pointer-events-none z-20 h-24 transition-all duration-500 px-6 md:px-12 lg:px-20 2xl:px-32 ${isScrolled ? 'py-4' : 'py-8 md:py-10'}`}
+                    className={`staggered-menu-header absolute top-0 left-0 w-full flex items-center justify-between pointer-events-none z-20 ${isScrolled ? 'h-18' : 'h-24'} transition-all duration-500 px-6 md:px-12 lg:px-20 2xl:px-32 ${isScrolled ? 'py-4' : 'py-8 md:py-10'}`}
                     style={{ backgroundColor: isScrolled ? '#000000' : 'transparent' }}
                     aria-label="Main navigation header"
                 >
