@@ -44,7 +44,7 @@ export default function CaseGalleryClient({ images }: Props) {
                         </div>
 
                         {image.description && (
-                            <figcaption className="font-league-spartan text-white/80 text-center mt-3 text-small">
+                            <figcaption className="font-outfit text-white/80 text-center mt-3 text-small">
                                 {image.description}
                             </figcaption>
                         )}
