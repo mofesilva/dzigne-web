@@ -41,8 +41,7 @@ function CaseSlide({ text, logo, alt, mockup, href, isLogoHorizontal = false }: 
                     />
 
                     <p
-                        className="font-league-spartan text-eggshell/60 mb-10 leading-relaxed"
-                        style={{ fontSize: 'clamp(0.9rem, 0.7vw + 0.5rem, 1.1rem)' }}
+                        className="font-outfit text-eggshell/60 mb-10 leading-relaxed"
                     >
                         {text}
                     </p>
