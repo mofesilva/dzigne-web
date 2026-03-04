@@ -15,7 +15,7 @@ function ServicesSection() {
                 <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-16 lg:mb-20">
                     <div className="w-full">
                         <p
-                            className="text-eggshell/60 mb-4 tracking-widest uppercase"
+                            className="                                         text-eggshell/60 mb-4 tracking-widest uppercase"
                         >
                             O que fazemos
                         </p>
