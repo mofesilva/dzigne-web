@@ -140,10 +140,10 @@ function PrivacyContentSection() {
             <div className="section-container">
                 <div className="max-w-4xl mx-auto">
                     <div className="mb-12 text-center">
-                        <h6 className="font-league-spartan text-gray-600 mb-4">
+                        <h6 className="font-outfit text-gray-600 mb-4">
                             Última atualização: Janeiro de 2024
                         </h6>
-                        <p className="font-league-spartan text-gray-700 max-w-3xl mx-auto">
+                        <p className="font-outfit text-gray-700 max-w-3xl mx-auto">
                             A Dzign-e está comprometida com a proteção da sua privacidade e o tratamento adequado dos seus dados pessoais, em conformidade com a Lei Geral de Proteção de Dados (LGPD).
                         </p>
                     </div>
@@ -156,7 +156,7 @@ function PrivacyContentSection() {
                                 </h3>
                                 <div className="space-y-4">
                                     {section.content.map((paragraph, pIndex) => (
-                                        <p key={pIndex} className="font-league-spartan text-gray-700 leading-relaxed">
+                                        <p key={pIndex} className="font-outfit text-gray-700 leading-relaxed">
                                             {paragraph}
                                         </p>
                                     ))}
@@ -169,12 +169,12 @@ function PrivacyContentSection() {
                         <h5 className="font-rajdhani font-bold text-carbon mb-4">
                             Tem dúvidas sobre nossa Política de Privacidade?
                         </h5>
-                        <p className="font-league-spartan text-gray-700 mb-4">
+                        <p className="font-outfit text-gray-700 mb-4">
                             Entre em contato conosco. Estamos aqui para esclarecer qualquer questão sobre o tratamento dos seus dados pessoais.
                         </p>
                         <a
                             href="mailto:contato@dzign-e.com.br"
-                            className="inline-flex items-center px-6 py-3 bg-green-accent text-white font-league-spartan font-semibold rounded-lg hover:bg-green-accent-light transition-colors"
+                            className="inline-flex items-center px-6 py-3 bg-green-accent text-white font-outfit font-semibold rounded-lg hover:bg-green-accent-light transition-colors"
                         >
                             <Letter weight="Outline" size={18} className="mr-2" />
                             Entrar em Contato
