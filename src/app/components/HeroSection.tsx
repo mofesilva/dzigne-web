@@ -10,6 +10,11 @@ function HeroSection() {
     const mockupRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
+        // Parallax só no desktop — no mobile causa jitter/tremidas
+        const isTouchDevice =
+            'ontouchstart' in window || navigator.maxTouchPoints > 0;
+        if (isTouchDevice) return;
+
         const handleScroll = () => {
             const scrollY = window.scrollY;
             if (contentRef.current) {
@@ -25,9 +30,9 @@ function HeroSection() {
     }, []);
 
     return (
-        <section className='bg-black w-full h-dvh overflow-hidden relative'>
+        <section className='bg-black w-full h-svh md:h-dvh overflow-hidden relative'>
             {/* Mockup — right side, bottom aligned */}
-            <div ref={mockupRef} className="hidden md:block absolute right-[2%] lg:right-[5%] bottom-[10%] w-[50%] lg:w-[48%] z-0 will-change-transform">
+            <div ref={mockupRef} className="hidden md:block absolute right-[2%] lg:right-[5%] bottom-[10%] w-[50%] lg:w-[48%] z-0 md:will-change-transform">
                 <Image
                     src="/assets/images/mockups/iCalvinus_mockup_2.png"
                     alt="iCalvinus Mockup"
@@ -40,7 +45,7 @@ function HeroSection() {
             </div>
 
             {/* Content — left aligned */}
-            <div ref={contentRef} className="w-full h-full flex flex-col justify-end relative z-10 px-6 md:px-12 lg:px-20 2xl:px-32 pb-[12vh] md:pb-[14vh] will-change-transform">
+            <div ref={contentRef} className="w-full h-full flex flex-col justify-end relative z-10 px-6 md:px-12 lg:px-20 2xl:px-32 pb-[12vh] md:pb-[14vh] md:will-change-transform">
                 <div className="max-w-3xl">
                     <h1
                         className='font-rajdhani text-eggshell mb-4 md:mb-6 tracking-wide'
