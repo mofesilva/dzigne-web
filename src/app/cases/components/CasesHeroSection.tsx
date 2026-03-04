@@ -8,7 +8,7 @@ function CasesHeroSection() {
                 <span className="text-green-accent">Negócios</span>
             </h1>
 
-            <h6 className='font-league-spartan text-white/80 max-w-2xl mx-auto'>
+            <h6 className='font-outfit text-white/80 max-w-2xl mx-auto'>
                 Cada projeto é único e desenvolvido com foco nos resultados do cliente.
                 Veja como ajudamos empresas a alcançar seus objetivos através da tecnologia.
             </h6>
