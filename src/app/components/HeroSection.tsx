@@ -34,7 +34,7 @@ function HeroSection() {
                     width={1920}
                     height={1440}
                     quality={100}
-                    className="w-full h-auto drop-shadow-[0_0_60px_rgba(127,209,12,0.15)]"
+                    className="w-full h-auto animate-levitate"
                     priority
                 />
             </div>
