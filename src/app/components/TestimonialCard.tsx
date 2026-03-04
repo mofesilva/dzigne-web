@@ -13,7 +13,7 @@ function TestimonialCard({ text, name, position, company, photo }: TestimonialCa
     return (
         <div className="bg-neutral-200 rounded-2xl p-8 border border-neutral-300 border-2 h-auto min-h-[400px] flex flex-col justify-between">
             <div>
-                <p className="text-gray-800 font-league-spartan leading-relaxed mb-8">
+                <p className="text-gray-800 font-outfit leading-relaxed mb-8">
                     &ldquo;{text}&rdquo;
                 </p>
             </div>
@@ -33,11 +33,11 @@ function TestimonialCard({ text, name, position, company, photo }: TestimonialCa
                     <h6 className="font-rajdhani font-bold text-carbon mb-1">
                         {name}
                     </h6>
-                    <p className="text-gray-600 font-league-spartan text-small">
+                    <p className="text-gray-600 font-outfit text-small">
                         {position}
                     </p>
                     {company && (
-                        <p className="text-gray-500 font-league-spartan text-small">
+                        <p className="text-gray-500 font-outfit text-small">
                             {company}
                         </p>
                     )}
