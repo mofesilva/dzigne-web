@@ -15,7 +15,7 @@ export default function Home() {
         <CompanyHighlightsSection />
         <ServicesSection />
         <CasesHighlightsSection />
-        <CompanyBio />
+        {/* <CompanyBio /> */}
         <TestimonialsSection />
       </div>
     </div>
