@@ -21,7 +21,7 @@ function ProcessStep({ number, title, description, icon }: ProcessStepProps) {
             </div>
 
             <h5 className="font-rajdhani font-bold text-white mb-4">{title}</h5>
-            <p className="text-white/80 font-league-spartan leading-relaxed">{description}</p>
+            <p className="text-white/80 font-outfit leading-relaxed">{description}</p>
         </div>
     );
 }
@@ -73,7 +73,7 @@ function ProcessSection() {
                     <h1 className="font-rajdhani font-bold text-white mb-8">
                         Nosso <span className="text-green-accent">Processo</span>
                     </h1>
-                    <h5 className="font-league-spartan text-white/80 max-w-4xl mx-auto leading-relaxed">
+                    <h5 className="font-outfit text-white/80 max-w-4xl mx-auto leading-relaxed">
                         Seguimos uma metodologia comprovada que garante entregas de qualidade, 
                         dentro do prazo e alinhadas com seus objetivos de negócio.
                     </h5>
@@ -96,20 +96,20 @@ function ProcessSection() {
                         <h5 className="font-rajdhani font-bold text-white mb-4">
                             Transparência Total
                         </h5>
-                        <p className="font-league-spartan text-white/80 mb-6">
+                        <p className="font-outfit text-white/80 mb-6">
                             Durante todo o processo, você tem visibilidade completa do progresso
                             através de relatórios regulares e demonstrações práticas.
                         </p>
                         <div className="flex flex-wrap justify-center gap-4">
-                            <div className="flex items-center text-green-accent font-league-spartan">
+                            <div className="flex items-center text-green-accent font-outfit">
                                 <CheckCircle weight="Bold" size={18} className="mr-2" />
                                 Reuniões semanais
                             </div>
-                            <div className="flex items-center text-green-accent font-league-spartan">
+                            <div className="flex items-center text-green-accent font-outfit">
                                 <CheckCircle weight="Bold" size={18} className="mr-2" />
                                 Relatórios de progresso
                             </div>
-                            <div className="flex items-center text-green-accent font-league-spartan">
+                            <div className="flex items-center text-green-accent font-outfit">
                                 <CheckCircle weight="Bold" size={18} className="mr-2" />
                                 Demos funcionais
                             </div>
