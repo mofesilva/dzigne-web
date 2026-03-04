@@ -2,7 +2,7 @@
 @import "tailwindcss";
 
 :root {
-  --background: #000000;
+  --background: #050505;
   --foreground: #eeeeee;
   --onyx: #0a0a0a;
   --carbon: #171717;
@@ -22,7 +22,7 @@
   --color-green-accent-light: var(--green-accent-light);
   --color-eggshell: var(--eggshell);
   --font-rajdhani: var(--font-rajdhani);
-  --font-league-spartan: var(--font-league-spartan);
+  --font-outfit: var(--font-outfit);
   --font-google-sans-flex: 'Google Sans Flex', sans-serif;
   --font-open-sans: 'Open Sans', sans-serif;
   --font-roboto: 'Roboto', sans-serif;
@@ -71,9 +71,9 @@ html {
 }
 
 .footer-section {
-  width: auto;
-  border-radius: 2rem;
+  width: 100%;
   background-color: var(--green-accent);
+  border-radius: 0 !important;
 }
 
 /* Typographic Scale (1.25 ratio) - Mobile First */
@@ -199,10 +199,57 @@ h1 {
   }
 
   100% {
-    transform: translateX(-50%);
+    transform: translateX(-33.333%);
   }
 }
 
 .animate-marquee {
   animation: marquee 40s linear infinite;
+}
+
+/* Marquee reverse (scrolls right) */
+@keyframes marquee-reverse {
+  0% {
+    transform: translateX(-33.333%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.animate-marquee-reverse {
+  animation: marquee-reverse 45s linear infinite;
+}
+
+/* Fade in animation for testimonial transitions */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+/* Hide scrollbar utility */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Text shadow for readability over illustrations */
+.text-shadow-heavy {
+  text-shadow: 0 0 12px rgba(0, 0, 0, 1), 0 0 24px rgba(0, 0, 0, 0.9), 0 0 40px rgba(0, 0, 0, 0.8);
 }
