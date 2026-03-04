@@ -1,8 +1,6 @@
 import React from "react";
 import AboutHeroSection from "./components/AboutHeroSection";
-import AboutManifestoSection from "./components/AboutManifestoSection";
-import AboutStatsSection from "./components/AboutStatsSection";
-import AboutMissionValuesSection from "./components/AboutMissionValuesSection";
+import AboutEssenceSection from "./components/AboutEssenceSection";
 import AboutTechStackSection from "./components/AboutTechStackSection";
 import AboutTeamSection from "./components/AboutTeamSection";
 import AboutCTASection from "./components/AboutCTASection";
@@ -10,16 +8,14 @@ import AboutCTASection from "./components/AboutCTASection";
 export const metadata = {
   title: "Sobre Nós | Dzign-e",
   description:
-    "Conheça a Dzign-e: nossa missão, valores, equipe e as tecnologias que utilizamos para criar soluções digitais extraordinárias.",
+    "Conheça a Dzign-e — equipe, tecnologias e o que nos move.",
 };
 
 const Page = () => {
   return (
     <main className="flex flex-col">
       <AboutHeroSection />
-      <AboutManifestoSection />
-      <AboutStatsSection />
-      <AboutMissionValuesSection />
+      <AboutEssenceSection />
       <AboutTechStackSection />
       <AboutTeamSection />
       <AboutCTASection />
