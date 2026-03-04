@@ -85,14 +85,22 @@ function TestimonialsSection() {
         container.scrollTo({ left: scrollLeft, behavior: 'smooth' })
     }, [selectedIndex])
 
+    // Auto-advance every 60 seconds
+    useEffect(() => {
+        const timer = setInterval(() => {
+            goNext()
+        }, 60_000)
+        return () => clearInterval(timer)
+    }, [goNext])
+
     return (
-        <section className="bg-eggshell py-32">
+        <section className="bg-eggshell pb-16 md:pb-32 pt-0">
             <div className="max-w-[1600px] mx-auto px-6 md:px-12 lg:px-20">
                 {/* Header */}
-                <div className="text-center mb-24 lg:mb-32">
-                    <h6 className="font-outfit text-green-accent font-semibold tracking-[0.25em] uppercase mb-6">Depoimentos</h6>
+                <div className="text-center mb-12 md:mb-24 lg:mb-32">
+                    <h6 className="font-outfit text-green-accent font-semibold tracking-[0.25em] uppercase mb-3">Depoimentos</h6>
                     <h2 className="font-rajdhani font-bold text-carbon">
-                        O que dizem nossos clientes
+                        O que dizem nossos parceiros
                     </h2>
                 </div>
 
@@ -100,11 +108,11 @@ function TestimonialsSection() {
 
                 {/* Testimonial Content */}
                 <div className="relative flex items-center justify-center gap-8 md:gap-14 lg:gap-20 max-w-6xl mx-auto">
-                    {/* Left Arrow */}
+                    {/* Left Arrow — hidden on mobile */}
                     <button
                         onClick={goPrev}
-                        className="flex-shrink-0 w-14 h-14 md:w-16 md:h-16 rounded-2xl border-2 border-neutral-300 
-                                   flex items-center justify-center text-carbon cursor-pointer
+                        className="hidden md:flex flex-shrink-0 w-14 h-14 md:w-16 md:h-16 rounded-2xl border-2 border-neutral-300 
+                                   items-center justify-center text-carbon cursor-pointer
                                    hover:border-green-accent hover:text-green-accent 
                                    transition-all duration-200 bg-neutral-200"
                         aria-label="Depoimento anterior"
@@ -118,7 +126,7 @@ function TestimonialsSection() {
                         className="flex-1 min-w-0 text-center animate-fadeIn"
                     >
                         {/* Profile */}
-                        <div className="flex flex-col items-center gap-5 mb-14 lg:mb-18">
+                        <div className="flex flex-col items-center gap-3 md:gap-5 mb-8 md:mb-14 lg:mb-18">
                             <div className="w-28 h-28 md:w-36 md:h-36 lg:w-40 lg:h-40 rounded-full overflow-hidden ring-4 lg:ring-[5px] ring-green-accent">
                                 <Image
                                     src={selected.photo}
@@ -139,20 +147,20 @@ function TestimonialsSection() {
                         </div>
 
                         {/* Quote */}
-                        <div className="relative px-2 md:px-8 lg:px-12">
+                        <div className="relative px-0 md:px-8 lg:px-12">
 
-                            <h5 className="text-gray-700 font-outfit font-normal leading-relaxed relative z-10 pt-8 lg:pt-10">
+                            <h5 className="text-gray-700 font-outfit font-normal leading-relaxed relative z-10 pt-4 md:pt-8 lg:pt-10">
                                 &ldquo;{selected.text}&rdquo;
                             </h5>
 
                         </div>
                     </div>
 
-                    {/* Right Arrow */}
+                    {/* Right Arrow — hidden on mobile */}
                     <button
                         onClick={goNext}
-                        className="flex-shrink-0 w-14 h-14 md:w-16 md:h-16 rounded-2xl border-2 border-neutral-300 
-                                   flex items-center justify-center text-carbon cursor-pointer
+                        className="hidden md:flex flex-shrink-0 w-14 h-14 md:w-16 md:h-16 rounded-2xl border-2 border-neutral-300 
+                                   items-center justify-center text-carbon cursor-pointer
                                    hover:border-green-accent hover:text-green-accent 
                                    transition-all duration-200 bg-neutral-200"
                         aria-label="Próximo depoimento"
@@ -161,39 +169,43 @@ function TestimonialsSection() {
                     </button>
                 </div>
             </div>
-            {/* Avatar Row */}
+            {/* Avatar Row — wave layout */}
             <div
                 ref={avatarRowRef}
-                className="flex items-center justify-center gap-4 md:gap-6 lg:gap-8 mt-20 lg:mt-28 overflow-x-auto py-6 px-6 scrollbar-hide"
+                className="flex items-center justify-center gap-4 md:gap-6 lg:gap-8 mt-12 md:mt-20 lg:mt-28 overflow-x-auto py-10 px-6 scrollbar-hide"
             >
-                {testimonials.map((t, i) => (
-                    <button
-                        key={i}
-                        onClick={() => goTo(i)}
-                        className="flex-shrink-0 group relative focus:outline-none cursor-pointer"
-                        aria-label={`Ver depoimento de ${t.name}`}
-                    >
-                        <div
-                            className={`
+                {testimonials.map((t, i) => {
+                    // Sine wave: ~1.2 rad step gives a nice oscillation across 7 items
+                    const waveY = Math.round(Math.sin(i * 1.2) * 16)
+                    return (
+                        <button
+                            key={i}
+                            onClick={() => goTo(i)}
+                            className="flex-shrink-0 group relative focus:outline-none cursor-pointer transition-transform duration-500 ease-out"
+                            style={{ transform: `translateY(${waveY}px)` }}
+                            aria-label={`Ver depoimento de ${t.name}`}
+                        >
+                            <div
+                                className={`
                                     w-14 h-14 md:w-16 md:h-16 lg:w-18 lg:h-18 rounded-full overflow-hidden
                                     transition-all duration-300 ease-out
                                     ${i === selectedIndex
-                                    ? 'ring-[3px] ring-green-accent scale-110'
-                                    : 'ring-2 ring-neutral-300 opacity-45 hover:opacity-75 hover:ring-neutral-400'
-                                }
+                                        ? 'ring-[3px] ring-green-accent scale-110'
+                                        : 'ring-2 ring-neutral-300 opacity-45 hover:opacity-75 hover:ring-neutral-400'
+                                    }
                                 `}
-                        >
-                            <Image
-                                src={t.photo}
-                                alt={t.name}
-                                width={72}
-                                height={72}
-                                className="w-full h-full object-cover"
-                            />
-                        </div>
-
-                    </button>
-                ))}
+                            >
+                                <Image
+                                    src={t.photo}
+                                    alt={t.name}
+                                    width={72}
+                                    height={72}
+                                    className="w-full h-full object-cover"
+                                />
+                            </div>
+                        </button>
+                    )
+                })}
             </div>
         </section>
     )
