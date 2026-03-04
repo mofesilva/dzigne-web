@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Rajdhani, League_Spartan } from "next/font/google";
+import { Rajdhani, Outfit } from "next/font/google";
 import "./globals.css";
 import StickyNavbar from "@/components/StickyNavbar";
 import Footer from "@/components/footer/Footer";
@@ -13,8 +13,8 @@ const rajdhani = Rajdhani({
   weight: ["300", "400", "500", "600", "700"],
 });
 
-const leagueSpartan = League_Spartan({
-  variable: "--font-league-spartan",
+const outfit = Outfit({
+  variable: "--font-outfit",
   subsets: ["latin"],
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
 });
@@ -34,7 +34,7 @@ export default function RootLayout({
       <head>
       </head>
       <body
-        className={`${rajdhani.variable} ${leagueSpartan.variable} antialiased`}
+        className={`${rajdhani.variable} ${outfit.variable} antialiased`}
       >
         <StickyNavbar />
         <ScrollTracker />
