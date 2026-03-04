@@ -1,103 +1,266 @@
 'use client';
 import React from 'react';
+import Image from 'next/image';
 import NavigationButton from '../../components/NavigationButton';
-import { Code, UserPlus, Cpu } from '@solar-icons/react/ssr';
+import { MagicBentoGrid, MagicBentoCard } from '../../components/MagicBento';
+import { IconStrategy } from './ServiceIcons';
 
-const services = [
-    {
-        number: '01',
-        icon: <Code weight="Bold" size={28} />,
-        title: 'Desenvolvimento',
-        description: 'Projetos desenvolvidos sob medida, com arquitetura robusta e tecnologias modernas para seu negócio.',
-    },
-    {
-        number: '02',
-        icon: <UserPlus weight="Outline" size={28} />,
-        title: 'Alocação de Equipes',
-        description: 'Times especializados sob demanda com os perfis certos para acelerar suas entregas.',
-    },
-    {
-        number: '03',
-        icon: <Cpu weight="Bold" size={28} />,
-        title: 'Tecnologia Proprietária',
-        description: 'Soluções inovadoras com nossa tecnologia proprietária para acelerar seu desenvolvimento.',
-    },
-];
+const GLOW = '127, 209, 12';
 
 function ServicesSection() {
     return (
-        <section className="bg-black w-full relative overflow-hidden">
-            <div className="px-6 md:px-12 lg:px-20 2xl:px-32 py-24 lg:py-32">
-                {/* Header — Hero pattern: big heading left, CTA right-bottom */}
-                <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-20 lg:mb-28">
-                    <div className="max-w-3xl">
+        <section className="bg-black w-full relative overflow-hidden py-20 md:py-28 lg:py-36">
+            <div className="px-6 md:px-12 lg:px-20 2xl:px-32">
+                {/* Header */}
+                <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-16 lg:mb-20">
+                    <div className="w-full">
                         <p
-                            className="font-league-spartan text-eggshell/40 mb-4 tracking-widest uppercase"
-                            style={{ fontSize: 'clamp(0.7rem, 0.5vw + 0.4rem, 0.85rem)' }}
+                            className="text-eggshell/60 mb-4 tracking-widest uppercase"
                         >
                             O que fazemos
                         </p>
                         <h1
                             className="font-rajdhani text-eggshell mb-5 md:mb-6"
-                            style={{ fontSize: 'clamp(2.5rem, 5vw + 0.5rem, 5rem)', lineHeight: 1.05 }}
                         >
-                            <span className="font-medium">Construímos</span><br />
-                            <span className="font-bold text-green-accent">software inteligente</span>
+                            <span className="font-medium">Transformamos ideias em</span><br />
+                            <span className="font-bold text-green-accent">produtos digitais</span>
                         </h1>
                         <p
-                            className="font-league-spartan text-eggshell/50 max-w-lg leading-relaxed"
-                            style={{ fontSize: 'clamp(0.95rem, 0.8vw + 0.5rem, 1.15rem)' }}
+                            className="font-outfit text-eggshell/50 max-w-xl"
                         >
-                            Do conceito à entrega. Rápido, familiar e feito sob medida.
+                            Da estratégia à execução. Cada projeto combina design, tecnologia
+                            e performance para entregar resultados reais ao seu negócio.
                         </p>
                     </div>
-                    <div className="flex-shrink-0">
-                        <NavigationButton href="/services" text="Ver mais serviços" />
-                    </div>
                 </div>
 
-                {/* Services — numbered list with horizontal lines */}
-                <div>
-                    {services.map((service, i) => (
-                        <div
-                            key={i}
-                            className="border-t border-eggshell/[0.08] py-10 lg:py-14 group cursor-default"
+                {/* ── Magic Bento Grid ── */}
+                <MagicBentoGrid
+                    glowColor={GLOW}
+                    spotlightRadius={250}
+                    enableSpotlight
+                >
+                    <div
+                        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 lg:grid-flow-row-dense gap-3 lg:gap-4"
+                        style={{ gridAutoRows: 'minmax(220px, auto)' } as React.CSSProperties}
+                    >
+                        {/* ═══ 1 · Desenvolvimento Web & Mobile ═══ */}
+                        <MagicBentoCard
+                            glowColor={GLOW}
+                            enableStars
+                            clickEffect
+                            particleCount={10}
+                            className="rounded-tl-4xl border border-eggshell/[0.06] min-h-[220px] bg-onyx"
                         >
-                            <div className="flex flex-col md:flex-row md:items-start gap-6 md:gap-12 lg:gap-20">
-                                {/* Number + Icon */}
-                                <div className="flex items-center gap-5 flex-shrink-0 md:w-[180px] lg:w-[220px]">
-                                    <span
-                                        className="font-rajdhani font-bold text-eggshell/10 group-hover:text-green-accent/30 transition-colors duration-500"
-                                        style={{ fontSize: 'clamp(2.5rem, 3vw, 4rem)' }}
+                            <Image
+                                src="/processor-chip.png"
+                                alt=""
+                                width={320}
+                                height={320}
+                                className="absolute pointer-events-none w-64 h-64 lg:w-80 lg:h-80 -top-12 -right-12 lg:-top-16 lg:-right-16 object-contain opacity-40"
+                                aria-hidden
+                            />
+                            <div className="flex flex-col justify-between h-full p-7 lg:p-9 relative z-10">
+                                <span className="font-outfit text-eggshell/20 text-xs tracking-[0.2em] uppercase">
+                                    Engenharia
+                                </span>
+                                <div>
+                                    <h4
+                                        className="font-rajdhani font-bold text-eggshell mb-2"
                                     >
-                                        {service.number}
-                                    </span>
-                                    <div className="text-green-accent/70 group-hover:text-green-accent transition-colors duration-500">
-                                        {service.icon}
-                                    </div>
+                                        Desenvolvimento<br />Web & Mobile
+                                    </h4>
+                                    <p
+                                        className="font-outfit text-eggshell/45"
+                                    >
+                                        Aplicações modernas que geram resultado. Sites que convertem,
+                                        apps que retêm e sistemas que escalam.
+                                    </p>
                                 </div>
-
-                                {/* Title */}
-                                <h3
-                                    className="font-rajdhani font-bold text-eggshell group-hover:text-green-accent transition-colors duration-500 flex-shrink-0 md:w-[260px] lg:w-[300px]"
-                                    style={{ fontSize: 'clamp(1.5rem, 2vw + 0.3rem, 2.2rem)', lineHeight: 1.15 }}
-                                >
-                                    {service.title}
-                                </h3>
-
-                                {/* Description */}
-                                <p
-                                    className="font-league-spartan text-eggshell/40 group-hover:text-eggshell/60 leading-relaxed transition-colors duration-500 max-w-md"
-                                    style={{ fontSize: 'clamp(0.9rem, 0.6vw + 0.5rem, 1.05rem)' }}
-                                >
-                                    {service.description}
-                                </p>
                             </div>
-                        </div>
-                    ))}
-                    {/* Bottom border */}
-                    <div className="border-t border-eggshell/[0.08]" />
-                </div>
+                        </MagicBentoCard>
+
+                        {/* ═══ 2 · UI/UX Design ═══ */}
+                        <MagicBentoCard
+                            glowColor={GLOW}
+                            enableStars
+                            clickEffect
+                            particleCount={10}
+                            className="border border-eggshell/[0.06] min-h-[220px] bg-onyx"
+                        >
+                            <Image
+                                src="/graphic-design.png"
+                                alt=""
+                                width={320}
+                                height={320}
+                                className="absolute pointer-events-none w-64 h-64 lg:w-80 lg:h-80 -top-12 -right-12 lg:-top-16 lg:-right-16 object-contain opacity-20"
+                                aria-hidden
+                            />
+                            <div className="flex flex-col justify-between h-full p-7 lg:p-9 relative z-10">
+                                <span className="font-outfit text-eggshell/20 text-xs tracking-[0.2em] uppercase">
+                                    Design
+                                </span>
+                                <div>
+                                    <h4
+                                        className="font-rajdhani font-bold text-eggshell mb-2"
+                                    >
+                                        UI/UX Design
+                                    </h4>
+                                    <p
+                                        className="font-outfit text-eggshell/45"
+                                    >
+                                        Interfaces que encantam. Cada pixel pensado para
+                                        guiar o usuário até a conversão.
+                                    </p>
+                                </div>
+                            </div>
+                        </MagicBentoCard>
+
+                        {/* ═══ 3 · Produtos Digitais — large card (2col × 2row) ═══ */}
+                        <MagicBentoCard
+                            glowColor={GLOW}
+                            enableStars
+                            clickEffect
+                            particleCount={18}
+                            className="rounded-tr-4xl border border-eggshell/[0.06] md:col-span-2 lg:col-span-2 lg:row-span-2 min-h-[220px] bg-onyx"
+                        >
+                            <Image
+                                src="/uiux-design.png"
+                                alt=""
+                                width={480}
+                                height={480}
+                                className="absolute pointer-events-none w-96 h-96 lg:w-[30rem] lg:h-[30rem] -top-16 -right-16 lg:-top-24 lg:-right-24 object-contain opacity-60"
+                                aria-hidden
+                            />
+                            <div className="flex flex-col justify-between h-full p-7 lg:p-10 relative z-10">
+                                <span className="font-outfit text-eggshell/20 text-xs tracking-[0.2em] uppercase">
+                                    Produto
+                                </span>
+                                <div>
+                                    <h4
+                                        className="font-rajdhani font-bold text-eggshell mb-3"
+                                    >
+                                        Produtos Digitais
+                                    </h4>
+                                    <p
+                                        className="font-outfit text-eggshell/45 max-w-md"
+                                    >
+                                        Do MVP ao produto completo. Transformamos sua ideia em um
+                                        produto digital validado, funcional e pronto para o mercado.
+                                    </p>
+                                    <span className="inline-block mt-4 font-outfit text-eggshell/15 text-xs tracking-[0.2em] uppercase">
+                                        Discovery · Prototipação · Validação · Lançamento
+                                    </span>
+                                </div>
+                            </div>
+                        </MagicBentoCard>
+
+                        {/* ═══ 4 · Hospedagem & Infraestrutura — large card (2col × 2row) ═══ */}
+                        <MagicBentoCard
+                            glowColor={GLOW}
+                            enableStars
+                            clickEffect
+                            particleCount={18}
+                            className="rounded-bl-4xl border border-eggshell/[0.06] md:col-span-2 lg:col-span-2 lg:row-span-2 min-h-[220px] bg-onyx"
+                        >
+                            <Image
+                                src="/cloud-database-3.png"
+                                alt=""
+                                width={480}
+                                height={480}
+                                className="absolute pointer-events-none w-96 h-96 lg:w-[30rem] lg:h-[30rem] -top-16 -right-16 lg:-top-24 lg:-right-24 object-contain opacity-40"
+                                aria-hidden
+                            />
+                            <div className="flex flex-col justify-between h-full p-7 lg:p-10 relative z-10">
+                                <span className="font-outfit text-eggshell/20 text-xs tracking-[0.2em] uppercase">
+                                    Infraestrutura
+                                </span>
+                                <div>
+                                    <h4
+                                        className="font-rajdhani font-bold text-eggshell mb-3"
+                                    >
+                                        Hospedagem &<br />Infraestrutura
+                                    </h4>
+                                    <p
+                                        className="font-outfit text-eggshell/45 max-w-md"
+                                    >
+                                        Seu projeto sempre no ar. Alta disponibilidade, CDN global,
+                                        backups automáticos e monitoramento 24/7 para você focar
+                                        no que importa.
+                                    </p>
+                                    <span className="inline-block mt-4 font-outfit text-eggshell/15 text-xs tracking-[0.2em] uppercase">
+                                        AWS · Vercel · Docker · CI/CD
+                                    </span>
+                                </div>
+                            </div>
+                        </MagicBentoCard>
+
+                        {/* ═══ 5 · Consultoria em TI ═══ */}
+                        <MagicBentoCard
+                            glowColor={GLOW}
+                            enableStars
+                            clickEffect
+                            particleCount={10}
+                            className="border border-eggshell/[0.06] min-h-[220px] overflow-hidden bg-onyx"
+                        >
+                            <IconStrategy className="w-52 h-52 lg:w-72 lg:h-72 -top-8 -right-8 lg:-top-10 lg:-right-10" />
+                            <div className="flex flex-col justify-between h-full p-7 lg:p-9 relative z-10">
+                                <span className="font-outfit text-eggshell/20 text-xs tracking-[0.2em] uppercase">
+                                    Estratégia
+                                </span>
+                                <div>
+                                    <h4
+                                        className="font-rajdhani font-bold text-eggshell mb-2"
+                                    >
+                                        Consultoria em TI
+                                    </h4>
+                                    <p
+                                        className="font-outfit text-eggshell/45"
+                                    >
+                                        Analisamos sua operação e traçamos o roadmap
+                                        tecnológico ideal para acelerar resultados.
+                                    </p>
+                                </div>
+                            </div>
+                        </MagicBentoCard>
+
+                        {/* ═══ 6 · Analytics & Performance ═══ */}
+                        <MagicBentoCard
+                            glowColor={GLOW}
+                            enableStars
+                            clickEffect
+                            particleCount={10}
+                            className="rounded-br-4xl border border-eggshell/[0.06] min-h-[220px] bg-onyx"
+                        >
+                            <Image
+                                src="/data-pyramid.svg"
+                                alt=""
+                                width={480}
+                                height={480}
+                                className="absolute pointer-events-none w-80 h-80 lg:w-[26rem] lg:h-[26rem] -bottom-24 -right-20 lg:-bottom-32 lg:-right-28 object-contain opacity-40"
+                                aria-hidden
+                            />
+                            <div className="flex flex-col justify-between h-full p-7 lg:p-9 relative z-10">
+                                <span className="font-outfit text-eggshell/20 text-xs tracking-[0.2em] uppercase">
+                                    Dados
+                                </span>
+                                <div>
+                                    <h4
+                                        className="font-rajdhani font-bold text-eggshell mb-2"
+                                    >
+                                        Analytics &<br />Performance
+                                    </h4>
+                                    <p
+                                        className="font-outfit text-eggshell/45 text-shadow-heavy"
+                                    >
+                                        Métricas configuradas, performance monitorada e
+                                        otimização contínua para crescer com previsibilidade.
+                                    </p>
+                                </div>
+                            </div>
+                        </MagicBentoCard>
+                    </div>
+                </MagicBentoGrid>
             </div>
         </section>
     );
