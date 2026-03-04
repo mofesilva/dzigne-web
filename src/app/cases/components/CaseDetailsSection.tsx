@@ -36,7 +36,7 @@ function CaseDetailsSection({ duration, team, technologies, challenge, solution,
                             <h5 className="font-rajdhani font-bold text-carbon mb-3">
                                 {detail.label}
                             </h5>
-                            <p className="font-league-spartan text-carbon/70 leading-relaxed">
+                            <p className="font-outfit text-carbon/70 leading-relaxed">
                                 {detail.value}
                             </p>
                         </div>
@@ -50,7 +50,7 @@ function CaseDetailsSection({ duration, team, technologies, challenge, solution,
                             <Target weight="Bold" size={28} className="text-green-accent mr-3" />
                             O Desafio
                         </h3>
-                        <h6 className="font-league-spartan text-carbon/80 leading-relaxed">
+                        <h6 className="font-outfit text-carbon/80 leading-relaxed">
                             {challenge}
                         </h6>
                     </div>
@@ -59,7 +59,7 @@ function CaseDetailsSection({ duration, team, technologies, challenge, solution,
                             <LightbulbBolt weight="Outline" size={28} className="text-green-accent mr-3" />
                             Nossa Solução
                         </h3>
-                        <h6 className="font-league-spartan text-carbon/80 leading-relaxed">
+                        <h6 className="font-outfit text-carbon/80 leading-relaxed">
                             {solution}
                         </h6>
                     </div>
@@ -76,7 +76,7 @@ function CaseDetailsSection({ duration, team, technologies, challenge, solution,
                             <div key={index} className="bg-neutral-200 rounded-2xl p-8 border border-neutral-300">
                                 <div className="flex flex-col items-center justify-center">
                                     <CheckCircle weight="Bold" size={30} className="text-green-accent mt-1 pb-4" />
-                                    <p className="font-league-spartan text-center text-carbon/80 leading-relaxed">
+                                    <p className="font-outfit text-center text-carbon/80 leading-relaxed">
                                         {result}
                                     </p>
                                 </div>
