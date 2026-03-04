@@ -1,59 +1,45 @@
-'use client'
 import React from 'react';
 import LazyImage from '@/components/LazyImage';
-import BrandIcon from '@/components/BrandIcon';
-import { Letter } from '@solar-icons/react/ssr';
 
 function FooterContactSection() {
     return (
-        <>
-            <section className="flex flex-col items-center md:items-end justify-start h-auto pt-10 pb-0 px-10 md:py-10 md:pr-0 md:pl-0 text-center md:text-right">
-                <LazyImage src='/assets/dzigne-logotype-black.png'
-                    alt="Logotipo Dzign-e"
-                    width={100}
-                    height={100}
-                    className="h-auto w-30 pb-4 mr-1" />
-                <div className="flex items-center justify-center md:justify-start pb-4 gap-2">
-                    <a href="https://www.instagram.com/dzign.e/"
-                        target="_blank"
-                        rel="noopener noreferrer">
-                        <BrandIcon name="instagram" size={22} alt="Instagram" />
-                    </a>
-                    <a href="https://www.linkedin.com/company/dzigne/"
-                        target="_blank"
-                        rel="noopener noreferrer">
-                        <BrandIcon name="linkedin" size={22} alt="LinkedIn" />
-                    </a>
-                    <a href="mailto:contato@dzign-e.com.br"
-                        target="_blank"
-                        rel="noopener noreferrer">
-                        <Letter weight="Outline" size={22} className="text-carbon" />
-                    </a>
-                    <a href="https://wa.me/5519999094848"
-                        target="_blank"
-                        rel="noopener noreferrer">
-                        <BrandIcon name="whatsapp" size={22} alt="WhatsApp" />
-                    </a>
-                </div>
-                <div className="pb-4 flex flex-col items-center md:items-end gap-1">
-                    <div className="flex items-center justify-center md:justify-start w-full mr-0.5">
-                        <a href="mailto:contato@dzign-e.com.br" className="font-league-spartan text-carbon">
-                            contato@dzign-e.com.br
-                        </a>
-                    </div>
-                    <div className="flex items-center gap-1 mr-0.5">
-                        <a
-                            href="https://wa.me/5519999094848"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="font-league-spartan text-carbon"
-                        >
-                            (19) 99909-4848
-                        </a>
-                    </div>
-                </div>
-            </section>
-        </>
+        <section className="flex flex-col items-center lg:items-start text-center lg:text-left">
+            {/* Logo */}
+            <LazyImage
+                src="/assets/dzigne-logotype-black.png"
+                alt="Logotipo Dzign-e"
+                width={180}
+                height={180}
+                className="h-auto w-36 mb-8"
+            />
+
+            {/* Tagline */}
+            <h4
+                className="font-rajdhani font-medium text-carbon max-w-md mb-6"
+            >
+                Transformando visão em{' '}
+                <span className="font-bold">realidade digital</span>{' '}
+                sob medida
+            </h4>
+
+            {/* Contact */}
+            <div className="flex flex-col gap-2">
+                <a
+                    href="mailto:contato@dzign-e.com.br"
+                    className="font-outfit text-carbon/60 hover:text-carbon transition-colors duration-200"
+                >
+                    contato@dzign-e.com.br
+                </a>
+                <a
+                    href="https://wa.me/5519999094848"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-outfit text-carbon/60 hover:text-carbon transition-colors duration-200"
+                >
+                    (19) 99909-4848
+                </a>
+            </div>
+        </section>
     );
 }
 
