@@ -36,7 +36,7 @@ function CaseCard({ logo, company, title, description, mockup, href, tags, isRev
                     </h3>
                 )}
 
-                <h6 className="font-league-spartan text-carbon/80 mb-6 leading-relaxed">
+                <h6 className="font-outfit text-carbon/80 mb-6 leading-relaxed">
                     {description}
                 </h6>
 
