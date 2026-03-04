@@ -164,6 +164,13 @@ h1 {
     background: var(--background);
   }
 
+  /* Previne bounce/rubber-band que causa sensação de tremor */
+  html,
+  body {
+    overscroll-behavior: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
   .section-container {
     padding: 0 1rem;
   }
