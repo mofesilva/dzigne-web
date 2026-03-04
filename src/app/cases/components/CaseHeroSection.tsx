@@ -26,7 +26,7 @@ function CaseHeroSection({ logo, company, title, description, tags }: CaseHeroSe
                 {title}
             </h1>
 
-            <h5 className="font-league-spartan text-white/90 max-w-4xl mx-auto mb-8 leading-relaxed">
+            <h5 className="font-outfit text-white/90 max-w-4xl mx-auto mb-8 leading-relaxed">
                 {description}
             </h5>
 
