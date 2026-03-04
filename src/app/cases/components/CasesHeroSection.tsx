@@ -2,17 +2,25 @@ import React from 'react';
 
 function CasesHeroSection() {
     return (
-        <div className="max-w-4xl mx-auto text-center pb-16">
-            <h1 className='font-rajdhani font-bold text-white mb-6'>
-                Projetos que Transformaram <br />
-                <span className="text-green-accent">Negócios</span>
-            </h1>
+        <section className="bg-black w-full min-h-[60vh] flex items-end relative overflow-hidden">
+            <div className="px-6 md:px-12 lg:px-20 2xl:px-32 pt-36 pb-20 md:pb-28 w-full">
+                <div className="max-w-4xl mx-auto text-center">
+                    <h6 className="font-outfit text-green-accent font-semibold tracking-[0.25em] uppercase mb-6">
+                        Nosso portfólio
+                    </h6>
 
-            <h6 className='font-outfit text-white/80 max-w-2xl mx-auto'>
-                Cada projeto é único e desenvolvido com foco nos resultados do cliente.
-                Veja como ajudamos empresas a alcançar seus objetivos através da tecnologia.
-            </h6>
-        </div>
+                    <h1 className="font-rajdhani text-eggshell">
+                        <span className="font-medium">
+                            Conheça os projetos que
+                        </span>
+                        <br />
+                        <span className="font-bold text-green-accent">
+                            nasceram das melhores parcerias.
+                        </span>
+                    </h1>
+                </div>
+            </div>
+        </section>
     );
 }
 
