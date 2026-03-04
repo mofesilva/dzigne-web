@@ -13,7 +13,7 @@ function AddressItem({ title, address, city, details, state, country }: AddressI
     return (
         <div className="text-center md:text-left">
             <h6 className="font-rajdhani text-center font-bold text-carbon">{title}</h6>
-            <p className="font-league-spartan text-center text-md/6 text-carbon text-regular ">{address}<br />
+            <p className="font-outfit text-center text-md/6 text-carbon text-regular ">{address}<br />
                 {details}<br />
                 {city}/{state}<br />
                 {country}</p>
