@@ -7,10 +7,16 @@ export default function SmoothScroll() {
     const lenisRef = useRef<Lenis | null>(null);
 
     useEffect(() => {
+        // Dispositivos touch já possuem scroll inercial nativo suave.
+        // O Lenis intercepta o touch scroll e causa tremidas/lag no mobile.
+        const isTouchDevice =
+            'ontouchstart' in window || navigator.maxTouchPoints > 0;
+
+        if (isTouchDevice) return;
+
         const lenis = new Lenis({
             duration: 1.2,
             easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-            touchMultiplier: 2,
             infinite: false,
         });
 
