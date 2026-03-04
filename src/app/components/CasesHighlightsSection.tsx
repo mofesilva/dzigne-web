@@ -1,100 +1,167 @@
-'use client';
-import Carousel from '@/components/Swiper';
 import React from 'react';
-import CaseSlide from './CaseSlide';
+import Image from 'next/image';
+
 import NavigationButton from '../../components/NavigationButton';
+import { AltArrowRight } from '@solar-icons/react/ssr';
 
 function CasesHighlightsSection() {
     return (
-        <section className="bg-black w-full relative overflow-hidden">
-            {/* Header — same spacing as Hero */}
+        <section className="bg-eggshell w-full relative overflow-hidden">
+            {/* Header */}
             <div className="px-6 md:px-12 lg:px-20 2xl:px-32 pt-24 lg:pt-32 pb-4">
                 <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8">
                     <div className="max-w-3xl">
                         <p
-                            className="font-league-spartan text-eggshell/40 mb-4 tracking-widest uppercase"
-                            style={{ fontSize: 'clamp(0.7rem, 0.5vw + 0.4rem, 0.85rem)' }}
+                            className="text-caption font-outfit text-carbon/60 mb-4 tracking-widest uppercase"
                         >
                             Portfólio
                         </p>
                         <h1
-                            className="font-rajdhani text-eggshell"
-                            style={{ fontSize: 'clamp(2.5rem, 5vw + 0.5rem, 5rem)', lineHeight: 1.05 }}
+                            className="font-rajdhani text-carbon"
                         >
                             <span className="font-medium">Nossos</span><br />
-                            <span className="font-bold text-green-accent">cases de sucesso</span>
+                            <span className="font-bold">cases de sucesso</span>
                         </h1>
-                    </div>
-                    <div className="flex-shrink-0">
-                        <NavigationButton href="/cases" text="Ver todos os cases" />
                     </div>
                 </div>
             </div>
 
-            {/* Carousel — full bleed feel */}
-            <div className="pb-20 lg:pb-28">
-                <Carousel
-                    className="h-auto w-full"
-                    style={{
-                        '--swiper-navigation-color': '#7fd10c',
-                        '--swiper-pagination-bullet-inactive-color': '#eeeeee',
-                        '--swiper-pagination-bullet-inactive-opacity': '0.1',
-                        '--swiper-pagination-color': '#7fd10c',
-                        '--swiper-navigation-size': '24px',
-                    } as React.CSSProperties}
-                    options={{
-                        spaceBetween: 0,
-                        pagination: { clickable: true },
-                        autoplay: { delay: 6000, disableOnInteraction: false, pauseOnMouseEnter: true },
-                    }}
-                    slides={[
-                        <CaseSlide
-                            key={1}
-                            text="Criamos uma solução digital exclusiva que potencializou o estudo dos alunos para a OAB, integrando simulados intuitivos com gestão dinâmica do conteúdo pelos professores."
-                            logo="/assets/images/logos/mackenzie2.png"
-                            alt="Mackenzie Logo"
-                            isLogoHorizontal={true}
-                            mockup="/assets/images/mockups/oabmack_mockup.png"
-                            href="/cases/oab-mack"
-                        />,
-                        <CaseSlide
-                            key={2}
-                            text="Criamos o sistema oficial da Igreja Presbiteriana do Brasil, integrando funcionalidades cadastrais, documentos e gestão conciliar. A IPB otimizou o acesso aos documentos e reduziu o tempo das reuniões."
-                            logo="/assets/images/logos/icalvinus-hn.png"
-                            alt="iCalvinus Logo"
-                            isLogoHorizontal={true}
-                            mockup="/assets/images/mockups/iCalvinus_mockup_2.png"
-                            href="/cases/icalvinus"
-                        />,
-                        <CaseSlide
-                            key={3}
-                            text="Desenvolvemos um aplicativo que revolucionou a gestão condominial, integrando reservas, câmeras e autorizações de entrada em uma única solução inteligente."
-                            logo="/assets/images/logos/sigmaapp-n.png"
-                            alt="SigmaApp Logo"
-                            isLogoHorizontal={true}
-                            mockup="/assets/images/mockups/sigmaapp-mockup-1.png"
-                            href="/cases/sigmaapp"
-                        />,
-                        <CaseSlide
-                            key={4}
-                            text="Marketplace em desenvolvimento para conectar prestadores de serviços a potenciais clientes, com interface intuitiva e funcionalidades robustas."
-                            logo="/assets/images/logos/contrataja-hn1.png"
-                            alt="Contrata Já Logo"
-                            isLogoHorizontal={true}
-                            mockup="/assets/images/mockups/contrataja-ipad-mockup.png"
-                            href="/cases/contrata-ja"
-                        />,
-                        <CaseSlide
-                            key={5}
-                            text="Sistema integrado de gestão eclesiástica, conectando igrejas presbiterianas em todo o Brasil com ferramentas modernas de comunicação e administração."
-                            logo="/assets/images/logos/ipiconecta-h2.png"
-                            alt="IPIConecta Logo"
-                            isLogoHorizontal={true}
-                            mockup="/assets/images/mockups/ipiconecta_desktop_mockup_1.png"
-                            href="/cases/ipiconecta"
-                        />,
-                    ]}
-                />
+            {/* ── Bento Grid ── */}
+            <div className="px-6 md:px-12 lg:px-20 2xl:px-32 pt-12 pb-24 lg:pb-32">
+                <div
+                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 lg:gap-4"
+                    style={{ gridAutoRows: 'minmax(280px, auto)' }}
+                >
+                    {/* ═══ iCalvinus — Featured (2col × 2row) ═══ */}
+                    <div
+                        className="relative overflow-hidden rounded-tl-4xl rounded-bl-4xl border-2 border-neutral-300 md:col-span-2 lg:col-span-2 lg:row-span-2 min-h-[280px] bg-neutral-200"
+                    >
+                        <Image
+                            src="/assets/images/mockups/iCalvinus_mockup_2.png"
+                            alt=""
+                            width={600}
+                            height={500}
+                            quality={90}
+                            className="absolute pointer-events-none w-[50%] lg:w-[48%] h-auto top-1/2 -translate-y-1/2 right-4 lg:right-8 object-contain"
+                            aria-hidden
+                        />
+                        <div className="flex flex-col justify-between h-full p-7 lg:p-10 relative z-10">
+                            <span className="font-outfit text-carbon/50 text-xs tracking-[0.2em] uppercase">
+                                Gestão · Organização Religiosa · Documentos
+                            </span>
+                            <div className="max-w-sm">
+                                <Image
+                                    src="/assets/images/logos/icalvinus-h.png"
+                                    alt="iCalvinus Logo"
+                                    width={200}
+                                    height={60}
+                                    quality={100}
+                                    className="h-11 w-auto object-contain object-left mb-4"
+                                />
+                                <p
+                                    className="font-outfit text-carbon/80 leading-relaxed mb-6"
+                                >
+                                    Criamos o sistema oficial da Igreja Presbiteriana do Brasil,
+                                    integrando funcionalidades cadastrais, documentos e gestão conciliar.
+                                </p>
+                                <NavigationButton
+                                    href="/cases/icalvinus"
+                                    text="Ver case completo"
+                                    icon={<AltArrowRight weight="Bold" size={16} />}
+                                    inverted={true}
+                                />
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* ═══ IPIConecta — Top right ═══ */}
+                    <div
+                        className="relative overflow-hidden rounded-tr-4xl border-2 border-neutral-300 min-h-[280px] bg-neutral-200"
+                    >
+                        <Image
+                            src="/assets/images/mockups/ipiconecta_desktop_mockup_1.png"
+                            alt=""
+                            width={400}
+                            height={300}
+                            quality={90}
+                            className="absolute pointer-events-none w-72 lg:w-80 h-auto top-1/2 -translate-y-1/2 right-4 lg:right-6 object-contain"
+                            aria-hidden
+                        />
+                        <div className="flex flex-col justify-between h-full p-7 lg:p-9 relative z-10 max-w-[55%]">
+                            <span className="font-outfit text-carbon/50 text-xs tracking-[0.2em] uppercase">
+                                Gestão · Organização Religiosa
+                            </span>
+                            <div>
+                                <Image
+                                    src="/assets/images/logos/ipiconecta-h4.png"
+                                    alt="IPIConecta Logo"
+                                    width={160}
+                                    height={50}
+                                    quality={100}
+                                    className="h-9 w-auto object-contain object-left mb-3"
+                                />
+                                <p
+                                    className="text-small font-outfit text-carbon/80 leading-relaxed mb-5"
+                                >
+                                    Sistema integrado conectando igrejas presbiterianas
+                                    em todo o Brasil.
+                                </p>
+                                <NavigationButton
+                                    href="/cases/ipiconecta"
+                                    text="Ver case"
+                                    icon={<AltArrowRight weight="Bold" size={16} />}
+                                    inverted={true}
+                                />
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* ═══ SigmaApp — Bottom right ═══ */}
+                    <div
+                        className="relative overflow-hidden rounded-br-4xl border-2 border-neutral-300 min-h-[280px] bg-neutral-200"
+                    >
+                        <Image
+                            src="/assets/images/mockups/sigmaapp-mockup-1.png"
+                            alt=""
+                            width={400}
+                            height={300}
+                            quality={90}
+                            className="absolute pointer-events-none w-72 lg:w-80 h-auto top-1/2 -translate-y-1/2 right-4 lg:right-6 object-contain"
+                            aria-hidden
+                        />
+                        <div className="flex flex-col justify-between h-full p-7 lg:p-9 relative z-10 max-w-[55%]">
+                            <span className="font-outfit text-carbon/50 text-xs tracking-[0.2em] uppercase">
+                                Segurança · Condomínios · IoT
+                            </span>
+                            <div>
+                                <Image
+                                    src="/assets/images/logos/sigmaapp.png"
+                                    alt="SigmaApp Logo"
+                                    width={160}
+                                    height={50}
+                                    quality={100}
+                                    className="h-9 w-auto object-contain object-left mb-3"
+                                />
+                                <p
+                                    className="text-small font-outfit text-carbon/80 leading-relaxed mb-5"
+                                >
+                                    Aplicativo que revolucionou a gestão condominial
+                                    em uma única solução.
+                                </p>
+                                <NavigationButton
+                                    href="/cases/sigmaapp"
+                                    text="Ver case"
+                                    icon={<AltArrowRight weight="Bold" size={16} />}
+                                    inverted={true}
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="flex justify-center pt-12">
+                    <NavigationButton href="/cases" text="Ver todos os cases" inverted={true} />
+                </div>
             </div>
         </section>
     );
