@@ -2,8 +2,8 @@
 
 import React, { useEffect, useRef } from 'react';
 import NavigationButton from '../../components/NavigationButton';
+import ScrollIndicator from '../../components/ScrollIndicator';
 import Image from 'next/image';
-import { AltArrowDown } from '@solar-icons/react/ssr';
 
 function HeroSection() {
     const contentRef = useRef<HTMLDivElement>(null);
@@ -94,10 +94,7 @@ function HeroSection() {
                 </div>
             </div>
 
-            {/* Scroll down arrow */}
-            <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 animate-bounce opacity-80">
-                <AltArrowDown size={32} color="#eeeeee" />
-            </div>
+            <ScrollIndicator />
         </section>
     );
 }
