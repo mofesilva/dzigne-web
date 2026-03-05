@@ -4,6 +4,7 @@ import Image from 'next/image';
 import NavigationButton from '../../components/NavigationButton';
 import { MagicBentoGrid, MagicBentoCard } from '../../components/MagicBento';
 import { IconStrategy } from './ServiceIcons';
+import SectionTitle from '@/components/SectionTitle';
 
 const GLOW = '127, 209, 12';
 
@@ -12,27 +13,13 @@ function ServicesSection() {
         <section className="bg-black w-full relative overflow-hidden py-20 md:py-28 lg:py-36">
             <div className="px-6 md:px-12 lg:px-20 2xl:px-32">
                 {/* Header */}
-                <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-16 lg:mb-20">
-                    <div className="w-full">
-                        <p
-                            className="                                         text-eggshell/60 mb-4 tracking-widest uppercase"
-                        >
-                            O que fazemos
-                        </p>
-                        <h1
-                            className="font-rajdhani text-eggshell mb-5 md:mb-6"
-                        >
-                            <span className="font-medium">Transformamos ideias em</span><br />
-                            <span className="font-bold text-green-accent">produtos digitais</span>
-                        </h1>
-                        <p
-                            className="font-outfit text-eggshell/50 max-w-xl"
-                        >
-                            Da estratégia à execução. Cada projeto combina design, tecnologia
-                            e performance para entregar resultados reais ao seu negócio.
-                        </p>
-                    </div>
-                </div>
+
+                <SectionTitle
+                    caption="O que fazemos"
+                    title="Transformamos ideias em"
+                    accent="produtos digitais"
+                    description="Da estratégia à execução. Cada projeto combina design, tecnologia e performance para entregar resultados reais ao seu negócio."
+                />
 
                 {/* ── Magic Bento Grid ── */}
                 <MagicBentoGrid
