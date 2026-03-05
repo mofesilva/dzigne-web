@@ -264,6 +264,20 @@ h1 {
   animation: levitate 4s ease-in-out infinite;
 }
 
+@keyframes scrollWheel {
+  0% { transform: translateY(0); opacity: 1; }
+  50% { transform: translateY(6px); opacity: 0.3; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes swipeUp {
+  0% { transform: translateY(20px); opacity: 0; }
+  20% { transform: translateY(20px); opacity: 1; }
+  70% { transform: translateY(-30px); opacity: 1; }
+  90% { transform: translateY(-30px); opacity: 0; }
+  100% { transform: translateY(-30px); opacity: 0; }
+}
+
 /* Hide scrollbar utility */
 .scrollbar-hide {
   -ms-overflow-style: none;
