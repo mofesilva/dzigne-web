@@ -1,6 +1,7 @@
 'use client';
 import React from 'react';
 import Image from 'next/image';
+import BlurText from '@/components/BlurText';
 
 const logosRow1 = [
     { src: '/assets/images/logos/arion1.png', alt: 'Arion' },
@@ -47,9 +48,23 @@ function CompanyHighlightsSection() {
         <section className="bg-black w-full relative overflow-hidden py-20 md:py-28 lg:py-36">
             {/* Section heading */}
             <div className="px-6 md:px-12 lg:px-20 2xl:px-32 mb-12 md:mb-16 lg:mb-20">
-                <h1 className="font-rajdhani text-eggshell text-center">
-                    <span className="font-medium">Resultados que </span>
-                    <span className="font-bold text-green-accent">falam por si</span>
+                <h1 className="font-rajdhani text-eggshell text-center justify-center flex flex-wrap">
+                    <BlurText
+                        as="span"
+                        text="Resultados que "
+                        className="font-medium"
+                        animateBy="words"
+                        direction="bottom"
+                        delay={80}
+                    />
+                    <BlurText
+                        as="span"
+                        text="falam por si"
+                        className="font-bold text-green-accent"
+                        animateBy="words"
+                        direction="bottom"
+                        delay={80}
+                    />
                 </h1>
             </div>
 
