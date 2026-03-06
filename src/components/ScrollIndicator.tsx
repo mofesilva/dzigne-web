@@ -41,7 +41,7 @@ export default function ScrollIndicator({ className = '' }: ScrollIndicatorProps
             {/* Desktop — mouse scroll */}
             <div className="hidden md:block">
                 <div className="w-6 h-10 rounded-full border-2 border-white/40 flex items-start justify-center p-1.5">
-                    <div className="w-1 h-2.5 rounded-full bg-white/60 animate-[scrollWheel_1.5s_ease-in-out_infinite]" />
+                    <div className="w-1.5 h-1.5 rounded-full bg-white/60 animate-[scrollWheel_1.5s_ease-in-out_infinite]" />
                 </div>
             </div>
         </div>
