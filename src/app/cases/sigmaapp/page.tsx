@@ -3,10 +3,7 @@ import CaseHeroSection from '../components/CaseHeroSection';
 import CaseDetailsSection from '../components/CaseDetailsSection';
 import CaseGallerySection from '../components/CaseGallerySection';
 import CaseNavigationSection from '../components/CaseNavigationSection';
-import HeaderSection from '@/app/components/HeaderSection';
 
-// METADATA: Define automaticamente o <title> e <meta description> da página
-// Usado para SEO, compartilhamento em redes sociais e título da aba do navegador
 export const metadata = {
     title: "Case Sigmacon - App de Gestão Condominial | Dzign-e",
     description: "Como desenvolvemos um aplicativo revolucionário para gestão condominial integrando IoT, reservas e segurança"
@@ -15,15 +12,12 @@ export const metadata = {
 function SigmaappPage() {
     return (
         <main className="flex flex-col">
-            <HeaderSection
-                content={
-                    <CaseHeroSection
-                        logo="/assets/images/logos/sigmaapp-n.png"
-                        company="Sigmacon"
-                        description="Revolucionamos a gestão condominial com um aplicativo inteligente que integra reservas de espaços, sistema de câmeras, controle de acesso e comunicação entre moradores e administração."
-                        tags={["Gestão", "Mobile App", "IoT", "Flutter", "Firebase"]}
-                    />
-                }
+            <CaseHeroSection
+                logo="/assets/images/logos/sigmaapp-n.png"
+                company="Sigmacon"
+                description="Revolucionamos a gestão condominial com um aplicativo inteligente que integra reservas de espaços, sistema de câmeras, controle de acesso e comunicação entre moradores e administração."
+                tags={["Gestão", "Mobile App", "IoT", "Flutter", "Firebase"]}
+                mockup="/assets/images/mockups/sigmaapp-mockup-2.png"
             />
 
             <CaseDetailsSection
@@ -51,12 +45,14 @@ function SigmaappPage() {
                 previousCase={{
                     href: "/cases/icalvinus",
                     company: "iCalvinus",
-                    title: "Igreja Presbiteriana do Brasil"
+                    title: "Igreja Presbiteriana do Brasil",
+                    mockup: "/assets/images/mockups/iCalvinus_mockup_4.png"
                 }}
                 nextCase={{
                     href: "/cases/ipiconecta",
                     company: "IPIConecta",
-                    title: "Igreja Presbiteriana Independente do Brasil"
+                    title: "Igreja Presbiteriana Independente do Brasil",
+                    mockup: "/assets/images/mockups/ipiconecta_desktop+mobile_mockup_1.png"
                 }}
             />
 
