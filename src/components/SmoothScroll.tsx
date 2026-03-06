@@ -6,6 +6,14 @@ import Lenis from 'lenis';
 export default function SmoothScroll() {
     const lenisRef = useRef<Lenis | null>(null);
 
+    // Disable browser scroll restoration — always start at top on reload
+    useEffect(() => {
+        if ('scrollRestoration' in history) {
+            history.scrollRestoration = 'manual';
+        }
+        window.scrollTo(0, 0);
+    }, []);
+
     useEffect(() => {
         // Dispositivos touch já possuem scroll inercial nativo suave.
         // O Lenis intercepta o touch scroll e causa tremidas/lag no mobile.
