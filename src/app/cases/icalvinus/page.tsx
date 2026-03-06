@@ -3,6 +3,7 @@ import CaseHeroSection from '../components/CaseHeroSection';
 import CaseDetailsSection from '../components/CaseDetailsSection';
 import CaseGallerySection from '../components/CaseGallerySection';
 import CaseNavigationSection from '../components/CaseNavigationSection';
+import { getGalleryImages } from '../lib/getGalleryImages';
 
 function ICalvinusCasePage() {
     return (
@@ -34,7 +35,7 @@ function ICalvinusCasePage() {
             <CaseGallerySection
                 title="Galeria de Imagens"
                 description="Explore a galeria de imagens do projeto."
-                imagesFolder="/assets/images/mockups/cases/icalvinus"
+                images={getGalleryImages('/assets/images/mockups/cases/icalvinus')}
             />
 
             <CaseNavigationSection
