@@ -3,25 +3,21 @@ import CaseHeroSection from '../components/CaseHeroSection';
 import CaseDetailsSection from '../components/CaseDetailsSection';
 import CaseGallerySection from '../components/CaseGallerySection';
 import CaseNavigationSection from '../components/CaseNavigationSection';
-import HeaderSection from '@/app/components/HeaderSection';
 
 export const metadata = {
-    title: "Case Sigmacon - App de Gestão Condominial | Dzign-e",
-    description: "Como desenvolvemos um aplicativo revolucionário para gestão condominial integrando IoT, reservas e segurança"
+    title: "Case Contrata Já - Marketplace de Serviços | Dzign-e",
+    description: "Como desenvolvemos uma marketplace que conecta profissionais de serviços a clientes de forma rápida e segura"
 };
 
-function ICalvinusCasePage() {
+function ContrataJaPage() {
     return (
         <main className="flex flex-col">
-            <HeaderSection
-                content={
-                    <CaseHeroSection
-                        logo="/assets/images/logos/sigmaapp-n.png"
-                        company="Igreja Presbiteriana do Brasil"
-                        description="Criamos o sistema oficial da Igreja Presbiteriana do Brasil."
-                        tags={["Gestão", "Mobile App", "IoT", "Flutter", "Firebase"]}
-                    />
-                }
+            <CaseHeroSection
+                logo="/assets/images/logos/contrataja-hn2.png"
+                company="Contrata Já"
+                description="Uma marketplace em desenvolvimento que conecta profissionais de serviços a clientes, facilitando contratações rápidas e seguras com avaliações e portfólios integrados."
+                tags={["Serviços", "Marketplace", "Plataforma de Contratação"]}
+                mockup="/assets/images/mockups/contrataja-ipad-mockup-2.png"
             />
 
             <CaseDetailsSection
@@ -50,7 +46,8 @@ function ICalvinusCasePage() {
                 previousCase={{
                     href: "/cases/ipiconecta",
                     company: "IPIConecta",
-                    title: "Igreja Presbiteriana Independente do Brasil"
+                    title: "Igreja Presbiteriana Independente do Brasil",
+                    mockup: "/assets/images/mockups/ipiconecta_desktop+mobile_mockup_1.png"
                 }}
             // nextCase={{
             //     href: "/cases/ipi",
@@ -63,4 +60,4 @@ function ICalvinusCasePage() {
     );
 }
 
-export default ICalvinusCasePage;
+export default ContrataJaPage;
