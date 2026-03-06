@@ -18,13 +18,14 @@ interface CaseCardProps {
     isReversed: boolean;
     index: number;
     invertLogo?: boolean;
+    isDark?: boolean;
 }
 
-function CaseCard({ logo, company, description, mockup, href, tags, isReversed, index, invertLogo = true }: CaseCardProps) {
+function CaseCard({ logo, company, description, mockup, href, tags, isReversed, index, invertLogo = true, isDark: isDarkProp }: CaseCardProps) {
     const ref = useRef<HTMLElement>(null);
     const isInView = useInView(ref, { once: true, margin: '-100px' });
 
-    const isDark = index % 2 === 0;
+    const isDark = isDarkProp ?? index % 2 === 0;
 
     return (
         <section
@@ -53,7 +54,7 @@ function CaseCard({ logo, company, description, mockup, href, tags, isReversed, 
                                 width={200}
                                 height={60}
                                 quality={100}
-                                className={`h-10 md:h-12 w-auto object-contain ${isDark && invertLogo ? 'brightness-0 invert' : ''}`}
+                                className="h-10 md:h-12 w-auto object-contain"
                             />
                         </div>
 
