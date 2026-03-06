@@ -3,20 +3,16 @@ import CaseHeroSection from '../components/CaseHeroSection';
 import CaseDetailsSection from '../components/CaseDetailsSection';
 import CaseGallerySection from '../components/CaseGallerySection';
 import CaseNavigationSection from '../components/CaseNavigationSection';
-import HeaderSection from '@/app/components/HeaderSection';
 
 function ICalvinusCasePage() {
     return (
         <main className="flex flex-col">
-            <HeaderSection
-                content={
-                    <CaseHeroSection
-                        logo="/assets/images/logos/icalvinus-hn.png"
-                        company="Igreja Presbiteriana do Brasil"
-                        description="Criamos o sistema oficial da Igreja Presbiteriana do Brasil."
-                        tags={["Gestão", "Mobile App", "IoT", "Flutter", "Firebase"]}
-                    />
-                }
+            <CaseHeroSection
+                logo="/assets/images/logos/icalvinus-hn.png"
+                company="Igreja Presbiteriana do Brasil"
+                description="Criamos o sistema oficial da Igreja Presbiteriana do Brasil."
+                tags={["Gestão", "Mobile App", "IoT", "Flutter", "Firebase"]}
+                mockup="/assets/images/mockups/iCalvinus_mockup_4.png"
             />
 
             <CaseDetailsSection
@@ -45,12 +41,14 @@ function ICalvinusCasePage() {
                 previousCase={{
                     href: "/cases/oab-mack",
                     company: "OAB Mack",
-                    title: "Universidade Presbiteriana Mackenzie"
+                    title: "Universidade Presbiteriana Mackenzie",
+                    mockup: "/assets/images/mockups/oabmack_mockup_2.png"
                 }}
                 nextCase={{
                     href: "/cases/sigmaapp",
                     company: "SigmaApp",
-                    title: "Sigmacon"
+                    title: "Sigmacon",
+                    mockup: "/assets/images/mockups/sigmaapp-mockup-2.png"
                 }}
             />
 
