@@ -73,58 +73,54 @@ function AboutPassionSection() {
             const rect = section.getBoundingClientRect();
             const vh = window.innerHeight;
 
-            // Content slides: driven by how far we've scrolled past the top
             const scrolled = -rect.top;
             const scrollable = section.offsetHeight - vh;
             const progress = scrollable > 0
                 ? Math.max(0, Math.min(1, scrolled / scrollable))
                 : 0;
 
-            // Title fade: reveals in first 15% of scroll progress
+            // Title fade: reveals in first 10% of scroll
             const titleEl = section.querySelector<HTMLElement>('[data-title]');
             if (titleEl) {
-                const t = Math.max(0, Math.min(1, progress / 0.15));
+                const t = Math.max(0, Math.min(1, progress / 0.10));
                 titleEl.style.opacity = `${t}`;
             }
+
+            /*
+             * Layout: title takes 0→12%, then each slide gets an equal chunk of the remaining 88%.
+             * Each slide chunk: 20% fade-in, 60% hold, 20% fade-out (last slide never fades out).
+             */
+            const contentStart = 0.12;
+            const contentRange = 1 - contentStart;
+            const sliceSize = contentRange / N; // ~0.293 per slide
 
             for (let i = 0; i < N; i++) {
                 const card = section.querySelector<HTMLElement>(`[data-card="${i}"]`);
                 if (!card) continue;
 
+                const sliceStart = contentStart + i * sliceSize;
+                const sliceEnd = sliceStart + sliceSize;
+                const fadeDuration = sliceSize * 0.2; // 20% of slice for each fade
+
                 let opacity: number;
 
-                if (i === 0) {
-                    const enterStart = 0.15;
-                    const enterEnd = 0.22;
-                    const exitStart = 1 / N * 0.75;
-                    const exitEnd = 1 / N;
-
-                    if (progress < enterStart) {
-                        opacity = 0;
-                    } else if (progress < enterEnd) {
-                        opacity = ease((progress - enterStart) / (enterEnd - enterStart));
-                    } else if (progress < exitStart) {
+                if (progress < sliceStart) {
+                    opacity = 0;
+                } else if (progress < sliceStart + fadeDuration) {
+                    // Fade in
+                    opacity = ease((progress - sliceStart) / fadeDuration);
+                } else if (progress < sliceEnd - fadeDuration) {
+                    // Hold
+                    opacity = 1;
+                } else if (progress < sliceEnd) {
+                    // Fade out (skip for last slide)
+                    if (i === N - 1) {
                         opacity = 1;
-                    } else if (progress < exitEnd) {
-                        opacity = 1 - ease((progress - exitStart) / (exitEnd - exitStart));
                     } else {
-                        opacity = 0;
+                        opacity = 1 - ease((progress - (sliceEnd - fadeDuration)) / fadeDuration);
                     }
                 } else {
-                    const blockStart = i / N;
-                    const blockEnd = (i + 1) / N;
-                    const blockSize = blockEnd - blockStart;
-                    const mid = blockStart + blockSize * 0.5;
-
-                    if (progress <= blockStart) {
-                        opacity = 0;
-                    } else if (progress <= mid) {
-                        opacity = ease((progress - blockStart) / (mid - blockStart));
-                    } else if (progress <= blockEnd) {
-                        opacity = i === N - 1 ? 1 : 1 - ease((progress - mid) / (blockEnd - mid));
-                    } else {
-                        opacity = i === N - 1 ? 1 : 0;
-                    }
+                    opacity = i === N - 1 ? 1 : 0;
                 }
 
                 card.style.opacity = `${opacity}`;
@@ -141,7 +137,7 @@ function AboutPassionSection() {
     return (
         <section
             ref={sectionRef}
-            className="bg-black w-full relative h-[360vh] md:h-[240vh]"
+            className="bg-black w-full relative h-[500vh] md:h-[400vh]"
         >
             {/* Sticky frame */}
             <div className="sticky top-0 h-svh overflow-hidden">
