@@ -3,6 +3,7 @@ import CaseHeroSection from '../components/CaseHeroSection';
 import CaseDetailsSection from '../components/CaseDetailsSection';
 import CaseGallerySection from '../components/CaseGallerySection';
 import CaseNavigationSection from '../components/CaseNavigationSection';
+import { getGalleryImages } from '../lib/getGalleryImages';
 
 export const metadata = {
     title: "Case IPI - Plataforma Educacional iCalvinus | Dzign-e",
@@ -40,7 +41,7 @@ function IPIPage() {
             <CaseGallerySection
                 title="Galeria de Imagens"
                 description="Explore a galeria de imagens do projeto."
-                imagesFolder="/assets/images/mockups/cases/ipiconecta"
+                images={getGalleryImages('/assets/images/mockups/cases/ipiconecta')}
             />
 
             <CaseNavigationSection
