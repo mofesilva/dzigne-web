@@ -31,18 +31,17 @@ function CaseGallerySection({ title, description, imagesFolder }: CaseGallerySec
     }
 
     return (
-        <section className="bg-carbon w-auto py-20 sm:rounded-4xl m-0 sm:m-2">
-            <div className="section-container">
-                <div className="text-center mb-16">
-                    <h2 className="font-rajdhani font-bold text-white mb-6">
+        <section className="bg-black w-full py-24 md:py-32 lg:py-40">
+            <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-20 2xl:px-32">
+                <div className="text-center mb-16 lg:mb-20">
+                    <p className="text-caption font-outfit tracking-widest uppercase text-eggshell/30 mb-6">
                         {title}
-                    </h2>
-                    <h5 className="font-outfit text-white/90 max-w-3xl mx-auto">
+                    </p>
+                    <h2 className="font-rajdhani font-bold text-eggshell mb-4">
                         {description}
-                    </h5>
+                    </h2>
                 </div>
 
-                {/* Render client gallery */}
                 <CaseGalleryClient images={imagesToRender} />
             </div>
         </section>
