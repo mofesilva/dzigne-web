@@ -49,9 +49,9 @@ function CaseHeroSection({ logo, company, title, description, tags, mockup, inve
                             </h1>
                         )}
 
-                        <p className={`font-outfit text-eggshell/60 mb-10 leading-relaxed ${mockup ? 'max-w-xl' : 'max-w-2xl'}`}>
+                        <h6 className={`font-outfit text-eggshell/60 mb-10 leading-relaxed ${mockup ? 'max-w-xl' : 'max-w-2xl'}`}>
                             {description}
-                        </p>
+                        </h6>
 
                         <TagLine text={tags.join(' · ')} className={mockup ? 'text-left' : 'text-center'} />
                     </motion.div>
