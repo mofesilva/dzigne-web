@@ -1,5 +1,6 @@
 import React from "react";
 import AboutHeroSection from "./components/AboutHeroSection";
+import AboutPassionSection from "./components/AboutPassionSection";
 import AboutEssenceSection from "./components/AboutEssenceSection";
 import AboutTechStackSection from "./components/AboutTechStackSection";
 import AboutTeamSection from "./components/AboutTeamSection";
@@ -15,6 +16,7 @@ const Page = () => {
   return (
     <main className="flex flex-col">
       <AboutHeroSection />
+      <AboutPassionSection />
       <AboutEssenceSection />
       <AboutTechStackSection />
       <AboutTeamSection />
