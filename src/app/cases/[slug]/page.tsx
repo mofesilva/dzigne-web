@@ -6,6 +6,7 @@ import CaseHeroSection from '../components/CaseHeroSection';
 import CaseDetailsSection from '../components/CaseDetailsSection';
 import CaseGallerySection from '../components/CaseGallerySection';
 import CaseNavigationSection from '../components/CaseNavigationSection';
+import { getGalleryImages } from '../lib/getGalleryImages';
 
 interface CasePageProps {
     params: Promise<{ slug: string }>;
@@ -58,7 +59,7 @@ export default async function CasePage({ params }: CasePageProps) {
             <CaseGallerySection
                 title={caseData.gallery.title}
                 description={caseData.gallery.description}
-                imagesFolder={caseData.gallery.imagesFolder}
+                images={getGalleryImages(caseData.gallery.imagesFolder)}
             />
 
             <CaseNavigationSection
