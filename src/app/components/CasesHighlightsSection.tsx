@@ -34,19 +34,22 @@ function CasesHighlightsSection() {
                 >
                     {/* ═══ iCalvinus — Featured (2col × 2row) ═══ */}
                     <div
-                        className="relative overflow-hidden rounded-tl-4xl rounded-bl-4xl border-2 border-neutral-300 md:col-span-2 lg:col-span-2 lg:row-span-2 min-h-[280px] bg-neutral-200"
+                        className="relative overflow-hidden rounded-tl-4xl rounded-bl-4xl border-2 border-neutral-300 md:col-span-2 lg:col-span-2 lg:row-span-2 md:min-h-[280px] bg-neutral-200 flex flex-col md:block"
                     >
+                        <span className="block md:hidden font-outfit text-carbon/50 text-xs tracking-[0.2em] uppercase px-7 pt-7">
+                            Gestão · Organização Religiosa · Documentos
+                        </span>
                         <Image
                             src="/assets/images/mockups/iCalvinus_mockup_2.png"
                             alt=""
                             width={600}
                             height={500}
                             quality={90}
-                            className="absolute pointer-events-none w-[50%] lg:w-[48%] h-auto top-1/2 -translate-y-1/2 right-4 lg:right-8 object-contain"
+                            className="relative md:absolute pointer-events-none w-[75%] mx-auto md:mx-0 md:w-[50%] lg:w-[48%] h-auto md:top-1/2 md:-translate-y-1/2 md:right-4 lg:right-8 object-contain pt-6 md:pt-0"
                             aria-hidden
                         />
-                        <div className="flex flex-col justify-between h-full p-7 lg:p-10 relative z-10">
-                            <span className="font-outfit text-carbon/50 text-xs tracking-[0.2em] uppercase">
+                        <div className="flex flex-col justify-between flex-1 md:h-full p-7 lg:p-10 relative z-10">
+                            <span className="hidden md:block font-outfit text-carbon/50 text-xs tracking-[0.2em] uppercase">
                                 Gestão · Organização Religiosa · Documentos
                             </span>
                             <div className="max-w-sm">
@@ -76,19 +79,22 @@ function CasesHighlightsSection() {
 
                     {/* ═══ IPIConecta — Top right ═══ */}
                     <div
-                        className="relative overflow-hidden rounded-tr-4xl border-2 border-neutral-300 min-h-[280px] bg-neutral-200"
+                        className="relative overflow-hidden rounded-tr-4xl border-2 border-neutral-300 md:min-h-[280px] bg-neutral-200 flex flex-col md:block"
                     >
+                        <span className="block md:hidden font-outfit text-carbon/50 text-xs tracking-[0.2em] uppercase px-7 pt-7">
+                            Gestão · Organização Religiosa
+                        </span>
                         <Image
                             src="/assets/images/mockups/ipiconecta_desktop_mockup_1.png"
                             alt=""
                             width={400}
                             height={300}
                             quality={90}
-                            className="absolute pointer-events-none w-72 lg:w-80 h-auto top-1/2 -translate-y-1/2 right-4 lg:right-6 object-contain"
+                            className="relative md:absolute pointer-events-none w-[75%] mx-auto md:mx-0 md:w-72 lg:w-80 h-auto md:top-1/2 md:-translate-y-1/2 md:right-4 lg:right-6 object-contain pt-6 md:pt-0"
                             aria-hidden
                         />
-                        <div className="flex flex-col justify-between h-full p-7 lg:p-9 relative z-10 max-w-[55%]">
-                            <span className="font-outfit text-carbon/50 text-xs tracking-[0.2em] uppercase">
+                        <div className="flex flex-col justify-between flex-1 md:h-full p-7 lg:p-9 relative z-10 md:max-w-[55%]">
+                            <span className="hidden md:block font-outfit text-carbon/50 text-xs tracking-[0.2em] uppercase">
                                 Gestão · Organização Religiosa
                             </span>
                             <div>
@@ -118,19 +124,22 @@ function CasesHighlightsSection() {
 
                     {/* ═══ SigmaApp — Bottom right ═══ */}
                     <div
-                        className="relative overflow-hidden rounded-br-4xl border-2 border-neutral-300 min-h-[280px] bg-neutral-200"
+                        className="relative overflow-hidden rounded-br-4xl border-2 border-neutral-300 md:min-h-[280px] bg-neutral-200 flex flex-col md:block"
                     >
+                        <span className="block md:hidden font-outfit text-carbon/50 text-xs tracking-[0.2em] uppercase px-7 pt-7">
+                            Segurança · Condomínios · IoT
+                        </span>
                         <Image
                             src="/assets/images/mockups/sigmaapp-mockup-1.png"
                             alt=""
                             width={400}
                             height={300}
                             quality={90}
-                            className="absolute pointer-events-none w-72 lg:w-80 h-auto top-1/2 -translate-y-1/2 right-4 lg:right-6 object-contain"
+                            className="relative md:absolute pointer-events-none w-[75%] mx-auto md:mx-0 md:w-72 lg:w-80 h-auto md:top-1/2 md:-translate-y-1/2 md:right-4 lg:right-6 object-contain pt-6 md:pt-0"
                             aria-hidden
                         />
-                        <div className="flex flex-col justify-between h-full p-7 lg:p-9 relative z-10 max-w-[55%]">
-                            <span className="font-outfit text-carbon/50 text-xs tracking-[0.2em] uppercase">
+                        <div className="flex flex-col justify-between flex-1 md:h-full p-7 lg:p-9 relative z-10 md:max-w-[55%]">
+                            <span className="hidden md:block font-outfit text-carbon/50 text-xs tracking-[0.2em] uppercase">
                                 Segurança · Condomínios · IoT
                             </span>
                             <div>
