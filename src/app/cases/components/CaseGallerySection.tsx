@@ -1,35 +1,13 @@
 import React from 'react';
-import fs from 'fs';
-import path from 'path';
 import CaseGalleryClient from './CaseGalleryClient';
 
 interface CaseGallerySectionProps {
     title: string;
     description: string;
-    imagesFolder: string;
+    images: { src: string; alt?: string; description?: string }[];
 }
 
-function CaseGallerySection({ title, description, imagesFolder }: CaseGallerySectionProps) {
-    let imagesToRender: { src: string; alt?: string; description?: string }[] = [];
-
-    try {
-        const publicFolderRelative = imagesFolder.replace(/^\//, '').replace(/\/$/, '');
-        const dirPath = path.join(process.cwd(), 'public', publicFolderRelative);
-        const files = fs.readdirSync(dirPath).filter((f) => /\.(jpe?g|png|webp|avif|gif)$/i.test(f));
-
-        const folderImages = files.map((file) => ({
-            src: `/${publicFolderRelative}/${file}`,
-            alt: file,
-            description: ''
-        }));
-
-        if (folderImages.length > 0) {
-            imagesToRender = folderImages;
-        }
-    } catch {
-        // Could not read folder on server side; fall back to empty array
-    }
-
+function CaseGallerySection({ title, description, images }: CaseGallerySectionProps) {
     return (
         <section className="bg-black w-full py-24 md:py-32 lg:py-40">
             <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-20 2xl:px-32">
@@ -42,7 +20,7 @@ function CaseGallerySection({ title, description, imagesFolder }: CaseGallerySec
                     </h2>
                 </div>
 
-                <CaseGalleryClient images={imagesToRender} />
+                <CaseGalleryClient images={images} />
             </div>
         </section>
     );
