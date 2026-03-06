@@ -1,5 +1,4 @@
 import React from 'react';
-import SecondaryHeaderSection from '@/components/SecondaryHeaderSection';
 import CaseHeroSection from '../components/CaseHeroSection';
 import CaseDetailsSection from '../components/CaseDetailsSection';
 import CaseGallerySection from '../components/CaseGallerySection';
@@ -13,16 +12,13 @@ export const metadata = {
 function IPIPage() {
     return (
         <main className="flex flex-col">
-            <SecondaryHeaderSection
-                content={
-                    <CaseHeroSection
-                        logo="/assets/images/logos/ipi.png"
-                        company="IPI - Igreja Presbiteriana Independente"
-                        title="Plataforma Educacional Personalizada"
-                        description="Desenvolvemos o iCalvinus, uma plataforma educacional completa com aplicativo móvel para alunos e interface web para professores, revolucionando o ensino teológico digital."
-                        tags={["Educação", "Mobile App", "Web Platform", "React Native", "LMS"]}
-                    />
-                }
+            <CaseHeroSection
+                logo="/assets/images/logos/ipi.png"
+                company="IPI - Igreja Presbiteriana Independente"
+                title="Plataforma Educacional Personalizada"
+                description="Desenvolvemos o iCalvinus, uma plataforma educacional completa com aplicativo móvel para alunos e interface web para professores, revolucionando o ensino teológico digital."
+                tags={["Educação", "Mobile App", "Web Platform", "React Native", "LMS"]}
+                mockup="/assets/images/mockups/ipiconecta_desktop+mobile_mockup_1.png"
             />
 
             <CaseDetailsSection
@@ -51,12 +47,14 @@ function IPIPage() {
                 previousCase={{
                     href: "/cases/sigmaapp",
                     company: "SigmaApp",
-                    title: "Sigmacon"
+                    title: "Sigmacon",
+                    mockup: "/assets/images/mockups/sigmaapp-mockup-2.png"
                 }}
                 nextCase={{
                     href: "/cases/contrata-ja",
                     company: "Contrata Já",
-                    title: "Contrata Já"
+                    title: "Contrata Já",
+                    mockup: "/assets/images/mockups/contrataja-ipad-mockup-2.png"
                 }}
             />
 
