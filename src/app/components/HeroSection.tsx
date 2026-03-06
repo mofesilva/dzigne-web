@@ -54,11 +54,11 @@ function HeroSection() {
                         <span className="font-bold text-green-accent">ideal para o seu Negócio</span>
                     </h1>
 
-                    <p
+                    <h6
                         className='font-outfit text-eggshell mb-10 max-w-xl leading-relaxed'
                     >
                         Do conceito ao lançamento. Criamos soluções digitais sob medida que transformam ideias em produtos extraordinários.
-                    </p>
+                    </h6>
 
                     <div className="flex flex-col sm:flex-row gap-4 mb-8">
                         <NavigationButton
