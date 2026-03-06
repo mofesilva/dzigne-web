@@ -64,6 +64,19 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
     const pathname = usePathname();
     const prevPathnameRef = useRef(pathname);
 
+    // Current page label derived from items (hidden on home)
+    const currentPageLabel = React.useMemo(() => {
+        if (!items.length || pathname === '/') return '';
+        // Exact match first
+        const exact = items.find(it => it.link === pathname);
+        if (exact) return exact.label;
+        // Prefix match for nested routes (e.g. /cases/sigmaapp → Cases)
+        const prefix = items
+            .filter(it => it.link !== '/' && pathname.startsWith(it.link))
+            .sort((a, b) => b.link.length - a.link.length)[0];
+        return prefix ? prefix.label : '';
+    }, [pathname, items]);
+
     const panelRef = useRef<HTMLDivElement | null>(null);
     const preLayersRef = useRef<HTMLDivElement | null>(null);
     const preLayerElsRef = useRef<HTMLElement[]>([]);
@@ -518,6 +531,27 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
                         </Link>
                     </div>
 
+                    {/* Current page indicator */}
+                    {currentPageLabel && (
+                        <span
+                            className="sm-page-indicator hidden md:flex items-center gap-2 pointer-events-none select-none font-rajdhani text-[11px] font-medium tracking-[0.25em] uppercase absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
+                            style={{ color: accentColor, opacity: 0.7 }}
+                            aria-label={`Página atual: ${currentPageLabel}`}
+                        >
+                            <span
+                                className="inline-block w-5 h-[1px]"
+                                style={{ background: accentColor, opacity: 0.5 }}
+                                aria-hidden="true"
+                            />
+                            {currentPageLabel}
+                            <span
+                                className="inline-block w-5 h-[1px]"
+                                style={{ background: accentColor, opacity: 0.5 }}
+                                aria-hidden="true"
+                            />
+                        </span>
+                    )}
+
                     <button
                         ref={toggleBtnRef}
                         className="sm-toggle relative inline-flex items-center gap-[0.3rem] bg-transparent border-0 cursor-pointer font-rajdhani font-bold text-lg leading-none overflow-visible pointer-events-auto text-white"
@@ -691,6 +725,8 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
 @media (max-width: 1024px) { .sm-scope .staggered-menu-panel { width: 100%; left: 0; right: 0; height: 100dvh; height: 100%; } .sm-scope .sm-prelayers { width: 100%; left: 0; right: 0; } .sm-scope .sm-panel-list { gap: 2rem; } }
 @media (max-width: 640px) { .sm-scope .staggered-menu-panel { width: 100%; left: 0; right: 0; padding: 7.5em 1.5em 2em 1.5em; height: 100dvh; height: 100%; } .sm-scope .sm-prelayers { width: 100%; left: 0; right: 0; height: 100dvh; height: 100%; } .sm-scope .sm-panel-item { font-size: clamp(2rem, 8vw, 3rem); } .sm-scope .sm-panel-list { gap: 2rem; } .sm-scope .sm-panel-list[data-numbering] .sm-panel-item::after { top: -1.2em; right: auto; left: 0; font-size: 14px; } }
 .sm-scope .sm-whatsapp-cta { box-shadow: 0 4px 16px rgba(37, 211, 102, 0.3); }
+.sm-scope .sm-page-indicator { transition: opacity 0.4s ease; }
+.sm-scope [data-open] .sm-page-indicator { opacity: 0 !important; pointer-events: none; }
       `}</style>
         </div>
     );
