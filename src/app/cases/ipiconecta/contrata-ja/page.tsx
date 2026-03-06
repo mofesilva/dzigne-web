@@ -1,9 +1,9 @@
 import React from 'react';
-import CaseHeroSection from '../components/CaseHeroSection';
-import CaseDetailsSection from '../components/CaseDetailsSection';
-import CaseGallerySection from '../components/CaseGallerySection';
-import CaseNavigationSection from '../components/CaseNavigationSection';
-import { getGalleryImages } from '../lib/getGalleryImages';
+import CaseHeroSection from '../../components/CaseHeroSection';
+import CaseDetailsSection from '../../components/CaseDetailsSection';
+import CaseGallerySection from '../../components/CaseGallerySection';
+import CaseNavigationSection from '../../components/CaseNavigationSection';
+import { getGalleryImages } from '../../lib/getGalleryImages';
 
 export const metadata = {
     title: "Case Contrata Já - Marketplace de Serviços | Dzign-e",
