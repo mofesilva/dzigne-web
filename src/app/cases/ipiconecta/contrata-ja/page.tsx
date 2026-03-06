@@ -3,6 +3,7 @@ import CaseHeroSection from '../components/CaseHeroSection';
 import CaseDetailsSection from '../components/CaseDetailsSection';
 import CaseGallerySection from '../components/CaseGallerySection';
 import CaseNavigationSection from '../components/CaseNavigationSection';
+import { getGalleryImages } from '../lib/getGalleryImages';
 
 export const metadata = {
     title: "Case Contrata Já - Marketplace de Serviços | Dzign-e",
@@ -39,7 +40,7 @@ function ContrataJaPage() {
             <CaseGallerySection
                 title="Funcionalidades Inovadoras"
                 description="Explore as principais funcionalidades que transformaram a gestão condominial e a experiência dos moradores."
-                imagesFolder="/assets/images/mockups/contrata-ja"
+                images={getGalleryImages('/assets/images/mockups/contrata-ja')}
             />
 
             <CaseNavigationSection
