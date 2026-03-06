@@ -90,8 +90,9 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
     // Ref for closeMenu to avoid stale closures in effects
     const closeMenuRef = useRef<() => void>(() => { });
 
-    // Scroll listener for header background
+    // Scroll listener for header background — also check immediately on mount
     useEffect(() => {
+        setIsScrolled(window.scrollY > 50);
         const handleScroll = () => setIsScrolled(window.scrollY > 50);
         window.addEventListener('scroll', handleScroll, { passive: true });
         return () => window.removeEventListener('scroll', handleScroll);
@@ -165,7 +166,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
             preLayerElsRef.current = preLayers;
 
             const offscreen = position === 'left' ? -100 : 100;
-            gsap.set([panel, ...preLayers], { xPercent: offscreen });
+            gsap.set([panel, ...preLayers], { xPercent: offscreen, visibility: 'visible' });
 
             gsap.set(plusH, { transformOrigin: '50% 50%', rotate: 0 });
             gsap.set(plusV, { transformOrigin: '50% 50%', rotate: 90 });
@@ -482,7 +483,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
                         return arr.map((c, i) => (
                             <div
                                 key={i}
-                                className="sm-prelayer absolute top-0 right-0 h-full w-full translate-x-0"
+                                className="sm-prelayer absolute top-0 right-0 h-full w-full"
                                 style={{ background: c }}
                             />
                         ));
@@ -508,7 +509,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
                             <Image
                                 src={logoUrl || '/assets/dzigne-logotype-white-green.png'}
                                 alt="Dzign-e"
-                                className={`sm-logo-img block w-auto object-contain transition-all duration-500 ${isScrolled ? 'h-6' : 'h-10'}`}
+                                className={`sm-logo-img block w-auto object-contain transition-all duration-500 ${isScrolled ? 'h-6' : 'h-6 md:h-10'}`}
                                 width={300}
                                 height={72}
                                 priority
@@ -662,12 +663,13 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
 .sm-scope .sm-icon { position: relative; width: 14px; height: 14px; flex: 0 0 14px; display: inline-flex; align-items: center; justify-content: center; will-change: transform; }
 .sm-scope .sm-panel-itemWrap { position: relative; overflow: hidden; line-height: 1; }
 .sm-scope .sm-icon-line { position: absolute; left: 50%; top: 50%; width: 100%; height: 2px; border-radius: 2px; transform: translate(-50%, -50%); will-change: transform; }
+.sm-scope .sm-icon-line-v { transform: translate(-50%, -50%) rotate(90deg); }
 .sm-scope .sm-line { display: none !important; }
-.sm-scope .staggered-menu-panel { position: absolute; top: 0; right: 0; width: clamp(300px, 42vw, 540px); height: 100%; background: #000000; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); display: flex; flex-direction: column; padding: 7em 2.5em 2.5em 2.5em; overflow-y: auto; z-index: 10; -webkit-overflow-scrolling: touch; }
+.sm-scope .staggered-menu-panel { position: absolute; top: 0; right: 0; width: clamp(300px, 42vw, 540px); height: 100%; background: #000000; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); display: flex; flex-direction: column; padding: 7em 2.5em 2.5em 2.5em; overflow-y: auto; z-index: 10; -webkit-overflow-scrolling: touch; visibility: hidden; }
 .sm-scope [data-position='left'] .staggered-menu-panel { right: auto; left: 0; }
 .sm-scope .sm-prelayers { position: absolute; top: 0; right: 0; bottom: 0; width: clamp(300px, 42vw, 540px); pointer-events: none; z-index: 5; }
 .sm-scope [data-position='left'] .sm-prelayers { right: auto; left: 0; }
-.sm-scope .sm-prelayer { position: absolute; top: 0; right: 0; height: 100%; width: 100%; transform: translateX(0); }
+.sm-scope .sm-prelayer { position: absolute; top: 0; right: 0; height: 100%; width: 100%; visibility: hidden; }
 .sm-scope .sm-panel-inner { flex: 1; display: flex; flex-direction: column; gap: 1.25rem; }
 .sm-scope .sm-socials { margin-top: auto; padding-top: 2rem; display: flex; flex-direction: column; gap: 0.75rem; }
 .sm-scope .sm-socials-title { margin: 0; font-size: 1rem; font-weight: 500; color: var(--sm-accent, #7fd10c); }
