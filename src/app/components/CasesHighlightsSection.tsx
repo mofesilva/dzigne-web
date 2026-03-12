@@ -3,6 +3,7 @@ import Image from 'next/image';
 
 import NavigationButton from '../../components/NavigationButton';
 import { AltArrowRight } from '@solar-icons/react/ssr';
+import TagLine from '@/components/TagLine';
 
 function CasesHighlightsSection() {
     return (
@@ -36,9 +37,7 @@ function CasesHighlightsSection() {
                     <div
                         className="relative overflow-hidden rounded-tl-4xl rounded-bl-4xl border-2 border-neutral-300 md:col-span-2 lg:col-span-2 lg:row-span-2 md:min-h-[280px] bg-neutral-200 flex flex-col md:block"
                     >
-                        <span className="block md:hidden font-outfit text-carbon/50 text-xs tracking-[0.2em] uppercase px-7 pt-7">
-                            Gestão · Organização Religiosa · Documentos
-                        </span>
+                        <TagLine text="Gestão · Organização Religiosa · Documentos" variant="light" className="block md:hidden px-7 pt-7" noWrap />
                         <Image
                             src="/assets/images/mockups/iCalvinus_mockup_2.png"
                             alt=""
@@ -49,9 +48,7 @@ function CasesHighlightsSection() {
                             aria-hidden
                         />
                         <div className="flex flex-col justify-between flex-1 md:h-full p-7 lg:p-10 relative z-10">
-                            <span className="hidden md:block font-outfit text-carbon/50 text-xs tracking-[0.2em] uppercase">
-                                Gestão · Organização Religiosa · Documentos
-                            </span>
+                            <TagLine text="Gestão · Organização Religiosa · Documentos" variant="light" className="hidden md:block" noWrap />
                             <div className="max-w-sm">
                                 <Image
                                     src="/assets/images/logos/icalvinus-h.png"
@@ -81,9 +78,7 @@ function CasesHighlightsSection() {
                     <div
                         className="relative overflow-hidden rounded-tr-4xl border-2 border-neutral-300 md:min-h-[280px] bg-neutral-200 flex flex-col md:block"
                     >
-                        <span className="block md:hidden font-outfit text-carbon/50 text-xs tracking-[0.2em] uppercase px-7 pt-7">
-                            Gestão · Organização Religiosa
-                        </span>
+                        <TagLine text="Gestão · Organização Religiosa" variant="light" className="block md:hidden px-7 pt-7" noWrap />
                         <Image
                             src="/assets/images/mockups/ipiconecta_desktop_mockup_1.png"
                             alt=""
@@ -94,9 +89,7 @@ function CasesHighlightsSection() {
                             aria-hidden
                         />
                         <div className="flex flex-col justify-between flex-1 md:h-full p-7 lg:p-9 relative z-10 md:max-w-[55%]">
-                            <span className="hidden md:block font-outfit text-carbon/50 text-xs tracking-[0.2em] uppercase">
-                                Gestão · Organização Religiosa
-                            </span>
+                            <TagLine text="Gestão · Organização Religiosa" variant="light" className="hidden md:block" noWrap />
                             <div>
                                 <Image
                                     src="/assets/images/logos/ipiconecta-h4.png"
@@ -126,9 +119,7 @@ function CasesHighlightsSection() {
                     <div
                         className="relative overflow-hidden rounded-br-4xl border-2 border-neutral-300 md:min-h-[280px] bg-neutral-200 flex flex-col md:block"
                     >
-                        <span className="block md:hidden font-outfit text-carbon/50 text-xs tracking-[0.2em] uppercase px-7 pt-7">
-                            Segurança · Condomínios · IoT
-                        </span>
+                        <TagLine text="Segurança · Condomínios · IoT" variant="light" className="block md:hidden px-7 pt-7" noWrap />
                         <Image
                             src="/assets/images/mockups/sigmaapp-mockup-1.png"
                             alt=""
@@ -139,9 +130,7 @@ function CasesHighlightsSection() {
                             aria-hidden
                         />
                         <div className="flex flex-col justify-between flex-1 md:h-full p-7 lg:p-9 relative z-10 md:max-w-[55%]">
-                            <span className="hidden md:block font-outfit text-carbon/50 text-xs tracking-[0.2em] uppercase">
-                                Segurança · Condomínios · IoT
-                            </span>
+                            <TagLine text="Segurança · Condomínios · IoT" variant="light" className="hidden md:block" noWrap />
                             <div>
                                 <Image
                                     src="/assets/images/logos/sigmaapp.png"
