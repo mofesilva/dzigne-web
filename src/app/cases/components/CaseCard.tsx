@@ -64,7 +64,8 @@ function CaseCard({ logo, company, description, mockup, href, tags, isReversed, 
 
                         <TagLine
                             text={tags.join(' · ')}
-                            className={`text-left mb-10 ${isDark ? '[&_span]:text-eggshell/20' : '[&_span]:text-carbon/30'}`}
+                            variant={isDark ? 'dark' : 'light'}
+                            className="text-left mb-10"
                         />
 
                         <NavigationButton
