@@ -1,5 +1,5 @@
 import React from "react";
-import AboutHeroSection from "./components/AboutHeroSection";
+import QuoteHeroSection from "@/components/QuoteHeroSection";
 import AboutPassionSection from "./components/AboutPassionSection";
 import AboutEssenceSection from "./components/AboutEssenceSection";
 import AboutTechStackSection from "./components/AboutTechStackSection";
@@ -15,7 +15,12 @@ export const metadata = {
 const Page = () => {
   return (
     <main className="flex flex-col">
-      <AboutHeroSection />
+      <QuoteHeroSection
+        quote="A única forma de fazer um trabalho extraordinário é amar o que você faz."
+        author="Steve Jobs"
+        portraitSrc="/lowpoly-stevejobs-w.png"
+        portraitAlt="Steve Jobs — ilustração geométrica"
+      />
       <AboutPassionSection />
       <AboutEssenceSection />
       <AboutTechStackSection />
