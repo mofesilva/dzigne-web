@@ -5,6 +5,7 @@ import NavigationButton from '../../components/NavigationButton';
 import { MagicBentoGrid, MagicBentoCard } from '../../components/MagicBento';
 import { IconStrategy } from './ServiceIcons';
 import SectionTitle from '@/components/SectionTitle';
+import TagLine from '@/components/TagLine';
 
 const GLOW = '127, 209, 12';
 
@@ -48,9 +49,7 @@ function ServicesSection() {
                                 aria-hidden
                             />
                             <div className="flex flex-col justify-between h-full p-7 lg:p-9 relative z-10">
-                                <span className="font-outfit text-eggshell/20 text-xs tracking-[0.2em] uppercase">
-                                    Engenharia
-                                </span>
+                                <TagLine text="Engenharia" noWrap />
                                 <div>
                                     <h4
                                         className="font-rajdhani font-bold text-eggshell mb-2"
@@ -84,9 +83,7 @@ function ServicesSection() {
                                 aria-hidden
                             />
                             <div className="flex flex-col justify-between h-full p-7 lg:p-9 relative z-10">
-                                <span className="font-outfit text-eggshell/20 text-xs tracking-[0.2em] uppercase">
-                                    Design
-                                </span>
+                                <TagLine text="Design" noWrap />
                                 <div>
                                     <h4
                                         className="font-rajdhani font-bold text-eggshell mb-2"
@@ -120,9 +117,7 @@ function ServicesSection() {
                                 aria-hidden
                             />
                             <div className="flex flex-col justify-between h-full p-7 lg:p-10 relative z-10">
-                                <span className="font-outfit text-eggshell/20 text-xs tracking-[0.2em] uppercase">
-                                    Produto
-                                </span>
+                                <TagLine text="Produto" noWrap />
                                 <div>
                                     <h4
                                         className="font-rajdhani font-bold text-eggshell mb-3"
@@ -135,9 +130,7 @@ function ServicesSection() {
                                         Do MVP ao produto completo. Transformamos sua ideia em um
                                         produto digital validado, funcional e pronto para o mercado.
                                     </p>
-                                    <span className="inline-block mt-4 font-outfit text-eggshell/15 text-xs tracking-[0.2em] uppercase">
-                                        Discovery · Prototipação · Validação · Lançamento
-                                    </span>
+                                    <TagLine text="Discovery · Prototipação · Validação · Lançamento" className="inline-block mt-4" noWrap />
                                 </div>
                             </div>
                         </MagicBentoCard>
@@ -159,9 +152,7 @@ function ServicesSection() {
                                 aria-hidden
                             />
                             <div className="flex flex-col justify-between h-full p-7 lg:p-10 relative z-10">
-                                <span className="font-outfit text-eggshell/20 text-xs tracking-[0.2em] uppercase">
-                                    Infraestrutura
-                                </span>
+                                <TagLine text="Infraestrutura" noWrap />
                                 <div>
                                     <h4
                                         className="font-rajdhani font-bold text-eggshell mb-3"
@@ -175,9 +166,7 @@ function ServicesSection() {
                                         backups automáticos e monitoramento 24/7 para você focar
                                         no que importa.
                                     </p>
-                                    <span className="inline-block mt-4 font-outfit text-eggshell/15 text-xs tracking-[0.2em] uppercase">
-                                        AWS · Vercel · Docker · CI/CD
-                                    </span>
+                                    <TagLine text="AWS · Vercel · Docker · CI/CD" className="inline-block mt-4" noWrap />
                                 </div>
                             </div>
                         </MagicBentoCard>
@@ -192,9 +181,7 @@ function ServicesSection() {
                         >
                             <IconStrategy className="w-52 h-52 lg:w-72 lg:h-72 -top-8 -right-8 lg:-top-10 lg:-right-10" />
                             <div className="flex flex-col justify-between h-full p-7 lg:p-9 relative z-10">
-                                <span className="font-outfit text-eggshell/20 text-xs tracking-[0.2em] uppercase">
-                                    Estratégia
-                                </span>
+                                <TagLine text="Estratégia" noWrap />
                                 <div>
                                     <h4
                                         className="font-rajdhani font-bold text-eggshell mb-2"
@@ -228,9 +215,7 @@ function ServicesSection() {
                                 aria-hidden
                             />
                             <div className="flex flex-col justify-between h-full p-7 lg:p-9 relative z-10">
-                                <span className="font-outfit text-eggshell/20 text-xs tracking-[0.2em] uppercase">
-                                    Dados
-                                </span>
+                                <TagLine text="Dados" noWrap />
                                 <div>
                                     <h4
                                         className="font-rajdhani font-bold text-eggshell mb-2"

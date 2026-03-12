@@ -2,10 +2,17 @@
 
 import React from 'react';
 import Image from 'next/image';
-import BlurText from '../../../components/BlurText';
-import ScrollIndicator from '../../../components/ScrollIndicator';
+import BlurText from './BlurText';
+import ScrollIndicator from './ScrollIndicator';
 
-function AboutHeroSection() {
+interface QuoteHeroSectionProps {
+    quote: string;
+    author: string;
+    portraitSrc: string;
+    portraitAlt: string;
+}
+
+function QuoteHeroSection({ quote, author, portraitSrc, portraitAlt }: QuoteHeroSectionProps) {
     return (
         <section className="w-full h-svh relative overflow-hidden bg-black pt-24">
             <div className="absolute inset-0 top-24 flex items-center justify-center px-8 md:px-16 lg:px-24 2xl:px-32">
@@ -16,30 +23,30 @@ function AboutHeroSection() {
                         &ldquo;
                     </span>
                     <Image
-                        src="/lowpoly-stevejobs-w.png"
-                        alt="Steve Jobs — ilustração geométrica"
+                        src={portraitSrc}
+                        alt={portraitAlt}
                         width={160}
                         height={160}
-                        className="w-[4.5rem] h-auto my-8"
+                        className="w-[4.5rem] h-auto mb-8"
                     />
                     <BlurText
                         as="h2"
-                        text="A única forma de fazer um trabalho extraordinário é amar o que você faz."
+                        text={quote}
                         delay={80}
                         animateBy="words"
                         direction="bottom"
                         className="font-rajdhani font-semibold text-white leading-[1.15] [&]:justify-center"
                     />
                     <h6 className="font-outfit text-green-accent font-normal tracking-wide mt-8">
-                        Steve Jobs
+                        {author}
                     </h6>
                 </div>
 
                 {/* Desktop layout — image above, quotes beside text */}
                 <div className="hidden md:flex flex-col items-center gap-12">
                     <Image
-                        src="/lowpoly-stevejobs-w.png"
-                        alt="Steve Jobs — ilustração geométrica"
+                        src={portraitSrc}
+                        alt={portraitAlt}
                         width={200}
                         height={200}
                         className="w-28 lg:w-32 h-auto"
@@ -51,14 +58,14 @@ function AboutHeroSection() {
                         <div>
                             <BlurText
                                 as="h2"
-                                text="A única forma de fazer um trabalho extraordinário é amar o que você faz."
+                                text={quote}
                                 delay={80}
                                 animateBy="words"
                                 direction="bottom"
                                 className="font-rajdhani font-semibold text-white leading-[1.15]"
                             />
                             <h6 className="font-outfit text-green-accent font-normal tracking-wide mt-8">
-                                Steve Jobs
+                                {author}
                             </h6>
                         </div>
                     </div>
@@ -71,4 +78,4 @@ function AboutHeroSection() {
     );
 }
 
-export default AboutHeroSection;
+export default QuoteHeroSection;

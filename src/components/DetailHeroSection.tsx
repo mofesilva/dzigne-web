@@ -6,7 +6,7 @@ import { motion, useInView } from 'motion/react';
 import TagLine from '@/components/TagLine';
 import ScrollIndicator from '@/components/ScrollIndicator';
 
-interface CaseHeroSectionProps {
+interface DetailHeroSectionProps {
     logo: string;
     company: string;
     title?: string;
@@ -16,7 +16,7 @@ interface CaseHeroSectionProps {
     invertLogo?: boolean;
 }
 
-function CaseHeroSection({ logo, company, title, description, tags, mockup, invertLogo = false }: CaseHeroSectionProps) {
+function DetailHeroSection({ logo, company, title, description, tags, mockup, invertLogo = false }: DetailHeroSectionProps) {
     const ref = useRef<HTMLElement>(null);
     const isInView = useInView(ref, { once: true });
 
@@ -89,4 +89,4 @@ function CaseHeroSection({ logo, company, title, description, tags, mockup, inve
     );
 }
 
-export default CaseHeroSection;
+export default DetailHeroSection;

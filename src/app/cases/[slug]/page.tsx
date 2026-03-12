@@ -2,7 +2,7 @@ import React from 'react';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import { getCaseBySlug, getAdjacentCases, getAllSlugs } from '../data/casesData';
-import CaseHeroSection from '../components/CaseHeroSection';
+import DetailHeroSection from '@/components/DetailHeroSection';
 import CaseDetailsSection from '../components/CaseDetailsSection';
 import CaseGallerySection from '../components/CaseGallerySection';
 import CaseNavigationSection from '../components/CaseNavigationSection';
@@ -37,7 +37,7 @@ export default async function CasePage({ params }: CasePageProps) {
 
     return (
         <main className="flex flex-col">
-            <CaseHeroSection
+            <DetailHeroSection
                 logo={caseData.hero.logo}
                 company={caseData.hero.company}
                 title={caseData.hero.title}

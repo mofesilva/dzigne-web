@@ -1,5 +1,5 @@
 import React from 'react';
-import CaseHeroSection from '../components/CaseHeroSection';
+import DetailHeroSection from '@/components/DetailHeroSection';
 import CaseDetailsSection from '../components/CaseDetailsSection';
 import CaseGallerySection from '../components/CaseGallerySection';
 import CaseNavigationSection from '../components/CaseNavigationSection';
@@ -13,7 +13,7 @@ export const metadata = {
 function SigmaappPage() {
     return (
         <main className="flex flex-col">
-            <CaseHeroSection
+            <DetailHeroSection
                 logo="/assets/images/logos/sigmaapp-n.png"
                 company="Sigmacon"
                 description="Revolucionamos a gestão condominial com um aplicativo inteligente que integra reservas de espaços, sistema de câmeras, controle de acesso e comunicação entre moradores e administração."

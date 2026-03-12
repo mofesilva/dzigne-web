@@ -87,11 +87,20 @@ html {
   line-height: 1.5;
 }
 
-p {
+@utility tag-line {
+  @apply text-[0.75rem] tracking-[0.2em] uppercase;
+}
+
+@utility caption {
+  @apply text-sm tracking-[0.2em] uppercase;
+}
+
+p:not(.tag-line):not(.caption) {
   font-size: 1rem;
   line-height: 1.5;
   font-family: var(--font-outfit);
 }
+
 
 h6 {
   font-size: 1.125rem;

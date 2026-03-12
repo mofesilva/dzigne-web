@@ -1,5 +1,5 @@
 import React from 'react';
-import CaseHeroSection from '../../components/CaseHeroSection';
+import DetailHeroSection from '@/components/DetailHeroSection';
 import CaseDetailsSection from '../../components/CaseDetailsSection';
 import CaseGallerySection from '../../components/CaseGallerySection';
 import CaseNavigationSection from '../../components/CaseNavigationSection';
@@ -13,7 +13,7 @@ export const metadata = {
 function ContrataJaPage() {
     return (
         <main className="flex flex-col">
-            <CaseHeroSection
+            <DetailHeroSection
                 logo="/assets/images/logos/contrataja-hn2.png"
                 company="Contrata Já"
                 description="Uma marketplace em desenvolvimento que conecta profissionais de serviços a clientes, facilitando contratações rápidas e seguras com avaliações e portfólios integrados."

@@ -7,7 +7,7 @@ import { AltArrowRight } from '@solar-icons/react/ssr';
 import TagLine from '../../../components/TagLine';
 import NavigationButton from '../../../components/NavigationButton';
 
-interface CaseCardProps {
+interface PlatformCardProps {
     logo: string;
     company: string;
     title?: string;
@@ -21,7 +21,7 @@ interface CaseCardProps {
     isDark?: boolean;
 }
 
-function CaseCard({ logo, company, description, mockup, href, tags, isReversed, index, invertLogo = true, isDark: isDarkProp }: CaseCardProps) {
+function PlatformCard({ logo, company, description, mockup, href, tags, isReversed, index, invertLogo = false, isDark: isDarkProp }: PlatformCardProps) {
     const ref = useRef<HTMLElement>(null);
     const isInView = useInView(ref, { once: true, margin: '-100px' });
 
@@ -54,7 +54,7 @@ function CaseCard({ logo, company, description, mockup, href, tags, isReversed, 
                                 width={200}
                                 height={60}
                                 quality={100}
-                                className="h-10 md:h-12 w-auto object-contain"
+                                className={`h-10 md:h-12 w-auto object-contain ${invertLogo ? 'brightness-0 invert' : ''}`}
                             />
                         </div>
 
@@ -70,7 +70,7 @@ function CaseCard({ logo, company, description, mockup, href, tags, isReversed, 
 
                         <NavigationButton
                             href={href}
-                            text="Ver Case Completo"
+                            text="Conhecer Plataforma"
                             icon={<AltArrowRight weight="Bold" size={16} />}
                             inverted={!isDark}
                         />
@@ -112,4 +112,4 @@ function CaseCard({ logo, company, description, mockup, href, tags, isReversed, 
     );
 }
 
-export default CaseCard; 
+export default PlatformCard;
