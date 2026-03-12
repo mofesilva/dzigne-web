@@ -1,5 +1,5 @@
 import React from 'react';
-import CaseHeroSection from '../components/CaseHeroSection';
+import DetailHeroSection from '@/components/DetailHeroSection';
 import CaseDetailsSection from '../components/CaseDetailsSection';
 import CaseGallerySection from '../components/CaseGallerySection';
 import CaseNavigationSection from '../components/CaseNavigationSection';
@@ -8,7 +8,7 @@ import { getGalleryImages } from '../lib/getGalleryImages';
 function MackenziePage() {
     return (
         <main className="flex flex-col">
-            <CaseHeroSection
+            <DetailHeroSection
                 logo="/assets/images/logos/mackenzie2.png"
                 company="Universidade Mackenzie"
                 title="OAB Mack"
