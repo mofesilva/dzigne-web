@@ -5,7 +5,6 @@ const menuItems = [
     { label: 'Home', ariaLabel: 'Ir para a página inicial', link: '/' },
     { label: 'Inside Dzign-e', ariaLabel: 'Conhecer a Dzign-e', link: '/about-us' },
     { label: 'Cases', ariaLabel: 'Ver nossos cases', link: '/cases' },
-    { label: 'Plataformas', ariaLabel: 'Nossas plataformas', link: '/plataformas' },
 ];
 
 const socialItems = [
