@@ -53,6 +53,7 @@ export default async function CasePage({ params }: CasePageProps) {
                 technologies={caseData.details.technologies}
                 challenge={caseData.details.challenge}
                 solution={caseData.details.solution}
+                resultsCaption={caseData.details.resultsCaption}
                 results={caseData.details.results}
             />
 
