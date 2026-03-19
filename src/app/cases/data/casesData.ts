@@ -1,9 +1,3 @@
-/**
- * Centralized case data.
- *
- * Currently a local file — designed to be swapped for a Cappuccino Cloud
- * Database fetch once the Dzign-e CMS is ready.
- */
 
 export interface CaseData {
     slug: string;
@@ -37,7 +31,8 @@ export interface CaseData {
         technologies: string[];
         challenge: string;
         solution: string;
-        results?: string[];
+        resultsCaption?: string;
+        results?: { icon: string; text: string }[];
     };
 
     // CaseGallerySection props
@@ -80,8 +75,15 @@ export const casesData: CaseData[] = [
             duration: '6 meses',
             team: '2 desenvolvedores',
             technologies: ['Flutter', 'Dart', 'Node.js', 'MySQL', 'Akamai Cloud'],
-            challenge: 'A Universidade Mackenzie precisava de uma plataforma moderna que permitisse aos estudantes de Direito se prepararem de forma mais eficiente para o exame da OAB.\nO desafio era criar uma solução que fosse intuitiva para os alunos.\nE ao mesmo tempo oferecesse ferramentas robustas para os professores gerenciarem o conteúdo dinamicamente.',
-            solution: 'Desenvolvemos uma plataforma completa composta por um aplicativo móvel para estudantes e um painel web para professores.\nO app permite realizar simulados personalizados, acompanhar progresso e estudar com base nas áreas de maior dificuldade.\nO painel web oferece criação de questões, análise de desempenho dos alunos e gestão completa do conteúdo educacional.',
+            challenge: 'A Universidade Mackenzie precisava de uma plataforma para ajudar os estudantes de Direito a se prepararem para o exame da OAB. A solução precisava ser intuitiva para os alunos e, ao mesmo tempo, permitir que os professores gerenciassem o conteúdo de forma dinâmica.',
+            solution: 'Desenvolvemos uma plataforma com duas frentes: um aplicativo mobile para os estudantes e um painel web para os professores.\nNo app, os alunos conseguem realizar simulados personalizados, acompanhar o próprio progresso e direcionar os estudos com base nas áreas de maior dificuldade.\nNo painel web, os professores têm acesso à criação e edição de questões e gestão completa do conteúdo educacional.',
+            resultsCaption: 'Plataforma proprietária desenvolvida sob medida para a Mackenzie.',
+            results: [
+                { icon: 'users', text: '+500 usuários cadastrados' },
+                { icon: 'notebook', text: '+700 questões organizadas em 21 categorias' },
+                { icon: 'checklist', text: '+300 simulados realizados' },
+
+            ],
         },
         gallery: {
             title: 'Galeria de Imagens',
@@ -116,15 +118,13 @@ export const casesData: CaseData[] = [
             duration: '4 anos',
             team: '2 desenvolvedores',
             technologies: ['Flutter', 'Firebase', 'Node.js', 'MySQL', 'Akamai Cloud',],
-            challenge: 'A Igreja Presbiteriana do Brasil, tendo seu modelo de governo representativo, enfrentava uma enorme dificuldade de gerenciar as informações e documentos de decisões das reuniões conciliares.\nTodos os documentos e decisões eram impressos e armazenados na Secretaria Executiva.\nIsso dificultava a logística de armazenamento, transporte para reuniões e consultas.\nEssa instituição precisava de um sistema que centralizasse todos os documentos passados e futuros, de forma a providenciar o fácil acesso assim como a consulta eficiente.',
-            solution: 'Desenvolvemos um sistema web e móvel completo que permite a centralização de documentos, decisões e comunicações em uma plataforma digital acessível e eficiente, além de cadastro de sínodos, presbitérios, igrejas e rol de membros.\nO sistema inclui funcionalidades como upload e organização de documentos, acesso controlado por níveis hierárquicos, ferramentas de busca avançada, notificações automáticas para reuniões e decisões, e um painel administrativo para gestão completa do conteúdo conciliar.',
+            challenge: 'A Igreja Presbiteriana do Brasil possui um modelo de governo representativo que gera grandes volumes de documentos, atas e decisões conciliares. Toda essa gestão dependia de processos manuais e arquivos físicos — o que tornava o acesso a documentos históricos lento e a logística de cada reunião do Supremo Concílio complexa.',
+            solution: 'Desenvolvemos o iCalvinus, uma plataforma web e mobile construída especificamente para o modelo de governança presbiteriana.\nA plataforma centraliza toda a gestão conciliar em ambiente digital: documentos históricos e futuros em um só lugar, geração automática de atas, controle de presença e um módulo de votação eletrônica — tudo acessível de forma simples e imediata.',
+            resultsCaption: 'Redução de 2/3 do tempo das reuniões do Supremo Concílio. Facilidade de acesso do Digesto, Anuário, Decisões e Atas.',
             results: [
-                'Redução de 2/3 do tempo de reuniões conciliares',
-                'Mais de 2800 documentos, decisões, ementas concentradas na plataforma',
-                '80% de aumento na satisfação dos moradores',
-                'Redução de 70% em conflitos por reservas',
-                'Sistema de segurança 24/7 implementado',
-                'Comunicação instantânea entre moradores e administração',
+                { icon: 'users', text: '+3400 usuários ativos cadastrados' },
+                { icon: 'buildings', text: '+4300 igrejas ativas cadastradas' },
+                { icon: 'documents', text: '+2800 documentos, decisões, ementas concentradas na plataforma' },
             ],
         },
         gallery: {
@@ -157,11 +157,17 @@ export const casesData: CaseData[] = [
             mockup: '/assets/images/mockups/sigmaapp-mockup-2.png',
         },
         details: {
-            duration: '8 meses',
+            duration: 'Contínuo desde 2019',
             team: '2 desenvolvedores',
-            technologies: ['Flutter', 'Firebase', 'Node.js', 'MongoDB', 'AWS IoT', 'WebRTC', 'TypeScript'],
-            challenge: 'O CEO da Sigmacon identificou uma lacuna no mercado de segurnça condominial, um aplicativo que intetgrasse enfrentavam dificuldades para gerenciar reservas de espaços comuns, controlar acessos, monitorar segurança e manter comunicação eficiente entre moradores e administração. Era necessária uma solução integrada que centralizasse todas essas funcionalidades em uma plataforma móvel intuitiva.',
-            solution: 'Desenvolvemos um aplicativo móvel completo que permite aos moradores reservar espaços comuns, visualizar câmeras de segurança, autorizar visitantes, receber comunicados da administração e acessar serviços do condomínio. Para administradores, criamos um painel de gestão com controle total das funcionalidades, relatórios e monitoramento em tempo real.',
+            technologies: ['Flutter', 'Firebase', 'Node.js', 'MySQL', 'Akamai Cloud'],
+            challenge: 'O CEO da SigmaCon identificou uma lacuna no mercado de segurança condominial: a falta de uma ferramenta que facilitasse a comunicação entre moradores e a gestão do condomínio, por meio de abertura e acompanhamento de ocorrências.',
+            solution: 'Desenvolvemos o SigmaApp, um aplicativo mobile com foco inicial na gestão de ocorrências. Com o tempo, novas necessidades foram surgindo e o app foi evoluindo para incorporar controle de acesso, reserva e gestão de espaços comuns e notificações aos condôminos, combinando funcionalidades nativas e integrações externas.',
+            resultsCaption: 'O SigmaApp está ativo no mercado e segue em desenvolvimento contínuo, incorporando melhorias para atender novos clientes e novas demandas que surgem ao longo do caminho. A Dzign-e atua com coparticipação na receita do aplicativo, refletindo o nível de confiança e comprometimento construído ao longo do projeto.',
+            results: [
+                { icon: 'check', text: '+41.000 visitas registradas' },
+                { icon: 'documents', text: '+7.000 ocorrências registradas' },
+                { icon: 'users', text: '+17.000 usuários ativos' },
+            ],
         },
         gallery: {
             title: 'Galeria de Imagens',
@@ -197,15 +203,12 @@ export const casesData: CaseData[] = [
             duration: '3 anos',
             team: '2 desenvolvedores',
             technologies: ['React Native', 'Next.js', 'Node.js', 'PostgreSQL', 'Redis', 'AWS', 'TypeScript', 'Socket.io'],
-            challenge: 'A IPI do Brasil necessitava conectar suas igrejas, presbitérios e sínodos em uma única plataforma que facilitasse a comunicação e a administração denominacional.\nOs processos administrativos dependiam de trocas de e-mails, documentos físicos e planilhas isoladas, gerando retrabalho e perda de informações importantes.\nNão existia uma forma padronizada de acompanhar deliberações, compartilhar comunicados oficiais ou manter um registro histórico acessível a todos os níveis da estrutura eclesiástica.\nA denominação precisava de uma ferramenta própria que unificasse a gestão administrativa e fortalecesse o vínculo entre suas comunidades.',
-            solution: 'Criamos o IPIConecta, uma plataforma web e mobile sob medida que serve como o hub digital da denominação, integrando gestão de concílios, comunicação interna e cadastro institucional em um único ambiente.\nO sistema oferece painel de gestão para lideranças, módulo de comunicados e notificações em tempo real, repositório organizado de atas e documentos oficiais, cadastro hierárquico de igrejas e membros, além de relatórios e dashboards para acompanhamento denominacional.',
+            challenge: 'A Igreja Presbiteriana Independente do Brasil possui um modelo de governo representativo que gera grandes volumes de documentos, atas e decisões conciliares. Toda essa gestão dependia de processos manuais e arquivos físicos, o que tornava o acesso a documentos históricos lento e a logística de cada reunião complexa. Além disso, a denominação não tinha uma forma centralizada de gerenciar seu rol de membros e sua estrutura de igrejas, presbitérios e sínodos.',
+            solution: 'Desenvolvemos o IPIConecta, uma plataforma web e mobile construída especificamente para o modelo de governança da IPIB. A plataforma centraliza toda a gestão conciliar em ambiente digital: documentos históricos e futuros em um só lugar, geração automática de atas, controle de presença e módulo de votação eletrônica. Além disso, a plataforma integra o cadastro e gestão de membros, igrejas, presbitérios e sínodos, contemplando toda a estrutura denominacional da instituição.',
+            resultsCaption: 'A IPIB passou a contar com uma solução própria, aderente às especificidades da sua estrutura denominacional, que modernizou a gestão conciliar e centralizou tanto a base documental quanto o registro institucional da denominação.',
             results: [
-                'Centralização de documentos e decisões conciliares',
-                'Acesso digital para todos os sínodos, presbitérios e igrejas',
-                'Redução significativa no tempo de reuniões conciliares',
-                'Comunicação instantânea entre concílios',
-                'Sistema de busca avançada para consulta de decisões',
-                'Plataforma 100% responsiva com acesso mobile e web',
+                { icon: 'users', text: '+1000 ministros cadastrados' },
+                { icon: 'buildings', text: '+500 igrejas cadastradas' },
             ],
         },
         gallery: {
@@ -243,13 +246,12 @@ export const casesData: CaseData[] = [
             technologies: ['Flutter', 'Dart', 'Node.js', 'MongoDB', 'Akamai Cloud'],
             challenge: 'Os condomínios enfrentavam dificuldades para gerenciar reservas de espaços comuns, controlar acessos, monitorar segurança e manter comunicação eficiente entre moradores e administração. Era necessária uma solução integrada que centralizasse todas essas funcionalidades em uma plataforma móvel intuitiva.',
             solution: 'Desenvolvemos um aplicativo móvel completo que permite aos moradores reservar espaços comuns, visualizar câmeras de segurança, autorizar visitantes, receber comunicados da administração e acessar serviços do condomínio. Para administradores, criamos um painel de gestão com controle total das funcionalidades, relatórios e monitoramento em tempo real.',
+            resultsCaption: 'Sistema de segurança 24/7 implementado. Comunicação instantânea entre moradores e administração.',
             results: [
-                '95% de redução no tempo de reserva de espaços',
-                'Mais de 150 condomínios utilizando a plataforma',
-                '80% de aumento na satisfação dos moradores',
-                'Redução de 70% em conflitos por reservas',
-                'Sistema de segurança 24/7 implementado',
-                'Comunicação instantânea entre moradores e administração',
+                { icon: 'clock', text: '95% de redução no tempo de reserva de espaços' },
+                { icon: 'buildings', text: 'Mais de 150 condomínios utilizando a plataforma' },
+                { icon: 'graph', text: '80% de aumento na satisfação dos moradores' },
+                { icon: 'shield', text: 'Redução de 70% em conflitos por reservas' },
             ],
         },
         gallery: {
