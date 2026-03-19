@@ -3,7 +3,54 @@
 import React, { useRef } from 'react';
 import Image from 'next/image';
 import { motion, useInView } from 'motion/react';
-import { ClockCircle, UsersGroupTwoRounded, CheckCircle } from '@solar-icons/react/ssr';
+import { ClockCircle, UsersGroupTwoRounded, CheckCircle, UsersGroupRounded, ClipboardList, GraphUp, Buildings3, Shield, Magnifier, NotebookBookmark, DocumentText } from '@solar-icons/react/ssr';
+import CountUp from '@/components/CountUpText';
+
+const RESULT_ICON_SIZE = 32;
+
+const iconMap: Record<string, React.ReactNode> = {
+    users: <UsersGroupRounded weight="LineDuotone" size={RESULT_ICON_SIZE} />,
+    notebook: <NotebookBookmark weight="LineDuotone" size={RESULT_ICON_SIZE} />,
+    checklist: <ClipboardList weight="LineDuotone" size={RESULT_ICON_SIZE} />,
+    documents: <DocumentText weight="LineDuotone" size={RESULT_ICON_SIZE} />,
+    buildings: <Buildings3 weight="LineDuotone" size={RESULT_ICON_SIZE} />,
+    clock: <ClockCircle weight="LineDuotone" size={RESULT_ICON_SIZE} />,
+    graph: <GraphUp weight="LineDuotone" size={RESULT_ICON_SIZE} />,
+    shield: <Shield weight="LineDuotone" size={RESULT_ICON_SIZE} />,
+    magnifier: <Magnifier weight="LineDuotone" size={RESULT_ICON_SIZE} />,
+    check: <CheckCircle weight="LineDuotone" size={RESULT_ICON_SIZE} />,
+};
+
+/* ─── Result parser ─── */
+interface ParsedMetric {
+    raw: string;
+    numericValue: number | null;
+    prefix: string;
+    suffix: string;
+    label: string;
+}
+
+function parseMetric(raw: string): ParsedMetric {
+    const match = raw.match(/^(\+?\d[\d.,/]*%?)\s+(.+)$/);
+    if (!match) return { raw, numericValue: null, prefix: '', suffix: '', label: raw };
+
+    const value = match[1];
+    const label = match[2];
+
+    const parts = value.match(/^(\+?)(\d[\d.,]*?)(%?)$/);
+    if (parts) {
+        const numStr = parts[2].replace(/\./g, '').replace(',', '.');
+        const num = parseFloat(numStr);
+        return { raw, numericValue: isNaN(num) ? null : num, prefix: parts[1], suffix: parts[3], label };
+    }
+
+    return { raw, numericValue: null, prefix: '', suffix: '', label };
+}
+
+interface ResultItem {
+    icon: string;
+    text: string;
+}
 
 interface CaseDetailsSectionProps {
     duration: string;
@@ -11,12 +58,16 @@ interface CaseDetailsSectionProps {
     technologies: string[];
     challenge: string;
     solution: string;
-    results?: string[];
+    resultsCaption?: string;
+    results?: ResultItem[];
 }
 
-function CaseDetailsSection({ duration, team, technologies, challenge, solution, results }: CaseDetailsSectionProps) {
+function CaseDetailsSection({ duration, team, technologies, challenge, solution, resultsCaption, results }: CaseDetailsSectionProps) {
     const ref = useRef<HTMLElement>(null);
     const isInView = useInView(ref, { once: true, margin: '-80px' });
+
+    const resultsRef = useRef<HTMLDivElement>(null);
+    const resultsInView = useInView(resultsRef, { once: true, margin: '-60px' });
 
     const techIconMap: Record<string, string> = {
         'Flutter': '/assets/icons/tech/flutter.svg',
@@ -145,33 +196,70 @@ function CaseDetailsSection({ duration, team, technologies, challenge, solution,
 
             {/* ── Results ── */}
             {results && results.length > 0 && (
-                <div className="bg-black">
-                    <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-20 2xl:px-32 py-24 md:py-32">
+                <div ref={resultsRef} className="border-t border-carbon/10">
+                    <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-20 2xl:px-32 py-24 md:py-32 lg:py-40">
+
+                        {/* Section header */}
                         <motion.div
+                            className="mb-16 lg:mb-20"
                             initial={{ opacity: 0, y: 30 }}
-                            animate={isInView ? { opacity: 1, y: 0 } : {}}
-                            transition={{ duration: 0.7, delay: 0.3 }}
+                            animate={resultsInView ? { opacity: 1, y: 0 } : {}}
+                            transition={{ duration: 0.7 }}
                         >
-                            <p className="text-caption font-outfit tracking-widest uppercase text-eggshell/30 mb-12 text-center">
+                            <p className="flex items-center gap-3 text-caption font-outfit tracking-widest uppercase text-carbon/50 mb-4">
+                                <span className="w-2 h-2 rounded-full bg-green-accent -translate-y-px shrink-0" />
                                 Resultados Alcançados
                             </p>
-                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                                {results.map((result, i) => (
+                            <h2 className="font-rajdhani font-bold text-carbon mb-5 md:mb-6">
+                                O que <span className="text-green-accent">alcançamos?</span>
+                            </h2>
+                            {resultsCaption && (
+                                <h6 className="font-outfit text-carbon/70 max-w-xl">
+                                    {resultsCaption}
+                                </h6>
+                            )}
+                        </motion.div>
+
+                        {/* Metrics grid */}
+                        <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-14 lg:gap-x-12">
+                            {results.map((result, i) => {
+                                const metric = parseMetric(result.text);
+                                return (
                                     <motion.div
                                         key={i}
-                                        className="flex items-start gap-4"
                                         initial={{ opacity: 0, y: 20 }}
-                                        animate={isInView ? { opacity: 1, y: 0 } : {}}
-                                        transition={{ duration: 0.5, delay: 0.4 + i * 0.1 }}
+                                        animate={resultsInView ? { opacity: 1, y: 0 } : {}}
+                                        transition={{ duration: 0.5, delay: 0.15 + i * 0.1, ease: [0.25, 0.46, 0.45, 0.94] }}
                                     >
-                                        <CheckCircle weight="Bold" size={22} className="text-green-accent shrink-0 mt-0.5" />
-                                        <p className="font-outfit text-eggshell/60 leading-relaxed">
-                                            {result}
-                                        </p>
+                                        <div className="w-14 h-14 rounded-2xl border-2 border-green-accent/40 bg-green-accent/15 flex items-center justify-center text-green-accent mb-5">
+                                            {iconMap[result.icon] ?? iconMap.check}
+                                        </div>
+                                        <div className="border-t border-carbon/15 pt-6">
+                                            <h1 className="font-rajdhani font-bold text-green-accent mb-3">
+                                                {metric.numericValue !== null ? (
+                                                    <>
+                                                        {metric.prefix}
+                                                        <CountUp
+                                                            to={metric.numericValue}
+                                                            from={0}
+                                                            duration={1}
+                                                            separator="."
+                                                            startWhen={resultsInView}
+                                                        />
+                                                        {metric.suffix}
+                                                    </>
+                                                ) : (
+                                                    metric.raw
+                                                )}
+                                            </h1>
+                                            <h6 className="font-outfit text-carbon/80 leading-relaxed">
+                                                {metric.label}
+                                            </h6>
+                                        </div>
                                     </motion.div>
-                                ))}
-                            </div>
-                        </motion.div>
+                                );
+                            })}
+                        </div>
                     </div>
                 </div>
             )}
