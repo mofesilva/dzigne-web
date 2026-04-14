@@ -95,7 +95,7 @@ html {
   @apply text-sm tracking-[0.2em] uppercase;
 }
 
-p:not(.tag-line):not(.caption) {
+p {
   font-size: 1rem;
   line-height: 1.5;
   font-family: var(--font-outfit);
