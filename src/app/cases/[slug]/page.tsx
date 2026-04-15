@@ -60,7 +60,7 @@ export default async function CasePage({ params }: CasePageProps) {
             <CaseGallerySection
                 title={caseData.gallery.title}
                 description={caseData.gallery.description}
-                images={getGalleryImages(caseData.gallery.imagesFolder)}
+                images={await getGalleryImages(caseData.gallery.imagesFolder)}
             />
 
             <CaseNavigationSection

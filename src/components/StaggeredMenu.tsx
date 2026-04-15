@@ -43,7 +43,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
     displaySocials = true,
     displayItemNumbering = true,
     className,
-    logoUrl = '/assets/dzigne-logotype-white-green.png',
+    logoUrl = '',  // set via StickyNavbar
     menuButtonColor = '#fff',
     openMenuButtonColor = '#fff',
     changeMenuColorOnOpen = true,
@@ -520,7 +520,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
                     <div className="sm-logo flex items-center select-none pointer-events-auto" aria-label="Logo">
                         <Link href="/">
                             <Image
-                                src={logoUrl || '/assets/dzigne-logotype-white-green.png'}
+                                src={logoUrl}
                                 alt="Dzign-e"
                                 className={`sm-logo-img block w-auto object-contain transition-all duration-500 ${isScrolled ? 'h-6' : 'h-6 md:h-10'}`}
                                 width={300}

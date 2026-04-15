@@ -1,7 +1,7 @@
 import React from "react";
 import QuoteHeroSection from "@/components/QuoteHeroSection";
-import AboutPassionSection from "./components/AboutPassionSection";
-import AboutEssenceSection from "./components/AboutEssenceSection";
+import AboutIdentitySection from "./components/AboutIdentitySection";
+import AboutProcessSection from "./components/AboutProcessSection";
 import AboutTechStackSection from "./components/AboutTechStackSection";
 import AboutTeamSection from "./components/AboutTeamSection";
 import AboutCTASection from "./components/AboutCTASection";
@@ -21,8 +21,8 @@ const Page = () => {
         portraitSrc="/lowpoly-stevejobs-w.png"
         portraitAlt="Steve Jobs — ilustração geométrica"
       />
-      <AboutPassionSection />
-      <AboutEssenceSection />
+      <AboutIdentitySection />
+      <AboutProcessSection />
       <AboutTechStackSection />
       <AboutTeamSection />
       <AboutCTASection />

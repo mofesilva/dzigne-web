@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import { cdnUrl } from '@/lib/cdn';
 
 interface TeamMember {
     name: string;
@@ -12,34 +13,34 @@ interface TeamMember {
 
 /*
  *  TODO: Substituir com dados reais da equipe.
- *  Adicionar fotos em /public/assets/images/team/ (112×112 ou maior, quadradas).
+ *  Adicionar fotos no CDN em /team/ (112×112 ou maior, quadradas).
  */
 const teamMembers: TeamMember[] = [
     {
         name: 'Moisés Silva',
         role: 'CEO & Full-Stack Developer',
-        photo: '/assets/images/team/moises-silva.jpg',
+        photo: cdnUrl('/team/moises-silva.jpg'),
         linkedin: 'https://www.linkedin.com/in/moisessilva/',
         github: 'https://github.com/moisessilva',
     },
     {
         name: 'Ana Costa',
         role: 'UI/UX Designer Lead',
-        photo: '/assets/images/team/ana-costa.jpg',
+        photo: cdnUrl('/team/ana-costa.jpg'),
         linkedin: 'https://www.linkedin.com/in/anacosta/',
         instagram: 'https://instagram.com/anacosta',
     },
     {
         name: 'Lucas Ferreira',
         role: 'Backend Engineer',
-        photo: '/assets/images/team/lucas-ferreira.jpg',
+        photo: cdnUrl('/team/lucas-ferreira.jpg'),
         linkedin: 'https://www.linkedin.com/in/lucasferreira/',
         github: 'https://github.com/lucasferreira',
     },
     {
         name: 'Juliana Mendes',
         role: 'Mobile Developer',
-        photo: '/assets/images/team/juliana-mendes.jpg',
+        photo: cdnUrl('/team/juliana-mendes.jpg'),
         linkedin: 'https://www.linkedin.com/in/julianamendes/',
     },
 ];
@@ -53,7 +54,7 @@ function SocialLink({ href, icon, alt }: { href: string; icon: string; alt: stri
             className="opacity-40 hover:opacity-100 transition-opacity duration-300"
         >
             <Image
-                src={`/assets/icons/brands/${icon}.svg`}
+                src={cdnUrl(`/icons/${icon}.svg`)}
                 alt={alt}
                 width={18}
                 height={18}

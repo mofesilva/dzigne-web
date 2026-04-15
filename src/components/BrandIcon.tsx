@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import { cdnUrl } from '@/lib/cdn';
 
 interface BrandIconProps {
     name: string;
@@ -11,7 +12,7 @@ interface BrandIconProps {
 export default function BrandIcon({ name, size = 24, className = '', alt }: BrandIconProps) {
     return (
         <Image
-            src={`/assets/icons/brands/${name}.svg`}
+            src={cdnUrl(`/icons/${name}.svg`)}
             alt={alt ?? name}
             width={size}
             height={size}

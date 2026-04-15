@@ -5,6 +5,8 @@
  * Database fetch once the Dzign-e CMS is ready.
  */
 
+import { cdnUrl } from '@/lib/cdn';
+
 export interface PlatformData {
     slug: string;
 
@@ -68,12 +70,12 @@ export const platformsData: PlatformData[] = [
             description: 'Conheça o Cappuccino Cloud Database, a plataforma de banco de dados em nuvem desenvolvida pela Dzign-e para simplificar o armazenamento e a gestão de dados.',
         },
         hero: {
-            logo: '/assets/images/logos/cappuccino-logo.png',
+            logo: cdnUrl('/logos/cappuccino-logo.png'),
             company: 'Dzign-e',
             title: 'Cappuccino Cloud Database',
             description: 'Uma plataforma de banco de dados em nuvem projetada para simplificar o armazenamento, a consulta e a gestão de dados em tempo real, com escalabilidade automática e integração nativa com aplicações web e mobile.',
             tags: ['Cloud', 'Database', 'BaaS', 'Real-time', 'Serverless'],
-            mockup: '/assets/images/mockups/cappuccino_mockup.png',
+            mockup: cdnUrl('/mockups/cappuccino_mockup.png'),
             invertLogo: true,
         },
         details: {
@@ -94,13 +96,13 @@ export const platformsData: PlatformData[] = [
         gallery: {
             title: 'Galeria de Imagens',
             description: 'Explore a interface e funcionalidades do Cappuccino Cloud Database.',
-            imagesFolder: '/assets/images/mockups/platforms/cappuccino',
+            imagesFolder: '/mockups/platforms/cappuccino',
         },
         listing: {
-            logo: '/assets/images/logos/cappuccino-logo.png',
+            logo: cdnUrl('/logos/cappuccino-logo.png'),
             company: 'Cappuccino Cloud Database',
             description: 'Banco de dados em nuvem com setup instantâneo, escalabilidade automática e SDK próprio. Simplifique seu backend e foque no que importa: o seu produto.',
-            mockup: '/assets/images/mockups/cappuccino_mockup.png',
+            mockup: cdnUrl('/mockups/cappuccino_mockup.png'),
             tags: ['Cloud', 'Database', 'BaaS'],
             invertLogo: true,
         },
@@ -115,12 +117,12 @@ export const platformsData: PlatformData[] = [
             description: 'Conheça o Boomerang, a plataforma da Dzign-e para coleta de feedback, NPS e engajamento de usuários em tempo real.',
         },
         hero: {
-            logo: '/assets/images/logos/boomerang-logo.png',
+            logo: cdnUrl('/logos/boomerang-logo.png'),
             company: 'Dzign-e',
             title: 'Boomerang',
             description: 'Plataforma inteligente de coleta de feedback e engajamento que permite empresas compreenderem seus clientes em profundidade, com pesquisas automatizadas, análise de sentimento e dashboards interativos.',
             tags: ['Feedback', 'NPS', 'Engajamento', 'Analytics', 'Automação'],
-            mockup: '/assets/images/mockups/boomerang_mockup.png',
+            mockup: cdnUrl('/mockups/boomerang_mockup.png'),
             invertLogo: true,
         },
         details: {
@@ -141,13 +143,13 @@ export const platformsData: PlatformData[] = [
         gallery: {
             title: 'Galeria de Imagens',
             description: 'Explore a interface e funcionalidades do Boomerang.',
-            imagesFolder: '/assets/images/mockups/platforms/boomerang',
+            imagesFolder: '/mockups/platforms/boomerang',
         },
         listing: {
-            logo: '/assets/images/logos/boomerang-logo.png',
+            logo: cdnUrl('/logos/boomerang-logo.png'),
             company: 'Boomerang',
             description: 'Plataforma inteligente de feedback e engajamento com pesquisas automatizadas, análise de sentimento por IA e dashboards interativos para transformar opiniões em ações.',
-            mockup: '/assets/images/mockups/boomerang_mockup.png',
+            mockup: cdnUrl('/mockups/boomerang_mockup.png'),
             tags: ['Feedback', 'NPS', 'Engajamento'],
             invertLogo: true,
         },
@@ -162,12 +164,12 @@ export const platformsData: PlatformData[] = [
             description: 'Conheça o Kart Collector, a plataforma da Dzign-e para colecionadores organizarem, avaliarem e negociarem suas coleções.',
         },
         hero: {
-            logo: '/assets/images/logos/kartcollector-logo.png',
+            logo: cdnUrl('/logos/kartcollector-logo.png'),
             company: 'Dzign-e',
             title: 'Kart Collector',
             description: 'A plataforma definitiva para colecionadores. Organize, catalogue, avalie e negocie itens da sua coleção com ferramentas inteligentes de precificação, comunidade integrada e marketplace seguro.',
             tags: ['Colecionáveis', 'Marketplace', 'Comunidade', 'Mobile App', 'Catálogo'],
-            mockup: '/assets/images/mockups/kartcollector_mockup.png',
+            mockup: cdnUrl('/mockups/kartcollector_mockup.png'),
         },
         details: {
             duration: 'Em contínuo desenvolvimento',
@@ -187,13 +189,13 @@ export const platformsData: PlatformData[] = [
         gallery: {
             title: 'Galeria de Imagens',
             description: 'Explore a interface e funcionalidades do Kart Collector.',
-            imagesFolder: '/assets/images/mockups/platforms/kart-collector',
+            imagesFolder: '/mockups/platforms/kart-collector',
         },
         listing: {
-            logo: '/assets/images/logos/kartcollector-logo.png',
+            logo: cdnUrl('/logos/kartcollector-logo.png'),
             company: 'Kart Collector',
             description: 'A plataforma definitiva para colecionadores organizarem, catalogarem e negociarem itens com precificação inteligente, scanner automático e marketplace integrado.',
-            mockup: '/assets/images/mockups/kartcollector_mockup.png',
+            mockup: cdnUrl('/mockups/kartcollector_mockup.png'),
             tags: ['Colecionáveis', 'Marketplace', 'Comunidade'],
         },
     },
@@ -207,12 +209,12 @@ export const platformsData: PlatformData[] = [
             description: 'Conheça o Kangaroo, a plataforma da Dzign-e para gestão inteligente de entregas e logística last-mile.',
         },
         hero: {
-            logo: '/assets/images/logos/kangaroo-logo.png',
+            logo: cdnUrl('/logos/kangaroo-logo.png'),
             company: 'Dzign-e',
             title: 'Kangaroo',
             description: 'Plataforma de gestão inteligente de entregas e logística last-mile. Otimize rotas, acompanhe entregas em tempo real e ofereça uma experiência de rastreamento transparente para seus clientes.',
             tags: ['Logística', 'Entregas', 'Rastreamento', 'Mobile App', 'Otimização'],
-            mockup: '/assets/images/mockups/kangaroo_mockup.png',
+            mockup: cdnUrl('/mockups/kangaroo_mockup.png'),
         },
         details: {
             duration: 'Em contínuo desenvolvimento',
@@ -232,13 +234,13 @@ export const platformsData: PlatformData[] = [
         gallery: {
             title: 'Galeria de Imagens',
             description: 'Explore a interface e funcionalidades do Kangaroo.',
-            imagesFolder: '/assets/images/mockups/platforms/kangaroo',
+            imagesFolder: '/mockups/platforms/kangaroo',
         },
         listing: {
-            logo: '/assets/images/logos/kangaroo-logo.png',
+            logo: cdnUrl('/logos/kangaroo-logo.png'),
             company: 'Kangaroo',
             description: 'Gestão inteligente de entregas com otimização de rotas, rastreamento em tempo real e comprovante digital. Simplifique sua logística last-mile.',
-            mockup: '/assets/images/mockups/kangaroo_mockup.png',
+            mockup: cdnUrl('/mockups/kangaroo_mockup.png'),
             tags: ['Logística', 'Entregas', 'Rastreamento'],
         },
     },

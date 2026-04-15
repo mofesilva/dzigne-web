@@ -2,26 +2,27 @@
 import React from 'react';
 import Image from 'next/image';
 import BlurText from '@/components/BlurText';
+import { cdnUrl } from '@/lib/cdn';
 
 const logosRow1 = [
-    { src: '/assets/images/logos/arion1.png', alt: 'Arion' },
-    { src: '/assets/images/logos/contrataja-hn1.png', alt: 'Contrata Já' },
-    { src: '/assets/images/logos/ergon1.png', alt: 'Ergon' },
-    { src: '/assets/images/logos/gar1.png', alt: 'GAR' },
-    { src: '/assets/images/logos/gideoes1.png', alt: 'Gideões' },
-    { src: '/assets/images/logos/icalvinus-hn.png', alt: 'iCalvinus' },
-    { src: '/assets/images/logos/infinity1.png', alt: 'Infinity' },
-    { src: '/assets/images/logos/ipb1.png', alt: 'IPB' },
+    { src: cdnUrl('/clients/arion1.png'), alt: 'Arion' },
+    { src: cdnUrl('/clients/contrataja-hn1.png'), alt: 'Contrata Já' },
+    { src: cdnUrl('/clients/ergon1.png'), alt: 'Ergon' },
+    { src: cdnUrl('/clients/gar1.png'), alt: 'GAR' },
+    { src: cdnUrl('/clients/gideoes1.png'), alt: 'Gideões' },
+    { src: cdnUrl('/clients/icalvinus-hn.png'), alt: 'iCalvinus' },
+    { src: cdnUrl('/clients/infinity1.png'), alt: 'Infinity' },
+    { src: cdnUrl('/clients/ipb1.png'), alt: 'IPB' },
 ];
 
 const logosRow2 = [
-    { src: '/assets/images/logos/ipi1.png', alt: 'IPI' },
-    { src: '/assets/images/logos/ipiconecta-h2.png', alt: 'IPIconecta' },
-    { src: '/assets/images/logos/labormed1.png', alt: 'Labormed' },
-    { src: '/assets/images/logos/mackenzie1.png', alt: 'Mackenzie' },
-    { src: '/assets/images/logos/sigmaapp-n.png', alt: 'SigmaApp' },
-    { src: '/assets/images/logos/sigmacon1png.png', alt: 'Sigmacon' },
-    { src: '/assets/images/logos/trilobit1.png', alt: 'Trilobit' },
+    { src: cdnUrl('/clients/ipi1.png'), alt: 'IPI' },
+    { src: cdnUrl('/clients/ipiconecta-h2.png'), alt: 'IPIconecta' },
+    { src: cdnUrl('/clients/labormed1.png'), alt: 'Labormed' },
+    { src: cdnUrl('/clients/mackenzie1.png'), alt: 'Mackenzie' },
+    { src: cdnUrl('/clients/sigmaapp-n.png'), alt: 'SigmaApp' },
+    { src: cdnUrl('/clients/sigmacon1png.png'), alt: 'Sigmacon' },
+    { src: cdnUrl('/clients/trilobit1.png'), alt: 'Trilobit' },
 ];
 
 function LogoCard({ logo }: { logo: { src: string; alt: string } }) {

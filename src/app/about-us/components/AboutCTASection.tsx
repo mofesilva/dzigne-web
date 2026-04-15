@@ -7,16 +7,16 @@ function AboutCTASection() {
             <div className="px-6 md:px-12 lg:px-20 2xl:px-32">
                 <div className="max-w-3xl mx-auto text-center">
                     <p className="text-caption font-outfit text-eggshell/60 mb-4 tracking-widest uppercase">
-                        Próximo passo
+                        Próximo capítulo
                     </p>
                     <h1 className="font-rajdhani text-eggshell mb-6">
-                        <span className="font-medium">Pronto para transformar sua </span>
+                        <span className="font-medium">Vamos construir algo </span>
                         <br />
-                        <span className="font-bold text-green-accent">ideia em realidade?</span>
+                        <span className="font-bold text-green-accent">extraordinário juntos?</span>
                     </h1>
                     <p className="font-outfit text-eggshell/50 max-w-2xl mx-auto mb-10 leading-relaxed">
-                        Vamos conversar sobre o seu próximo projeto. Da estratégia ao lançamento,
-                        estamos prontos para construir algo extraordinário juntos.
+                        Se você quer um parceiro que trata o seu projeto como se fosse dele
+                        — a conversa começa aqui.
                     </p>
                     <div className="flex flex-col sm:flex-row justify-center gap-4">
                         <NavigationButton

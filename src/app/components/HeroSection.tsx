@@ -4,6 +4,7 @@ import React, { useEffect, useRef } from 'react';
 import NavigationButton from '../../components/NavigationButton';
 import ScrollIndicator from '../../components/ScrollIndicator';
 import Image from 'next/image';
+import { cdnUrl } from '@/lib/cdn';
 
 function HeroSection() {
     const contentRef = useRef<HTMLDivElement>(null);
@@ -34,7 +35,7 @@ function HeroSection() {
             {/* Mockup — right side, bottom aligned */}
             <div ref={mockupRef} className="hidden md:block absolute right-[2%] lg:right-[5%] bottom-[10%] w-[50%] lg:w-[48%] z-0 md:will-change-transform">
                 <Image
-                    src="/assets/images/mockups/iCalvinus_mockup_2.png"
+                    src={cdnUrl('/mockups/iCalvinus_mockup_2.png')}
                     alt="iCalvinus Mockup"
                     width={1920}
                     height={1440}

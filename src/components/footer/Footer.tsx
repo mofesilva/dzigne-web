@@ -1,6 +1,6 @@
 import React from 'react';
+import Image from 'next/image';
 import LazyImage from '@/components/LazyImage';
-import BrandIcon from '@/components/BrandIcon';
 import { Plain2, Phone } from '@solar-icons/react/ssr';
 
 const socialLinks = [
@@ -75,7 +75,12 @@ function Footer() {
                                     aria-label={label}
                                     className="flex items-center justify-center w-12 h-12 rounded-full bg-onyx/10 hover:bg-onyx/20 transition-colors"
                                 >
-                                    <BrandIcon name={name} size={22} alt={label} />
+                                    <Image
+                                        src={`/assets/icons/brands/${name}.svg`}
+                                        alt={label}
+                                        width={22}
+                                        height={22}
+                                    />
                                 </a>
                             ))}
                         </div>

@@ -4,6 +4,7 @@ import React, { useRef } from 'react';
 import Image from 'next/image';
 import { motion, useInView } from 'motion/react';
 import { ClockCircle, UsersGroupTwoRounded, CheckCircle } from '@solar-icons/react/ssr';
+import { cdnUrl } from '@/lib/cdn';
 
 interface PlatformDetailsSectionProps {
     duration: string;
@@ -19,30 +20,30 @@ function PlatformDetailsSection({ duration, team, technologies, challenge, solut
     const isInView = useInView(ref, { once: true, margin: '-80px' });
 
     const techIconMap: Record<string, string> = {
-        'Flutter': '/assets/icons/tech/flutter.svg',
-        'Dart': '/assets/icons/tech/dart.svg',
-        'Node.js': '/assets/icons/tech/nodedotjs.svg',
-        'Firebase': '/assets/icons/tech/firebase.svg',
-        'MongoDB': '/assets/icons/tech/mongodb.svg',
-        'AWS': '/assets/icons/tech/aws.svg',
-        'AWS IoT': '/assets/icons/tech/aws.svg',
-        'React Native': '/assets/icons/tech/react.svg',
-        'Next.js': '/assets/icons/tech/nextdotjs.svg',
-        'PostgreSQL': '/assets/icons/tech/postgresql.svg',
-        'JavaScript': '/assets/icons/tech/javascript.svg',
-        'TypeScript': '/assets/icons/tech/typescript.svg',
-        'Tailwind CSS': '/assets/icons/tech/tailwindcss.svg',
-        'Python': '/assets/icons/tech/python.svg',
-        'PHP': '/assets/icons/tech/php.svg',
-        'Express': '/assets/icons/tech/express.svg',
-        'Docker': '/assets/icons/tech/docker.svg',
-        'Vercel': '/assets/icons/tech/vercel.svg',
-        'Linux': '/assets/icons/tech/linux.svg',
-        'MySQL': '/assets/icons/tech/mysql.svg',
-        'Akamai Cloud': '/assets/icons/tech/akamai.svg',
-        'Redis': '/assets/icons/tech/redis.svg',
-        'Socket.io': '/assets/icons/tech/socketdotio.svg',
-        'WebRTC': '/assets/icons/tech/webrtc.svg',
+        'Flutter': cdnUrl('/icons/flutter.svg'),
+        'Dart': cdnUrl('/icons/dart.svg'),
+        'Node.js': cdnUrl('/icons/nodedotjs.svg'),
+        'Firebase': cdnUrl('/icons/firebase.svg'),
+        'MongoDB': cdnUrl('/icons/mongodb.svg'),
+        'AWS': cdnUrl('/icons/aws.svg'),
+        'AWS IoT': cdnUrl('/icons/aws.svg'),
+        'React Native': cdnUrl('/icons/react.svg'),
+        'Next.js': cdnUrl('/icons/nextdotjs.svg'),
+        'PostgreSQL': cdnUrl('/icons/postgresql.svg'),
+        'JavaScript': cdnUrl('/icons/javascript.svg'),
+        'TypeScript': cdnUrl('/icons/typescript.svg'),
+        'Tailwind CSS': cdnUrl('/icons/tailwindcss.svg'),
+        'Python': cdnUrl('/icons/python.svg'),
+        'PHP': cdnUrl('/icons/php.svg'),
+        'Express': cdnUrl('/icons/express.svg'),
+        'Docker': cdnUrl('/icons/docker.svg'),
+        'Vercel': cdnUrl('/icons/vercel.svg'),
+        'Linux': cdnUrl('/icons/linux.svg'),
+        'MySQL': cdnUrl('/icons/mysql.svg'),
+        'Akamai Cloud': cdnUrl('/icons/akamai.svg'),
+        'Redis': cdnUrl('/icons/redis.svg'),
+        'Socket.io': cdnUrl('/icons/socketdotio.svg'),
+        'WebRTC': cdnUrl('/icons/webrtc.svg'),
     };
 
     return (

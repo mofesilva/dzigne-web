@@ -59,7 +59,7 @@ export default async function PlatformPage({ params }: PlatformPageProps) {
             <PlatformGallerySection
                 title={platformData.gallery.title}
                 description={platformData.gallery.description}
-                images={getGalleryImages(platformData.gallery.imagesFolder)}
+                images={await getGalleryImages(platformData.gallery.imagesFolder)}
             />
 
             <PlatformNavigationSection

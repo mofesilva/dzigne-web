@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useState, useEffect } from "react";
-import BrandIcon from "./BrandIcon";
 
 type Props = {
     phone?: string;
@@ -40,7 +39,8 @@ export default function FloatingWhatsApp({
         >
             {/* Icon */}
             <span className="flex items-center justify-center w-[52px] h-[52px] shrink-0">
-                <BrandIcon name="whatsapp" size={24} className="invert" alt="WhatsApp" />
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/assets/icons/brands/whatsapp.svg" alt="WhatsApp" width={24} height={24} className="invert" />
             </span>
 
             {/* Text — hidden on mobile, animated on desktop */}

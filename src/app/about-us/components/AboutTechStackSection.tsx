@@ -5,36 +5,36 @@ import SectionTitle from '@/components/SectionTitle';
 import TagLine from '@/components/TagLine';
 import StackCard from './StackCard';
 import type { TechDef } from './StackCard';
+import { cdnUrl } from '@/lib/cdn';
 
 const GLOW = '127, 209, 12';
 /* ── Frontend & Mobile ────────────────────────────── */
 const frontend: TechDef[] = [
-    { src: '/assets/icons/tech/nextdotjs.svg', name: 'Next.js' },
-    { src: '/assets/icons/tech/react.svg', name: 'React' },
-    { src: '/assets/icons/tech/javascript.svg', name: 'JavaScript' },
-    { src: '/assets/icons/tech/tailwindcss.svg', name: 'Tailwind CSS' },
-    { src: '/assets/icons/tech/flutter.svg', name: 'Flutter' },
-    { src: '/assets/icons/tech/dart.svg', name: 'Dart' },
+    { src: cdnUrl('/icons/nextdotjs.svg'), name: 'Next.js' },
+    { src: cdnUrl('/icons/react.svg'), name: 'React' },
+    { src: cdnUrl('/icons/javascript.svg'), name: 'JavaScript' },
+    { src: cdnUrl('/icons/tailwindcss.svg'), name: 'Tailwind CSS' },
+    { src: cdnUrl('/icons/flutter.svg'), name: 'Flutter' },
+    { src: cdnUrl('/icons/dart.svg'), name: 'Dart' },
 ];
 
 /* ── Backend & Dados ──────────────────────────────── */
 const backend: TechDef[] = [
-    { src: '/assets/icons/tech/nodedotjs.svg', name: 'Node.js' },
-    { src: '/assets/icons/tech/express.svg', name: 'Express' },
-    { src: '/assets/icons/tech/php.svg', name: 'PHP' },
-    { src: '/assets/icons/tech/python.svg', name: 'Python' },
-    { src: '/assets/icons/tech/postgresql.svg', name: 'PostgreSQL' },
-    { src: '/assets/icons/tech/mongodb.svg', name: 'MongoDB' },
+    { src: cdnUrl('/icons/nodedotjs.svg'), name: 'Node.js' },
+    { src: cdnUrl('/icons/express.svg'), name: 'Express' },
+    { src: cdnUrl('/icons/php.svg'), name: 'PHP' },
+    { src: cdnUrl('/icons/mysql.svg'), name: 'MySQL' },
+    { src: cdnUrl('/icons/mongodb.svg'), name: 'MongoDB' },
 ];
 
 /* ── Cloud & DevOps ───────────────────────────────── */
 const cloudDevops: TechDef[] = [
-    { src: '/assets/icons/tech/aws.svg', name: 'AWS' },
-    { src: '/assets/icons/tech/docker.svg', name: 'Docker' },
-    { src: '/assets/icons/tech/github.svg', name: 'GitHub' },
-    { src: '/assets/icons/tech/linux.svg', name: 'Linux' },
-    { src: '/assets/icons/tech/firebase.svg', name: 'Firebase' },
-    { src: '/assets/icons/tech/vercel.svg', name: 'Vercel' },
+    { src: cdnUrl('/icons/akamai.svg'), name: 'Akamai Cloud' },
+    { src: cdnUrl('/icons/docker.svg'), name: 'Docker' },
+    { src: cdnUrl('/icons/github.svg'), name: 'GitHub' },
+    { src: cdnUrl('/icons/linux.svg'), name: 'Linux' },
+    { src: cdnUrl('/icons/firebase.svg'), name: 'Firebase' },
+    { src: cdnUrl('/icons/vercel.svg'), name: 'Vercel' },
 ];
 
 function AboutTechStackSection() {
@@ -77,11 +77,6 @@ function AboutTechStackSection() {
                         />
                     </div>
                 </MagicBentoGrid>
-
-                <TagLine
-                    text="Next.js · React · Flutter · Node.js · Python · AWS · Docker · Vercel · e mais"
-                    className="mt-12 lg:mt-16"
-                />
             </div>
         </section>
     );

@@ -3,6 +3,7 @@ import React from 'react';
 import LazyImage from '@/components/LazyImage';
 import BrandIcon from '@/components/BrandIcon';
 import { PaintRoller, Server, Database, Leaf, Fire, CloudBoltMinimalistic, Rocket } from '@solar-icons/react/ssr';
+import { cdnUrl } from '@/lib/cdn';
 
 function TechStackSection() {
     return (
@@ -34,7 +35,7 @@ function TechStackSection() {
                                     <td className="p-6 align-top">
                                         <div className="space-y-3">
                                             <div className="flex items-center">
-                                                <LazyImage src="/assets/icons/nextjs-icon-svgrepo-com.svg" alt="Next.js" width={20} height={20} className="opacity-70 mr-3" />
+                                                <LazyImage src={cdnUrl('/icons/nextjs-icon-svgrepo-com.svg')} alt="Next.js" width={20} height={20} className="opacity-70 mr-3" />
                                                 <span className="font-outfit text-carbon text-small">Next.js</span>
                                             </div>
                                             <div className="flex items-center">

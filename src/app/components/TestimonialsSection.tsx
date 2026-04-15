@@ -1,6 +1,7 @@
 'use client'
 import React, { useState, useCallback, useRef, useEffect } from 'react'
 import Image from 'next/image'
+import { cdnUrl } from '@/lib/cdn'
 
 
 const testimonials = [
@@ -9,21 +10,21 @@ const testimonials = [
         name: "Adalberto Santos",
         position: "CEO",
         company: "Sigmacon",
-        photo: "/assets/images/depoimentos/adalberto.jpg"
+        photo: cdnUrl('/depoimentos/adalberto.jpg')
     },
     {
         text: "A Dzign-e sempre atendeu nossas expectativas, nos fornecendo serviços de qualidade e sempre fomos atendidos prontamente. A empresa é extremamente comprometida o que é muito importante pra mim.",
         name: "Cláudia Martins",
         position: "CEO",
         company: "Labormed Sorocaba",
-        photo: "/assets/images/depoimentos/claudia.jpg"
+        photo: cdnUrl('/depoimentos/claudia.jpg')
     },
     {
         text: "A Dzign-e desenvolveu um aplicativo multiplataforma (iOS e Android) para simulados da OAB com layout moderno e intuitivo. Atenderam todos os requisitos e entregaram além do solicitado. Estamos impressionados com a qualidade do atendimento e suporte técnico.",
         name: "Anderson Amim",
         position: "Gerente de TI",
         company: "Universidade Mackenzie de Brasilia",
-        photo: "/assets/images/depoimentos/anderson.jpg"
+        photo: cdnUrl('/depoimentos/anderson.jpg')
     },
     //TODO: Buscar depoimento da CCPrevi
     //TODO: Buscar depoimento da IPIB (Pb. Moisés talvez)
@@ -32,28 +33,28 @@ const testimonials = [
         name: "Presbª. Dorothy Maia",
         position: "Membro do conselho",
         company: "Primeira IPI de São Paulo",
-        photo: "/assets/images/depoimentos/dorothy.jpg"
+        photo: cdnUrl('/depoimentos/dorothy.jpg')
     },
     {
         text: "Somos clientes da Dzign-e há mais de sete anos. A integração entre site e aplicativo facilita muito a divulgação e uso pelos membros da igreja. Tudo que é feito no site aparece imediatamente no app, incluindo cultos online disponíveis 24h. A satisfação é total pela competência, profissionalismo e excelente comunicação da equipe.",
         name: "Rev. Geraldo Silveira",
         position: "Pastor titular",
         company: "Igreja Presbiteriana do Belvedere",
-        photo: "/assets/images/depoimentos/geraldo.jpg"
+        photo: cdnUrl('/depoimentos/geraldo.jpg')
     },
     {
         text: "Registramos nossa gratidão pelo desenvolvimento e administração do site e aplicativo da nossa igreja. A Dzign-e une qualidade e eficiência, sempre disponível inclusive em urgências, atendendo todas as demandas com atenção e prestatividade. Obrigado, Dzign-e!",
         name: "Rev. Marcelo Martinello",
         position: "Pastor auxiliar",
         company: "Igreja Presbiteriana de Vila Mariana",
-        photo: "/assets/images/depoimentos/marcelo.jpg"
+        photo: cdnUrl('/depoimentos/marcelo.jpg')
     },
     {
         text: "Trabalhamos com a Dzign-e há alguns anos no desenvolvimento de website sincronizado com aplicativo. Atendimento pronto, desenvolvido conforme nossas necessidades com total satisfação. Ferramentas fáceis e acessíveis, aprovadas pelos membros. Suporte rápido e efetivo. O investimento vale a pena. Recomendação total.",
         name: "Rev. Carlos E. Aranha Neto",
         position: "Pastor titular",
         company: "Igreja Presbiteriana de Campinas",
-        photo: "/assets/images/depoimentos/aranha.jpg"
+        photo: cdnUrl('/depoimentos/aranha.jpg')
     },
 ]
 

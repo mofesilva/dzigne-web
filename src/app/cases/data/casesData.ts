@@ -1,3 +1,4 @@
+import { cdnUrl } from '@/lib/cdn';
 
 export interface CaseData {
     slug: string;
@@ -63,12 +64,12 @@ export const casesData: CaseData[] = [
             description: 'Como desenvolvemos uma solução digital completa que revolucionou a preparação dos estudantes de Direito para o exame da OAB',
         },
         hero: {
-            logo: '/assets/images/logos/mackenzie2.png',
+            logo: cdnUrl('/clients/mackenzie2.png'),
             company: 'Universidade Mackenzie',
             title: 'OAB Mack',
             description: 'Desenvolvemos uma solução digital completa que revolucionou a preparação dos estudantes de Direito para o exame da OAB, integrando simulados intuitivos com gestão dinâmica de conteúdo.',
             tags: ['Educação', 'Mobile App', 'Web Platform', 'Gameficado', 'Estudo'],
-            mockup: '/assets/images/mockups/oabmack_mockup_2.png',
+            mockup: cdnUrl('/mockups/oabmack_mockup_2.png'),
             invertLogo: true,
         },
         details: {
@@ -88,13 +89,13 @@ export const casesData: CaseData[] = [
         gallery: {
             title: 'Galeria de Imagens',
             description: 'Explore a galeria de imagens do projeto.',
-            imagesFolder: '/assets/images/mockups/cases/oab-mack',
+            imagesFolder: '/mockups/cases/oab-mack',
         },
         listing: {
-            logo: '/assets/images/logos/mackenzie2.png',
+            logo: cdnUrl('/clients/mackenzie2.png'),
             company: 'Universidade Mackenzie',
             description: 'Uma plataforma educacional que transformou a preparação dos estudantes de Direito para o exame da OAB, integrando simulados interativos com gestão dinâmica de conteúdo.',
-            mockup: '/assets/images/mockups/oabmack_mockup_2.png',
+            mockup: cdnUrl('/mockups/oabmack_mockup_2.png'),
             tags: ['Educação', 'Direito', 'Plataforma de Estudos'],
         },
     },
@@ -108,11 +109,11 @@ export const casesData: CaseData[] = [
             description: 'Como desenvolvemos o sistema oficial da Igreja Presbiteriana do Brasil para gestão conciliar',
         },
         hero: {
-            logo: '/assets/images/logos/icalvinus-hn.png',
+            logo: cdnUrl('/clients/icalvinus-hn.png'),
             company: 'Igreja Presbiteriana do Brasil',
             description: 'Criamos o sistema oficial da Igreja Presbiteriana do Brasil focado na gestão conciliar.',
             tags: ['Religioso', 'Gestão', 'Web Platform', 'Mobile App'],
-            mockup: '/assets/images/mockups/iCalvinus_mockup_4.png',
+            mockup: cdnUrl('/mockups/iCalvinus_mockup_4.png'),
         },
         details: {
             duration: '4 anos',
@@ -130,13 +131,13 @@ export const casesData: CaseData[] = [
         gallery: {
             title: 'Galeria de Imagens',
             description: 'Explore a galeria de imagens do projeto.',
-            imagesFolder: '/assets/images/mockups/cases/icalvinus',
+            imagesFolder: '/mockups/cases/icalvinus',
         },
         listing: {
-            logo: '/assets/images/logos/icalvinus-hn.png',
+            logo: cdnUrl('/clients/icalvinus-hn.png'),
             company: 'Igreja Presbiteriana do Brasil',
             description: 'Um sistema inovador que transformou a gestão conciliar da Igreja Presbiteriana do Brasil, centralizando documentos e decisões em uma plataforma digital acessível e eficiente.',
-            mockup: '/assets/images/mockups/iCalvinus_mockup_4.png',
+            mockup: cdnUrl('/mockups/iCalvinus_mockup_4.png'),
             tags: ['Gestão', 'Organização Religiosa', 'Gestão de Documentos'],
         },
     },
@@ -150,11 +151,11 @@ export const casesData: CaseData[] = [
             description: 'Como desenvolvemos um aplicativo revolucionário para gestão condominial integrando IoT, reservas e segurança',
         },
         hero: {
-            logo: '/assets/images/logos/sigmaapp-n.png',
+            logo: cdnUrl('/clients/sigmaapp-n.png'),
             company: 'Sigmacon',
             description: 'Revolucionamos a gestão condominial com um aplicativo inteligente que integra reservas de espaços, sistema de câmeras, controle de acesso e comunicação entre moradores e administração.',
             tags: ['Gestão', 'Mobile App', 'IoT', 'Segurança', 'Condomínios'],
-            mockup: '/assets/images/mockups/sigmaapp-mockup-2.png',
+            mockup: cdnUrl('/mockups/sigmaapp-mockup-2.png'),
         },
         details: {
             duration: 'Contínuo desde 2019',
@@ -172,13 +173,13 @@ export const casesData: CaseData[] = [
         gallery: {
             title: 'Galeria de Imagens',
             description: 'Explore a galeria de imagens do projeto.',
-            imagesFolder: '/assets/images/mockups/cases/sigmaapp',
+            imagesFolder: '/mockups/cases/sigmaapp',
         },
         listing: {
-            logo: '/assets/images/logos/sigmaapp.png',
+            logo: cdnUrl('/clients/sigmaapp.png'),
             company: 'Sigmacon',
             description: 'O aplicativo móvel que mudou a forma de gerenciar segurança em condomínios, integrando reservas de espaços, controle de acesso e monitoramento em uma única plataforma intuitiva.',
-            mockup: '/assets/images/mockups/sigmaapp-mockup-2.png',
+            mockup: cdnUrl('/mockups/sigmaapp-mockup-2.png'),
             tags: ['Segurança', 'Condomínios', 'IoT', 'Gestão de Espaços'],
         },
     },
@@ -192,12 +193,12 @@ export const casesData: CaseData[] = [
             description: 'Como desenvolvemos o sistema oficial da Igreja Presbiteriana Independente do Brasil para gestão conciliar',
         },
         hero: {
-            logo: '/assets/images/logos/ipi.png',
+            logo: cdnUrl('/clients/ipi.png'),
             company: 'IPI - Igreja Presbiteriana Independente',
             title: 'IPIConecta',
             description: 'Desenvolvemos o IPIConecta, o sistema oficial da Igreja Presbiteriana Independente do Brasil para gestão conciliar, centralizando documentos, decisões e comunicações em uma plataforma digital acessível.',
             tags: ['Religioso', 'Gestão', 'Web Platform', 'Mobile App'],
-            mockup: '/assets/images/mockups/ipiconecta_desktop+mobile_mockup_1.png',
+            mockup: cdnUrl('/mockups/ipiconecta_desktop+mobile_mockup_1.png'),
         },
         details: {
             duration: '3 anos',
@@ -214,13 +215,13 @@ export const casesData: CaseData[] = [
         gallery: {
             title: 'Galeria de Imagens',
             description: 'Explore a galeria de imagens do projeto.',
-            imagesFolder: '/assets/images/mockups/cases/ipiconecta',
+            imagesFolder: '/mockups/cases/ipiconecta',
         },
         listing: {
-            logo: '/assets/images/logos/ipiconecta-h4.png',
+            logo: cdnUrl('/clients/ipiconecta-h4.png'),
             company: 'Igreja Presbiteriana Independente do Brasil',
             description: 'Um sistema definitivo para gestão conciliar, centralizando documentos, decisões e comunicações em uma plataforma digital acessível e eficiente, além de cadastro de sínodos, presbitérios, igrejas e rol de membros.',
-            mockup: '/assets/images/mockups/ipiconecta_desktop+mobile_mockup_1.png',
+            mockup: cdnUrl('/mockups/ipiconecta_desktop+mobile_mockup_1.png'),
             tags: ['Gestão', 'Organização Religiosa', 'Gestão de Documentos'],
         },
     },
@@ -234,11 +235,11 @@ export const casesData: CaseData[] = [
             description: 'Como desenvolvemos uma marketplace que conecta profissionais de serviços a clientes de forma rápida e segura',
         },
         hero: {
-            logo: '/assets/images/logos/contrataja-hn2.png',
+            logo: cdnUrl('/clients/contrataja-hn2.png'),
             company: 'Contrata Já',
             description: 'Uma marketplace em desenvolvimento que conecta profissionais de serviços a clientes, facilitando contratações rápidas e seguras com avaliações e portfólios integrados.',
             tags: ['Serviços', 'Marketplace', 'Plataforma de Contratação', 'Mobile App', 'Web Platform'],
-            mockup: '/assets/images/mockups/contrataja-ipad-mockup-2.png',
+            mockup: cdnUrl('/mockups/contrataja-ipad-mockup-2.png'),
         },
         details: {
             duration: '6 meses',
@@ -257,13 +258,13 @@ export const casesData: CaseData[] = [
         gallery: {
             title: 'Galeria de Imagens',
             description: 'Explore a galeria de imagens do projeto.',
-            imagesFolder: '/assets/images/mockups/contrata-ja',
+            imagesFolder: '/mockups/cases/contrata-ja',
         },
         listing: {
-            logo: '/assets/images/logos/contrataja-h.png',
+            logo: cdnUrl('/clients/contrataja-h.png'),
             company: 'Contrata Já',
             description: 'Uma marketplace em desenvolvimento que conecta profissionais de serviços a clientes, facilitando contratações rápidas e seguras com avaliações e portfólios integrados.',
-            mockup: '/assets/images/mockups/contrataja-ipad-mockup-2.png',
+            mockup: cdnUrl('/mockups/contrataja-ipad-mockup-2.png'),
             tags: ['Serviços', 'Marketplace', 'Plataforma de Contratação'],
         },
     },
