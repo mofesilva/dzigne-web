@@ -11,37 +11,26 @@ interface TeamMember {
     instagram?: string;
 }
 
-/*
- *  TODO: Substituir com dados reais da equipe.
- *  Adicionar fotos no CDN em /team/ (112×112 ou maior, quadradas).
- */
 const teamMembers: TeamMember[] = [
     {
+        name: 'Samuel Silva',
+        role: 'CEO',
+        photo: cdnUrl('/team/samuel-silva.jpg'),
+    },
+    {
+        name: 'Tânia Araújo',
+        role: 'Financeira',
+        photo: cdnUrl('/team/tania-araujo.jpg'),
+    },
+    {
+        name: 'Rodrigo Araújo',
+        role: 'Sócio-Fundador & Customer Success',
+        photo: cdnUrl('/team/rodrigo-araujo.jpg'),
+    },
+    {
         name: 'Moisés Silva',
-        role: 'CEO & Full-Stack Developer',
+        role: 'COO & Desenvolvedor Fullstack',
         photo: cdnUrl('/team/moises-silva.jpg'),
-        linkedin: 'https://www.linkedin.com/in/moisessilva/',
-        github: 'https://github.com/moisessilva',
-    },
-    {
-        name: 'Ana Costa',
-        role: 'UI/UX Designer Lead',
-        photo: cdnUrl('/team/ana-costa.jpg'),
-        linkedin: 'https://www.linkedin.com/in/anacosta/',
-        instagram: 'https://instagram.com/anacosta',
-    },
-    {
-        name: 'Lucas Ferreira',
-        role: 'Backend Engineer',
-        photo: cdnUrl('/team/lucas-ferreira.jpg'),
-        linkedin: 'https://www.linkedin.com/in/lucasferreira/',
-        github: 'https://github.com/lucasferreira',
-    },
-    {
-        name: 'Juliana Mendes',
-        role: 'Mobile Developer',
-        photo: cdnUrl('/team/juliana-mendes.jpg'),
-        linkedin: 'https://www.linkedin.com/in/julianamendes/',
     },
 ];
 
