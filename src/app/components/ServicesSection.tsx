@@ -57,7 +57,7 @@ function ServicesSection() {
                                         Desenvolvimento<br />Web & Mobile
                                     </h4>
                                     <p
-                                        className="font-outfit text-eggshell/45"
+                                        className="font-outfit text-eggshell/65"
                                     >
                                         Aplicações modernas que geram resultado. Sites que convertem,
                                         apps que retêm e sistemas que escalam.
@@ -91,7 +91,7 @@ function ServicesSection() {
                                         UI/UX Design
                                     </h4>
                                     <p
-                                        className="font-outfit text-eggshell/45"
+                                        className="font-outfit text-eggshell/65"
                                     >
                                         Interfaces que encantam. Cada pixel pensado para
                                         guiar o usuário até a conversão.
@@ -125,7 +125,7 @@ function ServicesSection() {
                                         Produtos Digitais
                                     </h4>
                                     <p
-                                        className="font-outfit text-eggshell/45 max-w-md"
+                                        className="font-outfit text-eggshell/65 max-w-md"
                                     >
                                         Do MVP ao produto completo. Transformamos sua ideia em um
                                         produto digital validado, funcional e pronto para o mercado.
@@ -160,7 +160,7 @@ function ServicesSection() {
                                         Hospedagem &<br />Infraestrutura
                                     </h4>
                                     <p
-                                        className="font-outfit text-eggshell/45 max-w-md"
+                                        className="font-outfit text-eggshell/65 max-w-md"
                                     >
                                         Seu projeto sempre no ar. Alta disponibilidade, CDN global,
                                         backups automáticos e monitoramento 24/7 para você focar
@@ -189,7 +189,7 @@ function ServicesSection() {
                                         Consultoria em TI
                                     </h4>
                                     <p
-                                        className="font-outfit text-eggshell/45"
+                                        className="font-outfit text-eggshell/65"
                                     >
                                         Analisamos sua operação e traçamos o roadmap
                                         tecnológico ideal para acelerar resultados.
@@ -223,7 +223,7 @@ function ServicesSection() {
                                         Analytics &<br />Performance
                                     </h4>
                                     <p
-                                        className="font-outfit text-eggshell/45 text-shadow-heavy"
+                                        className="font-outfit text-eggshell/65 text-shadow-heavy"
                                     >
                                         Métricas configuradas, performance monitorada e
                                         otimização contínua para crescer com previsibilidade.

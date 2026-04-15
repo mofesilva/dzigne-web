@@ -33,7 +33,7 @@ export default function StackCard({ label, title, description, techs, glowColor,
                     <h4 className="font-rajdhani font-bold text-eggshell mb-2">
                         {title}
                     </h4>
-                    <p className="font-outfit text-eggshell/45 mb-8">
+                    <p className="font-outfit text-eggshell/65 mb-8">
                         {description}
                     </p>
                     <div className="flex flex-wrap gap-5 lg:gap-6">
