@@ -81,11 +81,7 @@ function AboutProcessSection() {
                         >
                             {/* Giant outlined number — left side, bleeding bottom */}
                             <span
-                                className="absolute left-3 md:left-4 lg:left-5 bottom-0 translate-y-[33%] font-rajdhani font-bold text-[24rem] md:text-[30rem] lg:text-[28rem] leading-[0.85] select-none pointer-events-none z-0"
-                                style={{
-                                    color: 'transparent',
-                                    WebkitTextStroke: '3px rgba(127, 209, 12, 0.5)',
-                                }}
+                                className="process-number absolute left-3 md:left-4 lg:left-5 bottom-0 translate-y-[33%] font-rajdhani font-bold text-[24rem] md:text-[30rem] lg:text-[28rem] leading-[0.85] select-none pointer-events-none z-0"
                                 aria-hidden="true"
                             >
                                 {cat.number}

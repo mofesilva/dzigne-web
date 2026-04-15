@@ -21,8 +21,8 @@ function DetailHeroSection({ logo, company, title, description, tags, mockup, in
     const isInView = useInView(ref, { once: true });
 
     return (
-        <section ref={ref} className="w-full min-h-svh relative overflow-hidden bg-black pt-24">
-            <div className="absolute inset-0 top-24 flex items-center justify-center px-6 md:px-12 lg:px-20 2xl:px-32">
+        <section ref={ref} className="w-full lg:min-h-svh relative overflow-hidden bg-black pt-24 pb-16 lg:pb-0">
+            <div className="relative lg:absolute lg:inset-0 lg:top-24 flex items-center justify-center px-6 md:px-12 lg:px-20 2xl:px-32 py-8 lg:py-0">
                 <div className="max-w-[1400px] mx-auto w-full grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16 items-center">
 
                     {/* Text side (golden ratio ~3/5) */}

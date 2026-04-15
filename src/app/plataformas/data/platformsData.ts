@@ -96,7 +96,7 @@ export const platformsData: PlatformData[] = [
         gallery: {
             title: 'Galeria de Imagens',
             description: 'Explore a interface e funcionalidades do Cappuccino Cloud Database.',
-            imagesFolder: '/mockups/platforms/cappuccino',
+            imagesFolder: cdnUrl('/mockups/platforms/cappuccino'),
         },
         listing: {
             logo: cdnUrl('/logos/cappuccino-logo.png'),
@@ -143,7 +143,7 @@ export const platformsData: PlatformData[] = [
         gallery: {
             title: 'Galeria de Imagens',
             description: 'Explore a interface e funcionalidades do Boomerang.',
-            imagesFolder: '/mockups/platforms/boomerang',
+            imagesFolder: cdnUrl('/mockups/platforms/boomerang'),
         },
         listing: {
             logo: cdnUrl('/logos/boomerang-logo.png'),
@@ -189,7 +189,7 @@ export const platformsData: PlatformData[] = [
         gallery: {
             title: 'Galeria de Imagens',
             description: 'Explore a interface e funcionalidades do Kart Collector.',
-            imagesFolder: '/mockups/platforms/kart-collector',
+            imagesFolder: cdnUrl('/mockups/platforms/kart-collector'),
         },
         listing: {
             logo: cdnUrl('/logos/kartcollector-logo.png'),
@@ -234,7 +234,7 @@ export const platformsData: PlatformData[] = [
         gallery: {
             title: 'Galeria de Imagens',
             description: 'Explore a interface e funcionalidades do Kangaroo.',
-            imagesFolder: '/mockups/platforms/kangaroo',
+            imagesFolder: cdnUrl('/mockups/platforms/kangaroo'),
         },
         listing: {
             logo: cdnUrl('/logos/kangaroo-logo.png'),

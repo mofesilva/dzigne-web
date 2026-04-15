@@ -327,6 +327,17 @@ h1 {
   display: none;
 }
 
+/* Process number stroke */
+.process-number {
+  color: transparent;
+  -webkit-text-stroke: 3px rgba(127, 209, 12, 0.1);
+}
+@media (min-width: 768px) {
+  .process-number {
+    -webkit-text-stroke: 3px rgba(127, 209, 12, 0.5);
+  }
+}
+
 /* Text shadow for readability over illustrations */
 .text-shadow-heavy {
   text-shadow: 0 0 12px rgba(0, 0, 0, 1), 0 0 24px rgba(0, 0, 0, 0.9), 0 0 40px rgba(0, 0, 0, 0.8);

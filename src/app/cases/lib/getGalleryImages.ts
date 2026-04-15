@@ -1,5 +1,3 @@
-import { CDN_BASE_URL } from '@/lib/cdn';
-
 export interface GalleryImage {
     src: string;
     alt: string;
@@ -8,13 +6,13 @@ export interface GalleryImage {
 
 /**
  * Fetches gallery images from the CDN directory listing.
- * `imagesFolder` is a relative path like '/mockups/cases/oab-mack'.
+ * `imagesFolder` is a full CDN URL like 'https://assets.dzign-e.app/mockups/cases/oab-mack'.
  * Parses the HTML directory index to extract image filenames.
  */
 export async function getGalleryImages(imagesFolder: string): Promise<GalleryImage[]> {
     try {
-        const relative = imagesFolder.replace(/^\//, '').replace(/\/$/, '');
-        const url = `${CDN_BASE_URL}/${relative}/`;
+        const baseUrl = imagesFolder.replace(/\/$/, '');
+        const url = `${baseUrl}/`;
 
         const res = await fetch(url, { next: { revalidate: 3600 } });
         if (!res.ok) return [];
@@ -32,7 +30,7 @@ export async function getGalleryImages(imagesFolder: string): Promise<GalleryIma
         files.sort();
 
         return files.map((file) => ({
-            src: `${CDN_BASE_URL}/${relative}/${file}`,
+            src: `${baseUrl}/${file}`,
             alt: file,
             description: '',
         }));

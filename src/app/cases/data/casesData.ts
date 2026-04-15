@@ -89,7 +89,7 @@ export const casesData: CaseData[] = [
         gallery: {
             title: 'Galeria de Imagens',
             description: 'Explore a galeria de imagens do projeto.',
-            imagesFolder: '/mockups/cases/oab-mack',
+            imagesFolder: cdnUrl('/mockups/cases/oab-mack'),
         },
         listing: {
             logo: cdnUrl('/clients/mackenzie2.png'),
@@ -131,7 +131,7 @@ export const casesData: CaseData[] = [
         gallery: {
             title: 'Galeria de Imagens',
             description: 'Explore a galeria de imagens do projeto.',
-            imagesFolder: '/mockups/cases/icalvinus',
+            imagesFolder: cdnUrl('/mockups/cases/icalvinus'),
         },
         listing: {
             logo: cdnUrl('/clients/icalvinus-hn.png'),
@@ -173,7 +173,7 @@ export const casesData: CaseData[] = [
         gallery: {
             title: 'Galeria de Imagens',
             description: 'Explore a galeria de imagens do projeto.',
-            imagesFolder: '/mockups/cases/sigmaapp',
+            imagesFolder: cdnUrl('/mockups/cases/sigmaapp'),
         },
         listing: {
             logo: cdnUrl('/clients/sigmaapp.png'),
@@ -201,9 +201,9 @@ export const casesData: CaseData[] = [
             mockup: cdnUrl('/mockups/ipiconecta_desktop+mobile_mockup_1.png'),
         },
         details: {
-            duration: '3 anos',
+            duration: 'Contínuo desde 2022',
             team: '2 desenvolvedores',
-            technologies: ['React Native', 'Next.js', 'Node.js', 'PostgreSQL', 'Redis', 'AWS', 'TypeScript', 'Socket.io'],
+            technologies: ['Flutter', 'Dart', 'Node.js', 'MySQL', 'Akamai Cloud',],
             challenge: 'A Igreja Presbiteriana Independente do Brasil possui um modelo de governo representativo que envolve diferentes níveis institucionais: igrejas locais, presbitérios e sínodos. A denominação precisava de uma plataforma que centralizasse a gestão conciliar e, ao mesmo tempo, organizasse toda a sua estrutura denominacional, incluindo o cadastro de membros e das entidades que compõem a IPIB.',
             solution: 'Desenvolvemos o IPIConecta, uma plataforma web e mobile construída especificamente para o modelo de governança da IPIB.\nA plataforma centraliza a gestão conciliar em ambiente digital: documentos históricos e futuros em um só lugar, geração automática de atas, controle de presença e módulo de votação eletrônica, tudo acessível de forma simples e imediata.\nAlém da gestão conciliar, o IPIConecta integra o cadastro e gerenciamento de membros, igrejas, presbitérios e sínodos, contemplando toda a estrutura denominacional da instituição em um único sistema.',
             resultsCaption: 'A IPIB passou a contar com uma solução própria e aderente às especificidades da sua estrutura denominacional, que centralizou a base documental e modernizou a gestão conciliar e institucional da denominação.',
@@ -215,7 +215,7 @@ export const casesData: CaseData[] = [
         gallery: {
             title: 'Galeria de Imagens',
             description: 'Explore a galeria de imagens do projeto.',
-            imagesFolder: '/mockups/cases/ipiconecta',
+            imagesFolder: cdnUrl('/mockups/cases/ipiconecta'),
         },
         listing: {
             logo: cdnUrl('/clients/ipiconecta-h4.png'),
@@ -258,7 +258,7 @@ export const casesData: CaseData[] = [
         gallery: {
             title: 'Galeria de Imagens',
             description: 'Explore a galeria de imagens do projeto.',
-            imagesFolder: '/mockups/cases/contrata-ja',
+            imagesFolder: cdnUrl('/mockups/cases/contrata-ja'),
         },
         listing: {
             logo: cdnUrl('/clients/contrataja-h.png'),
