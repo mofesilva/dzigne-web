@@ -6,7 +6,7 @@ function AboutCTASection() {
         <section className="bg-black w-full py-20 md:py-28 lg:py-36">
             <div className="px-6 md:px-12 lg:px-20 2xl:px-32">
                 <div className="max-w-3xl mx-auto text-center">
-                    <p className="text-caption font-outfit text-eggshell/60 mb-4 tracking-widest uppercase">
+                    <p className="text-caption font-outfit text-eggshell/65 mb-4 tracking-widest uppercase">
                         Próximo capítulo
                     </p>
                     <h1 className="font-rajdhani text-eggshell mb-6">

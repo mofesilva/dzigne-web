@@ -31,7 +31,7 @@ export default function SectionTitle({
         >
             <div className={`w-full ${centered ? 'text-center' : ''}`}>
                 <p
-                    className={`text-caption font-outfit mb-4 tracking-widest uppercase ${isDark ? 'text-eggshell/60' : 'text-carbon/60'
+                    className={`text-caption font-outfit mb-4 tracking-widest uppercase ${isDark ? 'text-eggshell/65' : 'text-carbon/65'
                         }`}
                 >
                     {caption}

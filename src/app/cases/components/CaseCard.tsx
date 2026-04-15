@@ -58,7 +58,7 @@ function CaseCard({ logo, company, description, mockup, href, tags, isReversed, 
                             />
                         </div>
 
-                        <p className={`font-outfit leading-relaxed mb-8 max-w-lg ${isDark ? 'text-eggshell/60' : 'text-carbon/70'}`}>
+                        <p className={`font-outfit leading-relaxed mb-8 max-w-lg ${isDark ? 'text-eggshell/65' : 'text-carbon/70'}`}>
                             {description}
                         </p>
 

@@ -41,7 +41,7 @@ function CaseSlide({ text, logo, alt, mockup, href, isLogoHorizontal = false }: 
                     />
 
                     <p
-                        className="font-outfit text-eggshell/60 mb-10 leading-relaxed"
+                        className="font-outfit text-eggshell/65 mb-10 leading-relaxed"
                     >
                         {text}
                     </p>

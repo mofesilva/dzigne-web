@@ -49,7 +49,7 @@ function DetailHeroSection({ logo, company, title, description, tags, mockup, in
                             </h1>
                         )}
 
-                        <h6 className={`font-outfit text-eggshell/60 mb-10 leading-relaxed ${mockup ? 'max-w-xl' : 'max-w-2xl'}`}>
+                        <h6 className={`font-outfit text-eggshell/65 mb-10 leading-relaxed ${mockup ? 'max-w-xl' : 'max-w-2xl'}`}>
                             {description}
                         </h6>
 

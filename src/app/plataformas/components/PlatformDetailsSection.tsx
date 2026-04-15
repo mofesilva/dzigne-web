@@ -166,7 +166,7 @@ function PlatformDetailsSection({ duration, team, technologies, challenge, solut
                                         transition={{ duration: 0.5, delay: 0.4 + i * 0.1 }}
                                     >
                                         <CheckCircle weight="Bold" size={22} className="text-green-accent shrink-0 mt-0.5" />
-                                        <p className="font-outfit text-eggshell/60 leading-relaxed">
+                                        <p className="font-outfit text-eggshell/65 leading-relaxed">
                                             {result}
                                         </p>
                                     </motion.div>
