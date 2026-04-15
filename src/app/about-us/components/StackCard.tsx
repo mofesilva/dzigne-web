@@ -25,7 +25,7 @@ export default function StackCard({ label, title, description, techs, glowColor,
             enableStars
             clickEffect
             particleCount={12}
-            className={`border border-eggshell/[0.06] bg-onyx ${corner}`}
+            className={`border border-eggshell/[0.06] bg-carbon-medium ${corner}`}
         >
             <div className="flex flex-col justify-between h-full p-7 lg:p-9 relative z-10">
                 <TagLine text={label} noWrap />

@@ -44,7 +44,7 @@ function AboutIdentitySection() {
 
                 {/* ─── DNA strip ──────────────────────────────── */}
                 <div className="mt-20 md:mt-28 pt-10 border-t border-eggshell/[0.08]">
-                    <p className="font-outfit text-eggshell/30 text-xs tracking-[0.25em] uppercase mb-10">
+                    <p className="font-outfit text-eggshell/65 text-xs tracking-[0.25em] uppercase mb-10">
                         DNA Dzign-e
                     </p>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
@@ -54,7 +54,7 @@ function AboutIdentitySection() {
                                 <h4 className="font-rajdhani font-bold text-green-accent text-2xl md:text-3xl mb-3">
                                     {item.value}
                                 </h4>
-                                <p className="font-outfit text-eggshell/40 text-sm leading-relaxed">
+                                <p className="font-outfit text-eggshell/65 text-sm leading-relaxed">
                                     {item.text}
                                 </p>
                             </div>

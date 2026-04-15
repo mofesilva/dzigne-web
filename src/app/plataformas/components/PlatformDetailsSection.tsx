@@ -153,7 +153,7 @@ function PlatformDetailsSection({ duration, team, technologies, challenge, solut
                             animate={isInView ? { opacity: 1, y: 0 } : {}}
                             transition={{ duration: 0.7, delay: 0.3 }}
                         >
-                            <p className="text-caption font-outfit tracking-widest uppercase text-eggshell/30 mb-12 text-center">
+                            <p className="text-caption font-outfit tracking-widest uppercase text-eggshell/65 mb-12 text-center">
                                 Diferenciais da Plataforma
                             </p>
                             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

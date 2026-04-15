@@ -43,7 +43,7 @@ function CaseCard({ logo, company, description, mockup, href, tags, isReversed, 
                         transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
                     >
                         {/* Index number */}
-                        <span className={`font-rajdhani font-bold text-[8rem] md:text-[10rem] leading-none ${isDark ? 'text-green-accent/[0.04]' : 'text-black/[0.06]'} select-none block -mb-10 md:-mb-14`}>
+                        <span className={`font-rajdhani font-bold text-[8rem] md:text-[10rem] leading-none ${isDark ? 'text-green-accent/15' : 'text-black/10'} select-none block -mb-10 md:-mb-14`}>
                             {String(index + 1).padStart(2, '0')}
                         </span>
 

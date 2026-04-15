@@ -53,10 +53,10 @@ const categories = [
 
 /* Outer corners of the 2x2 grid are larger */
 const corners = [
-    'rounded-tl-3xl rounded-tr-xl rounded-bl-xl rounded-br-xl',
-    'rounded-tl-xl rounded-tr-3xl rounded-bl-xl rounded-br-xl',
-    'rounded-tl-xl rounded-tr-xl rounded-bl-3xl rounded-br-xl',
-    'rounded-tl-xl rounded-tr-xl rounded-bl-xl rounded-br-3xl',
+    'rounded-tl-3xl rounded-tr-0 rounded-bl-0 rounded-br-0',
+    'rounded-tl-0 rounded-tr-3xl rounded-bl-0 rounded-br-0',
+    'rounded-tl-0 rounded-tr-0 rounded-bl-3xl rounded-br-0',
+    'rounded-tl-0 rounded-tr-0 rounded-bl-0 rounded-br-3xl',
 ];
 
 /* ── Main Section ──────────────────────────────────── */
@@ -81,7 +81,7 @@ function AboutProcessSection() {
                         >
                             {/* Giant outlined number — left side, bleeding bottom */}
                             <span
-                                className="process-number absolute left-3 md:left-4 lg:left-5 bottom-0 translate-y-[33%] font-rajdhani font-bold text-[24rem] md:text-[30rem] lg:text-[28rem] leading-[0.85] select-none pointer-events-none z-0"
+                                className="text-green-accent/15 absolute left-3 md:left-4 lg:left-5 bottom-0 translate-y-[33%] font-rajdhani font-bold text-[24rem] md:text-[30rem] lg:text-[28rem] leading-[0.85] select-none pointer-events-none z-0"
                                 aria-hidden="true"
                             >
                                 {cat.number}

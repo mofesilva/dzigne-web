@@ -12,7 +12,7 @@ function CaseGallerySection({ title, description, images }: CaseGallerySectionPr
         <section className="bg-black w-full py-24 md:py-32 lg:py-40">
             <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-20 2xl:px-32">
                 <div className="mb-16 lg:mb-20">
-                    <p className="flex items-center gap-3 text-caption font-outfit tracking-widest uppercase text-eggshell/40 mb-4">
+                    <p className="flex items-center gap-3 text-caption font-outfit tracking-widest uppercase text-eggshell/65 mb-4">
                         <span className="w-2 h-2 rounded-full bg-green-accent -translate-y-px shrink-0" />
                         {title}
                     </p>
