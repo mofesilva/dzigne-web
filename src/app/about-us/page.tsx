@@ -1,10 +1,10 @@
 import React from "react";
 import QuoteHeroSection from "@/components/QuoteHeroSection";
 import AboutIdentitySection from "./components/AboutIdentitySection";
-import AboutProcessSection from "./components/AboutProcessSection";
 import AboutTechStackSection from "./components/AboutTechStackSection";
 import AboutTeamSection from "./components/AboutTeamSection";
 import AboutCTASection from "./components/AboutCTASection";
+import AboutProcessSection from "./components/AboutProcessSection";
 
 export const metadata = {
   title: "Sobre Nós | Dzign-e",

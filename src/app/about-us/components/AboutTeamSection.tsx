@@ -9,6 +9,7 @@ interface TeamMember {
     linkedin?: string;
     github?: string;
     instagram?: string;
+    photoPosition?: string;
 }
 
 const teamMembers: TeamMember[] = [
@@ -16,6 +17,7 @@ const teamMembers: TeamMember[] = [
         name: 'Samuel Silva',
         role: 'CEO',
         photo: cdnUrl('/team/samuel-silva.jpg'),
+        photoPosition: 'center top',
     },
     {
         name: 'Tânia Araújo',
@@ -76,6 +78,7 @@ function TeamCard({ member, index }: { member: TeamMember; index: number }) {
                     width={112}
                     height={112}
                     className="w-full h-full object-cover"
+                    style={member.photoPosition ? { objectPosition: member.photoPosition } : undefined}
                 />
             </div>
 
