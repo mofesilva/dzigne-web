@@ -14,7 +14,7 @@ interface TeamMember {
 
 const teamMembers: TeamMember[] = [
     {
-        name: 'Rodrigo Wágner Araújo',
+        name: 'Rodrigo Wagner Araújo',
         role: 'Sócio-Fundador & Customer Success',
         photo: cdnUrl('/team/rodrigo-araujo.jpg'),
     },
@@ -30,7 +30,7 @@ const teamMembers: TeamMember[] = [
         photoPosition: 'center top',
     },
     {
-        name: 'Tânia Araújo',
+        name: 'Tânia Simioni Wagner',
         role: 'Financeira',
         photo: cdnUrl('/team/tania-araujo.jpg'),
     },

@@ -42,7 +42,7 @@ function NavigationCard({ caseData, direction }: { caseData: NavigationCase; dir
                 <div className={`flex-1 flex flex-col justify-center p-6 md:p-8 ${isPrev ? 'items-start' : 'items-end text-right'}`}>
                     <div className={`flex items-center gap-2 mb-4`}>
                         {isPrev && <AltArrowLeft weight="Bold" size={14} className="text-green-accent group-hover:-translate-x-1 transition-transform duration-300" />}
-                        <span className="font-outfit text-xs text-eggshell/50 tracking-widest uppercase">
+                        <span className="font-outfit text-xs text-eggshell/65 tracking-widest uppercase">
                             {isPrev ? 'Case Anterior' : 'Próximo Case'}
                         </span>
                         {!isPrev && <AltArrowRight weight="Bold" size={14} className="text-green-accent group-hover:translate-x-1 transition-transform duration-300" />}
@@ -50,7 +50,7 @@ function NavigationCard({ caseData, direction }: { caseData: NavigationCase; dir
                     <h4 className="font-rajdhani font-bold text-2xl md:text-3xl text-eggshell group-hover:text-green-accent transition-colors duration-300 leading-tight">
                         {caseData.company}
                     </h4>
-                    <p className="font-outfit text-sm text-eggshell/50 mt-2 line-clamp-2">
+                    <p className="font-outfit text-sm text-eggshell/65 mt-2 line-clamp-2">
                         {caseData.title}
                     </p>
                 </div>

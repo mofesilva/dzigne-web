@@ -51,7 +51,7 @@ export default function SectionTitle({
                 {description && (
                     <p
                         className={`font-outfit ${centered ? 'max-w-2xl mx-auto' : 'max-w-xl'
-                            } ${isDark ? 'text-eggshell/50' : 'text-carbon/60'}`}
+                            } ${isDark ? 'text-eggshell/65' : 'text-carbon/65'}`}
                     >
                         {description}
                     </p>

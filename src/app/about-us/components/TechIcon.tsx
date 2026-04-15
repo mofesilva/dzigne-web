@@ -15,7 +15,7 @@ export default function TechIcon({ tech }: { tech: TechDef }) {
                     className="w-8 h-8 lg:w-10 lg:h-10 object-contain group-hover:scale-110 transition-transform duration-300"
                 />
             </div>
-            <span className="font-outfit text-eggshell/50 text-xs lg:text-small group-hover:text-eggshell/80 transition-colors duration-300">
+            <span className="font-outfit text-eggshell/65 text-xs lg:text-small group-hover:text-eggshell/80 transition-colors duration-300">
                 {tech.name}
             </span>
         </div>

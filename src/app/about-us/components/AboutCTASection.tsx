@@ -14,7 +14,7 @@ function AboutCTASection() {
                         <br />
                         <span className="font-bold text-green-accent">extraordinário juntos?</span>
                     </h1>
-                    <p className="font-outfit text-eggshell/50 max-w-2xl mx-auto mb-10 leading-relaxed">
+                    <p className="font-outfit text-eggshell/65 max-w-2xl mx-auto mb-10 leading-relaxed">
                         Se você quer um parceiro que trata o seu projeto como se fosse dele
                         — a conversa começa aqui.
                     </p>
