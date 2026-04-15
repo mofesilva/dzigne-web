@@ -14,7 +14,17 @@ interface TeamMember {
 
 const teamMembers: TeamMember[] = [
     {
-        name: 'Samuel Silva',
+        name: 'Rodrigo Wágner Araújo',
+        role: 'Sócio-Fundador & Customer Success',
+        photo: cdnUrl('/team/rodrigo-araujo.jpg'),
+    },
+    {
+        name: 'Marco Antônio Lopes da Silva',
+        role: 'Sócio-Fundador & Desenvolvedor Fullstack',
+        photo: cdnUrl('/team/marco-silva.jpg'),
+    },
+    {
+        name: 'Samuel Ferreira e Silva',
         role: 'CEO',
         photo: cdnUrl('/team/samuel-silva.jpg'),
         photoPosition: 'center top',
@@ -25,12 +35,7 @@ const teamMembers: TeamMember[] = [
         photo: cdnUrl('/team/tania-araujo.jpg'),
     },
     {
-        name: 'Rodrigo Araújo',
-        role: 'Sócio-Fundador & Customer Success',
-        photo: cdnUrl('/team/rodrigo-araujo.jpg'),
-    },
-    {
-        name: 'Moisés Silva',
+        name: 'Moisés Ferreira e Silva',
         role: 'COO & Desenvolvedor Fullstack',
         photo: cdnUrl('/team/moises-silva.jpg'),
     },
