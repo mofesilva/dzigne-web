@@ -24,8 +24,31 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://dzign-e.app"),
   title: "Dzign-e | Software House",
   description: "A casa do seu sucesso",
+  openGraph: {
+    title: "Dzign-e | Software House",
+    description: "A casa do seu sucesso",
+    url: "https://dzign-e.app",
+    siteName: "Dzign-e",
+    locale: "pt_BR",
+    type: "website",
+    images: [
+      {
+        url: "/open-graph-banner.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Dzign-e | Software House",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Dzign-e | Software House",
+    description: "A casa do seu sucesso",
+    images: ["/open-graph-banner.jpg"],
+  },
 };
 
 export default function RootLayout({
