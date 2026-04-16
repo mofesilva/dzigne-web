@@ -24,13 +24,13 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://dzign-e.app"),
+  metadataBase: new URL("https://www.dzign-e.com.br"),
   title: "Dzign-e | Software House",
   description: "A casa do seu sucesso",
   openGraph: {
     title: "Dzign-e | Software House",
     description: "A casa do seu sucesso",
-    url: "https://dzign-e.app",
+    url: "https://www.dzign-e.com.br",
     siteName: "Dzign-e",
     locale: "pt_BR",
     type: "website",
